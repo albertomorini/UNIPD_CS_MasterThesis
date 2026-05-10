@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'build/thesis.blg'
+[51] biber:342> INFO - === Sun May 10, 2026, 18:34:49
+[62] Biber.pm:421> INFO - Reading 'build/thesis.bcf'
+[105] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[117] Biber.pm:4487> INFO - Processing section 0
+[124] Biber.pm:4678> INFO - Looking for bibtex file 'appendix/bibliography.bib' for section 0
+[124] bibtex.pm:1713> INFO - LaTeX decoding ...
+[126] bibtex.pm:1519> INFO - Found BibTeX data source 'appendix/bibliography.bib'
+[148] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[148] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[148] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'it-IT'
+[149] Biber.pm:4313> INFO - No sort tailoring available for locale 'it-IT'
+[153] bbl.pm:676> INFO - Writing 'build/thesis.bbl' with encoding 'UTF-8'
+[154] bbl.pm:779> INFO - Output to build/thesis.bbl
