@@ -1,0 +1,99 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{site:agile-manifesto}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=848fab37c071b402458fb871d0b9c12e}{%
+           family={{Agile Alliance}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{848fab37c071b402458fb871d0b9c12e}
+      \strng{fullhash}{848fab37c071b402458fb871d0b9c12e}
+      \strng{fullhashraw}{848fab37c071b402458fb871d0b9c12e}
+      \strng{bibnamehash}{848fab37c071b402458fb871d0b9c12e}
+      \strng{authorbibnamehash}{848fab37c071b402458fb871d0b9c12e}
+      \strng{authornamehash}{848fab37c071b402458fb871d0b9c12e}
+      \strng{authorfullhash}{848fab37c071b402458fb871d0b9c12e}
+      \strng{authorfullhashraw}{848fab37c071b402458fb871d0b9c12e}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2026-05-16}
+      \field{title}{Manifesto for Agile Software Development}
+      \field{year}{2001}
+      \true{nocite}
+      \verb{urlraw}
+      \verb http://agilemanifesto.org/iso/it/
+      \endverb
+      \verb{url}
+      \verb http://agilemanifesto.org/iso/it/
+      \endverb
+    \endentry
+    \entry{site:goodit}{online}{}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeltitlesource}{title}
+      \field{title}{GoodIT 2025 - International Conference on Information Technology for Social Good}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://goodit2025.org
+      \endverb
+      \verb{url}
+      \verb https://goodit2025.org
+      \endverb
+    \endentry
+    \entry{womak:lean-thinking}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=a3c8f484d3822ee8a4cd9dc285bf8350}{%
+           family={Womack},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=56a85c63886b8bae540df9023b7eb6f2}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Daniel\bibnamedelima T.},
+           giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Simon \& Schuster, Inc.}%
+      }
+      \strng{namehash}{7d343dbf77c039f55d0670883f27defc}
+      \strng{fullhash}{7d343dbf77c039f55d0670883f27defc}
+      \strng{fullhashraw}{7d343dbf77c039f55d0670883f27defc}
+      \strng{bibnamehash}{7d343dbf77c039f55d0670883f27defc}
+      \strng{authorbibnamehash}{7d343dbf77c039f55d0670883f27defc}
+      \strng{authornamehash}{7d343dbf77c039f55d0670883f27defc}
+      \strng{authorfullhash}{7d343dbf77c039f55d0670883f27defc}
+      \strng{authorfullhashraw}{7d343dbf77c039f55d0670883f27defc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lean Thinking, Second Edition}
+      \field{year}{2010}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

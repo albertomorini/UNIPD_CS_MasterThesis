@@ -1,44 +1,122 @@
-\chapter{Introduzione}
-\label{cap:introduzione}
+\chapter{Introduction}
+\label{cap:introduction}
 
-Introduzione al contesto applicativo.\\
 
-\noindent Esempio di utilizzo di un termine nel glossario \\
-\gls{api}. \\
+Over the past few decades, mobile applications have experienced ex-
+plosive growth, increasingly replacing traditional desktop software
+and web browsing. This transformation is not only technological but
+also cultural, reflecting the shift toward a digital society [22]—one
+in which everyday activities, social interactions, and information
+flows are deeply embedded in digital infrastructure and mobile tech-
+nologies. This transformation is driven by several key factors: the
+widespread adoption of mobile devices [15, 31], their growing com-
+putational power [13], increased battery life [8], and an expansion
 
-\noindent Esempio di citazione in linea \\
-\cite{site:agile-manifesto}. \\
+of use cases [19]. Modern smartphones offer a wider range of func-
+tionalities compared to conventional computers, largely due to their
+built-in sensors—such as gyroscopes, GPS modules, and light sen-
+sors—and actuators like vibration motors and cameras [33]. These
+features have enabled a richer, more interactive user experience
+and opened the door to innovative applications in diverse domains,
+including health [4], education [21], and serious games [23]. Ap-
+plications that interact with the physical world—through sensors
+or cameras—and mobile games have become particularly preva-
+lent [27]. Prominent examples such as Google Maps, Waze, Strava,
+Snapchat, and Instagram illustrate the popularity and ubiquity of
+such mobile apps, each boasting millions of downloads.
+The shift from browser-based to mobile-based internet use has
+been striking. In 2011, only 6% of users accessed the internet via
+mobile phones; today, that figure exceeds 93%, representing ap-
+proximately 4 billion people [11]. This trend is mirrored in social
+media usage: over 80% of Facebook users now access the platform
+exclusively through mobile devices, a dramatic increase from 30%
+in 2014 [20, 30]. As a result, many companies are prioritizing mo-
+bile platforms to deliver personalized, engaging experiences. To
+achieve this, they increasingly rely on sensor data to infer user be-
+havior and preferences. For instance, GPS data can reveal movement
+patterns [29], while gyroscopes can detect specific gestures or ac-
+tions [7]. However, this data collection raises several challenges, in-
+cluding faster battery depletion [14], higher data consumption [25],
+and significant privacy concerns [10].
+As mobile hardware continues to evolve, there is an increasing
+convergence between physical and digital spaces. Location-aware
+technologies now support a wide spectrum of applications, from
+real-time navigation and location-based recommendations to aug-
+mented reality games and immersive media experiences. This shift
+has transformed how individuals interact not only with their de-
+vices but also with their surroundings, turning smartphones into
+context-sensitive tools capable of enhancing real-world interac-
+tions.
+Despite this evolution, many existing location-based applica-
+tions remain proprietary, rigid in functionality, or focused pre-
+dominantly on data consumption rather than creation. There is a
+notable lack of open, extensible platforms that empower users to
+actively contribute multimedia content—such as audio, images, or
+video—anchored to specific physical locations. Furthermore, tools
+that enable users to collaboratively create and explore geo-tagged
+content in a transparent and privacy-conscious environment are
+scarce. These gaps present a clear opportunity for developing plat-
+forms that are both technically flexible and socially engaging.
+Within this context, we introduce GeoMedia: an open-source mo-
+bile platform that enables users to share comments and multimedia
+content—such as photos, audio, or video—directly on a geographicGoodIT ’25, September 03–05, 2025, Antwerp, Belgium
+Alberto Morini, Lorenzo Perinello, and Claudio E. Palazzi
+map, linking each post to the user’s current location. GeoMedia
+aims to support interactive spatial storytelling, collaborative ex-
+ploration, and personalized geolocation-based content sharing. Its
+modular architecture allows developers and researchers to extend
+the platform for various use cases, from tourism and urban art to
+education and field research.
+The remainder of this paper is organized as follows: Section 2 re-
+views relevant related work in the domain of location-based social
+networks and geolocation in mobile applications. Section 3 intro-
+duces the design and main features of the GeoMedia platform. Sec-
+tion 4 describes the system architecture, detailing the presentation,
+application, and data layers. Section 5 focuses on the development
+of the mobile application, including its main components, such as
+the map interface, exclusive posts, and media handling. Section 6
+presents the backend server implementation and its integration
+with the database, while Section 7 outlines the database schema
+and the use of stored procedures to manage data efficiently. Finally,
+Sections 8 and 9 present directions for future work and conclude
 
-\noindent Esempio di citazione nel pie' di pagina \\
-citazione\footcite{womak:lean-thinking} \\
 
-\section{L'azienda}
+% \noindent Esempio di utilizzo di un termine nel glossario \\
+% \gls{api}. \\
 
-Descrizione dell'azienda.
+% \noindent Esempio di citazione in linea \\
+% \cite{site:agile-manifesto}. \\
 
-\section{L'idea}
+% \noindent Esempio di citazione nel pie' di pagina \\
+% citazione\footcite{womak:lean-thinking} \\
 
-Introduzione all'idea dello stage.
+% \section{L'azienda}
 
-\section{Organizzazione del testo}
+% Descrizione dell'azienda.
 
-\begin{description}
-    \item[{\hyperref[cap:processi-metodologie]{Il secondo capitolo}}] descrive ...
+% \section{L'idea}
+
+% Introduzione all'idea dello stage.
+
+% \section{Organizzazione del testo}
+
+% \begin{description}
+%     \item[{\hyperref[cap:processi-metodologie]{Il secondo capitolo}}] descrive ...
     
-    \item[{\hyperref[cap:descrizione-stage]{Il terzo capitolo}}] approfondisce ...
+%     \item[{\hyperref[cap:descrizione-stage]{Il terzo capitolo}}] approfondisce ...
     
-    \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] approfondisce ...
+%     \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] approfondisce ...
     
-    \item[{\hyperref[cap:progettazione-codifica]{Il quinto capitolo}}] approfondisce ...
+%     \item[{\hyperref[cap:progettazione-codifica]{Il quinto capitolo}}] approfondisce ...
     
-    \item[{\hyperref[cap:verifica-validazione]{Il sesto capitolo}}] approfondisce ...
+%     \item[{\hyperref[cap:verifica-validazione]{Il sesto capitolo}}] approfondisce ...
     
-    \item[{\hyperref[cap:conclusioni]{Nel settimo capitolo}}] descrive ...
-\end{description}
+%     \item[{\hyperref[cap:conclusioni]{Nel settimo capitolo}}] descrive ...
+% \end{description}
 
-Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
-\begin{itemize}
-	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel glossario, situato alla fine del presente documento;
-	\item per la prima occorrenza dei termini riportati nel glossario viene utilizzata la seguente nomenclatura: \emph{parola}\glsfirstoccur;
-	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \emph{corsivo}.
-\end{itemize}
+% Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
+% \begin{itemize}
+% 	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel glossario, situato alla fine del presente documento;
+% 	\item per la prima occorrenza dei termini riportati nel glossario viene utilizzata la seguente nomenclatura: \emph{parola}\glsfirstoccur;
+% 	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \emph{corsivo}.
+% \end{itemize}
