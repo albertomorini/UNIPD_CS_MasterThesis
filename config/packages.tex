@@ -58,7 +58,13 @@
 \usepackage[toc, acronym]{glossaries}   % glossario
 
 % \usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
-\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage[
+    backend=biber,
+    style=numeric,        % numeric style [1], [2], ...
+    % sorting=none,         % keeps order in your .bib file
+    hyperref,
+    backref              % optional: shows pages where cited
+]{biblatex}
 
 \usepackage{layaureo}                   % margini ottimizzati per l'A4
 \usepackage{fancyhdr}

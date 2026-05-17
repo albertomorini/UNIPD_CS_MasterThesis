@@ -1,10 +1,4 @@
-# Master Thesis in Computer Science at University of Padua.
-
-> This repository contains the LaTeX structure for my thesis, the source code is on: [GeoMedia](https://github.com/albertomorini/GeoMedia)
-
-
-
-<!-- # Thesis template
+# Thesis template
 A simple Thesis template for the Bachelor Degree in Computer Science @Unipadova
 
 # Installation
@@ -204,4 +198,4 @@ It provides asymmetrical margins, chapters openings on the right and no links hi
 Remember not to unconditionally stick with this structure, as it's just an example.
 If you feel you don't need this chapter or that section, or you prefer a different order and organization of the content do as you want.
 
-Before really starting to write actual content you should take some time to think about the structure of your chapters, filling them with the (empty) sections you will then develop, as it should help later on, avoiding to constantly rewrite and reorder stuff. -->
+Before really starting to write actual content you should take some time to think about the structure of your chapters, filling them with the (empty) sections you will then develop, as it should help later on, avoiding to constantly rewrite and reorder stuff.
