@@ -62,6 +62,13 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Document's title</rdf:li></rdf:Alt></dc:title>
+   <dc:creator><rdf:Seq><rdf:li>Author's name</rdf:li></rdf:Seq></dc:creator>
+   <dc:language><rdf:Bag><rdf:li>it-IT</rdf:li></rdf:Bag></dc:language>
+   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Short description</rdf:li></rdf:Alt></dc:description>
+   <dc:subject><rdf:Bag><rdf:li>keyword1</rdf:li>
+     <rdf:li>keyword2</rdf:li>
+     <rdf:li>keyword3</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -73,15 +80,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2026-05-17T16:03:00+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2026-05-17T16:03:00+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2026-05-17T16:03:00+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2026-05-17T16:42:33+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2026-05-17T16:42:33+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2026-05-17T16:42:33+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:C8CFC28F-88E1-7995-E9AD-F6D12EAD346B</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:3CE5EA6E-1F83-B4D8-A0EB-A3CBA2D5963C</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:C04126E4-C2FB-A348-AF8F-B0A1D39DBA14</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

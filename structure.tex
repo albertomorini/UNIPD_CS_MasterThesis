@@ -8,6 +8,51 @@
         %%******************************************%%
 
 
+\definecolor{jskeyword}{RGB}{0,0,180}
+\definecolor{jsstring}{RGB}{163,21,21}
+\definecolor{jscomment}{RGB}{0,128,0}
+\definecolor{jsbackground}{RGB}{245,245,245}
+
+\lstdefinelanguage{JavaScript}{
+    keywords={break, case, catch, const, continue, debugger, default, delete,
+        do, else, export, for, function, if, import, in, instanceof, let,
+        new, return, super, switch, this, throw, try, typeof, var, void,
+        while, with, yield, class},
+    keywordstyle=\color{jskeyword}\bfseries,
+    ndkeywords={true,false,null,undefined},
+    ndkeywordstyle=\color{magenta}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{jscomment}\ttfamily,
+    stringstyle=\color{jsstring}\ttfamily,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstset{
+    language=JavaScript,
+    backgroundcolor=\color{jsbackground},
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=10pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=true
+}
+
+\renewcommand{\lstlistlistingname}{List of Codes} %to rename it into List of Codes (and not listing)
+
+
+
 \begin{document}
     \frontmatter
     \input{preface/title-page}
@@ -15,7 +60,7 @@
     \input{preface/summary}
     \input{preface/table-of-contents}
     \cleardoublepage
-    
+
     \mainmatter
     \input{chapters/introduzione}
     \input{chapters/processi}
@@ -30,8 +75,8 @@
     \input{appendix/appendice-a}
 
     \backmatter
-    \printglossary[type=\acronymtype, title=Acronyms, toctitle=List of Acronyms]
-    % \printglossary[type=main, title=Glossario, toctitle=Glossario]
+    \printglossary[type=\acronymtype, title=Acronimi e abbreviazioni, toctitle=Acronimi e abbreviazioni]
+    \printglossary[type=main, title=Glossario, toctitle=Glossario]
 
     \input{appendix/bibliography}
 \end{document}
