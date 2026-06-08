@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  17 MAY 2026 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  8 JUN 2026 23:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2826,75 +2826,71 @@ l.1 \cleardoublepage
 
 ]) (./chapters/introduction.tex
 Chapter 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
-
- []
-
-
-LaTeX Warning: Hyper reference `cap:processi-metodologie' on page 1 undefined o
-n input line 45.
-
 [1
 
 
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+
+ []
+
+
+LaTeX Warning: Hyper reference `cap:processi-metodologie' on page 2 undefined o
+n input line 61.
+
 
 LaTeX Warning: Hyper reference `cap:descrizione-stage' on page 2 undefined on i
-nput line 47.
+nput line 63.
 
 
 LaTeX Warning: Hyper reference `cap:analisi-requisiti' on page 2 undefined on i
-nput line 49.
+nput line 65.
 
 
 LaTeX Warning: Hyper reference `cap:progettazione-codifica' on page 2 undefined
- on input line 51.
+ on input line 67.
 
 
 LaTeX Warning: Hyper reference `cap:verifica-validazione' on page 2 undefined o
-n input line 53.
+n input line 69.
+
+
+LaTeX Warning: Hyper reference `cap:conclusioni' on page 2 undefined on input l
+ine 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 57.
+nput line 73.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 58.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-! Undefined control sequence.
-\glsfirstoccur ->\ap 
-                     {{[g]}}
-l.79 ... nomenclatura: \emph{parola}\glsfirstoccur
-                                                  ;
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) (./chapters/client-layer.tex [2]
+))
+(./chapters/related-works.tex [2]
 Chapter 2.
+) (./chapters/client-layer.tex [3
+
+]
+Chapter 3.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2904,16 +2900,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) (./chapters/server-layer.tex [3
-
-]
-Chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-) (./chapters/data-layer.tex [4
+) (./chapters/server-layer.tex [4
 
 ]
 Chapter 4.
@@ -2922,11 +2909,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) (./chapters/conclusions.tex [5
+) (./chapters/data-layer.tex [5
 
 ]
 Chapter 5.
-) (./preface/acknowledgements.tex [6
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+) (./chapters/conclusions.tex [6
+
+]
+Chapter 6.
+) (./preface/acknowledgements.tex [7
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -2938,18 +2934,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (./appendix/appendice-a.tex [7
+) (./appendix/appendice-a.tex [8
 
 ]
 Appendix A.
-) [8
+) [9
 
-] (build/thesis.acr) (build/thesis.gls [9
+] (build/thesis.acr) (build/thesis.gls [10
 
 
 
 ]) (./appendix/bibliography.tex
-[10
+[11
 
 
 ]
@@ -2971,7 +2967,7 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-) [11
+) [12
 
 
 ] (build/thesis.aux)
@@ -2988,44 +2984,36 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 40591 strings out of 467533
- 741130 string characters out of 5422138
- 1706066 words of memory out of 5000000
- 68661 multiletter control sequences out of 15000+600000
- 657340 words of font info for 164 fonts, out of 8000000 for 9000
+ 40618 strings out of 467533
+ 741475 string characters out of 5422138
+ 1707104 words of memory out of 5000000
+ 68671 multiletter control sequences out of 15000+600000
+ 657572 words of font info for 168 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  97i,8n,125p,2498b,2549s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{page.12} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{page.13} has been referenced but does not exist, re
-placed by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfsi1000.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sftt1000.pfb>
-Output written on build/thesis.pdf (17 pages, 553726 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle
+1.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfsi1000.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sftt1000.pfb>
+Output written on build/thesis.pdf (18 pages, 557222 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 66778 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 66834 words of extra memory for PDF output out of 74296 (max. 10000000)
 
