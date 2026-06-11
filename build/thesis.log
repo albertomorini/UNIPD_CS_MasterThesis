@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  9 JUN 2026 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  11 JUN 2026 23:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2891,10 +2891,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [10
+[10
 
 
-] (build/thesis.aux)
+]) [11] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2904,13 +2904,13 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 39890 strings out of 467533
- 733925 string characters out of 5422138
- 1694930 words of memory out of 5000000
- 67984 multiletter control sequences out of 15000+600000
- 650835 words of font info for 149 fonts, out of 8000000 for 9000
+ 39965 strings out of 467533
+ 736850 string characters out of 5422138
+ 1701943 words of memory out of 5000000
+ 68029 multiletter control sequences out of 15000+600000
+ 651761 words of font info for 158 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,6n,125p,2498b,2549s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 97i,6n,125p,2498b,3234s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texm
 f/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public
 /cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.p
@@ -2924,10 +2924,10 @@ m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb
 onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
 
-Output written on build/thesis.pdf (16 pages, 440019 bytes).
+Output written on build/thesis.pdf (17 pages, 459698 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 407 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
  51938 words of extra memory for PDF output out of 61914 (max. 10000000)
 
