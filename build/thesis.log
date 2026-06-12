@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  11 JUN 2026 23:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  12 JUN 2026 19:35
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2826,6 +2826,11 @@ l.1 \cleardoublepage
 
 ]) (./chapters/introduction.tex
 Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
+
+ []
+
 [1
 
 
@@ -2904,13 +2909,13 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 39965 strings out of 467533
- 736850 string characters out of 5422138
- 1701943 words of memory out of 5000000
- 68029 multiletter control sequences out of 15000+600000
- 651761 words of font info for 158 fonts, out of 8000000 for 9000
+ 40032 strings out of 467533
+ 739474 string characters out of 5422138
+ 1709876 words of memory out of 5000000
+ 68073 multiletter control sequences out of 15000+600000
+ 652237 words of font info for 164 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,6n,125p,2498b,3234s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 97i,6n,125p,2498b,3232s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texm
 f/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public
 /cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.p
@@ -2924,10 +2929,10 @@ m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb
 onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
 
-Output written on build/thesis.pdf (17 pages, 459698 bytes).
+Output written on build/thesis.pdf (17 pages, 471699 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 347 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 463 PDF objects out of 1000 (max. 8388607)
+ 402 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
  51938 words of extra memory for PDF output out of 61914 (max. 10000000)
 
