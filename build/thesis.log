@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  13 JUN 2026 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  13 JUN 2026 16:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2843,16 +2843,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
 ) (./chapters/related-works.tex [2]
 Chapter 2.
-) (./chapters/geomedia.tex [3
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+[3
+
+]) (./chapters/geomedia.tex [4]
 Chapter 3.
-) (./chapters/architecture.tex) (./chapters/mobile.tex) (./chapters/backend.tex
-) (./chapters/data_layer.tex) (./chapters/conclusions.tex [4
+) (./chapters/architecture.tex [5
 
 ]
 Chapter 4.
-) (./preface/acknowledgements.tex [5
+) (./chapters/mobile.tex [6
+
+]
+Chapter 5.
+) (./chapters/backend.tex [7
+
+]
+Chapter 6.
+) (./chapters/data_layer.tex) (./chapters/conclusions.tex [8
+
+]
+Chapter 7.
+) (./preface/acknowledgements.tex [9
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -2864,18 +2880,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (./appendix/appendice-a.tex [6
+) (./appendix/appendice-a.tex [10
 
 ]
 Appendix A.
-) [7
+) [11
 
-] (build/thesis.acr) (build/thesis.gls [8
+] (build/thesis.acr) (build/thesis.gls [12
 
 
 
 ]) (./appendix/bibliography.tex
-[9
+[13
 
 
 ]
@@ -2901,7 +2917,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[10
+[14
 
 
 ]
@@ -2910,7 +2926,7 @@ Overfull \hbox (5.83511pt too wide) in paragraph at lines 10--10
  / Toward -[] Stopping -[]
  []
 
-[11]) [12] (build/thesis.aux)
+[15]) [16] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2920,30 +2936,30 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 40083 strings out of 467533
- 741839 string characters out of 5422138
- 1710746 words of memory out of 5000000
- 68110 multiletter control sequences out of 15000+600000
- 652433 words of font info for 166 fonts, out of 8000000 for 9000
+ 40149 strings out of 467533
+ 743299 string characters out of 5422138
+ 1712218 words of memory out of 5000000
+ 68148 multiletter control sequences out of 15000+600000
+ 653602 words of font info for 173 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,6n,125p,2498b,3234s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 97i,6n,125p,2498b,3235s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texm
-f/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public
-/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-
-Output written on build/thesis.pdf (18 pages, 479188 bytes).
+f/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on build/thesis.pdf (22 pages, 499639 bytes).
 PDF statistics:
- 513 PDF objects out of 1000 (max. 8388607)
- 451 compressed objects within 5 object streams
- 100 named destinations out of 1000 (max. 500000)
- 51938 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 592 PDF objects out of 1000 (max. 8388607)
+ 523 compressed objects within 6 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 54034 words of extra memory for PDF output out of 61914 (max. 10000000)
 
