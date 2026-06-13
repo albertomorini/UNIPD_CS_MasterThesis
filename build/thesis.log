@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  13 JUN 2026 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  13 JUN 2026 17:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2793,8 +2793,11 @@ been already used, duplicate ignored
 l.1 \cleardoublepage
                      [1
 
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (./preface/table
--of-contents.tex
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+LaTeX Warning: Citation 'paper:goodit' on page 2 undefined on input line 18.
+
+) (./preface/table-of-contents.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
  been already used, duplicate ignored
 <to be read again> 
@@ -2896,13 +2899,10 @@ Appendix A.
 
 ]
 
-Package biblatex Warning: Split bibliography detected.
-(biblatex)                Many simple split bibliography setups with
-(biblatex)                non-overlapping bibliographies benefit from
-(biblatex)                setting 'defernumbers=true'.
-(biblatex)                See the documentation for details.
-(biblatex)                This warning can be suppressed with
-(biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
+Package biblatex Warning: Type 'book' not found on input line 7.
+
+
+LaTeX Warning: Empty bibliography on input line 7.
 
 
 Package biblatex Warning: Split bibliography detected.
@@ -2912,34 +2912,84 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                See the documentation for details.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[14
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
 
 
-]
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
 Overfull \hbox (5.83511pt too wide) in paragraph at lines 10--10
 \T1/cmtt/m/n/10 Using _ Sentiment _ Analysis / links / 60b8e34992851cb13d73e858
  / Toward -[] Stopping -[]
  []
 
-[15]) [16] (build/thesis.aux)
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: Split bibliography detected.
+(biblatex)                Many simple split bibliography setups with
+(biblatex)                non-overlapping bibliographies benefit from
+(biblatex)                setting 'defernumbers=true'.
+(biblatex)                See the documentation for details.
+(biblatex)                This warning can be suppressed with
+(biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
+
+[14
+
+
+] [15]) [16] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 40149 strings out of 467533
- 743299 string characters out of 5422138
- 1712218 words of memory out of 5000000
- 68148 multiletter control sequences out of 15000+600000
+ 40143 strings out of 467533
+ 743073 string characters out of 5422138
+ 1712178 words of memory out of 5000000
+ 68143 multiletter control sequences out of 15000+600000
  653602 words of font info for 173 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  97i,6n,125p,2498b,3235s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2956,10 +3006,10 @@ m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
 onts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (22 pages, 499639 bytes).
+Output written on build/thesis.pdf (22 pages, 501555 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
- 523 compressed objects within 6 object streams
- 115 named destinations out of 1000 (max. 500000)
+ 590 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
+ 114 named destinations out of 1000 (max. 500000)
  54034 words of extra memory for PDF output out of 61914 (max. 10000000)
 

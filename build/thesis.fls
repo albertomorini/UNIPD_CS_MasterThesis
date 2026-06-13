@@ -511,6 +511,7 @@ INPUT preface/summary.tex
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx2488.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
 INPUT ./preface/table-of-contents.tex
 INPUT ./preface/table-of-contents.tex
 INPUT ./preface/table-of-contents.tex
@@ -519,7 +520,6 @@ INPUT preface/table-of-contents.tex
 INPUT build/thesis.toc
 INPUT build/thesis.toc
 INPUT build/thesis.toc
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT build/thesis.toc
