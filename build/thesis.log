@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  13 JUN 2026 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  14 JUN 2026 23:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2549,7 +2549,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 Package LayAureo Warning: Textwidth as whith the "11pt" class option.
 
-)) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip106
@@ -2567,6 +2567,14 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip118
 \f@nch@widthR=\skip119
 \@temptokenb=\toks46
+))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count512
+\float@exts=\toks47
+\float@box=\box68
+\@float@everytoks=\toks48
+\@floatcapt=\box69
 )
 (./config/thesis-config.tex (./config/variables.tex
 
@@ -2623,8 +2631,8 @@ File: lstlang3.sty 2025/11/14 1.11b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-\c@riskcounter=\count512
-\c@usecasecounter=\count513
+\c@riskcounter=\count513
+\c@usecasecounter=\count514
 )
 (./structure.tex
 Package csquotes Info: Checking for multilingual support...
@@ -2655,17 +2663,17 @@ LaTeX Font Info:    ... okay on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count514
+\scratchcounter=\count515
 \scratchdimen=\dimen288
-\scratchbox=\box68
-\nofMPsegments=\count515
-\nofMParguments=\count516
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count517
+\scratchbox=\box70
+\nofMPsegments=\count516
+\nofMParguments=\count517
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count518
 \MPscratchDim=\dimen289
-\MPnumerator=\count518
-\makeMPintoPDFobject=\count519
-\everyMPtoPDFconversion=\toks48
+\MPnumerator=\count519
+\makeMPintoPDFobject=\count520
+\everyMPtoPDFconversion=\toks50
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -2682,6 +2690,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen290
 \caption@adjustwidth@linewidth=\dimen291
+Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -2690,7 +2699,7 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count520
+\c@lstlisting=\count521
 LaTeX Info: Redefining \microtypecontext on input line 56.
 Package microtype Info: Applying patch `item' on input line 56.
 Package microtype Info: Applying patch `toc' on input line 56.
@@ -2793,11 +2802,8 @@ been already used, duplicate ignored
 l.1 \cleardoublepage
                      [1
 
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-LaTeX Warning: Citation 'paper:goodit' on page 2 undefined on input line 18.
-
-) (./preface/table-of-contents.tex
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (./preface/table
+-of-contents.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
  been already used, duplicate ignored
 <to be read again> 
@@ -2847,31 +2853,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 ) (./chapters/related-works.tex [2]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--13
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
 [3
 
-]) (./chapters/geomedia.tex [4]
+]
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=218, 947.54
+pt x 492.84125pt>
+File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png Graphic fi
+le (type png)
+<use ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLA
+INED.png  used on input line 42.
+(pdftex.def)             Requested size: 277.19879pt x 144.17615pt.
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=222, 969.622
+5pt x 457.20813pt>
+File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png Graphic fil
+e (type png)
+<use ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPla
+ces.png  used on input line 52.
+(pdftex.def)             Requested size: 277.19879pt x 130.7103pt.
+ [4 <build/../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png> <bui
+ld/../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>]
+<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=248, 348.
+30125pt x 619.31375pt>
+File: ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png Graphic 
+file (type png)
+<use ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/InstagramZuck
+_MapOG.png  used on input line 87.
+(pdftex.def)             Requested size: 118.80121pt x 211.23483pt.
+ [5]
+<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=265, 64
+5.41125pt x 583.17876pt>
+File: ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png Graphi
+c file (type png)
+<use ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/Instagram_Pla
+ceSearch.png  used on input line 100.
+(pdftex.def)             Requested size: 198.0pt x 178.90594pt.
+)
+(./chapters/geomedia.tex [6 <build/../images/../images/StateOfArt/Instagram/Ins
+tagramZuck_MapOG.png (PNG copy)> <build/../images/../images/StateOfArt/Instagra
+m/Instagram_PlaceSearch.png>]
 Chapter 3.
-) (./chapters/architecture.tex [5
+) (./chapters/architecture.tex [7
 
 ]
 Chapter 4.
-) (./chapters/mobile.tex [6
+) (./chapters/mobile.tex [8
 
 ]
 Chapter 5.
-) (./chapters/backend.tex [7
+) (./chapters/backend.tex [9
 
 ]
 Chapter 6.
-) (./chapters/data_layer.tex) (./chapters/conclusions.tex [8
+) (./chapters/data_layer.tex) (./chapters/conclusions.tex [10
 
 ]
 Chapter 7.
-) (./preface/acknowledgements.tex [9
+) (./preface/acknowledgements.tex [11
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -2883,18 +2928,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (./appendix/appendice-a.tex [10
+) (./appendix/appendice-a.tex [12
 
 ]
 Appendix A.
-) [11
+) [13
 
-] (build/thesis.acr) (build/thesis.gls [12
+] (build/thesis.acr) (build/thesis.gls [14
 
 
 
 ]) (./appendix/bibliography.tex
-[13
+[15
 
 
 ]
@@ -2946,10 +2991,18 @@ Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
 
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
 Overfull \hbox (5.83511pt too wide) in paragraph at lines 10--10
 \T1/cmtt/m/n/10 Using _ Sentiment _ Analysis / links / 60b8e34992851cb13d73e858
  / Toward -[] Stopping -[]
  []
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
 
 
 Package biblatex Warning: No driver for 'paper'.
@@ -2964,10 +3017,10 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[14
+[16
 
 
-] [15]) [16] (build/thesis.aux)
+] [17] [18]) [19] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2986,30 +3039,32 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 40143 strings out of 467533
- 743073 string characters out of 5422138
- 1712178 words of memory out of 5000000
- 68143 multiletter control sequences out of 15000+600000
- 653602 words of font info for 173 fonts, out of 8000000 for 9000
+ 40314 strings out of 467533
+ 748524 string characters out of 5422138
+ 1716955 words of memory out of 5000000
+ 68274 multiletter control sequences out of 15000+600000
+ 656556 words of font info for 185 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,6n,125p,2498b,3235s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texm
-f/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public
-/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (22 pages, 501555 bytes).
+ 97i,6n,125p,2498b,3232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sftt1000.pfb>
+Output written on build/thesis.pdf (25 pages, 4098615 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 521 compressed objects within 6 object streams
- 114 named destinations out of 1000 (max. 500000)
- 54034 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 694 PDF objects out of 1000 (max. 8388607)
+ 607 compressed objects within 7 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 60206 words of extra memory for PDF output out of 61914 (max. 10000000)
 

@@ -1,35 +1,107 @@
-\chapter{Related works}
+\chapter{State of Art}
 \label{cap:relatedwork}
 
-GeoMedia positions itself among existing online social media platforms, offering core functionality for sharing location-based content anchored to geographic coordinates. Content is visible only within a user-defined distance, or it can be used to create various real-world scenarios, such as scavenger hunts or city tour guides.
-The application enables users to explore the real world through enriched map-based content contributed by other users, who can upload pictures or other multimedia files associated with specific locations.
+GeoMedia positions itself among existing online social media platforms, by offering functionality centered on the sharing of geolocated content linked to specific geographic coordinates. Content is visible only within a configurable distance radius, allowing to create a wide range of real-world applications, including scavenger hunts, interactive city guides, and any other location-based experiences
 
-Several other social media platforms utilize a mobile device’s GPS module to enhance user experience or provide additional functionality. However, none fully implement the concept behind GeoMedia or its versatility in creating varios application scenario and explore content uploaded.
+The platform enables users to discover and interact with the physical environment through a map enriched by content contributed by other users, who can upload pictures or other multimedia resources associated with specific locations.
+
+Although several other social media platforms utilize the GPS capabilities of mobile devices to enhance user experience and provide location-aware features, none fully realize the underlying concept of GeoMedia or offer the same degree of flexibility for creating diverse application scenarios and exploration of uploaded content.
+
 
 \section{Foursquare Swarm}
+\label{sec:foursquare-swarm}
 
-Foursquare Swarm is the spin-off of a formely app `Foursquare City Guide', which once provided personalized recoomandations of places near a user's current location based on it interests or previous browsing history and check-in (place where the user has been).
-Foursquare has been discontinued in 2024 and it functionalities has been integrated into Swarm, another app that also allows users to share their position with realatives. The apps also create a personal lifelog of places visited thus to share it with others. \\
 
-Any user for each place visited, can leave a review or uploads media, but this is associated to a physical place like a store, coffee, restaurant or something, cannot be done in desired coordination and do not provide any kind of post confining, every users can access to it. 
-The application also incentive the usage by making the user earning badges by visiting places and uploading content to it. These functionalities and mechanism are quite the same of also other solutions like Google Maps (see Section~\ref{sec:google-maps}).
+Foursquare Swarm is the spin-off of a formerly app, `Foursquare City Guide', which provide personalized recommendations of nearby places to the users' current location based on its interests or previous browsing history and check-ins (locations previously visited by the user).
+
+Foursquare was discontinued in 2024 and its functionalities have been integrated into Swarm, which in addition allows users to share their position with relatives, maintaining a personal lifelog of visited places, which can be shared with others.\\
+
+
+For each visited location, users may leave reviews or upload multimedia content; however, these contributions are strictly tied to physical place, such as stores, cafés, or restaurants. Users cannot publish content at arbitrary geographic coordinates, nor can restrict post visibility, as all content is publicly accessible.
+The application further encourages the usage through a gamification system, in which users earn badges for visiting locations and uploading content. These mechanisms are broadly comparable to those implemented in other platforms such as Google Maps (see Section~\ref{sec:google-maps}).
+
 
 \subsection{Dodgeball and Google Latitude}
-Dodgeball later acquired by Google and rebranded as `Google Latitude' \cite{site:google-latitude} was quite the precursor of Foursquare, simply allowing to share current locations with friends through a map.
-Google Latitude was discontinued in 2013, integrated into another discontinued social media by Google (Google+ \cite{site:google-plus}) and finally migrated into Google Maps in 2018.
+
+Dodgeball was a service that simply allowed users to share their current locations with friends through a map, and served as a precursor to Foursquare City Guide and Foursquare Swarm same functionality. 
+Later was acquired by Google and rebranded as `Google Latitude' \cite{site:google-latitude} discontinued in 2013 and integrated into another discontinued social media by Google (Google+ \cite{site:google-plus}) and finally migrated into Google Maps\ref{sec:google-maps} in 2018.
+
 
 \section{Snapchat}
+\label{sec:snapchat}
 
-Snapchat\cite{site:snapchat} app has been one of the most used social media world wide, mainly thanks to its instant-message service and multimedia functionality like time-based content, that make the uploaded content visibile only for 24h or visible only once by a user. This brings user to check it daily in order to not missing out anything and to keep up with realtives life. The app also consent to see firends current location on the app, and geographic group closer content into a single flow of information. This service has been a main application of `mobile first' concept for social media, not only leveraging GPS module, but also camera thus to implement augmented reality objects.
 
 
-Copompared to GeoMedia, the users can explore the information uploaded around them but not categorized on specific interests, more like a bunch of media together.
+Snapchat \cite{site:snapchat} has been one of the most used social media platforms worldwide \cite{site:snapchat-usage}, mainly thanks to its instant messaging service and multimedia functionality, such as time-based content, which makes uploaded content visible only for 24 hours or visible only once to a user. This encourages users to check it daily in order not to miss anything and to keep up with relatives' lives. As a negative effect, these features have fueled some social impacts such as FoMO (Fear of Missing Out) \cite{site:social-fomo,site:social-fomo-snapchat}, leading users to become increasingly attached to the social platform and also creating self-comparison with content posted by other users. This problem is not strictly related to Snapchat, but is very common in every self-centric social media platform.
 
-Despite the innovative functionality this create a negative social impact on daily life, called FoMo (fear of Missing Out).
-Another problem concerns user privacy, expecially 
+Snapchat also provides a map-based feature that allows users to view the real-time location of friends and closer content grouped into a unified cluster of information, as illustrated in Figure~\ref{fig:snapchat-explained}. While this functionality differs in structure from GeoMedia Framework~\ref{cap:geomedia}, it raises important privacy and safety concerns \cite{site:snapchat-privacy}.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png}
+    \caption{Snapchat functionalities}
+    \label{fig:snapchat-explained}
+\end{figure}
+
+
+Moreover, as the Swarm app does~\ref{sec:foursquare-swarm}, it allows users can log visited locations, including public places such as bars, retail stores, and museums. This enables the association of user-generated content with specific points of interest (POI) and  supports the aggregation of geographically and contextually related content to represent events, such as concerts or other real-word gatherings, as illustrated in Figure~\ref{fig:snapchat-my-places}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png}
+    \caption{Snapchat `my place' functionality}
+    \label{fig:snapchat-my-places}
+\end{figure}
+
+Snapchat represents a notable example of the adoption of the ``mobile-first'' paradigm, expecially in social media applications. The platform leverages not only GPS module but also a variety of mobile device sensors, including the camera for augmented reality (AR) experiences and the microphone to records voice-based content. By integrating these hardware features into its core functionality, the app delivers a highly immersive and personalized user experience.
 
 
 \section{Instagram}
+
+
+Instagram, owned by Meta Platforms, is one of the biggest and most used social media
+of the latest decades. Through the introduction of numerous features and continuous innovations, it has attracted more than two billion montly active users worldwide \cite{site:social-instagram-usage1,site:social-instagram-usage2}.
+
+
+The platform was initially released in October 2010 exclusively for iOS devices. In fact, at the time, the uploaded content was framed in a square (1:1) aspect ratio with a resolution of 640 pixels, reflecting the display characteristics of iPhones at the time. Later acquired by the formerly named Facebook Inc. (now Meta Platforms Inc.), the application was also deployed for Android systems in April 2012. Then, the original aspect-ratio limitations were removed, and several additional functionalities were introduced, including direct messaging and support for multiple images or videos within a single post.
+
+A major development was the introduction of the ``Stories'' feature, which provid ethe same mechanism created by Snapchat~\ref{sec:snapchat}, that allows users to publish content that remains visible for only 24 hours after publication. The addition of this ability contributed significantly to Instagram surpassing Snapchat in user engagement metrics by 2019 \cite{site:instagram-stories-usage}.
+
+To enrich the media sharing, Instagram provides a variety of creative tools, including photographic filters, image-editing capabilities, and even a live-streaming functionality. The platform also popularized the use of hashtags as a content categorization mechanism, enabling users to discover media and connect with communities centered around shared interests and topics.
+
+
+Instagram to encourage content discovery adopt a sophisticated recommendation systems that leverage contextual information, including geographic location derived from GPS or cellular network data. Such metadata$_{\text{\gls{metadata}}}$ contributes to the generation of personalized recommendations, allowing users to discover nearby profiles, locations, and content that align with their interests \cite{site:instagram-explore-system}.
+
+Despite its popularity, Instagram has been the subject of significant criticism. Concerns have been raised regarding user privacy, large-scale behavioral profiling, and the potential influence of recommendation algorithms on user behavior. Additional controversies involve the platform's impact on adolescent mental health, content moderation practices, and the dissemination of illegal or inappropriate content.
+
+
+\subsection{Instagram Map}
+
+
+Despite its numerous functionalities, Instagram introduced in 2022 a map-based content discovery feature\cite{site:instagram-map}. By anchoring content to existing geographic entities such as cities or others POI\gls{poi}, users can explore both nearby or remote content, as illustrated in Figure ~\ref{fig:instagram-map-zuck}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/StateOfArt/Instagram/InstagramZuck_MapOG.png}
+    \caption{Instagram map discovery}
+    \label{fig:instagram-map-zuck}
+\end{figure}
+
+
+
+In 2026, this functionality underwent a redesign: content is no longer presented as spatial clusters on the map (as implemented in Snapchat, Figure~\ref{fig:snapchat-my-places}), instead is represented in a grid-based layout when a specific place is selected via the searchbar of the ``Explore'' section, as illustrated in Figure~\ref{fig:instagram-map-content-2026}.
+In addition, Instagram provides functionality for sharing real-time location with users connections (followers), similarly to other social media platforms discussed in Sections~\ref{sec:snapchat} and~\ref{sec:foursquare-swarm}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/StateOfArt/Instagram/Instagram_PlaceSearch.png}
+    \caption{Instagram map content 2026}
+    \label{fig:instagram-map-content-2026}
+\end{figure}
+
 
 \section{Google Maps}
 \label{sec:google-maps}
