@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  17 JUN 2026 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  20 JUN 2026 11:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2841,12 +2841,12 @@ Chapter 1.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 29--31
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
@@ -2857,7 +2857,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<../images/../images/StateOfArt/swarm/swarm_merged.png, id=208, 769.37437pt x 5
+<../images/../images/StateOfArt/swarm/swarm_merged.png, id=212, 769.37437pt x 5
 33.49312pt>
 File: ../images/../images/StateOfArt/swarm/swarm_merged.png Graphic file (type 
 png)
@@ -2868,80 +2868,92 @@ Package pdftex.def Info: ../images/../images/StateOfArt/swarm/swarm_merged.png
 [3
 
 ]
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=224, 947.54
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=228, 947.54
 pt x 492.84125pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png Graphic fi
 le (type png)
 <use ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png>
 Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLA
-INED.png  used on input line 51.
+INED.png  used on input line 48.
 (pdftex.def)             Requested size: 316.80121pt x 164.77382pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=227, 969.622
+ [4 <build/../images/../images/StateOfArt/swarm/swarm_merged.png>]
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=246, 969.622
 5pt x 457.20813pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png Graphic fil
 e (type png)
 <use ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>
 Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPla
-ces.png  used on input line 61.
+ces.png  used on input line 58.
 (pdftex.def)             Requested size: 316.80121pt x 149.37921pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4 <build/../images/../images/StateOfArt/swarm/swarm_merged.png>] [5 <build/../
-images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png> <build/../images/.
-./images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>]
-<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=264, 348.
+ [5 <build/../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png> <bui
+ld/../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>]
+<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=267, 348.
 30125pt x 619.31375pt>
 File: ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png Graphic 
 file (type png)
 <use ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png>
 Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/InstagramZuck
-_MapOG.png  used on input line 96.
+_MapOG.png  used on input line 93.
 (pdftex.def)             Requested size: 158.39758pt x 281.64645pt.
-<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=269, 64
+ [6]
+<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=282, 64
 5.41125pt x 583.17876pt>
 File: ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png Graphi
 c file (type png)
 <use ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>
 Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/Instagram_Pla
-ceSearch.png  used on input line 109.
-(pdftex.def)             Requested size: 237.60242pt x 214.68713pt.
- [6 <build/../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png (PN
+ceSearch.png  used on input line 106.
+(pdftex.def)             Requested size: 356.39758pt x 322.0307pt.
+ [7 <build/../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png (PN
 G copy)>]
-<../images/../images/StateOfArt/maps/maps_merged.png, id=285, 965.6075pt x 539.
+<../images/../images/StateOfArt/maps/maps_merged.png, id=295, 965.6075pt x 539.
 51563pt>
 File: ../images/../images/StateOfArt/maps/maps_merged.png Graphic file (type pn
 g)
 <use ../images/../images/StateOfArt/maps/maps_merged.png>
 Package pdftex.def Info: ../images/../images/StateOfArt/maps/maps_merged.png  u
-sed on input line 126.
-(pdftex.def)             Requested size: 316.80121pt x 177.00342pt.
- [7 <build/../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>]
+sed on input line 123.
+(pdftex.def)             Requested size: 356.39758pt x 199.13194pt.
+ [8 <build/../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>]
+<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=308, 746.79pt x 11
+37.24875pt>
+File: ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG Graphic file (typ
+e png)
+<use ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG>
+Package pdftex.def Info: ../images/../images/StateOfArt/Jagat/jagat_showcase.PN
+G  used on input line 143.
+(pdftex.def)             Requested size: 198.0pt x 301.52567pt.
+ [9 <build/../images/../images/StateOfArt/maps/maps_merged.png>]
+<../images/../images/StateOfArt/auglin/auglin_merged.png, id=317, 968.61874pt x
+ 497.35812pt>
+File: ../images/../images/StateOfArt/auglin/auglin_merged.png Graphic file (typ
+e png)
+<use ../images/../images/StateOfArt/auglin/auglin_merged.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/auglin/auglin_merged.pn
+g  used on input line 158.
+(pdftex.def)             Requested size: 356.39758pt x 183.00269pt.
 )
-(./chapters/geomedia.tex [8 <build/../images/../images/StateOfArt/maps/maps_mer
-ged.png>]
+(./chapters/geomedia.tex [10 <build/../images/../images/StateOfArt/Jagat/jagat_
+showcase.PNG>] [11 <build/../images/../images/StateOfArt/auglin/auglin_merged.p
+ng>]
 Chapter 3.
-) (./chapters/architecture.tex [9
+) (./chapters/architecture.tex [12
 
 ]
 Chapter 4.
-) (./chapters/mobile.tex [10
+) (./chapters/mobile.tex [13
 
 ]
 Chapter 5.
-) (./chapters/backend.tex [11
+) (./chapters/backend.tex [14
 
 ]
 Chapter 6.
-) (./chapters/data_layer.tex) (./chapters/conclusions.tex [12
+) (./chapters/data_layer.tex) (./chapters/conclusions.tex [15
 
 ]
 Chapter 7.
-) (./preface/acknowledgements.tex [13
+) (./preface/acknowledgements.tex [16
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -2953,18 +2965,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (./appendix/appendice-a.tex [14
+) (./appendix/appendice-a.tex [17
 
 ]
 Appendix A.
-) [15
+) [18
 
-] (build/thesis.acr) (build/thesis.gls [16
+] (build/thesis.acr) (build/thesis.gls [19
 
 
 
 ]) (./appendix/bibliography.tex
-[17
+[20
 
 
 ]
@@ -3042,10 +3054,10 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[18
+[21
 
 
-] [19] [20]) [21] (build/thesis.aux)
+] [22] [23]) [24] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3055,11 +3067,11 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 40360 strings out of 467533
- 750228 string characters out of 5422138
- 1717324 words of memory out of 5000000
- 68306 multiletter control sequences out of 15000+600000
- 656749 words of font info for 188 fonts, out of 8000000 for 9000
+ 40393 strings out of 467533
+ 751483 string characters out of 5422138
+ 1718527 words of memory out of 5000000
+ 68329 multiletter control sequences out of 15000+600000
+ 656865 words of font info for 190 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  97i,6n,125p,2498b,3234s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texm
@@ -3077,10 +3089,10 @@ onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sftt1000.pfb>
-Output written on build/thesis.pdf (27 pages, 6268205 bytes).
+Output written on build/thesis.pdf (30 pages, 11211402 bytes).
 PDF statistics:
- 738 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
- 137 named destinations out of 1000 (max. 500000)
- 60224 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 764 PDF objects out of 1000 (max. 8388607)
+ 665 compressed objects within 7 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 60234 words of extra memory for PDF output out of 61914 (max. 10000000)
 
