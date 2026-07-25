@@ -3,15 +3,12 @@
 
 \section{Concept}
 
-AAa
-
 GeoMedia introduces a geographically oriented social platform in which users can upload and share content in the form of posts. Each post acts as a container for the information that users want to publish, enabling location-based interactions and content discovery.
 
 
-The original concept focused exclusively on textual comments (\textit{GeoComments}), then extended to support any kind of multimedia content. Finally enriched with the concpet of collections, which act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
+The original concept focused exclusively on textual comments (called \textit{GeoComments}), then extended to support any kind of multimedia content. Finally enriched with the concpet of collections, which act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
 
-To realize the idea behind the application, an appropriate software architecture~\ref{cap:architecture} and different supporting technlogies must be adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thust to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend, which works as coordinator for implementing the system`s business logic and determining which content should be provided to the users` requests (basing on their current position and other metdata).
-
+To realize the idea behind the application, an appropriate software architecture (later explained in Cap.~\ref{cap:architecture}) and different supporting technlogies must be adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thust to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend, which works as coordinator for implementing the system`s business logic and determining which content should be provided to the users' requests (basing on their current position and other metdata).
 
 
 \section{Collections}
@@ -30,24 +27,61 @@ Additionally to defining who can view the collection, owners of a collection can
 For each collection, the owner can also enable or disable the \textit{remote posting} feature. When enabled, users are allowed to manually select the geographical location associated with a new post, byu dragging a marked through the map. \\
 Instead, when disabled, posts can only be created at the user's current GPS location. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information; avoiding the likelihood of unrelated or misleading content and strengthening the connection between the online content and the physical world.
 
-Finally, each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections of specific interests.
+Moreover, the creator of the collection can reorder the contained posts, enabling a sequential visibility order in which a post becomes visible only after the previous one has been viewed.
+
+Figure~\ref{fig:collection-overview} shows the explained functionalities with the respective order:
+
+\begin{itemize}
+    \item the panoramic view of a single collection (top-left);
+    \item the sequential ordering function (top-right);
+    \item the application of date-time and recurrence limitations (bottom-left);
+    \item the management of creators allowed within the collection (bottom-right).
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GeoMedia/collections/collection1.png}
+        \caption{Collection panormaic and functionalities.}
+    \label{fig:collection-overview}
+\end{figure}
+
+
+Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections of specific interests. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GeoMedia/collections/topics-and-suggestions.jpg}
+    \caption{Collection topics and suggestions}
+    \label{fig:topics-and-suggestions}
+\end{figure}
 
 
 \section{Map}
 
 The \textbf{Map} section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows \textit{remote posting}, at the location selected by its creator.
 
-
 To improve visual recognition, each marker adopts the color assigned to its collection, allowing users to associate the context to which the post belongs. \\
 By selecting a marker, the complete content of the corresponding post is displayed and express appreciation by liking the post, or, whenever a post contains an attached media file, users can download it regardless of its file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata).
 
 
-As shown in Figure \ref{...}, the interface (described in Chapter \ref{...}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts. \\
-The map component also supports multiple styles among five different map themes, through the application settings, allowing the interface to better adapt to personal preferences and different usage scenarios.
+As shown in Figure~\ref{fig:map-overview}, the interface (described in Chapter \ref{ui_and_usability}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts near the current location, this feature is called `local collections'. Moreover, GeoMedia offer different modalities toward the discovery of collections, such as:
+\begin{itemize}
+    \item \textbf{For you}: which is a personalized space for user to discover collections based on their interests topic selected within the same page.
+    \item \textbf{All}: which provide all the collections in form as a list in random order.
+    \item \textbf{Popular}: which provide a standings about the most used collections, computed by the amount of post that are associated
+    \item \textbf{Trending}: produce a standings of the most used collection within the last 4hours.
+\end{itemize}
 
 
-Finally, the map continuously follows the user's position by exploiting the GPS capabilities of the mobile device. As the user moves through the physical world, the map automatically shift its center to the current location (unless the user manually navigates the map). Consequently, posts are dynamically displayed or hidden according to the user's updated position and the visibility constraints associated with each post.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GeoMedia/map/map_collection}
+    \caption{Map tab overview and colletion discovery}
+    \label{fig:map-overview}
+\end{figure}
 
+GeoMedia also supports multiple styles among five different map themes, through the application settings, allowing the interface to better adapt to personal preferences and different usage scenarios. The current position of the user is continuously followed through the GPS capability thus to make appear and hide different posts as user moves through the physical world; then the map automatically shift its center to the current location (unless the user manually navigates the map). 
 
 \subsection{Post creation}
 
@@ -65,29 +99,76 @@ Through the map component, users can also access to the post creation section, w
 The geographical position of a post is automatically retrieved from the user's current GPS location. Each post is therefore characterized by its latitude, longitude, and altitude. Although altitude is not currently exploited by the platform, it is stored to support future extensions of the system.
 
 
-\subsection{Vincenty formulae}
+\subsection{Haversine formula}
 
-To determine which posts are visible to a user, GeoMedia evaluates the geographical distance between the user's current position and the location associated with each stored post. Only posts whose visibility radius includes the user's current position are returned by the server and displayed on the device requesting.
+To determine which posts are visible to a user, GeoMedia evaluates the geographical distance between the user's current position and the location associated with each stored post. Only posts whose visibility radius includes the user's current position are returned by the server and displayed on the mobile devices.
+
+The server computes these distances using an implementation of the Haversine formula\cite{article:sinnott1984haversine}. Specifically, the implementation calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
+
+The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae\cite{site:vincenty-formulae} provide higher accuracy, overral the precision offered by the Haversine formula is sufficient for GeoMedia, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
+
+For short-range distance calculations, the error introduced by the spherical approximation is negligible compared with the uncertainty of standard GPS positioning. At distances of approximately 30 km, the deviation from an ellipsoidal model is generally within a few meters, while for distances below a few kilometers it is typically reduced to the meter or sub-meter range.
+
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+Implementation of the Vincenty formulae as a backend function
+
+\begin{lstlisting}
+# Haversine formula implementation
+# Compute the geodesic distance between two geographic coordinates
+# using Vincenty's inverse formula.
+
+# Args:
+#     areaKM (float): The range within the post would be visible
+#     post_lat (float): Latitude of the post.
+#     post_lon (float): Longitude of the post.
+#     curr_lat (float): Current latitude coordinate of the user.
+#     curr_lon (float): Current longitude coordinate of the user.
+
+# Returns:
+#     bool: True if the user position is included within the area of visibility of the post.
+
+def check_post_area(areaKM, post_lat, post_lon, curr_lat, curr_lon):
+    from math import cos, asin, sqrt, pi
+
+    post_lat = float(post_lat)
+    post_lon = float(post_lon)
+    curr_lat = float(curr_lat)
+    curr_lon = float(curr_lon)
 
 
-The server computes these distances using an implementation of Vincenty's formulae\cite{site:vincenty-formulae}. Specifically, the implementation compute the direct geodesic formulation to determine the geographical coordinates corresponding to points located at a specified distance and bearing from a known position. \\
-These coordinates are then used to construct the geographical boundary defining the visibility area of each post.
+    dLat = (post_lat - curr_lat) * pi / 180
+    dLon = (post_lon - curr_lon) * pi / 180
 
-Vincenty's formulae model the Earth as an ellipsoid according to the WGS-84 reference system. This results in significantly higher accuracy, with typical errors on the order of only a few centimeters over long distances. Such precision is particularly suitable for GeoMedia, where the visibility of a post depends on its geographical position and the distance between the user and the post. 
+    a = (0.5
+        - cos(dLat) / 2
+        + cos(curr_lat * pi / 180)
+        * cos(post_lat * pi / 180)
+        * (1 - cos(dLon)) / 2
+    )
 
-\section{User}
+    d = round(6371000 * 2 * asin(sqrt(a)))
 
-
-As a social media, GeoMedia provides to users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
-
-In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distribuited across months or which in which collections they are active as pie-chart. As shown in Figure \ref{...}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
-
+    return d <= areaKM * 1000
+\end{lstlisting}
 
 
 \section{Exclusivity}
 
 The exclusivity feature assume an important role in GeoMedia, as it allows the application to be adapted to different use cases and real-world scenarios by providing fine-grained control over content visibility.
-
 
 As previously described, collections act as containers for posts. Consequently, posts inherit the visibility constraints defined at the collection level and may additionally introduce narrower restrictions. In other words, if a user cannot access a collection, they cannot access any of the posts contained within it. However, access to a collection does not automatically imply access to all its posts, as individual posts may apply additional limitations as:
 
@@ -109,7 +190,6 @@ As previously described, collections act as containers for posts. Consequently, 
 
 By combining geographical positioning, collections, access restrictions and sequentiality, GeoMedia supports different scenarios and applications. Some examples are described below:
 
-
 \begin{itemize}
 
 
@@ -127,3 +207,15 @@ By combining geographical positioning, collections, access restrictions and sequ
 \end{itemize}
 
 
+\section{User}
+
+As a social media, GeoMedia provides to users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
+
+In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distribuited across months or which in which collections they are active as pie-chart. As shown in Figure \ref{fig:user-profile-overview}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GeoMedia/user/user.png}
+        \caption{User profile editor and viewer mode.}
+    \label{fig:user-profile-overview}
+\end{figure}
