@@ -1,3 +1,4 @@
+\begin{document}
 \chapter{GeoMedia}
 \label{cap:geomedia}
 
@@ -24,29 +25,28 @@ Users can also configure the visibility of each collection according to the foll
 
 Additionally to defining who can view the collection, owners of a collection can specify which users are authorized to create post within it. This distinction between viewers and contributors provides finer-grained access control, enriching users experiences while enabling more effective moderation and content management.
 
-For each collection, the owner can also enable or disable the \textit{remote posting} feature. When enabled, users are allowed to manually select the geographical location associated with a new post, byu dragging a marked through the map. \\
-Instead, when disabled, posts can only be created at the user's current GPS location. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information; avoiding the likelihood of unrelated or misleading content and strengthening the connection between the online content and the physical world.
+For each collection, the owner can also enable or disable the \textit{remote posting} feature. When enabled, users are allowed to manually select the geographical location associated with a new post, byu dragging a marked through the map. Instead, when disabled, posts can only be created at the user's current GPS location. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information; avoiding the likelihood of unrelated or misleading content and strengthening the connection between the online content and the physical world.
 
-Moreover, the creator of the collection can reorder the contained posts, enabling a sequential visibility order in which a post becomes visible only after the previous one has been viewed.
+Moreover, the creator of the collection can reorder the contained posts, enabling a sequential visibility order in which a post becomes visible only after the previous one has been viewed. \\
 
 Figure~\ref{fig:collection-overview} shows the explained functionalities with the respective order:
 
 \begin{itemize}
-    \item the panoramic view of a single collection (top-left);
-    \item the sequential ordering function (top-right);
-    \item the application of date-time and recurrence limitations (bottom-left);
-    \item the management of creators allowed within the collection (bottom-right).
+    \item The panoramic view of a single collection (top-left);
+    \item The sequential ordering function (top-right);
+    \item The application of date-time and recurrence limitations (bottom-left);
+    \item The management of creators allowed within the collection (bottom-right).
 \end{itemize}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{GeoMedia/collections/collection1.png}
+    \includegraphics[width=0.85\textwidth]{GeoMedia/collections/collection1.png}
         \caption{Collection panormaic and functionalities.}
     \label{fig:collection-overview}
 \end{figure}
 
 
-Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections of specific interests. 
+Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections of specific interests, toward to create a personalized feed in the ``For you'' section of collections. 
 
 
 \begin{figure}[H]
@@ -62,21 +62,21 @@ Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can
 The \textbf{Map} section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows \textit{remote posting}, at the location selected by its creator.
 
 To improve visual recognition, each marker adopts the color assigned to its collection, allowing users to associate the context to which the post belongs. \\
-By selecting a marker, the complete content of the corresponding post is displayed and express appreciation by liking the post, or, whenever a post contains an attached media file, users can download it regardless of its file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata).
+By selecting a marker, the complete content of the corresponding post is displayed and express appreciation by liking the post, or, whenever a post contains an attached media file, users can download it regardless of its file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users' privacy, posts displayed in viewer mode are represented as lists and rather than on a map, thus to hide the positions of the creator and preserving the gamified experience of discovery through the map. However, this feature provide a peek of some content of the user in way to provide users potential related posts.
 
 
-As shown in Figure~\ref{fig:map-overview}, the interface (described in Chapter \ref{ui_and_usability}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts near the current location, this feature is called `local collections'. Moreover, GeoMedia offer different modalities toward the discovery of collections, such as:
+As shown in Figure~\ref{fig:map-overview}, the interface (described in Chapter \ref{ui_and_usability}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts near the current location, this feature is called ``local collections''. Moreover, GeoMedia offer different modalities toward the discovery of collections, such as:
 \begin{itemize}
-    \item \textbf{For you}: which is a personalized space for user to discover collections based on their interests topic selected within the same page.
-    \item \textbf{All}: which provide all the collections in form as a list in random order.
-    \item \textbf{Popular}: which provide a standings about the most used collections, computed by the amount of post that are associated
-    \item \textbf{Trending}: produce a standings of the most used collection within the last 4hours.
+    \item \textbf{For you}: That provide a personalized feed for user,  to discover collections based on their interests topic selected within the same page.
+    \item \textbf{All}: Which provide all the collections in form as a list in random order.
+    \item \textbf{Popular}: Represents a ranking of the most frequently used collections, computed based on the total number of posts associated with each collection.
+    \item \textbf{Trending}: Represents a ranking of the most frequently used collections during the last four hours.
 \end{itemize}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{GeoMedia/map/map_collection}
+    \includegraphics[width=0.85\textwidth]{GeoMedia/map/map_collection}
     \caption{Map tab overview and colletion discovery}
     \label{fig:map-overview}
 \end{figure}
@@ -103,15 +103,12 @@ The geographical position of a post is automatically retrieved from the user's c
 
 To determine which posts are visible to a user, GeoMedia evaluates the geographical distance between the user's current position and the location associated with each stored post. Only posts whose visibility radius includes the user's current position are returned by the server and displayed on the mobile devices.
 
-The server computes these distances using an implementation of the Haversine formula\cite{article:sinnott1984haversine}. Specifically, the implementation calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
+The server computes these distances using an implementation of the Haversine formula\cite{article:sinnott1984haversine}. Specifically, the implementation, reported in Listing~\ref{lst:haversine}, calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
 
-The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae\cite{site:vincenty-formulae} provide higher accuracy, overral the precision offered by the Haversine formula is sufficient for GeoMedia, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
+The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae\cite{site:vincenty-formulae} provide higher accuracy, overral the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
 
 For short-range distance calculations, the error introduced by the spherical approximation is negligible compared with the uncertainty of standard GPS positioning. At distances of approximately 30 km, the deviation from an ellipsoidal model is generally within a few meters, while for distances below a few kilometers it is typically reduced to the meter or sub-meter range.
 
-\documentclass{article}
-\usepackage{listings}
-\usepackage{xcolor}
 
 \lstset{
     language=Python,
@@ -124,9 +121,11 @@ For short-range distance calculations, the error introduced by the spherical app
     breaklines=true
 }
 
-Implementation of the Vincenty formulae as a backend function
 
-\begin{lstlisting}
+\begin{lstlisting}[
+    caption={Python implementation of the Haversine-based visibility check.},
+    label={lst:haversine}
+]
 # Haversine formula implementation
 # Compute the geodesic distance between two geographic coordinates
 # using Vincenty's inverse formula.
@@ -164,6 +163,7 @@ def check_post_area(areaKM, post_lat, post_lon, curr_lat, curr_lon):
 
     return d <= areaKM * 1000
 \end{lstlisting}
+
 
 
 \section{Exclusivity}
@@ -206,16 +206,34 @@ By combining geographical positioning, collections, access restrictions and sequ
 
 \end{itemize}
 
+% 3 senza di PADOVA
+
+An interesting scenario can be adopted by the City of Padua, thus to illustrate through the app one of its well-known sayings: ``citt\`a dei tre senza'' (literally, ``the city of the three withouth''). This expression refers to three notable things that Padua has-but or hasn't in a metaphorical way:
+\begin{itemize}
+    \item \textbf{The lawn without grass}: referring to \textit{Prato della Valle}, which despite its name (``meadow of the valley''), feature ornamental grass and is not a lawn in the traditional sense;
+    \item \textbf{The saint without a name}: referring to \textit{Sant'Antonio da Padova} who was actually born in Portugal, and only spent the last years of his life in Padua.
+    \item \textbf{The caf\'e withouth doors}: referring to one of the most historic Italian caf\'e, \textit{Caff\'e Pedrocchi}, which during wartime remained with doors opened all day and night to provide shelter.
+\end{itemize}
+
+In this case, digital markers at these location as shown in Figure~\ref{fig:tre-senza-screen}, enable the storytelling of each unique characteristic, by uploading historycal photograph or facts.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{GeoMedia/map/tre_senza.png}
+        \caption{City of Padua use case for its sayng of ``Tre senza''.}
+    \label{fig:tre-senza-screen}
+\end{figure}
+
 
 \section{User}
 
-As a social media, GeoMedia provides to users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
+Even if not profile-centric, GeoMedia, allows users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
 
 In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distribuited across months or which in which collections they are active as pie-chart. As shown in Figure \ref{fig:user-profile-overview}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
  
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{GeoMedia/user/user.png}
+    \includegraphics[width=0.85\textwidth]{GeoMedia/user/user.png}
         \caption{User profile editor and viewer mode.}
     \label{fig:user-profile-overview}
 \end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  25 JUL 2026 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  26 JUL 2026 17:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2567,7 +2567,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip118
 \f@nch@widthR=\skip119
 \@temptokenb=\toks46
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count512
@@ -2575,7 +2575,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box68
 \@float@everytoks=\toks48
 \@floatcapt=\box69
-)
+))
 (./config/thesis-config.tex (./config/variables.tex
 
 LaTeX Info: File `thesis.xmpdata' already exists on the system.
@@ -2845,7 +2845,7 @@ might try typing `S' now just to see what is salvageable.
 
  [5
 
-])
+] [6])
 (./chapters/introduction.tex
 Chapter 1.
 [1
@@ -2870,7 +2870,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<../images/../images/StateOfArt/swarm/swarm_merged.png, id=252, 769.37437pt x 5
+<../images/../images/StateOfArt/swarm/swarm_merged.png, id=260, 769.37437pt x 5
 33.49312pt>
 File: ../images/../images/StateOfArt/swarm/swarm_merged.png Graphic file (type 
 png)
@@ -2881,7 +2881,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/swarm/swarm_merged.png
 [3
 
 ]
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=268, 947.54
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=276, 947.54
 pt x 492.84125pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png Graphic fi
 le (type png)
@@ -2890,7 +2890,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLA
 INED.png  used on input line 48.
 (pdftex.def)             Requested size: 316.80121pt x 164.77382pt.
  [4 <build/../images/../images/StateOfArt/swarm/swarm_merged.png>]
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=286, 969.622
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=294, 969.622
 5pt x 457.20813pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png Graphic fil
 e (type png)
@@ -2900,7 +2900,7 @@ ces.png  used on input line 58.
 (pdftex.def)             Requested size: 316.80121pt x 149.37921pt.
  [5 <build/../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png> <bui
 ld/../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>]
-<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=307, 348.
+<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=316, 348.
 30125pt x 619.31375pt>
 File: ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png Graphic 
 file (type png)
@@ -2909,7 +2909,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/InstagramZuck
 _MapOG.png  used on input line 93.
 (pdftex.def)             Requested size: 158.39758pt x 281.64645pt.
  [6]
-<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=323, 64
+<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=331, 64
 5.41125pt x 583.17876pt>
 File: ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png Graphi
 c file (type png)
@@ -2919,7 +2919,7 @@ ceSearch.png  used on input line 106.
 (pdftex.def)             Requested size: 356.39758pt x 322.0307pt.
  [7 <build/../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png (PN
 G copy)>]
-<../images/../images/StateOfArt/maps/maps_merged.png, id=335, 965.6075pt x 539.
+<../images/../images/StateOfArt/maps/maps_merged.png, id=343, 965.6075pt x 539.
 51563pt>
 File: ../images/../images/StateOfArt/maps/maps_merged.png Graphic file (type pn
 g)
@@ -2928,7 +2928,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/maps/maps_merged.png  u
 sed on input line 123.
 (pdftex.def)             Requested size: 356.39758pt x 199.13194pt.
  [8 <build/../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>]
-<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=348, 746.79pt x 11
+<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=357, 746.79pt x 11
 37.24875pt>
 File: ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG Graphic file (typ
 e png)
@@ -2937,7 +2937,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/Jagat/jagat_showcase.PN
 G  used on input line 143.
 (pdftex.def)             Requested size: 198.0pt x 301.52567pt.
  [9 <build/../images/../images/StateOfArt/maps/maps_merged.png>]
-<../images/../images/StateOfArt/auglin/auglin_merged.png, id=358, 968.61874pt x
+<../images/../images/StateOfArt/auglin/auglin_merged.png, id=366, 968.61874pt x
  497.35812pt>
 File: ../images/../images/StateOfArt/auglin/auglin_merged.png Graphic file (typ
 e png)
@@ -2946,21 +2946,39 @@ Package pdftex.def Info: ../images/../images/StateOfArt/auglin/auglin_merged.pn
 g  used on input line 158.
 (pdftex.def)             Requested size: 356.39758pt x 183.00269pt.
 )
-(./chapters/geomedia.tex [10 <build/../images/../images/StateOfArt/Jagat/jagat_
-showcase.PNG>] [11 <build/../images/../images/StateOfArt/auglin/auglin_merged.p
-ng>]
+(./chapters/geomedia.tex
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[10 <build/../images/../images/StateOfArt/Jagat/jagat_showcase.PNG>] [11 <build
+/../images/../images/StateOfArt/auglin/auglin_merged.png>]
 Chapter 3.
 [12
 
 ]
-<../images/GeoMedia/collections/collection1.png, id=375, 1060.96375pt x 1184.42
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+<../images/GeoMedia/collections/collection1.png, id=383, 1060.96375pt x 1184.42
 5pt>
 File: ../images/GeoMedia/collections/collection1.png Graphic file (type png)
 <use ../images/GeoMedia/collections/collection1.png>
 Package pdftex.def Info: ../images/GeoMedia/collections/collection1.png  used o
 n input line 43.
-(pdftex.def)             Requested size: 316.80121pt x 353.66754pt.
-<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=377, 1363.0925pt
+(pdftex.def)             Requested size: 336.60242pt x 375.77063pt.
+[13 <build/../images/GeoMedia/collections/collection1.png>]
+<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=390, 1363.0925pt
  x 1072.005pt>
 File: ../images/GeoMedia/collections/topics-and-suggestions.jpg Graphic file (t
 ype jpg)
@@ -2968,78 +2986,49 @@ ype jpg)
 Package pdftex.def Info: ../images/GeoMedia/collections/topics-and-suggestions.
 jpg  used on input line 54.
 (pdftex.def)             Requested size: 316.80121pt x 249.14044pt.
- [13 <build/../images/GeoMedia/collections/collection1.png>]
+
 
 LaTeX Warning: Reference `ui_and_usability' on page 14 undefined on input line 
 68.
 
 [14 <build/../images/GeoMedia/collections/topics-and-suggestions.jpg>]
-<../images/GeoMedia/map/map_collection.png, id=388, 1266.7325pt x 662.475pt>
+<../images/GeoMedia/map/map_collection.png, id=396, 1266.7325pt x 662.475pt>
 File: ../images/GeoMedia/map/map_collection.png Graphic file (type png)
 <use ../images/GeoMedia/map/map_collection.png>
 Package pdftex.def Info: ../images/GeoMedia/map/map_collection.png  used on inp
 ut line 79.
-(pdftex.def)             Requested size: 316.80121pt x 165.67899pt.
+(pdftex.def)             Requested size: 336.60242pt x 176.03014pt.
  [15 <build/../images/GeoMedia/map/map_collection.png>]
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 \documentclass
-                    {article}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 \usepackage
-                 {listings}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 \usepackage
-                 {xcolor}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 128.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 147.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 146.
  [16] [17]
-<../images/GeoMedia/user/user.png, id=447, 1370.11874pt x 662.475pt>
+<../images/GeoMedia/map/tre_senza.png, id=456, 1180.41pt x 852.18375pt>
+File: ../images/GeoMedia/map/tre_senza.png Graphic file (type png)
+<use ../images/GeoMedia/map/tre_senza.png>
+Package pdftex.def Info: ../images/GeoMedia/map/tre_senza.png  used on input li
+ne 222.
+(pdftex.def)             Requested size: 336.60242pt x 243.00491pt.
+
+[18]
+<../images/GeoMedia/user/user.png, id=463, 1370.11874pt x 662.475pt>
 File: ../images/GeoMedia/user/user.png Graphic file (type png)
 <use ../images/GeoMedia/user/user.png>
 Package pdftex.def Info: ../images/GeoMedia/user/user.png  used on input line 2
-18.
-(pdftex.def)             Requested size: 316.80121pt x 153.17473pt.
-)
-(./chapters/architecture.tex [18 <build/../images/GeoMedia/user/user.png>]
+36.
+(pdftex.def)             Requested size: 336.60242pt x 162.74751pt.
+) (./chapters/architecture.tex [19 <build/../images/GeoMedia/map/tre_senza.png>
+ <build/../images/GeoMedia/user/user.png>]
 Chapter 4.
-) (./chapters/mobile.tex [19
+) (./chapters/mobile.tex [20
 
 ]
 Chapter 5.
@@ -3059,15 +3048,15 @@ might try typing `S' now just to see what is salvageable.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `alignment tab' on input line 14.
 
-) (./chapters/backend.tex [20
+) (./chapters/backend.tex [21
 
 ]
 Chapter 6.
-) (./chapters/data_layer.tex) (./chapters/conclusions.tex [21
+) (./chapters/data_layer.tex) (./chapters/conclusions.tex [22
 
 ]
 Chapter 7.
-) (./preface/acknowledgements.tex [22
+) (./preface/acknowledgements.tex [23
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -3079,18 +3068,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (./appendix/appendice-a.tex [23
+) (./appendix/appendice-a.tex [24
 
 ]
 Appendix A.
-) [24
+) [25
 
-] (build/thesis.acr) (build/thesis.gls [25
+] (build/thesis.acr) (build/thesis.gls [26
 
 
 
 ]) (./appendix/bibliography.tex
-[26
+[27
 
 
 ]
@@ -3163,7 +3152,7 @@ Package biblatex Warning: No driver for 'paper'.
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[27
+[28
 
 
 ]
@@ -3176,7 +3165,12 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[28] [29]) [30] (build/thesis.aux)
+[29] [30]) [31] (build/thesis.aux
+
+Package mparhack Warning: Marginpars may have changed.
+(mparhack)                Rerun to get them right.
+
+)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3186,6 +3180,9 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                thesis
 (biblatex)                and rerun LaTeX afterwards.
@@ -3193,36 +3190,40 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
- ) ) 
+ ) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 1 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 40987 strings out of 467533
- 759067 string characters out of 5422138
- 1821069 words of memory out of 5000000
- 68830 multiletter control sequences out of 15000+600000
- 658171 words of font info for 204 fonts, out of 8000000 for 9000
+ 41008 strings out of 467533
+ 759583 string characters out of 5422138
+ 1806354 words of memory out of 5000000
+ 68842 multiletter control sequences out of 15000+600000
+ 658432 words of font info for 207 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,6n,125p,2498b,3752s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle
-1.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/tex
-mf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/publi
-c/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.
-pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texm
-f/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public
-/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (37 pages, 11961453 bytes).
+ 97i,6n,125p,2498b,3891s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latx
+font/lcircle1.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on build/thesis.pdf (39 pages, 12307412 bytes).
 PDF statistics:
- 961 PDF objects out of 1000 (max. 8388607)
- 840 compressed objects within 9 object streams
- 207 named destinations out of 1000 (max. 500000)
- 60878 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 976 PDF objects out of 1000 (max. 8388607)
+ 851 compressed objects within 9 object streams
+ 210 named destinations out of 1000 (max. 500000)
+ 60883 words of extra memory for PDF output out of 61914 (max. 10000000)
 
