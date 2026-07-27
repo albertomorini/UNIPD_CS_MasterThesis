@@ -2939,4 +2939,90 @@ INED.png  used on input line 48.
 5pt x 457.20813pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png Graphic fil
 e (type png)
-<use ../images/../images/StateOfArt/snapchat/SNAPCHAT_My
+<use ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPla
+ces.png  used on input line 58.
+(pdftex.def)             Requested size: 316.80121pt x 149.37921pt.
+ [5 <build/../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png> <bui
+ld/../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>]
+<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=350, 348.
+30125pt x 619.31375pt>
+File: ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png Graphic 
+file (type png)
+<use ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/InstagramZuck
+_MapOG.png  used on input line 93.
+(pdftex.def)             Requested size: 158.39758pt x 281.64645pt.
+ [6]
+<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=366, 64
+5.41125pt x 583.17876pt>
+File: ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png Graphi
+c file (type png)
+<use ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/Instagram_Pla
+ceSearch.png  used on input line 106.
+(pdftex.def)             Requested size: 356.39758pt x 322.0307pt.
+ [7 <build/../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png (PN
+G copy)>]
+<../images/../images/StateOfArt/maps/maps_merged.png, id=378, 965.6075pt x 539.
+51563pt>
+File: ../images/../images/StateOfArt/maps/maps_merged.png Graphic file (type pn
+g)
+<use ../images/../images/StateOfArt/maps/maps_merged.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/maps/maps_merged.png  u
+sed on input line 123.
+(pdftex.def)             Requested size: 356.39758pt x 199.13194pt.
+ [8 <build/../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png>]
+<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=391, 746.79pt x 11
+37.24875pt>
+File: ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG Graphic file (typ
+e png)
+<use ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG>
+Package pdftex.def Info: ../images/../images/StateOfArt/Jagat/jagat_showcase.PN
+G  used on input line 143.
+(pdftex.def)             Requested size: 198.0pt x 301.52567pt.
+ [9 <build/../images/../images/StateOfArt/maps/maps_merged.png>]
+<../images/../images/StateOfArt/auglin/auglin_merged.png, id=400, 968.61874pt x
+ 497.35812pt>
+File: ../images/../images/StateOfArt/auglin/auglin_merged.png Graphic file (typ
+e png)
+<use ../images/../images/StateOfArt/auglin/auglin_merged.png>
+Package pdftex.def Info: ../images/../images/StateOfArt/auglin/auglin_merged.pn
+g  used on input line 158.
+(pdftex.def)             Requested size: 356.39758pt x 183.00269pt.
+)
+(./chapters/geomedia.tex [10 <build/../images/../images/StateOfArt/Jagat/jagat_
+showcase.PNG>] [11 <build/../images/../images/StateOfArt/auglin/auglin_merged.p
+ng>]
+Chapter 3.
+[12
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+<../images/GeoMedia/collections/collection1.png, id=417, 1060.96375pt x 1184.42
+5pt>
+File: ../images/GeoMedia/collections/collection1.png Graphic file (type png)
+<use ../images/GeoMedia/collections/collection1.png>
+Package pdftex.def Info: ../images/GeoMedia/collections/collection1.png  used o
+n input line 43.
+(pdftex.def)             Requested size: 336.60242pt x 375.77063pt.
+[13 <build/../images/GeoMedia/collections/collection1.png>]
+<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=424, 1363.0925pt
+ x 1072.005pt>
+File: ../images/GeoMedia/collections/topics-and-suggestions.jpg Graphic file (t
+ype jpg)
+<use ../images/GeoMedia/collections/topics-and-suggestions.jpg>
+Package pdftex.def Info: ../images/GeoMedia/collections/topics-and-suggestions.
+jpg  used on input line 54.
+(pdftex.def)             Requested size: 316.80121pt x 249.14044pt.
+
+
+LaTeX Warning: Reference `ui_and_usability' on page 14 undefined on input line 
+68.
+
+[14 <build/../images/GeoMedia/collections/topics-and-suggestions.jpg>]
+<../images/GeoMedia/map/map_collection.png, id=430, 1266.7325pt x 662.475pt>
+File: ../images/GeoMe
