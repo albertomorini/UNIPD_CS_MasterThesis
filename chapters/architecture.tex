@@ -1,9 +1,34 @@
 \chapter{Architecture and Software design}
 \label{cap:architecture}
 
-\section{Three Tier application}
 
-\subsection{Microservices comparison}
+The software architecture to concretize the concept behind GeoMedia, is represented by a three tier solution, which divide the whole platform into different actors accordign they operativity and functions.
 
-\section{Deployment}
+In specific, a three tier model is costituited by:
 
+Generally, a three-tier architecture consists of the following layers:
+\begin{itemize}
+    \item \textbf{Client layer (Presentation layer):} which provides the user interface and manages user interactions. It is responsible for presenting data to the user and forwarding user requests to the application layer while remaining independent of the underlying business logic and data storage. \textit{In GeoMedia, this is represented by the mobile app}
+    
+    \item \textbf{Application layer (Business Logic layer):} that implements the core functionalities of the platform and applies the business logic to process user requests. This layer acts as an intermediary between the presentation and data layers, encapsulating the application's logic and coordinating the exchange of data to ensure consistency and proper execution of system operations.
+    
+    \textit{In GeoMedia, this layer is represented by the server-side component responsible for processing client requests, executing the application logic and coordinating communication between the client and the data layer through a RESTful interface.}
+    
+    \item \textbf{Data layer (Persistence layer):} with the resposability to manage the storage and execute data opeartions such as data retrieval and modification of persistent data. It provides and interface to databases or other storage systems while abstracting and incapsulating the logic detail from the upper layers.
+    \textit{In GeoMedia, this is represented by a DBMS}
+
+
+    \item \textbf{Data layer (Persistence layer):} that is responsible for managing data storage and performing data operations such as the creation, retrieval, update and deletion (CRUD) of persistent data. It provides an interface to databases or other storage systems while abstracting and encapsulating the underlying data access details from the upper layers.
+    \textit{In GeoMedia, this layer is represented by the Database Management System (DBMS) that provides a full solution for data handling.}
+
+    
+\end{itemize}
+
+This solution provide a classic and simple architecture, by exploiting technology functionalities such Network communication with TCP/IP stack, these actors are able to enstablish a communication among each other and then to exchange information and activate business process.
+
+Into the detail of GeoMedia, the communication is been implements though HTTP protocol, which the most popular and used protocols in the last decades. HTTP is a request-response protocol in the client-server model that create a virtual link among the application layer (as server) which returns a response to the client (presentation layer) 
+
+
+the server attempts to satisfy the request and returns a response to the client that describes the disposition of the request and optionally contains a requested resource such as an HTML document or other content.
+
+\section{Microservices outro}
