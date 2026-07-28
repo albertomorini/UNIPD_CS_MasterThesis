@@ -187,7 +187,7 @@ As previously described, collections act as containers for posts. Consequently, 
 
 
 \subsection{Use cases}
-
+\label{sub:use_case}
 By combining geographical positioning, collections, access restrictions and sequentiality, GeoMedia supports different scenarios and applications. Some examples are described below:
 
 \begin{itemize}
@@ -205,6 +205,8 @@ By combining geographical positioning, collections, access restrictions and sequ
     \item \textbf{Augmented Reality}: GeoMedia does not currently implement Augmented Reality (AR) functionality; however, it includes an in-app camera component that can be leveraged for future AR-based enhancements. This feature could enable the integration of digital information above the real-word environment, visualizing for example historical information or media content. With this development, the mobile application would improve the user experience by providing a more immersive and interactive way to explore and interact with geographically referenced content.
 
 \end{itemize}
+
+
 
 % 3 senza di PADOVA
 
@@ -224,6 +226,7 @@ In this case, digital markers at these location as shown in Figure~\ref{fig:tre-
     \label{fig:tre-senza-screen}
 \end{figure}
 
+Moreover, can 
 
 \section{User}
 
@@ -239,12 +242,11 @@ In addition, the GeoMedia mobile application provides users with infographic-bas
 \end{figure}
 
 
-
 \section{Functional comparison}
 
-Despite sharing several functionalities with existing social media platforms, GeoMedia differs from those presented in Chapter~\ref{cap:relatedwork} in several key aspects. \\
-A functional comparison of features and capabilities is provided in Table~\ref{tab:comparison}.
 
+
+While GeoMedia incorporates functionalities commonly found in existing social media platforms presented in Chapter~\ref{cap:relatedwork}, it extends their capabilities through several distinctive features. Table~\ref{tab:comparison} provides a comparative overview of the supported functionalities across the analyzed platforms.
 
 \begin{table}[H]
 \centering
@@ -277,7 +279,7 @@ Remote location posting
 & \checkmark
 & \checkmark
 & \checkmark
-& \checkmark
+& --
 & \checkmark
 & \checkmark
 \\ \hline
@@ -298,7 +300,7 @@ Time restrictions
 & --
 & --
 & \checkmark
-& --
+& \checkmark
 & --
 \\ \hline
 
@@ -313,25 +315,46 @@ Sequential posts
 & --
 \\ \hline
 
-Multiple creator for a collection/POI
-& \checkmark (with restriction for specific users)
+Multi-author collections
+& Selective contributors
 & --
 & --
 & --
 & --
-& \checkmark
-& \checkmark
+& Everyone
+& Everyone
 \\ \hline
 
 
 User-based restrictions
+& Selective viewers
+& --
+& --
+& --
+& Selective viewers
+& Selective viewers
+& --
+\\ \hline
+
+Topic-based content
 & \checkmark
-& Friends
 & --
 & --
 & \checkmark
+& --
+& --
+& \checkmark
+\\ \hline
+
+
+User statistics
 & \checkmark
 & --
+& --
+& \checkmark
+& --
+& --
+& \checkmark
 \\ \hline
 
 \end{tabular}
@@ -341,3 +364,61 @@ User-based restrictions
 \label{tab:comparison}
 \end{table}
 
+
+% Moreover, GeoMedia can include different partecipant scale and exclusivity parameters for the various use cases mentioned before~\ref{sub:use_case} as summarized in the table~\ref{tab:use_cases} where 
+
+% \begin{table}[H]
+% \centering
+% \renewcommand{\arraystretch}{1.4}
+% \setlength{\arrayrulewidth}{0.6pt}
+
+% \resizebox{\textwidth}{!}{%
+% \begin{tabular}{|
+% >{\columncolor[HTML]{ECF4FF}}l|
+% >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}c|
+% >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}c|
+% >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}c|
+% >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}c|}
+% \hline
+
+% \cellcolor[HTML]{a8bca7}\textbf{Use Case}
+% & \cellcolor[HTML]{a8bca7}\textbf{Number of Creators}
+% & \cellcolor[HTML]{a8bca7}\textbf{Number of Viewers}
+% & \cellcolor[HTML]{a8bca7}\textbf{Geo-limited}
+% & \cellcolor[HTML]{a8bca7}\textbf{Time-limited}
+% \\ \hline
+
+% Interactive experience
+% & 1+
+% & Many
+% & \checkmark
+% & $\times$
+% \\ \hline
+
+% Personalized dedication
+% & 1
+% & 1
+% & \checkmark
+% & $\times$
+% \\ \hline
+
+% Location-based game
+% & 1+
+% & Many
+% & \checkmark
+% & \checkmark
+% \\ \hline
+
+% Virtual mural
+% & Many
+% & Many
+% & \checkmark
+% & $\times$
+% \\ \hline
+
+% \end{tabular}
+% }
+
+% \caption{Summary of GeoMedia use cases, participant scale, and exclusivity parameters.}
+% \label{tab:use_cases}
+% \end{table}
