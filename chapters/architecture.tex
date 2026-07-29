@@ -34,6 +34,37 @@ The data, referred to as packets, can be manipulated through intermediary networ
 
 Instead, to enstablish the connection between the others layer (application and data) the protocol depends on the data layer, in the case of GeoMedia the DBMS is represented by Microsoft SQL Server (MSSQL) that operate through the TCP/IP stack with TDS (Tabular Data Stream) protocol.
 
+
 \section{Microservices comparison}
 
-% \section{Deployment} in the specific section
+Another valid alternative to the architecture design adopted is the microservices structure, that see the system decomposed into a set of small and independent services, each responsible for a specific business capability.
+
+Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually providing RESTful APIs. In fact, this design concenrs mainly  the backend layers such as application and data more than the client which still represent the single poin of interaction with the users.
+
+This design compared to the a monolithic solution provides high degree of modularity and flexibility and others several key advantages, such as:
+
+\begin{itemize}
+    \item \textbf{Scalability:} individual services can be scaled independently according to their workload, reducing infrastructure costs and improving resource utilization.
+    
+    \item \textbf{Maintainability:} the decomposition into smaller services simplifies both code maintenanc than testing and debugging, as each service has a limited and well-defined responsibility.
+    
+    \item \textbf{Technology independence:} each service can be implemented using the programming language, framework or database that best fits its operativity, while respecting the compatibility thorugh communication interfaces
+    
+    \item \textbf{Fault isolation:} failures occurring in one service are less likely to compromise the entire application, increasing the reliability of the system.
+    
+    \item \textbf{Continuous deployment:} updates can be released independently for each service, enabling faster development cycles and reducing deployment risks.
+\end{itemize}
+
+Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or with low usage. In fact, the challenge of communication over the network, issues such as authentication, distribuited transactions of data and service orchestration tend to outweight the architectual benefits. 
+
+The three-tier designed for GeoMedia represent a monolithic good enough for the current size of the application, otgether with functional requirements. On the other hand, an interesting and justified adoption of microservices system can be adopted to accomplish local and distribuited databases across countries; since GeoMedia focus on local data, the synchronization could interest just the account user profile and collections, leaving the posts maintained to local-country servers based on the coordination.
+
+
+
+
+
+% In such cases, a well-designed layered monolithic architecture can provide a simpler implementation while still ensuring maintainability, modularity and acceptable scalability.
+
+% GeoMedia has therefore been designed according to a modular three-tier architecture rather than a fully distributed microservices solution. The current size of the application, together with its functional requirements, does not justify the additional infrastructure and operational costs associated with microservices. The business logic is sufficiently modular to allow future extraction into independent services if the platform evolves and requires greater scalability or the introduction of additional components.
+
+% This design choice follows the principle of building a system that satisfies the current requirements while avoiding unnecessary architectural complexity. Nevertheless, the clear separation between the presentation, application and persistence layers ensures that the software remains extensible and can progressively evolve towards a microservices architecture without requiring a complete redesign.
