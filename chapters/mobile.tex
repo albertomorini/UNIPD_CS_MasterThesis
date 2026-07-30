@@ -17,9 +17,10 @@ React Native\cite{site:react-native}, commonly abbreviated as RN, is an open-sou
 Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between Javascript/TypeScript based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
 More specifically, React Native consents to write application logic using web-oriented programming languages, such as JavaScript or TypeScript, while adopting a styling approach similar to CSS for interface design. UI elements are represented through reusable components, which can be considered analogous to HTML elements in traditional web development. Finally, during the deployment process, these components are translated into their corresponding native platform components, this enable the app to achieve a native-like user experience while maintaining a shared development environment.
 
-
 For GeoMedia, React Native represents a suitable technological option, allowing the platform to reach both Android than iOS markets. Overral, React Native is well supported by various components and libaries that can fully satisfy the requirements of the service.
 
+
+% TODO: SPECIFY THE FOLDER PROJECT? AND COMPILATION COMMANDS?
 
 \subsection{Ionic Framework}
 
@@ -47,22 +48,66 @@ A visual comparison between the Ionic previous version of GeoMedia and the React
 
 
 \subsection{Libraries}
+
+One of the main strengths of React Native is its extensive ecosystem of free and open-source libraries and components. These resources are widely documented and maintained by the community, with the official React Native Directory~\cite{site:react-native-directory} serving as the primary reference for discovering and evaluating compatible packages.
+
+%% TODO: REVIEW THESE 
+
+Overral GeoMedia for the Android version developed use several dependencies packages such as:
+\begin{itemize}
+    \item \textbf{@gorhom/bottom-sheet}: provides customizable bottom sheet components that can be expanded or collapsed to display additional content without leaving the current screen.
+    
+    \item \textbf{@react-native-community/geolocation}: provides access to the device's geolocation services, enabling the application to retrieve the user's current position.
+    
+    \item \textbf{@react-native-community/slider}: implements a customizable slider component that allows users to select values within a specified range.
+    
+    \item \textbf{@react-native-picker/picker}: provides a native picker component for selecting one value from a predefined list of options.
+    
+    \item \textbf{@shopify/flash-list}: offers a high-performance list component optimized for rendering large collections of data with improved memory usage and scrolling performance.
+    
+    \item \textbf{expo}: provides the development framework and runtime environment for building, testing, and deploying React Native applications, together with a wide range of native APIs.
+    
+    \item \textbf{expo-router}: implements a file-based routing system that simplifies navigation between the different screens of the application.
+    
+    \item \textbf{expo-secure-store}: securely stores sensitive information, such as authentication tokens and user credentials, by leveraging the secure storage facilities provided by the underlying operating system.
+    
+    \item \textbf{react}: provides the core declarative framework used to build the application's user interface through reusable components, state management, and hooks.
+    
+    \item \textbf{react-native-gesture-handler}: enables advanced gesture recognition, including swipes, taps, and drag interactions, providing a more responsive and native user experience.
+    
+    \item \textbf{react-native-gifted-charts}: provides customizable chart components for visualizing statistical information and user-related analytics.
+    
+    \item \textbf{react-native-maps}: integrates interactive maps into the application, allowing the visualization of geographic information and user locations.
+    
+    \item \textbf{react-native-reanimated-carousel}: implements an animated carousel component for displaying multiple images or other content through horizontal scrolling.
+    
+    \item \textbf{react-native-share}: enables the sharing of text, images, and other multimedia content through the native sharing facilities of the operating system.
+    
+    \item \textbf{react-native-sortables}: provides sortable list components that allow users to reorder items through drag-and-drop interactions.
+    
+    \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture, video recording, and real-time frame processing.
+\end{itemize}
+
+A particular emphasis should be placed on libraries that provide access to device APIs and hardware features, such as sensors and other physical components.
+
 \subsubsection{Map \& GPS}
-\subsubsection{Sequential feature}
+The map which represented the main component of GeoMedia is provided by `react-native-map' that in compilation phase translate the React component in Google Maps for Android or Apple Maps in iOS platform
+
 \subsubsection{Camera}
 \subsubsection{File System}
+\subsubsection{Sequential feature}
 
-\section{Components \& tabs}
+\section{Project structure}
 \subsection{Map}
 \subsection{Collections}
 \subsection{User}
 
-or
 
 
-
-\subsection{UI \& UX}
+\section{UI \& UX}
 \label{sub:ui_and_usability}
+
+\subsection{SUS Questionairre}
 
 
 \section{Android application}
