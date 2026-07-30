@@ -26,7 +26,40 @@ Generally, a three-tier architecture consists of the following layers:
 
 This solution provide a classic and simple architecture, by exploiting technology functionalities such Network communication with TCP/IP stack, these actors are able to enstablish a communication among each other and then to exchange information and activate business process.
 
-The UML schema in the Figure~ can represent graphically the architecture enstablished.
+The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the architecture enstablished.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{UML_Architecture.png}
+        \caption{Three-tier Software Architecture UML.}
+    \label{fig:UML-arch}
+\end{figure}
+
+
+% @startuml
+% top to bottom direction
+
+% package "GeoMedia - Software Architecture" {
+
+%     package "Presentation Tier" {
+%         [Mobile Application]
+%     }
+
+%     package "Application Tier" {
+%         [REST API Server]
+%     }
+
+%     package "Data Tier" {
+%         [Database Management System]
+%     }
+
+%     [Mobile Application] -[hidden]down-> [REST API Server]
+%     [REST API Server] -[hidden]down-> [Database Management System]
+
+%     [Mobile Application] --> [REST API Server] : HTTPS (TLS)
+%     [REST API Server] --> [Database Management System] : SQL Server Protocol (TDS)\nSQL Queries
+% }
+% @enduml
 
 
 Into the detail of GeoMedia, the communication is implemented through the HTTP protocol, which is one of the most popular and widely used protocols in the last decades. HTTP is a request-response protocol based on the client-server model that create a virtual link between the application layer (as server) that returns a response to the client (presentation layer) with the data requested.
@@ -55,16 +88,67 @@ This design compared to the a monolithic solution provides high degree of modula
     \item \textbf{Continuous deployment:} updates can be released independently for each service, enabling faster development cycles and reducing deployment risks.
 \end{itemize}
 
-Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or with low usage. In fact, the challenge of communication over the network, issues such as authentication, distribuited transactions of data and service orchestration tend to outweight the architectual benefits. 
+Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality and authentication, distribuited data transactions or service orchestration tend to outweight the architectual benefits. 
 
-The three-tier designed for GeoMedia represent a monolithic good enough for the current size of the application, otgether with functional requirements. On the other hand, an interesting and justified adoption of microservices system can be adopted to accomplish local and distribuited databases across countries; since GeoMedia focus on local data, the synchronization could interest just the account user profile and collections, leaving the posts maintained to local-country servers based on the coordination.
+The three-tier architecture designed for GeoMedia represents a monolithic solution that is sufficient for the current size and usage of the application, successfully supporting its functional requirements. Nevertheless, the clear separation between the presentation, application and data layers ensures that the software remains extensible and can progressively evolve towards a microservices architecture without requiring a complete redesign.
+
+On the other hand, the adoption of a microservices architecture could be an interesting and justified scenario to support local and distributed databases across different countries. Since GeoMedia focuses on local data, synchronization would only be required for user accounts and collections, while posts could be stored on country-specific servers according to their geographical coordinates metadata.
+
+A concept of the microservice adoption for GeoMedia is shown in the UML in Figure~\ref{fig:UML-arch-micro}
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{UML_Arch_MicroServices.png}
+        \caption{Microservices Software Architecture UML.}
+    \label{fig:UML-arch-micro}
+\end{figure}
 
 
+% @startuml
+% top to bottom direction
 
-% In such cases, a well-designed layered monolithic architecture can provide a simpler implementation while still ensuring maintainability, modularity and acceptable scalability.
+% package "GeoMedia - Distributed Microservices Architecture" {
 
-% GeoMedia has therefore been designed according to a modular three-tier architecture rather than a fully distributed microservices solution. The current size of the application, together with its functional requirements, does not justify the additional infrastructure and operational costs associated with microservices. The business logic is sufficiently modular to allow future extraction into independent services if the platform evolves and requires greater scalability or the introduction of additional components.
+%     package "Presentation Layer" {
+%         [Mobile Application]
+%     }
 
-% This design choice follows the principle of building a system that satisfies the current requirements while avoiding unnecessary architectural complexity. Nevertheless, the clear separation between the presentation, application and persistence layers ensures that the software remains extensible and can progressively evolve towards a microservices architecture without requiring a complete redesign.
+%     package "Microservices Layer" {
+%         [API Gateway]
+%         [Authentication Service]
+%         [User Service]
+%         [Post Service]
+%         [Collection Service]
+%     }
+
+%     package "Data Layer - Global" {
+
+%         database "User Database"
+%     }
+
+%     package "Data Layer - Local EU/US/.." {
+
+%         database "Post Database"
+%         database "Collection Database"
+%     }
+
+%     [Mobile Application] -[hidden]down-> [API Gateway]
+%     [API Gateway] -[hidden]down-> [Authentication Service]
+%     [Authentication Service] -[hidden]down-> "User Database"
+
+%     [Mobile Application] --> [API Gateway] : HTTPS (TLS)
+
+%     [API Gateway] --> [Authentication Service]
+%     [API Gateway] --> [User Service]
+%     [API Gateway] --> [Post Service]
+%     [API Gateway] --> [Collection Service]
+
+%     [Authentication Service] --> "User Database" : SQL
+%     [User Service] --> "User Database" : SQL
+
+%     [Post Service] --> "Post Database" : SQL
+%     [Collection Service] --> "Collection Database" : SQL
+% }
+
+% @enduml
