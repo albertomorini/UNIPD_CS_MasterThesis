@@ -3,12 +3,48 @@
 
 % brief intro 
 
+In order to provide its core functionalities, GeoMedia relies on mobile devices, such as smartphones and tablets, where GPS capabilities and internet connectivity can be leveraged to enable the discovery of the surrounding environment. Through the mobile application, users can visualize nearby posts based on their location and contribute new content by capturing images using the integrated camera.
+Therefore, the mobile application represents the most important component within the entire framework. Furthermore, its development introduces additional design challenges related to User Experience (UX), usability, performance limitations of mobile devices and the protection of user privacy.
+
+
+
 \section{React Native}
 
-React native intro and exple
+
+React Native\cite{site:react-native}, commonly abbreviated as RN, is an open-source software development framework created by Meta Platforms (formerly Facebook Inc.) for building cross-platform mobile and lately even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destiantion platform. This approach allows the reuse of all or at least the most of the application logic across different platforms, such as Android and iOS. Consequently, it reduces development and maintenance efforts while preserving the performance and user experience expected from native applications.
+
+
+Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between Javascript/TypeScript based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
+More specifically, React Native consents to write application logic using web-oriented programming languages, such as JavaScript or TypeScript, while adopting a styling approach similar to CSS for interface design. UI elements are represented through reusable components, which can be considered analogous to HTML elements in traditional web development. Finally, during the deployment process, these components are translated into their corresponding native platform components, this enable the app to achieve a native-like user experience while maintaining a shared development environment.
+
+
+For GeoMedia, React Native represents a suitable technological option, allowing the platform to reach both Android than iOS markets. Overral, React Native is well supported by various components and libaries that can fully satisfy the requirements of the service.
+
 
 \subsection{Ionic Framework}
-Older version, quick comparison Ionic Framework 
+
+A first version of GeoMedia was been developed with IonicFramework\cite{site:ionic-frameworks}, which is a valid framework for webdevelopment with the capability to encapsulating the web application into a native one that will render and interpretate the content as browsers do.
+
+Moreover, as advantages, Ionic allows developer to develop with different web framework such as: ReactJS, AngularJS, VueJS and integrate the Ionic components.
+
+
+A first version of GeoMedia was developed using Ionic Framework\cite{site:ionic-frameworks}, which is a valid framework for web development with the capability of encapsulating web applications into mobile applications. 
+This approach could seem to be similar to ReactNative but it's core is totally different, since IonicFramework rerender and interpretate the components on running time, as web browsers process web pages, while ReactNative compile and traduce into native components providing higher performance and more optimal resource utilization.
+
+
+Moreover, one of the main advantages of Ionic is the possibility for developers to work with different web frameworks such as ReactJS, AngularJS or VueJS, while integrating Ionic's components.
+
+
+A visual comparison between the Ionic previous version of GeoMedia and the React Native final version is shown in Figure~\ref{fig:ionic-comparison}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{GeoMedia/IonicComparison.png}
+        \caption{GeoMedia UI comparison between the Ionic Framework version (above) and the React Native version (below).}
+    \label{fig:ionic-comparison}
+\end{figure}
+
 
 \subsection{Libraries}
 \subsubsection{Map \& GPS}

@@ -672,6 +672,11 @@ INPUT build/../images/UML_Arch_MicroServices.png
 INPUT ./chapters/mobile.tex
 INPUT ./chapters/mobile.tex
 INPUT chapters/mobile.tex
+INPUT build/../images/GeoMedia/IonicComparison.png
+INPUT build/../images/GeoMedia/IonicComparison.png
+INPUT build/../images/GeoMedia/IonicComparison.png
+INPUT build/../images/GeoMedia/IonicComparison.png
+INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT ./chapters/backend.tex
 INPUT ./chapters/backend.tex
 INPUT chapters/backend.tex

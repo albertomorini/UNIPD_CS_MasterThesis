@@ -11,12 +11,7 @@ Generally, a three-tier architecture consists of the following layers:
     \item \textbf{Client layer (Presentation layer):} which provides the user interface and manages user interactions. It is responsible for presenting data to the user and forwarding user requests to the application layer while remaining independent of the underlying business logic and data storage. \textit{In GeoMedia, this is represented by the mobile app}
     
     \item \textbf{Application layer (Business Logic layer):} that implements the core functionalities of the platform and applies the business logic to process user requests. This layer acts as an intermediary between the presentation and data layers, encapsulating the application's logic and coordinating the exchange of data to ensure consistency and proper execution of system operations.
-    
     \textit{In GeoMedia, this layer is represented by the server-side component responsible for processing client requests, executing the application logic and coordinating communication between the client and the data layer through a RESTful interface.}
-    
-    \item \textbf{Data layer (Persistence layer):} with the resposability to manage the storage and execute data opeartions such as data retrieval and modification of persistent data. It provides and interface to databases or other storage systems while abstracting and incapsulating the logic detail from the upper layers.
-    \textit{In GeoMedia, this is represented by a DBMS}
-
 
     \item \textbf{Data layer (Persistence layer):} that is responsible for managing data storage and performing data operations such as the creation, retrieval, update and deletion (CRUD) of persistent data. It provides an interface to databases or other storage systems while abstracting and encapsulating the underlying data access details from the upper layers.
     \textit{In GeoMedia, this layer is represented by the Database Management System (DBMS) that provides a full solution for data handling.}
@@ -99,7 +94,7 @@ A concept of the microservice adoption for GeoMedia is shown in the UML in Figur
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{UML_Arch_MicroServices.png}
+    \includegraphics[width=0.65\textwidth]{UML_Arch_MicroServices.png}
         \caption{Microservices Software Architecture UML.}
     \label{fig:UML-arch-micro}
 \end{figure}
