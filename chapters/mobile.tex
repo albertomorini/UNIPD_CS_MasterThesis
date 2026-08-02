@@ -38,10 +38,9 @@ Moreover, one of the main advantages of Ionic is the possibility for developers 
 
 A visual comparison between the Ionic previous version of GeoMedia and the React Native final version is shown in Figure~\ref{fig:ionic-comparison}.
 
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{GeoMedia/IonicComparison.png}
+    \includegraphics[width=0.75\textwidth]{GeoMedia/IonicComparison.png}
         \caption{GeoMedia UI comparison between the Ionic Framework version (above) and the React Native version (below).}
     \label{fig:ionic-comparison}
 \end{figure}
@@ -55,74 +54,395 @@ One of the main strengths of React Native is its extensive ecosystem of free and
 
 Overral GeoMedia for the Android version developed use several dependencies packages such as:
 \begin{itemize}
-    \item \textbf{@gorhom/bottom-sheet}: provides customizable bottom sheet components that can be expanded or collapsed to display additional content without leaving the current screen.
+    \item \textbf{@gorhom/bottom-sheet}: provides customizable bottom sheet components that can be expanded or collapsed to display additional content without leaving the current screen, used mainly in the map component to render collections.
     
     \item \textbf{@react-native-community/geolocation}: provides access to the device's geolocation services, enabling the application to retrieve the user's current position.
     
-    \item \textbf{@react-native-community/slider}: implements a customizable slider component that allows users to select values within a specified range.
-    
-    \item \textbf{@react-native-picker/picker}: provides a native picker component for selecting one value from a predefined list of options.
+    \item \textbf{@react-native-community/slider}: offers a slider component that allows users to select value within a specified, applied for chose the distance range in the post visibility.
     
     \item \textbf{@shopify/flash-list}: offers a high-performance list component optimized for rendering large collections of data with improved memory usage and scrolling performance.
     
-    \item \textbf{expo}: provides the development framework and runtime environment for building, testing, and deploying React Native applications, together with a wide range of native APIs.
+    \item \textbf{expo}: provides the development framework and runtime environment for building, testing and deploying React Native applications, together with a wide range of native APIs.
     
     \item \textbf{expo-router}: implements a file-based routing system that simplifies navigation between the different screens of the application.
     
-    \item \textbf{expo-secure-store}: securely stores sensitive information, such as authentication tokens and user credentials, by leveraging the secure storage facilities provided by the underlying operating system.
+    \item \textbf{expo-secure-store}: securely stores sensitive information, such as user credentials, by leveraging the secure storage facilities provided by the underlying operating system.
     
-    \item \textbf{react}: provides the core declarative framework used to build the application's user interface through reusable components, state management, and hooks.
+    \item \textbf{react-native-gesture-handler}: enables advanced gesture recognition, including swipes, taps and drag interactions, providing a more responsive and native user experience.
     
-    \item \textbf{react-native-gesture-handler}: enables advanced gesture recognition, including swipes, taps, and drag interactions, providing a more responsive and native user experience.
-    
-    \item \textbf{react-native-gifted-charts}: provides customizable chart components for visualizing statistical information and user-related analytics.
+    \item \textbf{react-native-gifted-charts}: provides customizable chart components for visualizing statistical information about the usage on the user profile.
     
     \item \textbf{react-native-maps}: integrates interactive maps into the application, allowing the visualization of geographic information and user locations.
     
-    \item \textbf{react-native-reanimated-carousel}: implements an animated carousel component for displaying multiple images or other content through horizontal scrolling.
+    \item \textbf{react-native-reanimated-carousel}: implements an animated carousel component for displaying file attached into a post  through horizontal scrolling.
     
-    \item \textbf{react-native-share}: enables the sharing of text, images, and other multimedia content through the native sharing facilities of the operating system.
+    \item \textbf{react-native-share}: through the native sharing facilities of the operating system, allows to share or store the media attached in a post such as images or documents-
     
-    \item \textbf{react-native-sortables}: provides sortable list components that allow users to reorder items through drag-and-drop interactions.
+    \item \textbf{react-native-sortables}: provides sortable list components that allow users to reorder items through drag-and-drop interactions, used to arrange the post whenever th esequentals features is active in a collection.
     
-    \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture, video recording, and real-time frame processing.
+    \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture thus to attach piuctures in the post withouth levaing GeoMedia.
 \end{itemize}
 
 A particular emphasis should be placed on libraries that provide access to device APIs and hardware features, such as sensors and other physical components.
 
 \subsubsection{Map \& GPS}
-The map which represented the main component of GeoMedia is provided by `react-native-map' that in compilation phase translate the React component in Google Maps for Android or Apple Maps in iOS platform
 
-\subsubsection{Camera}
-\subsubsection{File System}
-\subsubsection{Sequential feature}
+The map is the core component of GeoMedia and is implemented using the `react-native-maps` library, which during the compilation process is translated into the corresponding native implementation for each platform, namely Google Maps on Android and Apple Maps on iOS.
 
-\section{Project structure}
-\subsection{Map}
-\subsection{Collections}
-\subsection{User}
+On the Android platform, the Google Maps component provides a wide range of features. These include graphical customization of the map through styling properties, as well as the display of commercial, historical or other points of interest, such as coffee shops, restaurants or retail stores. In GeoMedia, these elements remain visible and serve as useful landmarks, helping users orient themselves within the displayed environment and among the posts published through the app itself. In fact, the map supports the rendering of additional geographical elements with specific coordinates, known as markers. Each marker acts as a visual placeholder that identifies the physical location associated with a post.
+
+In addition, the library exposes several callback functions and hooks that allow developers to implement custom logic. One such feature is continuous background user location tracking, which GeoMedia leverages to dynamically load location-aware posts as the user moves through the physical environment. This approach ensures that the displayed content remains relevant to the user's current location. To optimize network usage and avoid unnecessary server requests caused by minor location variations, GeoMedia applies a 50-meter movement threshold, triggering a new request and post update only when the user's displacement exceeds this distance.
+
+
+In order to access Google Maps services on Android, a Google Maps API key is required, which serves as an authentication token that links the application to a Google Cloud Project (a Google suite that offers access to other products such as shared services, computing resources, and others), enabling access to the Google Maps SDK and its associated services. \
+The API key follows the pricing policy defined by Google. Specifically, it applies a `pay-as-you-go` pricing model\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7~\$.
+
+An implementation of map renderig is shown in Listing~\ref{lst:implementation_map_view}
+
+
+\begin{lstlisting}[
+    language=Javascript,
+    caption={Implementation of MapView component for rendering posts.},
+    label={lst:implementation_map_view}
+]
+<MapView
+        ref={mapRef}
+        style={styles.map}
+        showsUserLocation={true}
+        toolbarEnabled={true}
+        followsUserLocation={true}
+        initialRegion={{
+            latitude: UserPosition.latitude,
+            longitude: UserPosition.longitude,
+            latitudeDelta: 0.1,
+            longitudeDelta: 0.1,
+        }}
+        customMapStyle={
+            mapPreferenceStyle == "system" ? //here thus to render automatically when toggled by user via status-bar
+                colorScheme == "dark" ? MapDarkMode : MapLightMode
+                :
+                mapPreferenceStyle
+        }
+        onUserLocationChange={(event) => {
+            const { latitude, longitude } = event.nativeEvent.coordinate;
+
+            if (positionChanged(latitude, longitude)) {
+                setUserPosition({ latitude: latitude, longitude: longitude });
+                get_posts_map({ latitude: latitude, longitude: longitude }) //retrieve new posts
+            }
+        }}
+        zoomEnabled={true}
+        camera={{
+            center: {
+                latitude: UserPosition.latitude,
+                longitude: UserPosition.longitude,
+            },
+            pitch: 30, // like the angle
+            heading: 0, // direction the camera faces (0 = north)
+            zoom: 13.7, // optional, overrides altitude
+        }}
+        pitchEnabled={true}
+        showsCompass={false}
+        showsBuildings={true}
+        showsMyLocationButton={false} //make it custom thus to give space to collections
+    >
+        {//rendering the markers
+            postMarkers?.map((p, index) => (
+                <Marker
+                    key={p?.ID}
+                    coordinate={{
+                        latitude: p?.LATITUDE,
+                        longitude: p?.LONGITUDE,
+                    }}
+                    pinColor={p?.COLOR}
+                    title={p?.TITLE}
+                    onPress={() => { ///redirect to post viewer
+                        router.push({
+                            pathname: 'viewer/PostViewer',
+                            params: {
+                                postid: p?.ID,
+                            }
+                        });
+                    }}
+                />
+            ))
+        }
+    </MapView>
+
+\end{lstlisting}
+
+
+
+Along with the map rendering, the integration of the GPS module provides the current coordinates of the user:
+\begin{itemize}
+    \item \textbf{Longitude}: the angular distance east or west of the Prime Meridian, used to identify the horizontal position on the Earth's surface.
+    \item \textbf{Latitude}: the angular distance north or south of the Equator, used to identify the vertical position on the Earth's surface.
+    \item \textbf{Altitude}: the vertical distance of the user above mean sea level, estimated by the GPS sensor.
+\end{itemize}
+Even though altitude is not currently used by GeoMedia, it is stored for future developments.
+
+This set of information is repeatedly used throughout GeoMedia, both for displaying nearby posts and during the post creation process, where the user's current position is automatically assigned as the post location. Specifically, when the current position is used, the altitude is also stored. Conversely, when the location is selected remotely, the altitude is not available. This is because the altitude can be estimated by the GPS sensor, whereas the altitude of a manually selected location cannot be reliably determined, as different points may correspond to buildings with multiple floors, skyscrapers, or mountainous areas.\\
+In order to access device resources and user data, Android (as well as the iOS platform) adopts a permission-based security model. This requires users to explicitly grant permissions before applications can access protected system features, hardware components, and sensitive information.
+
+An implementation of position retrieving is shown in Listing~\ref{lst:location_retriving_snippet}
+
+\begin{lstlisting}[
+    language=Javascript,
+    caption={Location retriving snippet.},
+    label={lst:location_retriving_snippet}
+]
+
+ async function getLocation() {
+        const hasPermission = await requestLocationPermission();
+
+        if (!hasPermission) {
+            Alert.alert(langselected?.permission.location.denied);
+            return;
+        }
+        if (Platform.OS === 'ios') {
+            Geolocation.requestAuthorization();
+        }
+
+        Geolocation.getCurrentPosition(
+            position => {
+                const { latitude, longitude } = position.coords;
+                if (positionChanged(latitude, longitude, UserPosition)) {
+                    setUserPosition(prev => ({ ...prev, latitude: latitude, longitude: longitude }));
+                    get_posts_map({ latitude: latitude, longitude: longitude })
+                }
+
+                // set map with center on user location 
+                mapRef.current?.animateToRegion({
+                    latitude,
+                    longitude,
+                    latitudeDelta: 0.03, //zoom
+                    longitudeDelta: 0.03, //zoom
+                }, 1000);
+                return { latitude: latitude, longitude: longitude }
+            },
+
+            ...
+
+}
+\end{lstlisting}
+
+\subsubsection{File sharing \& camera access}
+
+Another external implementation involving device sensors is camera access. This functionality, which is always granted through the permission model, allows GeoMedia to access the smartphone camera capabilities in order to capture images and upload them during the post creation process.\\
+To accomplish this objective, GeoMedia integrates the third-party library `react-native-vision-camera`. This library provides a set of hook functions that encapsulate the underlying camera access logic and simplify the management and storage of captured images, as shown in Listing~\ref{lst:camera_implementation}.
+
+
+\begin{lstlisting}[
+    language=Javascript,
+    caption={Location retriving snippet.},
+    label={lst:location_retriving_snippet}
+]
+
+export default function OpenCamera(
+    { onClose, storePhoto }: { onClose: () => void; storePhoto: (b64: string) => void }
+) {
+    ...
+    return (
+        <View style={StyleSheet.absoluteFill}>
+
+            <Camera
+                ref={camera}
+                style={StyleSheet.absoluteFill}
+                device={device}
+                isActive={true}
+                photo={true}           // enable photo capture
+                video={false}          // enable if you want video later
+                enableZoomGesture={true}
+                torch={flash === 'on' ? 'on' : 'off'} // continuous torch (flash preview)
+            />
+
+            {/* FLASH/REVERSE BUTTONS */}
+            ...
+
+            {/* CAPTURE BUTTON */}
+            <View style={styles.controlsBottom}>
+                <TouchableOpacity style={styles.captureButton} onPress={async () => {
+                    let b64 = await takePhoto();
+                    storePhoto(b64)
+                }}>
+                    <View style={styles.captureInner} />
+                </TouchableOpacity>
+            </View>
+        </View >
+    );
+}
+\end{lstlisting}
+
+Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports various file formats, including audio files and PDF documents. To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, no specific visual components are required; instead, the file selection mechanism is triggered programmatically through a method call associated with an arbitrary button, which invokes the native file selection interface provided by the platform, as shown in Listing~\ref{lst:file_picking_snippet}.
+
+
+\begin{lstlisting}[
+    language=Javascript,
+    caption={File picking snippet.},
+    label={lst:file_picking_snippet}
+]
+
+    async function file_pick() {
+        try {
+            const result = await DocumentPicker.getDocumentAsync({
+                type: "*/*",
+                multiple: true,
+                copyToCacheDirectory: true,
+            });
+
+            if (result.canceled) return;
+
+            let files = []
+            for (const asset of result.assets) {
+                const { name, uri } = asset; //filename and uri path
+                const mimetype = asset?.mimeType;
+
+                //BASE64 computing
+                const file = new FileSystem.File(uri); //load the file
+                const base64 = await file.base64();
+
+                files.push({
+                    FILENAME: name,
+                    UPDATED: true,
+                    BASE64: base64,
+                    MIME_TYPE: mimetype
+                })
+            }
+
+            setFilesAttached(prev => [...prev, ...files])
+
+        } catch (error) {
+            console.error("Error picking or reading file:", error);
+            Alert.alert("Error reading files", error)
+        }
+    }
+\end{lstlisting}
+
+
+During the visualization of a post, users can interact with the content by performing actions such as adding likes and browsing uploaded files through a carousel view. Furthermore, the sharing functionality allows users to distribute the post content through external applications by exploiting the Android Intent mechanism, which enables communication between applications by describing the type of operation and data to be handled. The Android system then identifies the applications compatible with the requested content through their registered Intent filters, as shown in Figure~\ref{fig:android-sharing}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{GeoMedia/PostViewerSharing.png}
+    \caption{Post visualization and Android sharing menu}
+    \label{fig:android-sharing}
+\end{figure}
+
+
+Thus, to upload captured images or selected files to the server, the content is encoded from its binary representation into Base64 format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, the server will decode and store files into the File System of the server.
+
+
+\section{App flowchart}
+
+To provide a comprehensive overview of the application structure and user interactions, a workflow diagram of GeoMedia is presented in the Figure. \\
+This diagram describes the main operations performed by users and the corresponding processes executed by the application, highlighting the interaction between the user interface, internal components, and external services. The represtation of the application flowchart clarify the sequence of actions and the dependencies between differnet functionalities expecially during app design process. 
 
 
 
 \section{UI \& UX}
 \label{sub:ui_and_usability}
 
-\subsection{SUS Questionairre}
+make reference to Lorenzo and Gaggi's paper: https://ieeexplore.ieee.org/document/10454681
 
+\subsection{Sequential feature}
+Gestures?
+
+\subsection{SUS Questionaire results}
+closing soon
 
 \section{Android application}
 
-Android brief
+Android is an operating system developed by Google, originally designed for mobile devices such as smartphones and tablets, and later extended to a wider range of platforms, including televisions, vehicles, smartwatches, and other embedded systems. It is based on a modified version of the Linux kernel and was first released in 2008. Since then, it has become the most widely adopted operating system for smartphones worldwide\cite{site:android-usage}.
+
+
+
+Android provides a high degree of customization, allowing manufacturers such as Samsung, Motorola o others to modify the user interface and include proprietary applications as part of their devices. Despite these customizations, Android remains an open platform that allows users to install applications from several different stores or, more brutally through APK file, that contain the package and executable code to install the app.
+
+Android application development is freely available, with the main exception for deployment phases to in the official Google stores, where developers need to make one-time payment for a developer license that enable them to upload as many apps they want. Furthermore, Android development is platform-independent, representing a significant advantage over competing platforms such as Apple, where application compilation and deployment require dedicated software tools available only on macOS (Apple Inc operating systems for PC).
 
 \subsection{Development}
+
+The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application (APK).
+
+The official React Native documentation recommends Expo as the default starting point for most applications, as it provides a production-ready framework with integrated tooling, while still allowing the transition to native workflows when advanced platform-specific functionalities are required.
+
+
+
+To develop a React Native application using the Expo framework, the development environment must satisfy a number of software prerequisites:
+
+\begin{itemize}
+    \item \textbf{Node.js}: provides the JavaScript runtime environment required to execute development tools and includes the \textit{npm} package manager.
+    \item \textbf{npm}: the default package manager for Node.js, used to install and manage project dependencies.
+    \item \textbf{Expo}: the framework used to simplify the development, testing, and deployment of React Native applications. It is installed and managed through \textit{npm} and is typically initialized using the \texttt{create-expo-app} utility.
+\end{itemize}
+
+Once the prerequisites have been installed, a new Expo project can be created by executing the command \texttt{npx create-expo-app@latest}. The application can then be launched on a target platform using the command \texttt{npx expo run:\$platform\$}, where the platform is \texttt{android} or \texttt{ios}. \\
+For Android, the application can be executed either on a virtual device (through emulator) or physical if debugging mode is enabled.
+
+
+The generated project directory contains the application source code, static assets, and several configuration files, including:
+
+\begin{itemize}
+    \item \textbf{app.json}: stores the Expo application configuration, including the application name, version, icons, splash screen and platform-specific settings.
+    \item \textbf{package.json}: defines the project's metadata, scripts and JavaScript dependencies required by the application.
+    \item \textbf{tsconfig.json}: specifies the TypeScript compiler configuration, including compiler options and preferences.
+\end{itemize}
 
 
 \subsection{Deployment}
 
-How to compile, icon, and google store
+The deployment phases can follow different roads, from sharing the apk to uploading across differents store those will apply some rules and policy, in specific for GeoMedia has been taken in consideration these platforms
+\begin{itemize}
+    \item F-Droid: ....
+    \item Google Play Store: where the policy to upload an app are...
+    \item Obtanium
+\end{itemize}
+
+The deployment phase can be carried out through different distribution channels, starting from the direct sharing of the application package (APK) to publication on dedicated application stores. Each application stores adopts its own policies, technical requirements and review procedures that must be satisfied before an application can be made available to end users. \\
+
+For the GeoMedia application, the following distribution platforms were considered:
+
+\begin{itemize}
+    \item \textbf{F-Droid}: an open-source Android application repository that distributes only Free and Open Source Software (FOSS). Applications published on F-Droid must comply with its transparency and open-source requirements, making it a suitable distribution channel for projects released under open-source licenses.
+
+    \item \textbf{Google Play Store}: the official Android application marketplace maintained by Google. Publishing an application requires the creation of a Google Play Developer account, compliance with Google's Developer Program Policies and finally the review of the application along automated processess. \\
+    Furthermore, for newly registered personal developer accounts, Google requires a closed testing phase involving at least \textbf{12 testers for a minimum of 14 consecutive days} before production access can be requested.
+
+    \item \textbf{Obtainium}: an alternative application manager that allows users to install and update applications directly from their official release sources, such as GitHub repositories, without relying on a centralized application store. This approach enables rapid distribution while preserving direct control over application releases.
+
+\end{itemize}
+
+Initially, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently. This distribution approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid. Furthermore, distributing the application directly through GitHub enabled rapid release of new versions while maintaining full control over the deployment process.
 
 
 \subsection{Android Manifest}
-To explain for requirements and privacy concerns (permissions)
 
 
+The Android Manifest is a configuration file that defines essential information about an Android application, including its identifier, permissions and required system capabilities.
+For GeoMedia, the manifest was manually modified (from the React Native generated) to allow clear-text HTTP traffic, enabling users to configure their own server endpoints and adapt the application to different environments.
+
+A snippet of some permissions and the clear traffic usage (disabled by default since Android 8) is shown in Listing
+
+A snippet of some of configurated permissions and the clear-text traffic option is shown in Listing~\ref{lst:android_manifest}. The usesCleartextTraffic attribute was explicitly enabled because Android 9 (API level 28) introduced a default restriction on unencrypted HTTP communication, requiring applications that rely on HTTP connections to opt in explicitly.
+
+\begin{lstlisting}[
+    language=xml,
+    caption={Android Manifest snippet.},
+    label={lst:android_manifest}
+]
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  ...
+
+  <application android:usesCleartextTraffic="true"  android:name=".MainApplication" ...>
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="..."/>
+  </application>
+</manifest>
+
+\end{lstlisting}

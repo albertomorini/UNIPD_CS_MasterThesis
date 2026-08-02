@@ -119,3 +119,67 @@
       {8}{{{\color{jsonnumber}8}}}{1}
       {9}{{{\color{jsonnumber}9}}}{1}
 }
+
+
+
+
+\definecolor{jskeyword}{RGB}{0,0,180}
+\definecolor{jsstring}{RGB}{163,21,21}
+\definecolor{jscomment}{RGB}{0,128,0}
+\definecolor{jsnumber}{RGB}{128,0,128}
+\definecolor{jsbackground}{RGB}{248,248,248}
+
+\lstdefinelanguage{JavaScript}{
+    keywords={
+        const, let, var, if, else, return, true, false, null,
+        import, from, export, default, async, await,
+        function, class, extends, new, this,
+        map
+    },
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+}
+
+\lstset{
+    language=JavaScript,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{jskeyword}\bfseries,
+    stringstyle=\color{jsstring},
+    commentstyle=\color{jscomment}\itshape,
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=8pt,
+    backgroundcolor=\color{jsbackground},
+    frame=single,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4,
+    columns=fullflexible,
+    keepspaces=true
+}
+
+
+\lstdefinelanguage{XML}{
+  morestring=[b]",
+  morecomment=[s]{<!--}{-->},
+  moredelim=[s][\color{blue!70!black}]{<}{>},
+  stringstyle=\color{orange!80!black},
+  commentstyle=\color{gray!70}\itshape
+}
+
+\lstset{
+  language=XML,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!70!black},
+  stringstyle=\color{orange!80!black},
+  commentstyle=\color{gray!70}\itshape,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!30},
+  backgroundcolor=\color{black!3},
+  showstringspaces=false,
+  columns=fullflexible
+}

@@ -436,6 +436,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -679,6 +682,11 @@ INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT build/../images/GeoMedia/IonicComparison.png
+INPUT build/../images/GeoMedia/PostViewerSharing.png
+INPUT build/../images/GeoMedia/PostViewerSharing.png
+INPUT build/../images/GeoMedia/PostViewerSharing.png
+INPUT build/../images/GeoMedia/PostViewerSharing.png
+INPUT build/../images/GeoMedia/PostViewerSharing.png
 INPUT ./chapters/backend.tex
 INPUT ./chapters/backend.tex
 INPUT chapters/backend.tex
