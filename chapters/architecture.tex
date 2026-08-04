@@ -25,7 +25,7 @@ The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the ar
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{UML_Architecture.png}
+    \includegraphics[width=0.55\textwidth]{UML_Architecture.png}
         \caption{Three-tier Software Architecture UML.}
     \label{fig:UML-arch}
 \end{figure}
@@ -57,7 +57,7 @@ The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the ar
 % @enduml
 
 
-Into the detail of GeoMedia, the communication is implemented through the HTTP protocol, which is one of the most popular and widely used protocols in the last decades. HTTP is a request-response protocol based on the client-server model that create a virtual link between the application layer (as server) that returns a response to the client (presentation layer) with the data requested.
+Regarding GeoMedia, the communication is implemented through the HTTP protocol, which is one of the most popular and widely used protocols in the last decades. HTTP is a request-response protocol based on the client-server model that create a virtual link between the application layer (as server) that returns a response to the client (presentation layer) with the data requested.
 The data, referred to as packets, can be manipulated through intermediary network nodes (proxy servers, NAT, web caches, etc.) while respecting the TCP/IP structure. In order to ensure the confidentiality and security of the data, HTTP allows the adoption of SSL certificates (HTTPS), making the communication encrypted with the public key of the server (and decryptable only with the sercret key avaiable only to the application layer).
 
 Instead, to enstablish the connection between the others layer (application and data) the protocol depends on the data layer, in the case of GeoMedia the DBMS is represented by Microsoft SQL Server (MSSQL) that operate through the TCP/IP stack with TDS (Tabular Data Stream) protocol.
@@ -94,7 +94,7 @@ A concept of the microservice adoption for GeoMedia is shown in the UML in Figur
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{UML_Arch_MicroServices.png}
+    \includegraphics[width=0.75\textwidth]{UML_Arch_MicroServices.png}
         \caption{Microservices Software Architecture UML.}
     \label{fig:UML-arch-micro}
 \end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  2 AUG 2026 23:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  5 AUG 2026 00:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2620,19 +2620,141 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ))
-(./config/thesis-config.tex (./config/variables.tex
+(/usr/share/texlive/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2025/12/01 v3.49 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2025/12/01 v3.49 KOMA-Script package (file load hooks)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2025/12/01 v3.49 KOMA-Script package (using LaTeX hooks)
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2025/12/01 v3.49 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+runsystem(uname -s > "thesis.w18")...executed.
+
+
+(./thesis.w18)
+runsystem(rm -- "thesis.w18")...executed.
+
+)
+\c@svg@param@lastpage=\count516
+\svg@box=\box70
+\c@svg@param@currpage=\count517
+)
+(/usr/share/texlive/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2025-06-23 v1.6 Transparency with color stacks
+
+(/usr/share/texlive/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color
+ stack (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks57
+\pgfutil@tempdima=\dimen290
+\pgfutil@tempdimb=\dimen291
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box71
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks58
+\pgfkeys@temptoks=\toks59
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks60
+))
+\pgf@x=\dimen292
+\pgf@y=\dimen293
+\pgf@xa=\dimen294
+\pgf@ya=\dimen295
+\pgf@xb=\dimen296
+\pgf@yb=\dimen297
+\pgf@xc=\dimen298
+\pgf@yc=\dimen299
+\pgf@xd=\dimen300
+\pgf@yd=\dimen301
+\w@pgf@writea=\write5
+\r@pgf@reada=\read5
+\c@pgf@counta=\count518
+\c@pgf@countb=\count519
+\c@pgf@countc=\count520
+\c@pgf@countd=\count521
+\t@pgf@toka=\toks61
+\t@pgf@tokb=\toks62
+\t@pgf@tokc=\toks63
+\pgf@sys@id@count=\count522
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count523
+\pgfsyssoftpath@bigbuffer@items=\count524
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (./config/thesis-config.tex (./config/variables.tex
 
 LaTeX Info: File `thesis.xmpdata' already exists on the system.
             Not generating it from this source.
 
 ) (./appendix/glossary-entries.tex)
-\glswrite=\write5
-\glo@main@file=\write6
-\openout6 = `thesis.glo'.
+\glswrite=\write6
+\glo@main@file=\write7
+\openout7 = `thesis.glo'.
 
 Package glossaries Info: Writing glossary file thesis.glo on input line 49.
-\glo@acronym@file=\write7
-\openout7 = `thesis.acn'.
+\glo@acronym@file=\write8
+\openout8 = `thesis.acn'.
 
 Package glossaries Info: Writing glossary file thesis.acn on input line 49.
 Package hyperref Info: Option `colorlinks' set `true' on input line 104.
@@ -2678,8 +2800,8 @@ File: lstlang3.sty 2025/11/14 1.11b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-\c@riskcounter=\count516
-\c@usecasecounter=\count517
+\c@riskcounter=\count525
+\c@usecasecounter=\count526
 )
 (./structure.tex
 Package csquotes Info: Checking for multilingual support...
@@ -2713,17 +2835,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count518
-\scratchdimen=\dimen290
-\scratchbox=\box70
-\nofMPsegments=\count519
-\nofMParguments=\count520
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count521
-\MPscratchDim=\dimen291
-\MPnumerator=\count522
-\makeMPintoPDFobject=\count523
-\everyMPtoPDFconversion=\toks58
+\scratchcounter=\count527
+\scratchdimen=\dimen302
+\scratchbox=\box72
+\nofMPsegments=\count528
+\nofMParguments=\count529
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count530
+\MPscratchDim=\dimen303
+\MPnumerator=\count531
+\makeMPintoPDFobject=\count532
+\everyMPtoPDFconversion=\toks65
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -2738,8 +2860,8 @@ LaTeX Info: Redefining \it@ocap on input line 56.
 LaTeX Info: Redefining \it@ccap on input line 56.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen292
-\caption@adjustwidth@linewidth=\dimen293
+\caption@adjustwidth@hsize=\dimen304
+\caption@adjustwidth@linewidth=\dimen305
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -2749,7 +2871,7 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count524
+\c@lstlisting=\count533
 LaTeX Info: Redefining \microtypecontext on input line 56.
 Package microtype Info: Applying patch `item' on input line 56.
 Package microtype Info: Applying patch `toc' on input line 56.
@@ -2833,20 +2955,20 @@ Package biblatex Info: Reference segment=0 on input line 56.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./preface/title-page.tex
-<../images/unipd-logo.png, id=5, 943.525pt x 949.5475pt>
+<../images/unipd-logo.png, id=8, 943.525pt x 949.5475pt>
 File: ../images/unipd-logo.png Graphic file (type png)
 <use ../images/unipd-logo.png>
 Package pdftex.def Info: ../images/unipd-logo.png  used on input line 22.
 (pdftex.def)             Requested size: 169.62561pt x 170.71652pt.
  [1
 
-\openout5 = `thesis.ist'.
+\openout6 = `thesis.ist'.
 
 
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} <build/../images/un
 ipd-logo.png>] [2]) (./preface/copyright.tex)
-(./preface/summary.tex
+(./preface/abstract.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -2883,23 +3005,23 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 ])
-\tf@toc=\write8
-\openout8 = `thesis.toc'.
+\tf@toc=\write9
+\openout9 = `thesis.toc'.
 
  [4]
 (build/thesis.lof)
-\tf@lof=\write9
-\openout9 = `thesis.lof'.
+\tf@lof=\write10
+\openout10 = `thesis.lof'.
 
  (build/thesis.lot)
-\tf@lot=\write10
-\openout10 = `thesis.lot'.
+\tf@lot=\write11
+\openout11 = `thesis.lot'.
 
- (build/thesis.lol [5
+ [5
 
-])
-\tf@lol=\write11
-\openout11 = `thesis.lol'.
+] (build/thesis.lol)
+\tf@lol=\write12
+\openout12 = `thesis.lol'.
 
  [6])
 (./chapters/introduction.tex
@@ -2914,19 +3036,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--30
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[2]) (./chapters/related-works.tex [3]
+) (./chapters/related-works.tex [3]
 Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<../images/../images/StateOfArt/swarm/swarm_merged.png, id=316, 769.37437pt x 5
+[4
+
+]
+<../images/../images/StateOfArt/swarm/swarm_merged.png, id=323, 769.37437pt x 5
 33.49312pt>
 File: ../images/../images/StateOfArt/swarm/swarm_merged.png Graphic file (type 
 png)
@@ -2934,10 +3059,7 @@ png)
 Package pdftex.def Info: ../images/../images/StateOfArt/swarm/swarm_merged.png 
  used on input line 27.
 (pdftex.def)             Requested size: 277.19879pt x 192.21204pt.
-[4
-
-]
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=332, 947.54
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=335, 947.54
 pt x 492.84125pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png Graphic fi
 le (type png)
@@ -2946,7 +3068,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLA
 INED.png  used on input line 48.
 (pdftex.def)             Requested size: 316.80121pt x 164.77382pt.
  [5 <build/../images/../images/StateOfArt/swarm/swarm_merged.png>]
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=351, 969.622
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=354, 969.622
 5pt x 457.20813pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png Graphic fil
 e (type png)
@@ -2965,7 +3087,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/InstagramZuck
 _MapOG.png  used on input line 93.
 (pdftex.def)             Requested size: 118.80121pt x 211.23483pt.
  [7]
-<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=388, 64
+<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=390, 64
 5.41125pt x 583.17876pt>
 File: ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png Graphi
 c file (type png)
@@ -2976,7 +3098,7 @@ ceSearch.png  used on input line 106.
  [8 <build/../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png (PN
 G copy)> <build/../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.
 png>]
-<../images/../images/StateOfArt/maps/maps_merged.png, id=401, 965.6075pt x 539.
+<../images/../images/StateOfArt/maps/maps_merged.png, id=402, 965.6075pt x 539.
 51563pt>
 File: ../images/../images/StateOfArt/maps/maps_merged.png Graphic file (type pn
 g)
@@ -2985,7 +3107,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/maps/maps_merged.png  u
 sed on input line 123.
 (pdftex.def)             Requested size: 356.39758pt x 199.13194pt.
  [9 <build/../images/../images/StateOfArt/maps/maps_merged.png>]
-<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=414, 746.79pt x 11
+<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=415, 746.79pt x 11
 37.24875pt>
 File: ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG Graphic file (typ
 e png)
@@ -2994,7 +3116,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/Jagat/jagat_showcase.PN
 G  used on input line 143.
 (pdftex.def)             Requested size: 138.60242pt x 211.06448pt.
  [10 <build/../images/../images/StateOfArt/Jagat/jagat_showcase.PNG>]
-<../images/../images/StateOfArt/auglin/auglin_merged.png, id=422, 968.61874pt x
+<../images/../images/StateOfArt/auglin/auglin_merged.png, id=423, 968.61874pt x
  497.35812pt>
 File: ../images/../images/StateOfArt/auglin/auglin_merged.png Graphic file (typ
 e png)
@@ -3012,7 +3134,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-<../images/GeoMedia/collections/collection1.png, id=435, 1060.96375pt x 1184.42
+<../images/GeoMedia/collections/collection1.png, id=436, 1060.96375pt x 1184.42
 5pt>
 File: ../images/GeoMedia/collections/collection1.png Graphic file (type png)
 <use ../images/GeoMedia/collections/collection1.png>
@@ -3020,7 +3142,7 @@ Package pdftex.def Info: ../images/GeoMedia/collections/collection1.png  used o
 n input line 43.
 (pdftex.def)             Requested size: 336.60242pt x 375.77063pt.
 [13]
-<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=441, 1363.0925pt
+<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=442, 1363.0925pt
  x 1072.005pt>
 File: ../images/GeoMedia/collections/topics-and-suggestions.jpg Graphic file (t
 ype jpg)
@@ -3034,7 +3156,7 @@ LaTeX Warning: Reference `ui_and_usability' on page 15 undefined on input line
 68.
 
 [15 <build/../images/GeoMedia/collections/topics-and-suggestions.jpg>]
-<../images/GeoMedia/map/map_collection.png, id=452, 1266.7325pt x 662.475pt>
+<../images/GeoMedia/map/map_collection.png, id=453, 1266.7325pt x 662.475pt>
 File: ../images/GeoMedia/map/map_collection.png Graphic file (type png)
 <use ../images/GeoMedia/map/map_collection.png>
 Package pdftex.def Info: ../images/GeoMedia/map/map_collection.png  used on inp
@@ -3055,78 +3177,92 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 146.
  [18]
 [19]
-<../images/GeoMedia/map/tre_senza.png, id=517, 1180.41pt x 852.18375pt>
+<../images/GeoMedia/map/tre_senza.png, id=518, 1180.41pt x 852.18375pt>
 File: ../images/GeoMedia/map/tre_senza.png Graphic file (type png)
 <use ../images/GeoMedia/map/tre_senza.png>
 Package pdftex.def Info: ../images/GeoMedia/map/tre_senza.png  used on input li
 ne 224.
 (pdftex.def)             Requested size: 336.60242pt x 243.00491pt.
- [20 <build/../images/GeoMedia/map/tre_senza.png>]
+ [20]
 <../images/GeoMedia/user/user.png, id=524, 1370.11874pt x 662.475pt>
 File: ../images/GeoMedia/user/user.png Graphic file (type png)
 <use ../images/GeoMedia/user/user.png>
 Package pdftex.def Info: ../images/GeoMedia/user/user.png  used on input line 2
 39.
 (pdftex.def)             Requested size: 336.60242pt x 162.74751pt.
-)
-(./chapters/architecture.tex [21 <build/../images/GeoMedia/user/user.png>]
+ [21 <build/../images/GeoMedia/map/tre_senza.png>])
+(./chapters/architecture.tex [22 <build/../images/GeoMedia/user/user.png>]
 Chapter 4.
-<../images/UML_Architecture.png, id=535, 361.35pt x 492.84125pt>
+<../images/UML_Architecture.png, id=540, 363.3575pt x 427.5975pt>
 File: ../images/UML_Architecture.png Graphic file (type png)
 <use ../images/UML_Architecture.png>
 Package pdftex.def Info: ../images/UML_Architecture.png  used on input line 28.
 
-(pdftex.def)             Requested size: 178.19879pt x 243.04346pt.
-[22
+(pdftex.def)             Requested size: 217.80121pt x 256.31253pt.
+[23
 
-] [23 <build/../images/UML_Architecture.png>]
-<../images/UML_Arch_MicroServices.png, id=547, 827.09pt x 585.18625pt>
+] [24 <build/../images/UML_Architecture.png>]
+<../images/UML_Arch_MicroServices.png, id=552, 827.09pt x 585.18625pt>
 File: ../images/UML_Arch_MicroServices.png Graphic file (type png)
 <use ../images/UML_Arch_MicroServices.png>
 Package pdftex.def Info: ../images/UML_Arch_MicroServices.png  used on input li
 ne 97.
-(pdftex.def)             Requested size: 217.80121pt x 154.10033pt.
-) (./chapters/mobile.tex
-[24 <build/../images/UML_Arch_MicroServices.png>]
+(pdftex.def)             Requested size: 297.0pt x 210.14006pt.
+ [25]) (./chapters/mobile.tex
+[26 <build/../images/UML_Arch_MicroServices.png>]
 Chapter 5.
-[25
+[27
 
 ]
-<../images/GeoMedia/IonicComparison.png, id=562, 669.50125pt x 761.84625pt>
+<../images/GeoMedia/IonicComparison.png, id=571, 669.50125pt x 761.84625pt>
 File: ../images/GeoMedia/IonicComparison.png Graphic file (type png)
 <use ../images/GeoMedia/IonicComparison.png>
 Package pdftex.def Info: ../images/GeoMedia/IonicComparison.png  used on input 
 line 43.
 (pdftex.def)             Requested size: 297.0pt x 337.98009pt.
- [26] [27 <build/../images/GeoMedia/IonicComparison.png>] [28] [29]
-[30] [31]
+ [28] [29 <build/../images/GeoMedia/IonicComparison.png>] [30] [31]
+[32] [33]
 
-LaTeX Warning: Reference `lst:camera_implementation' on page 32 undefined on in
+LaTeX Warning: Reference `lst:camera_implementation' on page 34 undefined on in
 put line 232.
 
-[32] [33]
-<../images/GeoMedia/PostViewerSharing.png, id=770, 1379.1525pt x 1029.8475pt>
+[34] [35]
+<../images/GeoMedia/PostViewerSharing.png, id=760, 1379.1525pt x 1029.8475pt>
 File: ../images/GeoMedia/PostViewerSharing.png Graphic file (type png)
 <use ../images/GeoMedia/PostViewerSharing.png>
 Package pdftex.def Info: ../images/GeoMedia/PostViewerSharing.png  used on inpu
 t line 327.
 (pdftex.def)             Requested size: 336.60242pt x 251.34842pt.
- [34 <build/../images/GeoMedia/PostViewerSharing.png>] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+ [36]
+Package svg Info: Last page of `./svg-inkscape/GeoMedia_App_Flowchart.drawio_sv
+g-tex.pdf' is 1 on input line 343.
+ (./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf_tex
+<./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, id=792, page=1, 952.
+36798pt x 604.07181pt>
+File: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf Graphic file (ty
+pe pdf)
+<use ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.p
+df , page1 used on input line 56.
+(pdftex.def)             Requested size: 336.60242pt x 213.50221pt.
+)
+[37 <build/../images/GeoMedia/PostViewerSharing.png>] [38 <./svg-inkscape/GeoMe
+dia_App_Flowchart.drawio_svg-tex.pdf>] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
 
  []
 
-[36] [37]) (./chapters/backend.tex [38]
+[40]) (./chapters/backend.tex [41]
 Chapter 6.
-) (./chapters/data_layer.tex [39
+) (./chapters/data_layer.tex [42
 
 ]
 Chapter 7.
-) (./chapters/conclusions.tex [40
+) (./chapters/conclusions.tex [43
 
 ]
 Chapter 8.
-) (./preface/acknowledgements.tex [41
+) (./preface/acknowledgements.tex [44
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -3138,18 +3274,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (./appendix/appendice-a.tex [42
+) [45
 
-]
-Appendix A.
-) [43
-
-] (build/thesis.acr) (build/thesis.gls [44
+] (build/thesis.acr) (build/thesis.gls [46
 
 
 
 ]) (./appendix/bibliography.tex
-[45
+[47
 
 
 ]
@@ -3210,7 +3342,7 @@ Overfull \hbox (5.83511pt too wide) in paragraph at lines 10--10
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[46
+[48
 
 
 ]
@@ -3235,7 +3367,7 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[47] [48] [49]) [50] (build/thesis.aux)
+[49] [50] [51]) [52] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3252,13 +3384,13 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 42543 strings out of 467533
- 783068 string characters out of 5422138
- 2139892 words of memory out of 5000000
- 70073 multiletter control sequences out of 15000+600000
- 662427 words of font info for 232 fonts, out of 8000000 for 9000
+ 44686 strings out of 467533
+ 833515 string characters out of 5422138
+ 2260215 words of memory out of 5000000
+ 72130 multiletter control sequences out of 15000+600000
+ 659119 words of font info for 216 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,12n,125p,2498b,3922s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,12n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle
 1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/tex
@@ -3270,18 +3402,17 @@ f/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (58 pages, 13248524 bytes).
+b></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on build/thesis.pdf (60 pages, 13522668 bytes).
 PDF statistics:
- 1434 PDF objects out of 1440 (max. 8388607)
- 1274 compressed objects within 13 object streams
- 438 named destinations out of 1000 (max. 500000)
- 63079 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1542 PDF objects out of 1728 (max. 8388607)
+ 1329 compressed objects within 14 object streams
+ 440 named destinations out of 1000 (max. 500000)
+ 58997 words of extra memory for PDF output out of 61914 (max. 10000000)
 
