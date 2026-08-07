@@ -1,21 +1,175 @@
 \chapter{Geomedia Backend}
 \label{cap:backend}
 
+The application layer consists of an HTTPS server responsible for implementing the platform's business logic and handling requests from client applications, namely the mobile application. The main role is to process user requests and provide the required functionalities, such as content retrieval, content uploading or authentication, but also implement core operations for GeoMedia such as the restrictions of post visible from user position by implementing the Haversine Formula.\ref{haversine_formula}
+
+Furthermore, this layer acts as virtual bridge between the mobile application and the data layer, as previously introduced in the Chapter~\ref{cap:architecture}.\\
+However, as previously mentioned, this design follows a monolithic architecture, in which the HTTPS server operates as a single, self-contained unit responsible for handling all application functionalities and requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. To improve performance, scalability, maintainability, and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
+
+
+To implement the backend of the GeoMedia platform, the Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (knwon as Swagger). 
+
 
 \section{REST Server}
 
-HTTP vs HTTPS, brief notion on SSL/HTTPS security
+A REST server is a software application that implements the HTTP/HTTPS protocol and continuously listens for incoming client requests. It exposes one or more RESTful endpoints through which clients can interact with the services offered by the application.
 
-> wireshark?
+More specifically, the server listens for HTTP or HTTPS requests on a configurable network port. A network port is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
+
+For each server or simply, computer, the port numbers range start from \texttt{0} to \texttt{65'535} and are conventionally divided into three categories:
+\begin{itemize}
+    \item \textbf{Well-known ports (0--1023)}: Reserved for standard services and protocols, such as SMTP (port 25, mail protocol), HTTP (port 80), HTTPS (port 443) or SSH (port 22, remote connection).
+    \item \textbf{Registered ports (1024--49'151)}: Assigned to specific applications and services, although they may also be used by custom applications.
+    \item \textbf{Dynamic or private ports (49'152--65'535)}: Typically allocated dynamically by the operating system for temporary client connections or available for private application use.
+\end{itemize}
+
+
+By binding a server process to a specific port, operating system forwards all requests addressed to that port to the corresponding application that will handle the HTTP request and return a response (respecting the client-server model).
+
+
+The HTTP is an application-layer protocol that defines the format and exchange of messages between clients and servers on the Internet. Rather than providing communication mechanisms itself, HTTP relies on the services offered by the underlying layers of the \textit{TCP/IP} networking stack, where each layer is responsible for a specific set of operations.
+the TCP/IP model division promote modularity, encapsulation, robustness and separation of responsibilities, thus to allow each layer to evolve independently without affecting the others.
+
+The TCP/IP model is represented by four layers:
+
+\begin{itemize}
+    \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as HTTP, HTTPS, FTP, SMTP, DNS operate at this level, defining how data is formatted and exchanged between communicating applications. \\
+    \textit{GeoMedia's server use the HTTPS protocol of this stack}.
+
+    \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are TCP (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \textbf{UDP (User Datagram Protocol)}, which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
+    \textit{GeoMedia's server adopt the TCP protocol of this stack}.
+
+    \item \textbf{Internet layer}: responsible for logical addressing and packet routing across interconnected networks. The \textbf{Internet Protocol (IP)} determines how packets are addressed and forwarded from the source host to the destination, regardless of the physical networks traversed. There are two principal versions of the Internet Protocol (IP): IPv4 and IPv6. While both protocols provide logical addressing and packet routing across interconnected networks, IPv6 introduces several improvements over its predecessor.\\
+    \textit{GeoMedia backend is deployed using IPv4 networking}.
+
+    \item \textbf{Link layer}: handles communication over the local physical network. It is responsible for framing, physical addressing (e.g., MAC addresses), error detection on the local link, and transmitting data through the underlying network technology, such as Ethernet or Wi-Fi.
+
+\end{itemize}
+
+When an HTTP request is generated by a client, it is encapsulated as it traverses the TCP/IP stack, with each layer adding its own protocol-specific information before transmission. Upon reaching the destination, the reverse process, known as \emph{decapsulation}, removes these protocol headers and reconstructs the original HTTP message, which is then delivered to the server application.
+
+An HTTP message is composed of three main components:
+\begin{itemize}
+    \item \textbf{start line}: which specifies the HTTP method, like \texttt{GET} conventionally used for request a resource, \texttt{POST} conventionally used to upload data, \texttt{DELETE} to request the deletion of a resource and few others. Together with the \texttt{path} (everything after the base url of server, such as query string or paths) indicate the the conventional operation to apply on the resource.  
+    \item \textbf{header}: a small portion of packet that contain metedata describing the request or response, such as the \texttt{Content-Type} which indicates the format of the transimtted data (e.g., \texttt{application/json}, \texttt{text/html}), authentication information, caching directives and others parameters.
+    \item \textbf{body}: only with methods such as \texttt{POST} or \texttt{PUT}, contains the actual payload exchanged between client and server, such as JSON objects, uploaded files or text.
+\end{itemize}
 
 \section{Python FastAPI}
 
+FastAPI is a web framework implemented in the Pythob backend to instantiate a HTTP-based service APIs. It uses Pydantic as validation library, moreover it provides a declarative way to specify the structure and types of data incoming request (e.g., HTTP bodies) and outgoing responses.
+
+
+The framework simplifies the definition of RESTful endpoints, allowing developers to associate a Python function directly with the HTTP method and resource path thorught the use of decorators.
+The path may include both \textit{path parameter} which are embedded within the URL and \textit{query parameter} that are appended to the request URL as key-value pairs. FastAPI automaticaly validates these parameters according to the declared Python types and makes them available to corresponding request handler.
+
+
+In Listing~\ref{lst:endpoint_creation} is shown the implementation of the endpoint resposible for retrieving the posts visible from the current location of a target profile (function visible in the right image of Figure~\ref{fig:user-profile-overview}). The process is associated with \texttt{GET} method and defines query parameters (that are not part of the url) which are passed to the respective function associated to retrieve the corresponding information from the data layer (as shown in Listing~\ref{lst:post_user_retrieval}) and returns the result as an HTTP response.
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={HTTP Server Endpoint creation.},
+    label={lst:endpoint_creation}
+]
+
+@app.get("/profile/show_allowed_post",tags=["USERS"])
+async def profile_show_allowed_post(uid: int, profile_id: int, curr_lat: float, curr_lon: float):
+    return await geomedia_helper.profile_show_allowed_post(uid,profile_id,curr_lat,curr_lon)
+
+\end{lstlisting}
+
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={Implementation of post retrieval of a target user visible from current location.},
+    label={lst:post_user_retrieval}
+]
+
+async def profile_show_allowed_post(uid, profile_id, curr_lat, curr_lon):
+    ## prepared statement to avoid SQL Injection
+    query = """
+    EXEC PROFILE_GET_ALLOWEDPOST
+        @UID=%s,
+        @PROFILE_ID=%s
+    """
+    ## execute the query
+    posts = SQL_MANAGER.select_query(query, (uid, profile_id))
+
+    results = []
+
+    # Filter by visibility
+    for pp in posts:
+        if check_post_area(
+            pp["VISIBILITY_AREA_KM"],
+            pp["LATITUDE"],
+            pp["LONGITUDE"],
+            curr_lat,
+            curr_lon,
+        ):
+            results.append(pp)
+
+    return results
+
+
+\end{lstlisting}
+
+
+
+\subsection{Documentation}
+
+FastAPI automatically generates an API specification in \textit{OpenAPI} format, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via textit{Swagger UI} (typically available at \texttt{/docs}), which provides a comprehensive description of every available endpoint. Moreover, consent to group by endpoints in order to create some classification through tags, in GeoMedia as example, \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality  or \texttt{COLLECTIONS} for collection related enpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema, authentication requirements and the format and status codes of the corresponding responses. \\
+Since the documentation is generated directly from the application source code, it remains synchronized with the API implementation throughout the development process.
+
+An example of GeoMedia backend API documentation is shown in Figure~\ref{fig:swagger_docs}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{server/Swagger.png}
+    \caption{GeoMedia API documentation example}
+    \label{fig:swagger_docs}
+\end{figure}
+
+
+
 \subsection{NodeJS HTTP Comparison}
 
+The first version of the GeoMedia backend adopted HTTP native module of NodeJS for the application layer. Although the high performance and event-driven, asynchronous execution model, this solution became increasingly difficult to maintain as the number of API edpoints and application features grew. In specific, the absence of a well-structured framework reduced modularity and created a codebase that was progressively harder to extend.
 
-\subsection{Swagger and aanalysis}
+Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework, which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components.
+
+
+Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
+
+
 
 \section{Cybersecurity}
+\subsection{Email and authentication}
+dunno
 
 \subsection{Authentication}
 \subsection{SQL Injections}
+
+HTTP vs HTTPS, brief notion on SSL/HTTPS security
+
+> wireshark?dd

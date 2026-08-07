@@ -757,6 +757,11 @@ INPUT ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf
 INPUT ./chapters/backend.tex
 INPUT ./chapters/backend.tex
 INPUT chapters/backend.tex
+INPUT build/../images/server/Swagger.png
+INPUT build/../images/server/Swagger.png
+INPUT build/../images/server/Swagger.png
+INPUT build/../images/server/Swagger.png
+INPUT build/../images/server/Swagger.png
 INPUT ./chapters/data_layer.tex
 INPUT ./chapters/data_layer.tex
 INPUT chapters/data_layer.tex
