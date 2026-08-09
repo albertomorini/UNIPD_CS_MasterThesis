@@ -162,14 +162,272 @@ Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework, whi
 Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
 
 
+% \section{Cybersecurity}
 
-\section{Cybersecurity}
-\subsection{Email and authentication}
-dunno
+% In order to ensure the privacy and confidentiality of data, and, moreover to ensure the application safety, GeoMedia applies some cybersecurity tecniquest to prevent attacks.
 
-\subsection{Authentication}
-\subsection{SQL Injections}
+% Furthermore, GeoMedia, wokring as Online Social Network, ensure a content moderation thorugh users segnalation of a specific post. Whenver the segnalation became more of 3 from different users the post will be automaticallly hidden and no more accessible till back-office operation or automatically through some LLM moderation classified safe for platfrom policy which since is performed in Europe stands for GDPR instruction such as: 
 
-HTTP vs HTTPS, brief notion on SSL/HTTPS security
 
-> wireshark?dd
+
+% \subsection{Email and authentication}
+% i log the email of user and confirm via OTP
+
+% \subsection{Authentication}
+% HMAC and HTTPS
+
+% \subsection{SQL Injections}
+
+% prepared statement
+
+
+\section{Cybersecurity \& Privacy}
+
+In order to ensure the privacy, integrity, availability and confidentiality of data, GeoMedia, must adopt some mitigation tecniques to prevent cyber-attacks expecially because the platform processes user accounts, user-generated content and location-related information.
+
+The security concerns implemented follows a defens in every layer of the application architecture. The complementary adoption of different mechanism consists in secure communication protocoks, authentication and authorization and preventing injection attacks.
+
+Moreover, user privacy is a core principle of GeoMedia. As an open-source application, its codebase allows users to analyse and validate the application's behaviour, as well as inspect how user data is collected, processed, and managed.
+
+
+\subsection{Account Verification}
+
+To ensure the authenticity of account, users, during the registration provide an email address that will be associated to their account. On registration, the backend generates a One-Time Password (OTP) that is sent to the registered email address and must be entered within a limited period of time (imposed to 1 hour). Once successfully verified, the account is verified and user is allowed to utilize the platform.
+
+
+The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address supplied during registration. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure, is mitigated by limiting the number of verification attempts up to five, as impelemented in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts has been reached, the account results blocked and user must contact the GeoMedia back-office or proceed with a new account.
+
+
+\lstset{
+    language=SQL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={OTP verification processed by data layer, and brute-force mitigation.},
+    label={lst:otp_verification}
+]
+
+PROCEDURE [dbo].[AUTH_CHECK_OTP] @JSON NVARCHAR(MAX)
+AS BEGIN
+IF EXISTS(
+        SELECT * FROM USERS WHERE USERNAME = JSON_VALUE(@JSON, '$.USERNAME') AND OTPCODE = CAST(JSON_VALUE(@JSON, '$.OTP') AS INT)
+        AND DATEDIFF(hour, OTPDATE, GETDATE())<= 1 --OTP generated within an hour
+        AND BLOCKED=0 --TO PREVENT OTP BRUTEFORCE
+    )
+    BEGIN
+        --VERIFY THE PROFILE
+    ELSE
+    BEGIN
+          UPDATE USERS
+            SET WRONG_OTP_ATTEMPT=WRONG_OTP_ATTEMPT+1,
+            BLOCKED = IIF(WRONG_OTP_ATTEMPT>4,1,0) -- UP TO 5 ATTEMPTS
+            WHERE USERNAME = JSON_VALUE(@JSON, '$.USERNAME')
+                
+    END
+
+\end{lstlisting}
+
+
+The OTP generation and verification operations are performed in the Data Layer, in this case the server operates just as intermediary for the HTTP requests.
+
+
+\subsection{HTTPs and packet confidentiality}
+
+All communication between the client and GeoMedia's backend is performed through HTTPS. HTTPS relies on TLS (Transport Layer Security) to provide confidentiality and integrity for data exchanged between the client and server. This prevents an attacker positioned between the client and the server from trivially observing or modifying authentication requests.\\
+
+Finally, the communication process between clients and server, can be summarized as:
+
+\begin{enumerate}
+\item The client establishes a connection with the server and requests a secure TLS connection.
+\item The server provides a digital certificate containing its public key and information about its identity.
+\item The client verifies the certificate against trusted Certificate Authorities (CAs).
+\item During the TLS handshake, the client and server securely establish shared session keys using public-key cryptography.
+\item Once the handshake is completed, the HTTP traffic is encrypted and authenticated using symmetric cryptography and the established session keys.
+\end{enumerate}
+
+
+As additional security mechanism, GeoMedia, to verify the integrity and authenticity of messages exchanged between trusted components adopt HMAC (Hash-based Message Authentication Code) mechanism.
+
+HMAC combines a cryptographic hash function with a secret key. Despite simple hash, that only provides a digest of the input, HMAC requires knowledge of a shared secret key. The receiver that possess the same secret can verify whether a message was generated by the authorized GeoMedia official application or control if a third part has modified the packet.
+
+
+Consequently, a recipient possessing the same secret can verify whether a message was generated by an authorized party and whether its content has been modified.
+
+Conceptually, an HMAC can be represented as:
+
+\[
+\operatorname{HMAC}(K,m)
+\]
+where \(K\) represents the secret key and \(m\) represents the message.
+
+In particular, GeoMedia generates an HMAC for each request using the URL path, query parameters, a nonce plus a timestamp as the message. The HMAC is computed using a shared secret key known by both the client and the server. The timestamp and nonce are subsequently validated by the server to control the validity of the request and mitigate replay attacks. In this way, a previously captured request cannot be reused indefinitely, as the server can reject requests containing an expired timestamp or an already-used nonce.
+
+
+\subsection{Password handling}
+
+Another cryptographic technique adopted by GeoMedia is the MD5 hash function. Unlike encryption, hashing is a one-way process that transforms an input, such as a password, into a fixed-length digest. 
+In GeoMedia, the MD5 hash is computed by the client mobile application before the password is transmitted to the backend, which store the digest on the server through the data layer.
+
+
+\subsection{Password handling}
+
+Another encryption tecniques, adopted by GeoMedia, is the MD5 hash function, which it's an injective function that represent one-way only to encrypt a text such as password, in order that neither seeing the digest (result of the hash) can be reverse to obtain psw
+
+The MD5 is applied from the client mobile application and stored by server thorugh the data layer
+
+
+\subsection{Protection Against SQL Injection}
+
+SQL Injection is a major application-layer vulnerability in systems that interact with relational databases. The vulnerability occurs when user-controlled input is incorporated directly into SQL statements, allowing an attacker to manipulate the intended query.
+
+For example, constructing a query through string concatenation is unsafe:
+
+\begin{verbatim}
+SELECT * FROM users WHERE email = ' + userEmail + '
+\end{verbatim}
+
+An attacker could provide specially crafted input that changes the semantic meaning of the SQL query.
+
+
+To mitigate this vulnerability, GeoMedia, through the usage of prepared statments ensure the correct execution of SQL query and execution of stored procedure thorugh the DBMS (Data Layer).
+
+
+Listing~\ref{lst:prepared_statement_sqlinj} shows the use of a prepared statement for the execution of a stored procedure. The use of parameterized queries ensures that input provided is treated as data rather than executable SQL code. This prevents a malicious input, such as the request in Listing~\ref{lst:sqlinj_mal_req}, from altering the intended query and retrieving unauthorized information, such as the data of all users stored within the application.
+
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={Perpared statement example to mitigate SQL Injection.},
+    label={lst:prepared_statement_sqlinj}
+]
+async def post_delete(postid: int, password: str):
+    writeLog(f"Requested deletion for: {postid} = with pas[10]{password[:10]}")
+    # Perpared statement to avoid SQL INJECTION
+    query = """
+    EXEC POST_DELETE @POSTID=%s, @PASSWORD=%s
+    """
+    return SQL_MANAGER.insert_query(query, (postid, password))
+
+\end{lstlisting}
+
+
+The value supplied by the user is subsequently bound to the parameter by the database driver. Consequently, the database treats the supplied value as data rather than as executable SQL syntax.
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={Request example for SQL Injection.},
+    label={lst:sqlinj_mal_req}
+]
+import requests
+requests.delete("https://geomediasrv.duckdns.org:9911/post/1",
+    headers={...},
+    params={"password": "x'; SELECT * FROM USERS';--"}
+)
+\end{lstlisting}
+
+% Prepared statements therefore represent a primary defense against SQL Injection. However, they should be complemented by additional controls such as input validation, least-privilege database accounts, and appropriate error handling.
+
+
+Another injection attack that targets website and webapplication is the corss-site scripting, where an attack submit malicious HTML or JavaScript as part of a content (such as post, profile field, comments etc.). Then, the rendering of the content withouth appropriate sanitzation or encoding, makes the user's device (such as the browser) execute the malicious script.\\
+However, this attack cannot be performed against GeoMedia as the React Native mobile application does not use a WebView component. In fact, the app renders user interface using native platform component translated during building process, while JavaScript code is bundled in binary form. Nevertheless, this attack may be feasible in others mobile framework such as IonicFramework, which was used in the first version of GeoMedia, as parts of the application are executed within a WebView. 
+
+
+\subsection{Content Moderation and Abuse Prevention}
+
+As an Online Social Network, GeoMedia allows users to create and distribute content. Consequently, cybersecurity is not limited to protecting the technical infrastructure but also includes mechanisms for mitigating platform abuse.
+
+Users are able to report a posts through an opportune form shown in Figure, then to flag potentially harmful posts and add a mandatory motivation. When a post receives more than three reports from distinct users, it is automatically hidden from the map and cannot be discovered since the moderation process has evaluate the content attednability.\\
+The moderation process can involve either manual review or automated classification, in latter case,  Large Language Models (LLMs) can be used to analyse potentially harmful comments, while computer vision models or multimodal LLMs can be adopted to identify inappropriate images. Because automated classification systems may produce false positives and false negatives, LLM-based moderation should not necessarily be considered an infallible security mechanism. Particularly sensitive decisions should provide an escalation path to human review whenever there are isn't sufficiently certain.
+
+% TODO: insert image
+
+The use of reports from distinct users is important because it reduces the effectiveness of repeatedly reporting the same content from a single account. Nevertheless, the reporting mechanism itself represents a potential abuse vector and should therefore be protected through mechanisms such as rate limiting and detection of suspicious reporting behavior.
+
+
+\subsection{GDPR and Privacy Considerations}
+
+Since GeoMedia processes personal data and is operated within the European context, security mechanisms must also be considered in relation to the General Data Protection Regulation (GDPR).
+
+As Cybersecurity focuses primarily on protecting systems and inforamtions against unaauthorized access, alteration and descruction; Privacy, concerns how personal data is collected, processed, stored and shared.
+
+GeoMedia apply principles such as data minimization, collecting only necessary information and attuate mechanism such as authenticationa and encryption thus to respect the confidentiality.
+
+Authentication-related information, security logs and other potentially sensitive data should also be protected against unauthorized access.
+
+
+\subsection{Security Summary}
+
+The main security mechanisms adopted by GeoMedia can be summarized in the table~\ref{tab:cybersec_recap}.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\setlength{\arrayrulewidth}{0.6pt}
+
+\begin{tabular}{|
+>{\columncolor[HTML]{ECF4FF}}l|
+>{\columncolor[HTML]{ECF4FF}\raggedright\arraybackslash}p{8cm}|
+>{\columncolor[HTML]{EFEFEF}\raggedright\arraybackslash}X|}
+\hline
+\cellcolor[HTML]{a8bca7}\textit{\textbf{Mechanism}}
+& \cellcolor[HTML]{a8bca7}\textbf{Description}
+\\ \hline
+
+\textbf{Account verification (OTP)}
+& During the registration phase, the system verifies that the provided email address belongs to the user registering the account.
+\\ \hline
+
+\textbf{HTTPS/TLS}
+& Protects data exchanged between clients and backend services, applying encryption.
+\\ \hline
+
+\textbf{HMAC}
+& Used to verify the authenticity and integrity of messages and requests, and combined with nonces or timestamps, to mitigate replay and masquerade attacks.
+\\ \hline
+
+\textbf{HASH (MD5)}
+& Used to hash passwords into a fixed-length representation before storage.
+\\ \hline
+\textbf{Prepared Statement}
+& Implemented to mitigate SQL injection attacks by preventing user input from being interpreted as part of SQL queries.
+\\ \hline
+\textbf{Content moderation}
+& Designed to support automated moderation using LLMs and human review to identify and manage potentially harmful content.
+\\ \hline
+
+\end{tabular}
+\caption{Cybersecurity mechanism implemented.}
+\label{tab:cybersec_recap}
+\end{table}
+
+
+
+
+Overall, GeoMedia adopts a layered security model in which preventive, detective, and corrective controls operate together. This approach allows the platform to address both traditional application-level threats, such as SQL Injection and XSS, and threats specific to an Online Social Network, including account abuse, malicious user-generated content, automated reporting, and unauthorized access to protected resources.

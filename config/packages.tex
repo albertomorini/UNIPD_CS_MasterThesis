@@ -186,3 +186,32 @@
 }
 
 \usepackage{svg}
+
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinelanguage{SQL}{
+    morekeywords={
+        SELECT, FROM, WHERE, INSERT, INTO, VALUES,
+        UPDATE, SET, DELETE, CREATE, TABLE, AND, OR,
+        NULL, JOIN, ON, AS, ORDER, BY, GROUP
+    },
+    sensitive=false,
+    morecomment=[l]{--},
+    morestring=[b]'
+}
+
+\lstset{
+    language=SQL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true,
+    captionpos=b
+}
