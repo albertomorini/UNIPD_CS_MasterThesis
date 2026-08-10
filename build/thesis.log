@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  10 AUG 2026 12:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.10)  10 AUG 2026 13:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3254,18 +3254,7 @@ Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 358.
 
 (pdftex.def)             Requested size: 336.60242pt x 444.60023pt.
  [38 <./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf>] [39 <build/../
-images/GeoMedia/Access.png>] [40]
-
-LaTeX Warning: Citation 'brooke_susa_1996' on page 41 undefined on input line 4
-07.
-
-
-Overfull \hbox (4.1812pt too wide) in paragraph at lines 406--408
-\T1/cmr/m/n/10 (-20) The SUS is a stan-dard-ized ques-tion-naire orig-i-nally p
-ro-posed by Brooke [[]]
- []
-
-[41]
+images/GeoMedia/Access.png>] [40] [41]
 Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
@@ -3275,7 +3264,7 @@ Chapter 6.
 [45
 
 ] [46] [47] [48]
-<../images/server/Swagger.png, id=1043, 757.83125pt x 467.7475pt>
+<../images/server/Swagger.png, id=1045, 757.83125pt x 467.7475pt>
 File: ../images/server/Swagger.png Graphic file (type png)
 <use ../images/server/Swagger.png>
 Package pdftex.def Info: ../images/server/Swagger.png  used on input line 148.
@@ -3286,35 +3275,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--244
  []
 
 [51] [52] [53]
-<../images/GeoMedia/Report.png, id=1108, 1180.41pt x 847.165pt>
+<../images/GeoMedia/Report.png, id=1110, 1180.41pt x 847.165pt>
 File: ../images/GeoMedia/Report.png Graphic file (type png)
 <use ../images/GeoMedia/Report.png>
 Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 371.
 
 (pdftex.def)             Requested size: 336.60242pt x 241.57379pt.
- [54 <build/../images/GeoMedia/Report.png>]
-
-! Package array Error: >{..} at wrong position: token ignored.
-
-See the array package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.403 ...L]{EFEFEF}\raggedright\arraybackslash}X|}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing # inserted in alignment preamble.
-<to be read again> 
-                   \cr 
-l.403 ...L]{EFEFEF}\raggedright\arraybackslash}X|}
-                                                  
-There should be exactly one # between &'s, when an
-\halign or \valign is being set up. In this case you had
-none, so I've put one in; maybe that will work.
-
-) (./chapters/data_layer.tex [55]
+ [54 <build/../images/GeoMedia/Report.png>])
+(./chapters/data_layer.tex [55]
 Chapter 7.
 ) (./chapters/conclusions.tex [56
 
@@ -3357,6 +3325,10 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                See the documentation for details.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
 
 
 Package biblatex Warning: No driver for 'paper'.
@@ -3451,10 +3423,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 44982 strings out of 467533
- 838113 string characters out of 5422138
- 2261364 words of memory out of 5000000
- 72319 multiletter control sequences out of 15000+600000
+ 44987 strings out of 467533
+ 838320 string characters out of 5422138
+ 2261408 words of memory out of 5000000
+ 72323 multiletter control sequences out of 15000+600000
  659499 words of font info for 220 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  99i,12n,125p,2498b,3972s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3478,10 +3450,10 @@ texmf/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/pu
 blic/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti12
 00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/t
 exmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (73 pages, 14125086 bytes).
+Output written on build/thesis.pdf (73 pages, 14125185 bytes).
 PDF statistics:
- 1770 PDF objects out of 2073 (max. 8388607)
- 1532 compressed objects within 16 object streams
- 539 named destinations out of 1000 (max. 500000)
+ 1773 PDF objects out of 2073 (max. 8388607)
+ 1535 compressed objects within 16 object streams
+ 540 named destinations out of 1000 (max. 500000)
  59052 words of extra memory for PDF output out of 61914 (max. 10000000)
 
