@@ -363,10 +363,16 @@ However, this attack cannot be performed against GeoMedia as the React Native mo
 
 As an Online Social Network, GeoMedia allows users to create and distribute content. Consequently, cybersecurity is not limited to protecting the technical infrastructure but also includes mechanisms for mitigating platform abuse.
 
-Users are able to report a posts through an opportune form shown in Figure, then to flag potentially harmful posts and add a mandatory motivation. When a post receives more than three reports from distinct users, it is automatically hidden from the map and cannot be discovered since the moderation process has evaluate the content attednability.\\
+Users are able to report a posts through an opportune form shown in Figure~\ref{fig:post-reporting}, then to flag potentially harmful posts and add a mandatory motivation. When a post receives more than three reports from distinct users, it is automatically hidden from the map and cannot be discovered since the moderation process has evaluate the content attednability.\\
 The moderation process can involve either manual review or automated classification, in latter case,  Large Language Models (LLMs) can be used to analyse potentially harmful comments, while computer vision models or multimodal LLMs can be adopted to identify inappropriate images. Because automated classification systems may produce false positives and false negatives, LLM-based moderation should not necessarily be considered an infallible security mechanism. Particularly sensitive decisions should provide an escalation path to human review whenever there are isn't sufficiently certain.
 
-% TODO: insert image
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{GeoMedia/Report.png}
+        \caption{Post reporting.}
+    \label{fig:post-reporting}
+\end{figure}
+
 
 The use of reports from distinct users is important because it reduces the effectiveness of repeatedly reporting the same content from a single account. Nevertheless, the reporting mechanism itself represents a potential abuse vector and should therefore be protected through mechanisms such as rate limiting and detection of suspicious reporting behavior.
 
