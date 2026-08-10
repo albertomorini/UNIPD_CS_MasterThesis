@@ -8,7 +8,7 @@ Therefore, the mobile application represents the most important component within
 
 
 
-\section{React Native}
+\section{React Native framework}
 
 
 React Native\cite{site:react-native}, commonly abbreviated as RN, is an open-source software development framework created by Meta Platforms (formerly Facebook Inc.) for building cross-platform mobile and lately even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destiantion platform. This approach allows the reuse of all or at least the most of the application logic across different platforms, such as Android and iOS. Consequently, it reduces development and maintenance efforts while preserving the performance and user experience expected from native applications.
@@ -22,7 +22,7 @@ For GeoMedia, React Native represents a suitable technological option, allowing 
 
 % //TODO: SPECIFY THE FOLDER PROJECT? AND COMPILATION COMMANDS?
 
-\subsection{Ionic Framework}
+\subsection{Ionic Framework comparison}
 
 A first version of GeoMedia was been developed with IonicFramework\cite{site:ionic-frameworks}, which is a valid framework for webdevelopment with the capability to encapsulating the web application into a native one that will render and interpretate the content as browsers do.
 
@@ -345,16 +345,79 @@ This diagram describes the main operations performed by users and the correspond
     \label{fig:app-flowchart}
 \end{figure}
 
-\section{UI \& UX}
+\section{Usability}
 \label{sub:ui_and_usability}
 
- reference to Lorenzo and Gaggi's paper: https://ieeexplore.ieee.org/document/10454681 ??
+As an Online Social Network, GeoMedia, aims to be used by a potentially large and diverse user base. Consequently, usability represents an important aspect of the system design, expecially for the mobile application, where the limited screen size and touch-based interaction introduce additional constraints. During the development of the mobile app, established usability principles were taken into consideration. \\
+In particular, the interface follows the \emph{thumb-friendly} design principle, according to which frequently performed actions should be positioned within areas of the screen that can be easily reached with the user's thumb when operating the device with one hand. This approach aims to reduce unnecessary hand movements and make common interactions more accessible as shown in Figure~\ref{fig:geomedia_thumb_rule}.
 
-\subsection{Sequential feature}
-Gestures?
+However, the current implementation does not account for differences in users' dominant hand. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{GeoMedia/Access.png}
+    \caption{GeoMedia thumb-rule comparison}
+    \label{fig:geomedia_thumb_rule}
+\end{figure}
+
+Moreover, GeoMedia incorporates gesture-based interactions and haptic feedback to provide a more natural and intuitive interaction experience. Gestures allow users to interact with the application through direct and familiar touch-based actions, while haptic feedback provides immediate physical feedback in response to specific interactions. As an instance, in Figure~\ref{fig:collection-overview}, users can reorder posts through a drag-and-drop gesture, providing a seamless and intuitive interaction experience.\\
+Together, these mechanisms aim to improve the perceived responsiveness of the interface and make interactions feel more engaging and consistent.
+
+The design of GeoMedia was also influenced by established social networking applications with which users are likely to be familiar, such as WhatsApp and Instagram. In particular, the application adopts a bottom navigation menu to provide access to its main sections. Reusing a familiar navigation pattern reduces the need for users to learn a new interaction model and contributes to a more predictable and consistent user experience.
+
+
+Accessibility was also considered during the implementation of the mobile application. GeoMedia provides support for screen-reader technologies, including Android's TalkBack, by assigning appropriate accessibility roles and descriptive labels to interactive components. This allows assistive technologies to communicate the purpose and state of interface elements to users who rely on them. An example of this implementation is shown in Listing~\ref{lst:accessability_role_react}.
+
+Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} and \texttt{accessibilityLabel},providing semantic information to assistive features. For instance, \texttt{accessibilityRole} can be used to specify the semantic purpose of an interface element, while \texttt{accessibilityLabel} provides a descriptive text that can be announced by screen readers. \\
+This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements. Perinello and Gaggi's analysis of React Native and Flutter\cite{article:perinello2024}, highlights this as an ``enhancing'' approach to accessibility, in which accessibility properties can be applied directly to existing components; moreover, React Native thorught these properties can also implement featrues such as headings and text abbreviations.
+
+
+In GeoMedia, these properties are used to provide meaningful descriptions and semantic roles for interactive elements, allowing users relying on assistive technologies such as screen readers to understand and interact with the application.
+
+\begin{lstlisting}[
+    language=xml,
+    caption={Accessability role in React Native},
+    label={lst:accessability_role_react}
+]
+<TouchableOpacity style={[style.buttons.full_screen, style.colors.geomedia_green]} onPress={() => { saveInfo() }}
+    accessibilityRole="button"
+    accessibilityLabel={langselected?.save}
+>
+    <ThemedText>{langselected.save}</ThemedText>
+</TouchableOpacity>
+\end{lstlisting}
+
+In the end, GeoMedia mobile application supports both light and dark themes and can automatically follow the device's system-wide appearance settings, thus to adapt user preferences. \\
+In addition, GeoMedia allows user to change map colors among five different map styles:
+
+\begin{itemize}
+\item \textbf{Light}: the default map style for the light theme;
+\item \textbf{Dark}: a dark-themed map style designed for use in darker environments;
+\item \textbf{Blue}: a map style characterised by a night-blue colour palette;
+\item \textbf{Retro}: a map style inspired by traditional cartographic aesthetics;
+\item \textbf{System default}: automatically switches between the light and dark map styles according to the device's system theme.
+\end{itemize}
+
+These options provide users with greater control over the application's visual appearance and allow the map to be adapted to different environmental conditions and individual preferences.
+
 
 \subsection{SUS Questionaire results}
-closing soon
+
+In order to complement the qualitative evaluation of GeoMedia's usability, a quantitative assessment was conducted using the \emph{System Usability Scale} (SUS) among 15 different people with different ages and background.\\
+The SUS is a standardized questionnaire originally proposed by Brooke~\cite{brooke_susa_1996} to provide a quick and practical measure of the perceived usability of a system. It consists of ten statements evaluated using a five-point Likert scale, ranging from ``Strongly disagree to Strongly agree''. 
+
+% The SUS was selected because it provides a simple and technology-independent method for evaluating the overall usability of an application. In particular, its short length makes it suitable for administration after users have interacted with the system, while its standardized scoring procedure allows the results to be expressed as a single score ranging from 0 to 100. This provides a compact quantitative measure that can be used to summarize users' overall perception of the usability of GeoMedia~\cite{brooke_susa_1996}.
+
+% For each participant, the SUS score was calculated according to the standard scoring procedure. For positively worded questions (items 1, 3, 5, 7, and 9), the contribution to the score is obtained by subtracting 1 from the selected response. For negatively worded questions (items 2, 4, 6, 8, and 10), the contribution is obtained by subtracting the selected response from 5. The resulting values are summed and multiplied by 2.5, producing a final SUS score between 0 and 100~\cite{brooke_susa_1996}.
+
+% To provide an overall measure of GeoMedia's perceived usability, the SUS scores obtained from all participants were aggregated by calculating their arithmetic mean. The resulting value represents the average perceived usability of the application across the evaluated participants. Reporting the mean SUS score also provides a straightforward way to summarize the results and compare the obtained score with established SUS benchmarks.
+
+
+
+
+
+
+
 
 \section{Android application}
 

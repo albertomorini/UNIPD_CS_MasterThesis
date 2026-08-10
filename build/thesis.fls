@@ -754,6 +754,11 @@ INPUT ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf
 INPUT ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf_tex
 INPUT ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf
 INPUT ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf
+INPUT build/../images/GeoMedia/Access.png
+INPUT build/../images/GeoMedia/Access.png
+INPUT build/../images/GeoMedia/Access.png
+INPUT build/../images/GeoMedia/Access.png
+INPUT build/../images/GeoMedia/Access.png
 INPUT ./chapters/backend.tex
 INPUT ./chapters/backend.tex
 INPUT chapters/backend.tex
