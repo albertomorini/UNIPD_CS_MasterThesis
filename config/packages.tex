@@ -61,10 +61,10 @@
 % \usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
 \usepackage[
     backend=biber,
-    style=numeric,        % numeric style [1], [2], ...
-    % sorting=none,         % keeps order in your .bib file
+    style=numeric,
+    defernumbers=true,
     hyperref,
-    backref              % optional: shows pages where cited
+    backref
 ]{biblatex}
 
 \usepackage{layaureo}                   % margini ottimizzati per l'A4
@@ -100,7 +100,7 @@
     showstringspaces=false,
     breaklines=true,
     frame=single,
-    string=[b]",
+    string=[b],
     stringstyle=\color{jsonstring},
     literate=
      *{:}{{{\color{black}{:}}}}{1}
@@ -185,7 +185,10 @@
   columns=fullflexible
 }
 
-\usepackage{svg}
+% \usepackage{svg}
+\usepackage[
+    inkscapeexe=/usr/bin/inkscape
+]{svg}
 
 
 

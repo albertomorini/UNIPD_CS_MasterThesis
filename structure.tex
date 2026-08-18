@@ -57,11 +57,12 @@
     \frontmatter
     \input{preface/title-page}
     \input{preface/copyright}
-    % \input{preface/quote}
+    % % \input{preface/quote} //TODO: putted in copyright is ok?
     \input{preface/abstract.tex}
     \input{preface/table-of-contents}
     \cleardoublepage
-
+    \setstretch{1.4}   % Slightly increases line spacing
+    
     \mainmatter
     \input{chapters/introduction}
     \input{chapters/related-works.tex}

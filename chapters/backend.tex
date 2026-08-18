@@ -278,9 +278,9 @@ In GeoMedia, the MD5 hash is computed by the client mobile application before th
 
 \subsection{Password handling}
 
-Another encryption tecniques, adopted by GeoMedia, is the MD5 hash function, which it's an injective function that represent one-way only to encrypt a text such as password, in order that neither seeing the digest (result of the hash) can be reverse to obtain psw
+Another encryption tecniques, adopted by GeoMedia, is the MD5 hash function, which it's an injective function that represent one-way only to encrypt a text such as password, in order that neither seeing the digest (result of the hash) can be reverse to obtain original password.
 
-The MD5 is applied from the client mobile application and stored by server thorugh the data layer
+The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
 
 
 \subsection{Protection Against SQL Injection}
@@ -432,7 +432,6 @@ The main security mechanisms adopted by GeoMedia can be summarized in the table~
 \caption{Cybersecurity mechanism implemented.}
 \label{tab:cybersec_recap}
 \end{table}
-
 
 
 

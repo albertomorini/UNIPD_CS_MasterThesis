@@ -2,33 +2,24 @@
 \pdfbookmark{\contentsname}{tableofcontents}
 \setcounter{tocdepth}{2}
 \tableofcontents
-%\markboth{\contentsname}{\contentsname}
-\clearpage
 
-\begingroup
-    \let\clearpage\relax
-    \let\cleardoublepage\relax
-    \let\cleardoublepage\relax
+% List of Figures
+\cleardoublepage
+\phantomsection
+\pdfbookmark{\listfigurename}{lof}
+\listoffigures
 
-    % Figures list
-    \phantomsection
-    \pdfbookmark{\listfigurename}{lof}
-    \listoffigures
+% List of Tables
+\cleardoublepage
+\phantomsection
+\pdfbookmark{\listtablename}{lot}
+\listoftables
 
-    \vspace*{8ex}
+% List of Code Listings
+\cleardoublepage
+\phantomsection
+\pdfbookmark{List of Code Listings}{lol}
+\lstlistoflistings
 
-    % Tables list
-    \phantomsection
-    \pdfbookmark{\listtablename}{lot}
-    \listoftables
-
-
-    % Code listings
-    \phantomsection
-    \pdfbookmark{List of Code Listings}{lol}
-    \lstlistoflistings
-
-    \vspace*{8ex}
-\endgroup
-
+% Start main document
 \cleardoublepage
