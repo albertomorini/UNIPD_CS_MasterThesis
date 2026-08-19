@@ -222,4 +222,4 @@ TSWLatexianTemp*
 build/
 
 # produced pdf
-*thesis.pdf
+# *thesis.pdf
