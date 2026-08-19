@@ -320,5 +320,68 @@ Subsequently, using a DBMS client, the SQL queries required to create the databa
 
 Finally, the application layer (server http) can be configured with the connection parameters such as:
 \begin{itemize}
-    \item 
+    \item \textbf{Address}: IPv4/IPv6 address or server name where the RDBMS is hosted. GeoMedia uses a single-server deployment, therefore \texttt{localhost} is used in the local deployment.
+    \item \textbf{Port}: TCP/IP port used by the SQL Server instance. The default port is \texttt{1433}.
+    \item \textbf{User}: username of a database user with the specific roles and permissions required. For GeoMedia, the user should just require permission of read and execute stored procedure, since the input and updates operations are demanded to the appropriate stored procedures. The default administrative account \texttt{sa} is avoided for security reasons.
+    \item \textbf{Password}: password associated with the database user.
+    \item \textbf{Database}: name of the target database to which the application connects, in this case \texttt{GEOMEDIA}.
+    \item \textbf{Instance}: optional SQL Server instance name, whenever the server is configured with multiple independent database engine. In the GeoMedia deployment, a single SQL Server instance is used
 \end{itemize}
+
+Meanwhile the connection from the Python HTTP server to Microsoft SQL Server is provided by the library \texttt{pymssql}~\cite{site:pymssql}, offering an high-level API interface toward the database.
+
+A snippet illustrating the database connection and query execution is provided in Listing~\ref{lst:db_python_sql}, implemented through the application layer of GeoMedia.
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize, %\small?
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={Python implementation of the \texttt{pymssql} database connection and query execution.},
+    label={lst:db_python_sql}
+]
+# CONNECTION
+def create_connection():
+    return pymssql.connect(
+        server=CONFIG["server"],
+        user=CONFIG["user"],
+        password=CONFIG["password"],
+        database=CONFIG["database"],
+    )
+# ----------------------------------------------------
+# EXECUTE QUERY
+def execute_query(query, params=None, fetch=True):
+    conn = create_connection()
+    try:
+        cursor = conn.cursor(as_dict=True)
+        cursor.execute(query, params or ())
+        result = []
+        if fetch:
+            try:
+                result = cursor.fetchall()
+            except Exception:
+                result = []
+
+        conn.commit()
+        return result
+
+    except Exception as e:
+        conn.rollback()
+        print("SQL ERROR:: ", e)
+        raise
+
+    finally:
+        conn.close()
+# ----------------------------------------------------
+# SELECT
+def select_query(query, params=None):
+    return execute_query(query, params=params, fetch=True)
+\end{lstlisting}
+
