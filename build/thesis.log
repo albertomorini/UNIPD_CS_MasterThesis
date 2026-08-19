@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  19 AUG 2026 23:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  19 AUG 2026 23:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3339,6 +3339,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
 ) [76
 
 ] (build/thesis.acr) (build/thesis.gls [77
@@ -3468,7 +3493,7 @@ m-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti100
 re/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (94 pages, 14076477 bytes).
+Output written on build/thesis.pdf (94 pages, 14077124 bytes).
 PDF statistics:
  2171 PDF objects out of 2487 (max. 8388607)
  1887 compressed objects within 19 object streams
