@@ -545,14 +545,6 @@ The generated project directory contains the application source code, static ass
 
 
 \subsection{Deployment}
-
-The deployment phases can follow different roads, from sharing the apk to uploading across differents store those will apply some rules and policy, in specific for GeoMedia has been taken in consideration these platforms
-\begin{itemize}
-    \item F-Droid: ....
-    \item Google Play Store: where the policy to upload an app are...
-    \item Obtanium
-\end{itemize}
-
 The deployment phase can be carried out through different distribution channels, starting from the direct sharing of the application package (APK) to publication on dedicated application stores. Each application stores adopts its own policies, technical requirements and review procedures that must be satisfied before an application can be made available to end users. \\
 
 For the GeoMedia application, the following distribution platforms were considered:
@@ -593,8 +585,7 @@ A snippet of some of configurated permissions and the clear-text traffic option 
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.VIBRATE"/>
   ...
-
-  <application android:usesCleartextTraffic="true"  android:name=".MainApplication" ...>
+  <application android:usesCleartextTraffic="true" android:name=".MainApplication" ...>
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="..."/>
   </application>
 </manifest>
