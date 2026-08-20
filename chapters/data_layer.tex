@@ -184,7 +184,7 @@ The implementation of this logic is shown in Listing~\ref{lst:db_sp_post_seq}.
 
 \lstset{
     language=SQL,
-    basicstyle=\ttfamily\footnotesize, %\small?
+    basicstyle=\ttfamily\small, %\footnotesize?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
@@ -296,7 +296,7 @@ To create the Docker \textit{container}, it is sufficient to execute the termina
 
 \lstset{
     language=Python,
-    basicstyle=\ttfamily\footnotesize, %\small?
+    basicstyle=\ttfamily\small, %\small?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
@@ -309,11 +309,12 @@ To create the Docker \textit{container}, it is sufficient to execute the termina
     caption={Docker command to create the Microsoft SQL Server container.},
     label={lst:db_docker_deploy}
 ]
-docker run -e 'ACCEPT_EULA=Y' \
-    -e 'SA_PASSWORD=$$$$' \
-   -e 'MSSQL_PID=Express' \
-   -p 1433:1433 --name sqlserver \
-   -d mcr.microsoft.com/mssql/server:2022-latest
+docker run -e 'ACCEPT_EULA=Y' \ #accept lincense
+    -e 'SA_PASSWORD=changeme' \ #sa password for admin
+   -e 'MSSQL_PID=Express' \ #pid
+   -p 1433:1433 \ #default port
+   --name sqlserver \ #container name
+   -d mcr.microsoft.com/mssql/server:2022-latest #the image
 \end{lstlisting}
 
 Subsequently, using a DBMS client, the SQL queries required to create the database, its tables, stored procedures, and other database objects are executed, resulting in the initialization of a new GeoMedia database instance.
@@ -334,7 +335,7 @@ A snippet illustrating the database connection and query execution is provided i
 
 \lstset{
     language=Python,
-    basicstyle=\ttfamily\footnotesize, %\small?
+    basicstyle=\ttfamily\small, %\small?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
