@@ -3185,4 +3185,295 @@ Package pdftex.def Info: ../images/GeoMedia/map/map_collection.png  used on inp
 ut line 79.
 (pdftex.def)             Requested size: 336.60242pt x 176.03014pt.
  [17 <build/../images/GeoMedia/map/map_collection.png>] [18]
-(/usr/share/texmf-dist/tex/latex/listings/ls
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 129.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 147.
+ [19] [20] [21]
+<../images/GeoMedia/map/tre_senza.png, id=577, 1180.41pt x 852.18375pt>
+File: ../images/GeoMedia/map/tre_senza.png Graphic file (type png)
+<use ../images/GeoMedia/map/tre_senza.png>
+Package pdftex.def Info: ../images/GeoMedia/map/tre_senza.png  used on input li
+ne 225.
+(pdftex.def)             Requested size: 336.60242pt x 243.00491pt.
+ [22]
+<../images/GeoMedia/user/user.png, id=584, 1370.11874pt x 662.475pt>
+File: ../images/GeoMedia/user/user.png Graphic file (type png)
+<use ../images/GeoMedia/user/user.png>
+Package pdftex.def Info: ../images/GeoMedia/user/user.png  used on input line 2
+40.
+(pdftex.def)             Requested size: 336.60242pt x 162.74751pt.
+
+[23 <build/../images/GeoMedia/map/tre_senza.png>]) (./chapters/architecture.tex
+[24 <build/../images/GeoMedia/user/user.png>]
+Chapter 4.
+[25
+
+]
+<../images/UML_Architecture.png, id=604, 363.3575pt x 427.5975pt>
+File: ../images/UML_Architecture.png Graphic file (type png)
+<use ../images/UML_Architecture.png>
+Package pdftex.def Info: ../images/UML_Architecture.png  used on input line 28.
+
+(pdftex.def)             Requested size: 217.80121pt x 256.31253pt.
+ [26 <build/../images/UML_Architecture.png>] [27]
+<../images/UML_Arch_MicroServices.png, id=615, 827.09pt x 585.18625pt>
+File: ../images/UML_Arch_MicroServices.png Graphic file (type png)
+<use ../images/UML_Arch_MicroServices.png>
+Package pdftex.def Info: ../images/UML_Arch_MicroServices.png  used on input li
+ne 97.
+(pdftex.def)             Requested size: 297.0pt x 210.14006pt.
+) (./chapters/mobile.tex
+[28 <build/../images/UML_Arch_MicroServices.png>]
+Chapter 5.
+[29
+
+]
+<../images/GeoMedia/IonicComparison.png, id=632, 669.50125pt x 761.84625pt>
+File: ../images/GeoMedia/IonicComparison.png Graphic file (type png)
+<use ../images/GeoMedia/IonicComparison.png>
+Package pdftex.def Info: ../images/GeoMedia/IonicComparison.png  used on input 
+line 43.
+(pdftex.def)             Requested size: 297.0pt x 337.98009pt.
+ [30] [31 <build/../images/GeoMedia/IonicComparison.png>] [32] [33]
+[34] [35] [36]
+
+LaTeX Warning: Reference `lst:camera_implementation' on page 37 undefined on in
+put line 232.
+
+[37] [38] [39]
+<../images/GeoMedia/PostViewerSharing.png, id=853, 1379.1525pt x 1029.8475pt>
+File: ../images/GeoMedia/PostViewerSharing.png Graphic file (type png)
+<use ../images/GeoMedia/PostViewerSharing.png>
+Package pdftex.def Info: ../images/GeoMedia/PostViewerSharing.png  used on inpu
+t line 327.
+(pdftex.def)             Requested size: 336.60242pt x 251.34842pt.
+Package svg Info: Last page of `./svg-inkscape/GeoMedia_App_Flowchart.drawio_sv
+g-tex.pdf' is 1 on input line 343.
+ (./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf_tex
+<./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, id=856, page=1, 952.
+36798pt x 604.07181pt>
+File: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf Graphic file (ty
+pe pdf)
+<use ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.p
+df , page1 used on input line 56.
+(pdftex.def)             Requested size: 336.60242pt x 213.50221pt.
+)
+[40 <build/../images/GeoMedia/PostViewerSharing.png>]
+<../images/GeoMedia/Access.png, id=864, 641.39626pt x 847.165pt>
+File: ../images/GeoMedia/Access.png Graphic file (type png)
+<use ../images/GeoMedia/Access.png>
+Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 358.
+
+(pdftex.def)             Requested size: 336.60242pt x 444.60023pt.
+ [41 <./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf>] [42 <build/../
+images/GeoMedia/Access.png>] [43] [44] [45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
+
+ []
+
+[47] [48]) (./chapters/backend.tex [49]
+Chapter 6.
+[50
+
+] [51] [52] [53] [54]
+<../images/server/Swagger.png, id=1091, 757.83125pt x 467.7475pt>
+File: ../images/server/Swagger.png Graphic file (type png)
+<use ../images/server/Swagger.png>
+Package pdftex.def Info: ../images/server/Swagger.png  used on input line 148.
+(pdftex.def)             Requested size: 336.60242pt x 207.758pt.
+ [55 <build/../images/server/Swagger.png>] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+[57] [58] [59]
+<../images/GeoMedia/Report.png, id=1156, 1180.41pt x 847.165pt>
+File: ../images/GeoMedia/Report.png Graphic file (type png)
+<use ../images/GeoMedia/Report.png>
+Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 371.
+
+(pdftex.def)             Requested size: 336.60242pt x 241.57379pt.
+ [60]
+
+LaTeX Warning: Reference `tab:cybersec_recap' on page 61 undefined on input lin
+e 393.
+
+[61 <build/../images/GeoMedia/Report.png>]) (./chapters/data_layer.tex [62]
+Chapter 7.
+[63
+
+]
+Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
+ input line 42.
+ (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1177, page=1, 343.6589pt x 270.6361
+pt>
+File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf , page1 used on
+ input line 56.
+(pdftex.def)             Requested size: 297.0pt x 233.89052pt.
+) [64] [65 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [66] [67]
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+
+ []
+
+[68] [69] [70] [71] [72] [73]) (./chapters/conclusions.tex [74]
+Chapter 8.
+[75
+
+] [76] [77] [78]
+<../images/QRCODE_GEOMEDIA.png, id=1486, 116.435pt x 116.435pt>
+File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
+<use ../images/QRCODE_GEOMEDIA.png>
+Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 57.
+(pdftex.def)             Requested size: 138.60242pt x 138.61621pt.
+) (./preface/disclaimer.tex [79 <build/../images/QRCODE_GEOMEDIA.png>]) (./pref
+ace/acknowledgements.tex [80
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+) [81
+
+] (build/thesis.acr) (build/thesis.gls [82
+
+
+
+]) (./appendix/bibliography.tex
+[83
+
+
+]
+
+Package biblatex Warning: Type 'book' not found on input line 7.
+
+
+LaTeX Warning: Empty bibliography on input line 7.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+[84
+
+
+]
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Overfull \hbox (5.83511pt too wide) in paragraph at lines 10--10
+\T1/cmtt/m/n/10 Using _ Sentiment _ Analysis / links / 60b8e34992851cb13d73e858
+ / Toward -[] Stopping -[]
+ []
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+[85] [86] [87] [88] [89]) [90] (build/thesis.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'thesis.run.xml'.
+\openout1 = `thesis.run.xml'.
+
+ ) ) 
+Here is how much of TeX's memory you used:
+ 45663 strings out of 469431
+ 849270 string characters out of 5468909
+ 2146792 words of memory out of 5000000
+ 72502 multiletter control sequences out of 15000+600000
+ 661168 words of font info for 230 fonts, out of 8000000 for 9000
+ 61 hyphenation exceptions out of 8191
+ 99i,12n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/cm-super/sfbi1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx
+0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/
+share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dis
+t/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
+sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></
+usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf
+-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
+per/sfrm0500.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pf
+b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts
+/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf-dist/fonts/type1/public/c
+m-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti100
+0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/f
+onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/cm-super/sftt1000.pfb>
+Output written on build/thesis.pdf (99 pages, 14085670 bytes).
+PDF statistics:
+ 2213 PDF objects out of 2487 (max. 8388607)
+ 1921 compressed objects within 20 object streams
+ 767 named destinations out of 1000 (max. 500000)
+ 61635 words of extra memory for PDF output out of 61914 (max. 10000000)
+
