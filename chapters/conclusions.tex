@@ -11,11 +11,12 @@ Altitude is a metadata currently stored during the content creation, but not yet
 
 As mentioned before, an improvement applicable to the architecture is the adoption of microservices-based infrastructure, thus to allow the Online Social Network to operate world-wide without suffering in terms of performance and responsivity; while promoting scalability, fault tolerance and maintainability and aligning with framework with modern cloud-native platforms.
 
-
-% Furthermore, future versions of GeoMedia could incorporate blockchain technology to ensure tamperproof content verification, decentralized ownership of geotagged
-% media, and enhanced transparency in content provenance. Such integration would be particularly valuable for use cases involving
-% public records, collaborative mapping, or heritage documentation, where content authenticity and traceability are critical. Finally, a comprehensive testing and iterative development process will be prioritized. This includes usability testing and system-
-% atic collection of user feedback, which will be critical in refining the application and ensuring it meets the needs and expectations of a broad user base.
+\subsection{Nostr protocol}
+\label{sub:nostr}
+Furthermore, future versions of GeoMedia could implement a mesh network to support a more decentralized and potentially a serverless architecture; allowing users to share content based on their physical proximity.
+By leveraging protocols such as Bluetooth Low Energy (BLE), or standard Bluetooth, the GeoMedia framework could establish peer-to-peer connections between nearby devices without requiring continuous access to the Internet or cellular infrastructure. A similar approach is implemented by Bitchat, a messaging application that enables users to exchange messages over Bluetooth without requiring Internet connectivity, cellular service, user accounts or centralized servers. \\
+As Bitchat does, even GeoMedia, in addition could adop the local peer-to-peer Nostr framework, an open and decentrialized protocol that allows user to exchange information and data through distributed relays. Nostr could complement the local mesh layer by providing a synchronizing mechanism when Internet connectivity is available. In example, users could create and publish a posts related to an evnet, nearby devices could see it directly over the mesh network, while others users could subsequently synchronize the post. This scenario create a challenge of coordinate an hybid architecture in which BLE communication provide local content mwhile Nostr provides decentrialized sunchronization to further distance up to the maximum range imposed by GeoMedia (currently \texttt{30KM}). As result, this solution would reduce reliance ona single central server, improving the resilience of GeoMedia instance in environment where Internet connectivity is intermitted, unavailable or intentionally restricted. 
+However, implementing this technology would introduce several challenges related to data consistency, content storage, privacy, message propagation and resource resource consumption on mobile devices. 
 
 
 \subsection{Civic Applications and Social Impact}
@@ -28,26 +29,38 @@ However, these capabilities also raise important concerns regarding privacy, sec
 
 \section{Feedbacks}
 
-During the SUS questionairre several general feedbacks have been received
+During the SUS questionnaire, several general comments and suggestions for further development were received.
 
--> implementa il voto dell'app
+\begin{itemize}
+    \item \textbf{Content creation}: Some users suggests a faster way for creating and sharing posts, thus to foster users to publish content. One possible extension would be the adoption of QR codes, as an example, distributed across a city or in specific location that once scanned with device's camera automatically open GeoMedia application with predefined post structure (such as the collection or related metadata fields). The users woul then only be required to provide a comment or to take a picture throught the app. \\
+    The QR codes, are a type of two-dimensional matrix barcodes that could be printed in stickers or papers, in example, the Figure~\ref{fig:qrcode_geomedia} represent the hyperlink for the GitHub official repository for GeoMedia framework.
+    
+    
+    \item \textbf{Usability improvements}:  Several usability-related suggestions were provided by the participants. One suggestion concerned the post creation phase, where media content could be expanded by default rather than requiring the user to manually activate the corresponding toggle. \\
+    Another suggestion involved the behaviour of the bottom sheet used for limitation in post or collection cration: participants proposed enabling it to be dismissed by tapping outside its boundaries, rather than requiring the user to interact with the dedicated closed button or by drag down the component. \\
+    The last graphical and usabiltiy suggestion is to extend the application's color theme to reflect the map theme selected, now implmeneted just for light-dark mode (forced throught the setting or as default, the system configuration of the device). For instance, when selecting themes such as ``Retro'' (light brown) or ``Dark Night'' (blue), the corresponding colour palette could be appliced consistently across the entire app rather than being limited to the map.
 
-% Secondo me la parte dell'inserimento dovrebbe essere più snella e immediata (con le altre impostazioni sedondarie come opzionali) per invogliare l'utente a inserire spontaneamente un contenuto.
+    \item \textbf{Place research}:  Participants suggested introducing the possibility of searching for specific places during the post-creation process, similarly to conventional search services that provide results for restaurants, museums or other points of interest (POIs). Although this functionality may appear in partially in contrast with GeoMedia's focus on coordinate anchored content, it would not fundamentally conflict the framework core idea, and could therefore be considered as potential future extension.
+    
+    
+    \item \textbf{Profile suggestions}:  Another suggestion concerned the possibility of displaying posts created by friends even out of the limited range of the posts, or to introduce a ``demo mode'' cabale to access geographically remote content. This specific fucntionality could go in contrast with the content-centric nature of GeoMedia, but a less intrusive altenrative could involve the prioritising or reccomending posts created by users' friends. \\
+    A related suggestion is to introduce a users ranking based on expertise or domain knownledge. For example, users identified as expers in specific field, such as history teachers, could provide more detailed and curated content. Such features, could contribute to improving the quality and realiabilty of content, while maintaining the locaion centred nature of the platform.
+    
+    \item \textbf{GNSS integration}: An advanced improvement could be the integration of multi-band GNSS (Global Navigation Satellite System) alongside the GPS, to improving position accuracy and provide coverage for any user on Earth including air, desert and sea zones.
+    
+    \item \textbf{Comments}: The final suggestion concerned the comments or instant message amog users located in closer proximity to one another. This approac has been discussed previously in the context of Nostr application (subsection~\ref{sub:nostr}). However, the comment feature is easily applicable and already prepared in the design of Data Layer (table \texttt{interactions}).
+    
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{QRCODE_GEOMEDIA.png}
+    \caption{QR Code example, referring to GeoMedia GitHub repository.}
+    \label{fig:qrcode_geomedia}
+\end{figure}
 
 
-% Lo trovo un buon lavoro. C'è qualche bug, ma ci sta. Riporto ciò che ho notato io: - "Le password non coincidono": dopo aver risolto l'errore della password, la scritta rossa è rimasta anche nella schermata di scrittura OTP, cioè la schermata successiva, quando invece doveva scomparire - Dalla schermata iniziale, clicco su "Messaggi" e non succede nulla. Preferirei una schermata o un avviso che dice "non ci sono messaggi". O comunque qualcosa che dica a cosa serve quel pulsante. Poi ho capito che serve a visualizzare il messaggio dell'autore, ma ho dovuto rimpicciolire la mappa di tanto per trovarlo, perché abito molto distante. - Nella creazione di un post, per vedere i file caricati devi cliccare sulla freccetta per aprire l'elenco, perché di default sono nascosti. Io preferirei che quell'elenco si aprisse non appena carichi il primo file o foto. - Quando clicchi "Limitazioni", poi sei obbligato a cliccare "conferma" o a scorrere in giù per chiudere il menù che si apre, mentre toccare la parte di schermo superiore non fa nulla. Io invece preferisco quando, se clicchi la parte superiore dello schermo, il menù si chiude. - Non riesco a creare una collezione. Compilo tutto, clicco su "crea" ma non succede nulla. Poi ho chiuso e riaperto l'app, e mi sono ritrovato 20 collezioni "prova", una per ogni click che avevo fatto. Purtroppo non c'è il tasto per eliminarle, quindi pace, rimarranno lì. - Faccio fatica a selezionare chi può vedere i miei post, proprio il click a volte non funziona - Non riesco a vedere i post creati dalle mie collezioni se il raggio è troppo stretto. Non ho capito quel discorso del raggio di visibilità, sinceramente. - Non riesco a vedere i post che sono dentro le mie collezioni. Ne ho creati un po', ma è come se sparissero.
-
-
-% Per rendere la parte grafica più bella, al cambio del tema della mappa adattate di conseguenza anche il tema generale dell app. Dare la possibilità, in inserimento di nuovi contenuti, di spostare il puntatore tramite una ricerca testuale/trami coordinate del luogo desiderato o tenendo premuto un punto della mappa.
-
-
-% Applicazione con grandi potenzialità. Alcuni futuri miglioramenti tecnologici che possono contribuire al successo: 1) GNSS multibanda insieme alla multicostellazione satellitare per un GPS più preciso, 2) messaggistica istantanea (via mail o social) tra gli utenti che sono nell'area dei vari post per una maggiore iterazione/scambio. 3) ranking degli utenti iscritti a seconda del numero di post pubblicati (tipo novizio, storico/esperto, ecc.) 4) possibilità degli utenti che visitano i post di fornire il "mi piace" (così si saprà quanti utenti hanno apprezzato il post)
-
-
-% direi poter rendere l'area di visibilità infinita, almeno per gli Amici magari :)
-
-% Demo mode perchè con pochi pins non è chiaro cosa fa e come usalra (eg i float buttons nel top non danno abbastanza feedback se non ci sono pins da far sparire e apparire)
-
+Overall, the application received an average rating of \texttt{3.8} out of \texttt{5} from the participants.
 
 
 \section{Conclusion}
