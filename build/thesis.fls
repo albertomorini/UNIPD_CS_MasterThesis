@@ -567,7 +567,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/eccc1000.tfm
 OUTPUT build/thesis.ist
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
-INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsl1000.tfm
 INPUT ./preface/copyright.tex
 INPUT ./preface/copyright.tex
 INPUT ./preface/copyright.tex
@@ -575,10 +574,15 @@ INPUT ./preface/copyright.tex
 INPUT preface/copyright.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT ./preface/quote.tex
+INPUT ./preface/quote.tex
+INPUT ./preface/quote.tex
+INPUT ./preface/quote.tex
+INPUT preface/quote.tex
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./preface/abstract.tex
 INPUT ./preface/abstract.tex
 INPUT preface/abstract.tex
-INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx2488.tfm
 INPUT ./preface/table-of-contents.tex
@@ -611,6 +615,7 @@ INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 OUTPUT build/thesis.toc
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsl1000.tfm
 INPUT build/thesis.lof
 INPUT build/thesis.lof
 INPUT build/thesis.lof
@@ -799,11 +804,6 @@ INPUT build/../images/QRCODE_GEOMEDIA.png
 INPUT build/../images/QRCODE_GEOMEDIA.png
 INPUT build/../images/QRCODE_GEOMEDIA.png
 INPUT build/../images/QRCODE_GEOMEDIA.png
-INPUT ./preface/disclaimer.tex
-INPUT ./preface/disclaimer.tex
-INPUT ./preface/disclaimer.tex
-INPUT ./preface/disclaimer.tex
-INPUT preface/disclaimer.tex
 INPUT ./preface/acknowledgements.tex
 INPUT ./preface/acknowledgements.tex
 INPUT ./preface/acknowledgements.tex
