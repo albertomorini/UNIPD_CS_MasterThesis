@@ -55,6 +55,13 @@ An HTTP message is composed of three main components:
     \item \textbf{body}: only with methods such as \texttt{POST} or \texttt{PUT}, contains the actual payload exchanged between client and server, such as JSON objects, uploaded files or text.
 \end{itemize}
 
+\subsection{Business logic}
+
+The server, defining the endpoints decide how to handle request, whenever to demand to a stored procedure or to apply/filters additional control. A interest implementatio regard local collection
+% //TODO: but even image storing
+
+
+
 \section{Python FastAPI}
 
 FastAPI is a web framework implemented in the Python backend to instantiate a HTTP-based service APIs. It uses Pydantic as validation library, moreover it provides a declarative way to specify the structure and types of data incoming request (e.g., HTTP bodies) and outgoing responses.
@@ -149,8 +156,6 @@ An example of GeoMedia backend API documentation is shown in Figure~\ref{fig:swa
     \caption{GeoMedia API documentation example}
     \label{fig:swagger_docs}
 \end{figure}
-
-
 
 \subsection{NodeJS HTTP Comparison}
 

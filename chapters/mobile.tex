@@ -275,7 +275,7 @@ export default function OpenCamera(
 
 Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports various file formats, including audio files and PDF documents. To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, no specific visual components are required; instead, the file selection mechanism is triggered programmatically through a method call associated with an arbitrary button, which invokes the native file selection interface provided by the platform, as shown in Listing~\ref{lst:file_picking_snippet}.
 
-
+% BETTER DESCRIBE THE ALGORITM - base64
 \begin{lstlisting}[
     language=Javascript,
     caption={File picking snippet.},
@@ -562,6 +562,9 @@ For the GeoMedia application, the following distribution platforms were consider
 Initially, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently. This distribution approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid. Furthermore, distributing the application directly through GitHub enabled rapid release of new versions while maintaining full control over the deployment process.
 
 
+\subsection{APK signing}
+% //TODO: just a quick
+
 \subsection{Android Manifest}
 
 
@@ -591,3 +594,7 @@ A snippet of some of configurated permissions and the clear-text traffic option 
 </manifest>
 
 \end{lstlisting}
+
+\section{Network capability}
+
+% TODO: TO make bridge to next chapter and explain the doRequest wrapper 
