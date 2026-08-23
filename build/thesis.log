@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  23 AUG 2026 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  23 AUG 2026 12:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2811,6 +2811,9 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 
 (build/thesis.aux
 
+LaTeX Warning: Label `tab:comparison' multiply defined.
+
+
 LaTeX Warning: Label `lst:location_retriving_snippet' multiply defined.
 
 
@@ -3062,7 +3065,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 [4
 
 ]
-<../images/../images/StateOfArt/swarm/swarm_merged.png, id=376, 769.37437pt x 5
+<../images/../images/StateOfArt/swarm/swarm_merged.png, id=381, 769.37437pt x 5
 33.49312pt>
 File: ../images/../images/StateOfArt/swarm/swarm_merged.png Graphic file (type 
 png)
@@ -3071,7 +3074,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/swarm/swarm_merged.png
  used on input line 27.
 (pdftex.def)             Requested size: 277.19879pt x 192.21204pt.
  [5 <build/../images/../images/StateOfArt/swarm/swarm_merged.png>]
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=401, 947.54
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png, id=405, 947.54
 pt x 492.84125pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png Graphic fi
 le (type png)
@@ -3079,7 +3082,7 @@ le (type png)
 Package pdftex.def Info: ../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLA
 INED.png  used on input line 48.
 (pdftex.def)             Requested size: 316.80121pt x 164.77382pt.
-<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=404, 969.622
+<../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png, id=408, 969.622
 5pt x 457.20813pt>
 File: ../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png Graphic fil
 e (type png)
@@ -3093,7 +3096,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6 <build/../images/../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png>]
 [7 <build/../images/../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png>]
-<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=434, 348.
+<../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png, id=438, 348.
 30125pt x 619.31375pt>
 File: ../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png Graphic 
 file (type png)
@@ -3101,7 +3104,7 @@ file (type png)
 Package pdftex.def Info: ../images/../images/StateOfArt/Instagram/InstagramZuck
 _MapOG.png  used on input line 93.
 (pdftex.def)             Requested size: 118.80121pt x 211.23483pt.
-<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=439, 64
+<../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png, id=443, 64
 5.41125pt x 583.17876pt>
 File: ../images/../images/StateOfArt/Instagram/Instagram_PlaceSearch.png Graphi
 c file (type png)
@@ -3113,7 +3116,7 @@ ceSearch.png  used on input line 106.
 [8 <build/../images/../images/StateOfArt/Instagram/InstagramZuck_MapOG.png (PNG
  copy)>] [9 <build/../images/../images/StateOfArt/Instagram/Instagram_PlaceSear
 ch.png>]
-<../images/../images/StateOfArt/maps/maps_merged.png, id=459, 965.6075pt x 539.
+<../images/../images/StateOfArt/maps/maps_merged.png, id=463, 965.6075pt x 539.
 51563pt>
 File: ../images/../images/StateOfArt/maps/maps_merged.png Graphic file (type pn
 g)
@@ -3122,7 +3125,7 @@ Package pdftex.def Info: ../images/../images/StateOfArt/maps/maps_merged.png  u
 sed on input line 123.
 (pdftex.def)             Requested size: 356.39758pt x 199.13194pt.
  [10 <build/../images/../images/StateOfArt/maps/maps_merged.png>]
-<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=474, 746.79pt x 11
+<../images/../images/StateOfArt/Jagat/jagat_showcase.PNG, id=478, 746.79pt x 11
 37.24875pt>
 File: ../images/../images/StateOfArt/Jagat/jagat_showcase.PNG Graphic file (typ
 e png)
@@ -3132,7 +3135,7 @@ G  used on input line 143.
 (pdftex.def)             Requested size: 138.60242pt x 211.06448pt.
 
 [11 <build/../images/../images/StateOfArt/Jagat/jagat_showcase.PNG>]
-<../images/../images/StateOfArt/auglin/auglin_merged.png, id=480, 968.61874pt x
+<../images/../images/StateOfArt/auglin/auglin_merged.png, id=484, 968.61874pt x
  497.35812pt>
 File: ../images/../images/StateOfArt/auglin/auglin_merged.png Graphic file (typ
 e png)
@@ -3151,7 +3154,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-<../images/GeoMedia/collections/collection1.png, id=492, 1060.96375pt x 1184.42
+<../images/GeoMedia/collections/collection1.png, id=496, 1060.96375pt x 1184.42
 5pt>
 File: ../images/GeoMedia/collections/collection1.png Graphic file (type png)
 <use ../images/GeoMedia/collections/collection1.png>
@@ -3159,7 +3162,7 @@ Package pdftex.def Info: ../images/GeoMedia/collections/collection1.png  used o
 n input line 43.
 (pdftex.def)             Requested size: 336.60242pt x 375.77063pt.
 [14]
-<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=498, 1363.0925pt
+<../images/GeoMedia/collections/topics-and-suggestions.jpg, id=502, 1363.0925pt
  x 1072.005pt>
 File: ../images/GeoMedia/collections/topics-and-suggestions.jpg Graphic file (t
 ype jpg)
@@ -3173,7 +3176,7 @@ LaTeX Warning: Reference `ui_and_usability' on page 16 undefined on input line
 68.
 
 [16 <build/../images/GeoMedia/collections/topics-and-suggestions.jpg>]
-<../images/GeoMedia/map/map_collection.png, id=511, 1266.7325pt x 662.475pt>
+<../images/GeoMedia/map/map_collection.png, id=515, 1266.7325pt x 662.475pt>
 File: ../images/GeoMedia/map/map_collection.png Graphic file (type png)
 <use ../images/GeoMedia/map/map_collection.png>
 Package pdftex.def Info: ../images/GeoMedia/map/map_collection.png  used on inp
@@ -3188,59 +3191,109 @@ nput line 129.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 147.
  [19] [20] [21]
-<../images/GeoMedia/map/tre_senza.png, id=578, 1180.41pt x 852.18375pt>
+<../images/GeoMedia/map/tre_senza.png, id=582, 1180.41pt x 852.18375pt>
 File: ../images/GeoMedia/map/tre_senza.png Graphic file (type png)
 <use ../images/GeoMedia/map/tre_senza.png>
 Package pdftex.def Info: ../images/GeoMedia/map/tre_senza.png  used on input li
 ne 225.
 (pdftex.def)             Requested size: 336.60242pt x 243.00491pt.
  [22]
-<../images/GeoMedia/user/user.png, id=585, 1370.11874pt x 662.475pt>
+<../images/GeoMedia/user/user.png, id=589, 1370.11874pt x 662.475pt>
 File: ../images/GeoMedia/user/user.png Graphic file (type png)
 <use ../images/GeoMedia/user/user.png>
 Package pdftex.def Info: ../images/GeoMedia/user/user.png  used on input line 2
 40.
 (pdftex.def)             Requested size: 336.60242pt x 162.74751pt.
 
-[23 <build/../images/GeoMedia/map/tre_senza.png>]) (./chapters/architecture.tex
-[24 <build/../images/GeoMedia/user/user.png>]
+[23 <build/../images/GeoMedia/map/tre_senza.png>]
+Overfull \hbox (4.85826pt too wide) in paragraph at lines 279--280
+ []|\T1/cmr/bx/n/10 (-20) GeoMedia 
+ []
+
+
+Overfull \hbox (11.91795pt too wide) in paragraph at lines 291--292
+ []|\T1/cmr/bx/n/10 (-20) Foursquare 
+ []
+
+
+Overfull \hbox (2.39244pt too wide) in paragraph at lines 295--296
+ []|\T1/cmr/bx/n/10 (-20) Snapchat 
+ []
+
+
+Overfull \hbox (7.29686pt too wide) in paragraph at lines 299--300
+ []|\T1/cmr/bx/n/10 (-20) Instagram 
+ []
+
+
+Overfull \hbox (61.05945pt too wide) in paragraph at lines 261--396
+ [][] 
+ []
+
+
+Overfull \hbox (4.85826pt too wide) in paragraph at lines 433--434
+ []|\T1/cmr/bx/n/10 (-20) GeoMedia 
+ []
+
+
+Overfull \hbox (11.91795pt too wide) in paragraph at lines 445--446
+ []|\T1/cmr/bx/n/10 (-20) Foursquare 
+ []
+
+
+Overfull \hbox (2.39244pt too wide) in paragraph at lines 449--450
+ []|\T1/cmr/bx/n/10 (-20) Snapchat 
+ []
+
+
+Overfull \hbox (7.29686pt too wide) in paragraph at lines 453--454
+ []|\T1/cmr/bx/n/10 (-20) Instagram 
+ []
+
+
+Overfull \hbox (61.05945pt too wide) in paragraph at lines 415--550
+ [][] 
+ []
+
+[24 <build/../images/GeoMedia/user/user.png>]) (./chapters/architecture.tex
+[25]
 Chapter 4.
-[25
+[26
 
 ]
-<../images/UML_Architecture.png, id=605, 363.3575pt x 427.5975pt>
+<../images/UML_Architecture.png, id=616, 363.3575pt x 427.5975pt>
 File: ../images/UML_Architecture.png Graphic file (type png)
 <use ../images/UML_Architecture.png>
 Package pdftex.def Info: ../images/UML_Architecture.png  used on input line 28.
 
 (pdftex.def)             Requested size: 217.80121pt x 256.31253pt.
- [26 <build/../images/UML_Architecture.png>] [27]
-<../images/UML_Arch_MicroServices.png, id=616, 827.09pt x 585.18625pt>
+ [27 <build/../images/UML_Architecture.png>] [28]
+<../images/UML_Arch_MicroServices.png, id=629, 827.09pt x 585.18625pt>
 File: ../images/UML_Arch_MicroServices.png Graphic file (type png)
 <use ../images/UML_Arch_MicroServices.png>
 Package pdftex.def Info: ../images/UML_Arch_MicroServices.png  used on input li
 ne 97.
 (pdftex.def)             Requested size: 297.0pt x 210.14006pt.
 ) (./chapters/mobile.tex
-[28 <build/../images/UML_Arch_MicroServices.png>]
+[29 <build/../images/UML_Arch_MicroServices.png>]
 Chapter 5.
-[29
+[30
 
 ]
-<../images/GeoMedia/IonicComparison.png, id=633, 669.50125pt x 761.84625pt>
+<../images/GeoMedia/IonicComparison.png, id=644, 669.50125pt x 761.84625pt>
 File: ../images/GeoMedia/IonicComparison.png Graphic file (type png)
 <use ../images/GeoMedia/IonicComparison.png>
 Package pdftex.def Info: ../images/GeoMedia/IonicComparison.png  used on input 
 line 43.
 (pdftex.def)             Requested size: 297.0pt x 337.98009pt.
- [30] [31 <build/../images/GeoMedia/IonicComparison.png>] [32] [33]
-[34] [35] [36]
+ [31] [32 <build/../images/GeoMedia/IonicComparison.png>] [33] [34]
+[35] [36] [37]
 
-LaTeX Warning: Reference `lst:camera_implementation' on page 37 undefined on in
+LaTeX Warning: Reference `lst:camera_implementation' on page 38 undefined on in
 put line 232.
 
-[37] [38] [39]
-<../images/GeoMedia/PostViewerSharing.png, id=854, 1379.1525pt x 1029.8475pt>
+[38] [39] [40]
+<../images/GeoMedia/PostViewerSharing.png, id=866, 1379.1525pt x 1029.8475pt>
 File: ../images/GeoMedia/PostViewerSharing.png Graphic file (type png)
 <use ../images/GeoMedia/PostViewerSharing.png>
 Package pdftex.def Info: ../images/GeoMedia/PostViewerSharing.png  used on inpu
@@ -3249,7 +3302,7 @@ t line 327.
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_App_Flowchart.drawio_sv
 g-tex.pdf' is 1 on input line 343.
  (./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, id=857, page=1, 952.
+<./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, id=869, page=1, 952.
 36798pt x 604.07181pt>
 File: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf Graphic file (ty
 pe pdf)
@@ -3258,90 +3311,90 @@ Package pdftex.def Info: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.p
 df , page1 used on input line 56.
 (pdftex.def)             Requested size: 336.60242pt x 213.50221pt.
 )
-[40 <build/../images/GeoMedia/PostViewerSharing.png>]
-<../images/GeoMedia/Access.png, id=865, 641.39626pt x 847.165pt>
+[41 <build/../images/GeoMedia/PostViewerSharing.png>]
+<../images/GeoMedia/Access.png, id=876, 641.39626pt x 847.165pt>
 File: ../images/GeoMedia/Access.png Graphic file (type png)
 <use ../images/GeoMedia/Access.png>
 Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 358.
 
 (pdftex.def)             Requested size: 336.60242pt x 444.60023pt.
- [41 <./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf>] [42 <build/../
-images/GeoMedia/Access.png>] [43] [44] [45] [46]
+ [42 <./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf>] [43 <build/../
+images/GeoMedia/Access.png>] [44] [45] [46] [47]
 Underfull \hbox (badness 10000) in paragraph at lines 548--549
 
  []
 
-[47] [48]) (./chapters/backend.tex [49]
+[48] [49]) (./chapters/backend.tex [50]
 Chapter 6.
-[50
+[51
 
-] [51] [52] [53] [54]
-<../images/server/Swagger.png, id=1092, 757.83125pt x 467.7475pt>
+] [52] [53] [54] [55]
+<../images/server/Swagger.png, id=1104, 757.83125pt x 467.7475pt>
 File: ../images/server/Swagger.png Graphic file (type png)
 <use ../images/server/Swagger.png>
 Package pdftex.def Info: ../images/server/Swagger.png  used on input line 148.
 (pdftex.def)             Requested size: 336.60242pt x 207.758pt.
- [55 <build/../images/server/Swagger.png>] [56]
+ [56 <build/../images/server/Swagger.png>] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
-[57] [58] [59]
-<../images/GeoMedia/Report.png, id=1157, 1180.41pt x 847.165pt>
+[58] [59] [60]
+<../images/GeoMedia/Report.png, id=1168, 1180.41pt x 847.165pt>
 File: ../images/GeoMedia/Report.png Graphic file (type png)
 <use ../images/GeoMedia/Report.png>
 Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 371.
 
 (pdftex.def)             Requested size: 336.60242pt x 241.57379pt.
- [60]
+ [61]
 
-LaTeX Warning: Reference `tab:cybersec_recap' on page 61 undefined on input lin
+LaTeX Warning: Reference `tab:cybersec_recap' on page 62 undefined on input lin
 e 393.
 
-[61 <build/../images/GeoMedia/Report.png>]) (./chapters/data_layer.tex [62]
+[62 <build/../images/GeoMedia/Report.png>]) (./chapters/data_layer.tex [63]
 Chapter 7.
-[63
+[64
 
 ]
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
  input line 42.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1178, page=1, 343.6589pt x 270.6361
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1190, page=1, 343.6589pt x 270.6361
 pt>
 File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf , page1 used on
  input line 56.
 (pdftex.def)             Requested size: 297.0pt x 233.89052pt.
-) [64] [65 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [66] [67]
+) [65] [66 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [67] [68]
 Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-[68] [69] [70] [71] [72] [73]) (./chapters/conclusions.tex [74]
+[69] [70] [71] [72] [73] [74]) (./chapters/conclusions.tex [75]
 Chapter 8.
-[75
+[76
 
-] [76] [77] [78]
-<../images/QRCODE_GEOMEDIA.png, id=1487, 116.435pt x 116.435pt>
+] [77] [78] [79]
+<../images/QRCODE_GEOMEDIA.png, id=1498, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 60.
 (pdftex.def)             Requested size: 138.60242pt x 138.61621pt.
- [79 <build/../images/QRCODE_GEOMEDIA.png>])
-(./preface/acknowledgements.tex [80]
+ [80 <build/../images/QRCODE_GEOMEDIA.png>])
+(./preface/acknowledgements.tex [81]
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-) [81
+) [82
 
-] (build/thesis.acr) (build/thesis.gls [82
+] (build/thesis.acr) (build/thesis.gls [83
 
 
 
 ]) (./appendix/bibliography.tex
-[83
+[84
 
 
 ]
@@ -3383,7 +3436,7 @@ Package biblatex Warning: No driver for 'paper'.
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[84
+[85
 
 
 ]
@@ -3417,7 +3470,7 @@ Package biblatex Warning: No driver for 'paper'.
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[85] [86] [87] [88] [89]) [90] (build/thesis.aux)
+[86] [87] [88] [89] [90]) [91] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3434,39 +3487,40 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 45662 strings out of 469431
- 849231 string characters out of 5468909
- 2146795 words of memory out of 5000000
- 72502 multiletter control sequences out of 15000+600000
+ 45667 strings out of 469431
+ 849299 string characters out of 5468909
+ 2146909 words of memory out of 5000000
+ 72504 multiletter control sequences out of 15000+600000
  661239 words of font info for 231 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
- 99i,12n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/cm-super/sfbi1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx
-0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/
-share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dis
-t/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
-sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></
-usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf
--dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
-per/sfrm0500.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pf
-b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts
-/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti100
-0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/f
-onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (99 pages, 14086523 bytes).
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfb
+i1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr
+/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
+/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><
+/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texm
+f-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
+uper/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0500.p
+fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/
+texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfsl1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl12
+00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+tt1000.pfb>
+Output written on build/thesis.pdf (100 pages, 14098306 bytes).
 PDF statistics:
- 2208 PDF objects out of 2487 (max. 8388607)
- 1916 compressed objects within 20 object streams
- 765 named destinations out of 1000 (max. 500000)
+ 2223 PDF objects out of 2487 (max. 8388607)
+ 1928 compressed objects within 20 object streams
+ 768 named destinations out of 1000 (max. 500000)
  61627 words of extra memory for PDF output out of 61914 (max. 10000000)
 
