@@ -7,9 +7,9 @@
 GeoMedia introduces a geographically oriented social platform in which users can upload and share content in the form of posts. Each post acts as a container for the information that users want to publish, enabling location-based interactions and content discovery.
 
 
-The original concept focused exclusively on textual comments (called \textit{GeoComments}), then extended to support any kind of multimedia content. Finally enriched with the concpet of collections, which act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
+The original concept focused exclusively on textual comments (called \textit{GeoComments}), then extended to support any kind of multimedia content. Finally enriched with the concept of collections, which act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
 
-To realize the idea behind the application, an appropriate software architecture (later explained in Cap.~\ref{cap:architecture}) and different supporting technlogies must be adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thust to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend, which works as coordinator for implementing the system`s business logic and determining which content should be provided to the users' requests (basing on their current position and other metdata).
+To realize the idea behind the application, an appropriate software architecture (later explained in Cap.~\ref{cap:architecture}) and different supporting technologies must be adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thus to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend, which works as coordinator for implementing the system`s business logic and determining which content should be provided to the users' requests (basing on their current position and other metadata).
 
 
 \section{Collections}
@@ -41,7 +41,7 @@ Figure~\ref{fig:collection-overview} shows the explained functionalities with th
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{GeoMedia/collections/collection1.png}
-        \caption{Collection panormaic and functionalities.}
+        \caption{Collection panoramic and functionalities.}
     \label{fig:collection-overview}
 \end{figure}
 
@@ -77,7 +77,7 @@ As shown in Figure~\ref{fig:map-overview}, the interface (described in Chapter \
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{GeoMedia/map/map_collection}
-    \caption{Map tab overview and colletion discovery}
+    \caption{Map tab overview and collection discovery}
     \label{fig:map-overview}
 \end{figure}
 
@@ -106,7 +106,7 @@ To determine which posts are visible to a user, GeoMedia evaluates the geographi
 
 The server computes these distances using an implementation of the Haversine formula\cite{article:sinnott1984haversine}. Specifically, the implementation, reported in Listing~\ref{lst:haversine}, calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
 
-The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae\cite{site:vincenty-formulae} provide higher accuracy, overral the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
+The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae\cite{site:vincenty-formulae} provide higher accuracy, overall the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
 
 For short-range distance calculations, the error introduced by the spherical approximation is negligible compared with the uncertainty of standard GPS positioning. At distances of approximately 30 km, the deviation from an ellipsoidal model is generally within a few meters, while for distances below a few kilometers it is typically reduced to the meter or sub-meter range.
 
@@ -199,7 +199,7 @@ By combining geographical positioning, collections, access restrictions and sequ
 
     \item \textbf{Recurrent posts}: GeoMedia allows users to define post visibility not only through geographical constraints but also through temporal conditions. A post can be associated with a specific date and time interval and can optionally be configured with a recurrence pattern, such as monthly or yearly availability. This enables scenarios where the same content becomes available periodically without requiring manual recreation, relevant for scenario such as anniversaries, birthdays or recurrent celebrations.
 
-    \item \textbf{Sequential posts}: Collections with sequentiality enabled allow creators to define a specific order in which posts should be discovered. Only the first available post is initially displayed, while subsequent posts become accessible only after seen the previous one and satisfyingvisibility conditions defined by their geographical position, time constraints, and user permissions.\\
+    \item \textbf{Sequential posts}: Collections with sequentiality enabled allow creators to define a specific order in which posts should be discovered. Only the first available post is initially displayed, while subsequent posts become accessible only after seen the previous one and satisfying visibility conditions defined by their geographical position, time constraints, and user permissions.\\
     This mechanism introduces gamification possibilities within the social platform, enabling experiences such as digital scavenger hunts, interactive tours, treasure hunts or location-based challenges, where users progressively unlock new content by exploring the real world.
 
 
@@ -218,12 +218,12 @@ An interesting scenario can be adopted by the City of Padua, thus to illustrate 
     \item \textbf{The caf\'e withouth doors}: referring to one of the most historic Italian caf\'e, \textit{Caff\'e Pedrocchi}, which during wartime remained with doors opened all day and night to provide shelter.
 \end{itemize}
 
-In this case, digital markers at these location as shown in Figure~\ref{fig:tre-senza-screen}, enable the storytelling of each unique characteristic, by uploading historycal photograph or facts.
+In this case, digital markers at these location as shown in Figure~\ref{fig:tre-senza-screen}, enable the storytelling of each unique characteristic, by uploading historical photograph or facts.
  
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{GeoMedia/map/tre_senza.png}
-        \caption{City of Padua use case for its sayng of ``Tre senza''.}
+        \caption{City of Padua use case for its saying of ``Tre senza''.}
     \label{fig:tre-senza-screen}
 \end{figure}
 
@@ -233,7 +233,7 @@ In this case, digital markers at these location as shown in Figure~\ref{fig:tre-
 
 Even if not profile-centric, GeoMedia, allows users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
 
-In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distribuited across months or which in which collections they are active as pie-chart. As shown in Figure \ref{fig:user-profile-overview}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
+In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distributed across months or which in which collections they are active as pie-chart. As shown in Figure \ref{fig:user-profile-overview}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
  
 \begin{figure}[H]
     \centering

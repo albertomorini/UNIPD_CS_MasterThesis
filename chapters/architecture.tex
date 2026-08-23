@@ -2,9 +2,9 @@
 \label{cap:architecture}
 
 
-The software architecture to concretize the concept behind GeoMedia, is represented by a three tier solution, which divide the whole platform into different actors accordign they operativity and functions.
+The software architecture to concretize the concept behind GeoMedia, is represented by a three tier solution, which divide the whole platform into different actors according they operability and functions.
 
-In specific, a three tier model is costituited by:
+In specific, a three tier model is composed by:
 
 Generally, a three-tier architecture consists of the following layers:
 \begin{itemize}
@@ -19,9 +19,9 @@ Generally, a three-tier architecture consists of the following layers:
     
 \end{itemize}
 
-This solution provide a classic and simple architecture, by exploiting technology functionalities such Network communication with TCP/IP stack, these actors are able to enstablish a communication among each other and then to exchange information and activate business process.
+This solution provide a classic and simple architecture, by exploiting technology functionalities such Network communication with TCP/IP stack, these actors are able to establish a communication among each other and then to exchange information and activate business process.
 
-The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the architecture enstablished.
+The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the architecture established.
 
 \begin{figure}[H]
     \centering
@@ -58,32 +58,32 @@ The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the ar
 
 
 Regarding GeoMedia, the communication is implemented through the HTTP protocol, which is one of the most popular and widely used protocols in the last decades. HTTP is a request-response protocol based on the client-server model that create a virtual link between the application layer (as server) that returns a response to the client (presentation layer) with the data requested.
-The data, referred to as packets, can be manipulated through intermediary network nodes (proxy servers, NAT, web caches, etc.) while respecting the TCP/IP structure. In order to ensure the confidentiality and security of the data, HTTP allows the adoption of SSL certificates (HTTPS), making the communication encrypted with the public key of the server (and decryptable only with the sercret key avaiable only to the application layer).
+The data, referred to as packets, can be manipulated through intermediary network nodes (proxy servers, NAT, web caches, etc.) while respecting the TCP/IP structure. In order to ensure the confidentiality and security of the data, HTTP allows the adoption of SSL certificates (HTTPS), making the communication encrypted with the public key of the server (and decipherable only with the secret key available only to the application layer).
 
-Instead, to enstablish the connection between the others layer (application and data) the protocol depends on the data layer, in the case of GeoMedia the DBMS is represented by Microsoft SQL Server (MSSQL) that operate through the TCP/IP stack with TDS (Tabular Data Stream) protocol.
+Instead, to establish the connection between the others layer (application and data) the protocol depends on the data layer, in the case of GeoMedia the DBMS is represented by Microsoft SQL Server (MSSQL) that operate through the TCP/IP stack with TDS (Tabular Data Stream) protocol.
 
 
 \section{Microservices comparison}
 
 Another valid alternative to the architecture design adopted is the microservices structure, that see the system decomposed into a set of small and independent services, each responsible for a specific business capability.
 
-Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually providing RESTful APIs. In fact, this design concenrs mainly  the backend layers such as application and data more than the client which still represent the single poin of interaction with the users.
+Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually providing RESTful APIs. In fact, this design concerns mainly  the backend layers such as application and data more than the client which still represent the single point of interaction with the users.
 
 This design compared to the a monolithic solution provides high degree of modularity and flexibility and others several key advantages, such as:
 
 \begin{itemize}
     \item \textbf{Scalability:} individual services can be scaled independently according to their workload, reducing infrastructure costs and improving resource utilization.
     
-    \item \textbf{Maintainability:} the decomposition into smaller services simplifies both code maintenanc than testing and debugging, as each service has a limited and well-defined responsibility.
+    \item \textbf{Maintainability:} the decomposition into smaller services simplifies both code maintenance than testing and debugging, as each service has a limited and well-defined responsibility.
     
-    \item \textbf{Technology independence:} each service can be implemented using the programming language, framework or database that best fits its operativity, while respecting the compatibility thorugh communication interfaces
+    \item \textbf{Technology independence:} each service can be implemented using the programming language, framework or database that best fits its operability, while respecting the compatibility through communication interfaces
     
     \item \textbf{Fault isolation:} failures occurring in one service are less likely to compromise the entire application, increasing the reliability of the system.
     
     \item \textbf{Continuous deployment:} updates can be released independently for each service, enabling faster development cycles and reducing deployment risks.
 \end{itemize}
 
-Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality and authentication, distribuited data transactions or service orchestration tend to outweight the architectual benefits. 
+Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality and authentication, distributed data transactions or service orchestration tend to outweigh the architectural benefits. 
 
 The three-tier architecture designed for GeoMedia represents a monolithic solution that is sufficient for the current size and usage of the application, successfully supporting its functional requirements. Nevertheless, the clear separation between the presentation, application and data layers ensures that the software remains extensible and can progressively evolve towards a microservices architecture without requiring a complete redesign.
 
