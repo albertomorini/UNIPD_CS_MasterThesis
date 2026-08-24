@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  24 AUG 2026 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  24 AUG 2026 22:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2813,9 +2813,6 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 
 LaTeX Warning: Label `lst:location_retriving_snippet' multiply defined.
 
-
-LaTeX Warning: Label `tab:sus_results' multiply defined.
-
 )
 \openout1 = `thesis.aux'.
 
@@ -2982,12 +2979,22 @@ l.1 \cleardoublepage
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (./preface/
 abstract.tex [2
 
-]) (./preface/table-of-contents.tex
-[3
+]
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+) (./preface/table-of-contents.tex [3
 
 ] (build/thesis.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
@@ -3340,12 +3347,8 @@ File: ../images/GeoMedia/Report.png Graphic file (type png)
 Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 434.
 
 (pdftex.def)             Requested size: 336.60242pt x 241.57379pt.
- [65]
-
-LaTeX Warning: Reference `tab:cybersec_recap' on page 66 undefined on input lin
-e 456.
-
-[66 <build/../images/GeoMedia/Report.png>]) (./chapters/data_layer.tex [67]
+ [65] [66 <build/../images/GeoMedia/Report.png>])
+(./chapters/data_layer.tex [67]
 Chapter 7.
 [68
 
@@ -3353,7 +3356,7 @@ Chapter 7.
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
  input line 42.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1303, page=1, 343.6589pt x 270.6361
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1304, page=1, 343.6589pt x 270.6361
 pt>
 File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
@@ -3370,7 +3373,7 @@ Chapter 8.
 [80
 
 ] [81] [82] [83]
-<../images/QRCODE_GEOMEDIA.png, id=1612, 116.435pt x 116.435pt>
+<../images/QRCODE_GEOMEDIA.png, id=1613, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 60.
@@ -3483,7 +3486,7 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Here is how much of TeX's memory you used:
  45883 strings out of 469431
  852572 string characters out of 5468909
- 2147278 words of memory out of 5000000
+ 2147328 words of memory out of 5000000
  72630 multiletter control sequences out of 15000+600000
  661358 words of font info for 232 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
@@ -3510,10 +3513,10 @@ m-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti100
 re/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb>
-Output written on build/thesis.pdf (104 pages, 14310687 bytes).
+Output written on build/thesis.pdf (104 pages, 14310919 bytes).
 PDF statistics:
- 2359 PDF objects out of 2487 (max. 8388607)
- 2057 compressed objects within 21 object streams
+ 2360 PDF objects out of 2487 (max. 8388607)
+ 2058 compressed objects within 21 object streams
  856 named destinations out of 1000 (max. 500000)
  61661 words of extra memory for PDF output out of 61914 (max. 10000000)
 
