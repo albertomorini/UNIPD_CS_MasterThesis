@@ -58,20 +58,85 @@ An HTTP message is composed of three main components:
 
 \subsection{Business logic}
 
-However, the server, defining endpoints decide how to handle the requests, retrieving or storing data operating through data layer by executing the respective query commands or managing file system. As example, the hypermedia are stored in file system of the server, since the storage in the database as encoded text could results in bad performance and more space utilization; in order to implement this, the server must decode the base64 and serialize data as shown in Listing~\ref{...}.
+Conceptually, the server defines the endpoints and determines how requests are handled, retrieving or storing data through the data layer by executing the respective query commands or managing the file system. For example, hypermedia are stored in the server's file system, since storing them in the database as encoded text could result in worse performance and increased storage requirements. Conversely, to read the hypermedia referenced to a post whenever opened, the server must encode the media in Base64 format thus to encapsulated it in the HTTP response packet as shown in Listing~\ref{lst:hpmedia_management}, then the mobile app will provide to render to user.
 
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
 
-The implementation of the business logic is both implemented in data layer but hte server has the final filters and logic to apply. As shown in chapter~\ref{haversine_formula} to compute the distance among current location of user requester and the posts, an enriched algorithm that wrapping the same function leverage the logic, is the computation of local collection shown in Listing~\ref{...}
+\begin{lstlisting}[
+    caption={Hypermedia retrieval implementation in Pyhton.},
+    label={lst:hpmedia_management}
+]
+async def hpmedia_read_folder(postid: int):
+    query = f"EXEC HPMEDIA_GETFILES @POSTID={postid}" # SQL hypermedia reference
+    files = SQL_MANAGER.select_query(query)
+    for f in files:
+        try:
+            with open(f.get("FILEPATH"), "rb") as file:
+                f["BASE64"] = base64.b64encode(file.read()).decode()
+        except Exception:
+            f["BASE64"] = None
+    return files
+\end{lstlisting}
 
+However, for GeoMedia application, the business logic is implemented mainly in the data layer, leaving the server applies the final filters and logic; as previously shown in the implementation of the Haversine formula~\ref{haversine_formula}, used to compute the distance between the current location of the user and the posts. The same function is also leveraged by the \textit{Local collection}  feature as shown in Listing~\ref{lst:local_collection_implementation}.
 
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
 
+\begin{lstlisting}[
+    caption={Python implementation for algorithm used to compute the local collection visible from current location.},
+    label={lst:local_collection_implementation}
+]
+async def collections_get_local(uid,curr_lat,curr_lon):
+    query = """EXEC POST_GETALL_ALLOWED @UID=%s"""
+    posts = SQL_MANAGER.select_query(query, (uid))
+    results = []
+    ## filter by allowed by visibility
+    for pp in posts:
+        if check_post_area(
+            pp["VISIBILITY_AREA_KM"], # post range
+            pp["LATITUDE"], # post lat
+            pp["LONGITUDE"], #post lon
+            curr_lat, #user curr lat
+            curr_lon #user curr lon
+        ):
+            results.append(pp)
 
-The local collection are computed simply grouping the collection by the post that user requester is allowed to see, then kept just the first 3/4 most used and merged with some random one.
-This features permit user to have the most used collection as it moves in the physical environment, as happens for posts.
+    collection_rank = dict()
+    for p in results:
+        c = p["COLLECTION_ID"]
+        if(c not in collection_rank):
+            collection_rank[c] = 1
+        else:
+            collection_rank[c] += 1
 
+    collection_ids = [
+        k for k, v in sorted(collection_rank.items(),key=lambda item: item[1],reverse=True)[:10]
+    ]
+    id_collections = ", ".join(map(str, collection_ids))
 
+    query = f"SELECT * FROM COLLECTIONS WHERE ID IN ({id_collections})"
+    return SQL_MANAGER.select_query(query)
+\end{lstlisting}
 
-
+In this implementation, the local collections are retrieved from the post that user is allowed to see from its current location. Then, the collection are ranked based on the number of visible posts belonging to each collection, and finally the ten most used collections are selected, retrieved from the database and returned to the calling function that will respond to the HTTP request.
 
 
 \section{Python FastAPI}
