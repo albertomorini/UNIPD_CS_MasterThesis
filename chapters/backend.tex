@@ -11,6 +11,7 @@ To implement the backend of the GeoMedia platform, the Python programming langua
 
 
 \section{REST Server}
+\label{sec:rest_server}
 
 A REST server is a software application that implements the HTTP/HTTPS protocol and continuously listens for incoming client requests. It exposes one or more RESTful endpoints through which clients can interact with the services offered by the application.
 
@@ -57,8 +58,19 @@ An HTTP message is composed of three main components:
 
 \subsection{Business logic}
 
-The server, defining the endpoints decide how to handle request, whenever to demand to a stored procedure or to apply/filters additional control. A interest implementatio regard local collection
-% //TODO: but even image storing
+However, the server, defining endpoints decide how to handle the requests, retrieving or storing data operating through data layer by executing the respective query commands or managing file system. As example, the hypermedia are stored in file system of the server, since the storage in the database as encoded text could results in bad performance and more space utilization; in order to implement this, the server must decode the base64 and serialize data as shown in Listing~\ref{...}.
+
+
+The implementation of the business logic is both implemented in data layer but hte server has the final filters and logic to apply. As shown in chapter~\ref{haversine_formula} to compute the distance among current location of user requester and the posts, an enriched algorithm that wrapping the same function leverage the logic, is the computation of local collection shown in Listing~\ref{...}
+
+
+
+
+The local collection are computed simply grouping the collection by the post that user requester is allowed to see, then kept just the first 3/4 most used and merged with some random one.
+This features permit user to have the most used collection as it moves in the physical environment, as happens for posts.
+
+
+
 
 
 
@@ -225,7 +237,7 @@ The OTP generation and verification operations are performed in the Data Layer, 
 
 
 \subsection{HTTPs and packet confidentiality}
-
+\label{sub:http_sec}
 All communication between the client and GeoMedia's backend is performed through HTTPS. HTTPS relies on TLS (Transport Layer Security) to provide confidentiality and integrity for data exchanged between the client and server. This prevents an attacker positioned between the client and the server from trivially observing or modifying authentication requests.\\
 
 Finally, the communication process between clients and server, can be summarized as:

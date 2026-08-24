@@ -7,7 +7,6 @@ In order to provide its core functionalities, GeoMedia relies on mobile devices,
 Therefore, the mobile application represents the most important component within the entire framework. Furthermore, its development introduces additional design challenges related to User Experience (UX), usability, performance limitations of mobile devices and the protection of user privacy.
 
 
-
 \section{React Native framework}
 
 
@@ -559,11 +558,33 @@ For the GeoMedia application, the following distribution platforms were consider
 
 \end{itemize}
 
-Initially, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently. This distribution approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid. Furthermore, distributing the application directly through GitHub enabled rapid release of new versions while maintaining full control over the deployment process.
+For testing phase, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently and checking the previous version as shown in Figure~\ref{fig:github_release}. Furthermore, with this method, enabled rapid release of new versions while maintaining full control over the deployment process. Moreover, this approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid. 
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{github_release.png}
+    \caption{GitHub release page for GeoMedia}
+    \label{fig:github_release}
+\end{figure}
 
 
 \subsection{APK signing}
-% //TODO: just a quick
+
+In order to distribute the application, Android platform, require the APK to be digitally signed before the installation. The signing process consists of generating a cryptographic key pair, using developer's private key to create a digital signature and associate the mark with a certification containing the corresponding public key. During installation and updates, the operating system verifies the signature to ensure the APK's integrity and confirm that it originates from the same signing identity. \\
+This mechanism prevents unauthorized modification and redistribution of the application, as any alteration to the APK invalidates its digital signature. Furthermore, the use of the same signing key across application updates allows Android to establish continuity between different versions and prevents an attacker from installing a modified application as a legitimate update.
+
+
+The signing process can be performed through Android Studio, which is also used to compile the application source code thus to build the APK. Developers are enabled to generate the certificate, rather than require it by a trusted Certification Authority. In this way, developers can manage their own singin keys, with each define a distinct signing identity. An example of this process is illustrated in Figure~\ref{fig:apk_signing.png}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{apk_signing.png}
+    \caption{GitHub release page for GeoMedia}
+    \label{fig:apk_signing}
+\end{figure}
 
 \subsection{Android Manifest}
 
@@ -592,9 +613,57 @@ A snippet of some of configurated permissions and the clear-text traffic option 
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="..."/>
   </application>
 </manifest>
-
 \end{lstlisting}
 
 \section{Network capability}
 
-% TODO: TO make bridge to next chapter and explain the doRequest wrapper 
+As designed, the communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in chapter~\ref{sec:rest_server}). However, to perform the sending of respective HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} has been implemented in Listing~\ref{lst:dorequest_wrapper}.
+
+
+\begin{lstlisting}[
+    language=JavaScript,
+    caption={JavaScript fetch method wrapper.},
+    label={lst:dorequest_wrapper}
+]
+export const doRequest = (api, body = {}, method = "POST") => {
+    const nonce = Crypto.randomUUID(); 
+    const timestamp = Date.now().toString();
+
+    let methods_no_body = ["GET", "DELETE"];
+    if (methods_no_body.includes(method)) {
+        if (body && Object.keys(body).length > 0) {
+            const query = new URLSearchParams(body).toString();
+            api += "?" + query;
+        }
+    }
+    // Sign the FINAL path, including query parameters
+    const dataToSign = "/" + api + timestamp + nonce;
+    const signature = CryptoJS.HmacSHA256(
+        dataToSign,
+        SHARED_KEY
+    ).toString(CryptoJS.enc.Hex);
+
+    const headers = {
+        "Content-Type": "application/json",
+        "X-Timestamp": timestamp,
+        "X-Nonce": nonce,
+        "X-Signature": signature
+    };
+
+    if (methods_no_body.includes(method)) {
+        return fetch(URL + api, {
+            method,
+            headers: new Headers(headers),
+        }).then(res => res.json());
+    }
+
+    return fetch(URL + api, {
+        method,
+        headers: new Headers(headers),
+        body: JSON.stringify(body)
+    }).then(res => res.json());
+};
+\end{lstlisting}
+
+The wrapper function generates the HMAC signature required to authenticate the request on the server side (illustrated in chapter~\ref{sub:http_sec}) and then constructs the HTTP request by setting the appropriate method, headers and the optional body. \\ 
+Finally, it sends the request to the server and returns the response content parsed in JSON format to the calling procedure which will interprets the data.
