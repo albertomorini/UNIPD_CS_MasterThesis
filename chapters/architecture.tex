@@ -1,21 +1,18 @@
 \chapter{Architecture and Software design}
 \label{cap:architecture}
-
-
 The software architecture to concretize the concept behind GeoMedia, is represented by a three tier solution, which divide the whole platform into different actors according they operability and functions.
 
-In specific, a three tier model is composed by:
+In specific, a three tier model is composed by the following layers:
 
-Generally, a three-tier architecture consists of the following layers:
 \begin{itemize}
-    \item \textbf{Client layer (Presentation layer):} which provides the user interface and manages user interactions. It is responsible for presenting data to the user and forwarding user requests to the application layer while remaining independent of the underlying business logic and data storage. \textit{In GeoMedia, this is represented by the mobile app}
+    \item \textbf{Client layer (Presentation layer):} which provides the user interface and manages user interactions. It is responsible for presenting data to the user and forwarding user requests to the application layer while remaining independent of the underlying business logic and data storage. \\
+    \textit{In GeoMedia, this is represented by the mobile application}
     
     \item \textbf{Application layer (Business Logic layer):} that implements the core functionalities of the platform and applies the business logic to process user requests. This layer acts as an intermediary between the presentation and data layers, encapsulating the application's logic and coordinating the exchange of data to ensure consistency and proper execution of system operations.
-    \textit{In GeoMedia, this layer is represented by the server-side component responsible for processing client requests, executing the application logic and coordinating communication between the client and the data layer through a RESTful interface.}
+    \textit{In GeoMedia, this layer is represented by the server-side component that processes client requests and communicates with the data layer through a RESTful interface.}
 
-    \item \textbf{Data layer (Persistence layer):} that is responsible for managing data storage and performing data operations such as the creation, retrieval, update and deletion (CRUD) of persistent data. It provides an interface to databases or other storage systems while abstracting and encapsulating the underlying data access details from the upper layers.
+    \item \textbf{Data layer (Persistence layer):} that is responsible for managing data storage and performing data operations such as the creation, retrieval, update and deletion (CRUD) of persistent data. It provides an interface to databases or other storage systems while abstracting and encapsulating the underlying data access details from the upper layers.\\
     \textit{In GeoMedia, this layer is represented by the Database Management System (DBMS) that provides a full solution for data handling.}
-
     
 \end{itemize}
 
@@ -25,7 +22,7 @@ The UML schema in the Figure~\ref{fig:UML-arch} can represent graphically the ar
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{UML_Architecture.png}
+    \includegraphics[width=0.65\textwidth]{UML_Architecture.png}
         \caption{Three-tier Software Architecture UML.}
     \label{fig:UML-arch}
 \end{figure}
@@ -65,9 +62,9 @@ Instead, to establish the connection between the others layer (application and d
 
 \section{Microservices comparison}
 
-Another valid alternative to the architecture design adopted is the microservices structure, that see the system decomposed into a set of small and independent services, each responsible for a specific business capability.
+Another valid alternative to the architecture design adopted, is the microservices structure, that see the system decomposed into a set of small and independent services, each responsible for a specific business capability.
 
-Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually providing RESTful APIs. In fact, this design concerns mainly  the backend layers such as application and data more than the client which still represent the single point of interaction with the users.
+Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually providing RESTful APIs. In fact, this design concerns mainly  the backend structure such as application and data layer, more than the client which still represent the single point of interaction with the users.
 
 This design compared to the a monolithic solution provides high degree of modularity and flexibility and others several key advantages, such as:
 
@@ -83,7 +80,7 @@ This design compared to the a monolithic solution provides high degree of modula
     \item \textbf{Continuous deployment:} updates can be released independently for each service, enabling faster development cycles and reducing deployment risks.
 \end{itemize}
 
-Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality and authentication, distributed data transactions or service orchestration tend to outweigh the architectural benefits. 
+Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality, authentication or service orchestration tend to outweigh the architectural benefits. 
 
 The three-tier architecture designed for GeoMedia represents a monolithic solution that is sufficient for the current size and usage of the application, successfully supporting its functional requirements. Nevertheless, the clear separation between the presentation, application and data layers ensures that the software remains extensible and can progressively evolve towards a microservices architecture without requiring a complete redesign.
 
@@ -91,10 +88,9 @@ On the other hand, the adoption of a microservices architecture could be an inte
 
 A concept of the microservice adoption for GeoMedia is shown in the UML in Figure~\ref{fig:UML-arch-micro}
 
-
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{UML_Arch_MicroServices.png}
+    \includegraphics[width=0.70\textwidth]{UML_Arch_MicroServices.png}
         \caption{Microservices Software Architecture UML.}
     \label{fig:UML-arch-micro}
 \end{figure}
