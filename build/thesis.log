@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  25 AUG 2026 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  25 AUG 2026 23:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3336,35 +3336,36 @@ Package pdftex.def Info: ../images/apk_signing.png  used on input line 610.
 Chapter 6.
 [59
 
-] [60] [61] [62] [63] [64]
-Overfull \hbox (16.60413pt too wide) in paragraph at lines 168--170
-[][][][][][][][][][][][][][][][][][][][][][][][][]  
+]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
  []
 
-[65]
-<../images/server/Swagger.png, id=1231, 757.83125pt x 467.7475pt>
+[60] [61] [62] [63] [64] [65] [66]
+<../images/server/Swagger.png, id=1247, 757.83125pt x 467.7475pt>
 File: ../images/server/Swagger.png Graphic file (type png)
 <use ../images/server/Swagger.png>
-Package pdftex.def Info: ../images/server/Swagger.png  used on input line 229.
-(pdftex.def)             Requested size: 336.60242pt x 207.758pt.
- [66] [67 <build/../images/server/Swagger.png>] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Package pdftex.def Info: ../images/server/Swagger.png  used on input line 240.
+(pdftex.def)             Requested size: 396.0pt x 244.42201pt.
+ [67 <build/../images/server/Swagger.png>]
+[68] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
-[69] [70] [71] [72]
-<../images/GeoMedia/Report.png, id=1311, 1180.41pt x 847.165pt>
+[70] [71] [72]
+<../images/GeoMedia/Report.png, id=1315, 1180.41pt x 847.165pt>
 File: ../images/GeoMedia/Report.png Graphic file (type png)
 <use ../images/GeoMedia/Report.png>
-Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 431.
+Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 426.
 
-(pdftex.def)             Requested size: 336.60242pt x 241.57379pt.
- [73 <build/../images/GeoMedia/Report.png>]
-Overfull \hbox (7.7298pt too wide) in paragraph at lines 459--491
+(pdftex.def)             Requested size: 356.39758pt x 255.78021pt.
+ [73] [74 <build/../images/GeoMedia/Report.png>]
+Overfull \hbox (7.7298pt too wide) in paragraph at lines 451--483
  [][] 
  []
 
-[74]) (./chapters/data_layer.tex [75]
+) (./chapters/data_layer.tex [75]
 Chapter 7.
 [76
 
@@ -3372,7 +3373,7 @@ Chapter 7.
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
  input line 42.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1335, page=1, 343.6589pt x 270.6361
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1339, page=1, 343.6589pt x 270.6361
 pt>
 File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
@@ -3389,7 +3390,7 @@ Chapter 8.
 [89
 
 ] [90] [91] [92]
-<../images/QRCODE_GEOMEDIA.png, id=1646, 116.435pt x 116.435pt>
+<../images/QRCODE_GEOMEDIA.png, id=1650, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 60.
@@ -3522,10 +3523,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 45838 strings out of 469431
- 847712 string characters out of 5468909
- 2135131 words of memory out of 5000000
- 72568 multiletter control sequences out of 15000+600000
+ 45845 strings out of 469431
+ 847856 string characters out of 5468909
+ 2135180 words of memory out of 5000000
+ 72570 multiletter control sequences out of 15000+600000
  665282 words of font info for 247 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,13n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3552,10 +3553,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 t1095.pfb>
-Output written on build/thesis.pdf (115 pages, 14334759 bytes).
+Output written on build/thesis.pdf (115 pages, 14336648 bytes).
 PDF statistics:
- 2420 PDF objects out of 2487 (max. 8388607)
- 2107 compressed objects within 22 object streams
- 858 named destinations out of 1000 (max. 500000)
+ 2425 PDF objects out of 2487 (max. 8388607)
+ 2112 compressed objects within 22 object streams
+ 863 named destinations out of 1000 (max. 500000)
  61669 words of extra memory for PDF output out of 61914 (max. 10000000)
 

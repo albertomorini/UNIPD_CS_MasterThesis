@@ -1,9 +1,9 @@
 \chapter{Backend}
 \label{cap:backend}
 
-The application layer consists of an HTTP-RESTful server responsible for implementing the platform's business logic and handling requests from mobile clients application. The main role is to process user requests and provide the required functionalities, such as content retrieval, content uploading or authentication, but also implement core operations for GeoMedia such as the restrictions of post visible from user position by implementing the previously mentioned Haversine Formula.\ref{haversine_formula}
-Furthermore, this layer acts as virtual bridge between the mobile application and the data layer, as previously introduced in the Chapter~\ref{cap:architecture}.\\
-However, as previously mentioned, this design follows a monolithic architecture, in which the HTTP server operates as a single, self-contained unit responsible for handling all application functionalities and client requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. To improve performance, scalability, maintainability and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
+The application layer consists of an HTTP-RESTful server responsible for implementing the platform's business logic and it process every request from the client mobile application, such as content uploading or authentication. Furthermore, this layer acts as virtual bridge between the mobile application and the data layer, designed in the software architecture illustrated in the Chapter~\ref{cap:architecture}.\\
+However, this design follows a monolithic architecture, in which the HTTP server operates as a single, self-contained unit responsible for handling all application functionalities and client requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. \\
+To improve performance, scalability, maintainability and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
 
 To implement the backend of the GeoMedia platform, the Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (namely known as ``Swagger''). 
 
@@ -11,7 +11,7 @@ To implement the backend of the GeoMedia platform, the Python programming langua
 \label{sec:rest_server}
 
 A REST server is a software application that implements the HTTP/HTTPS protocol and continuously listens for incoming client requests. It exposes one or more RESTful endpoints through which clients can interact with the services offered by the application.
-A RESTful API follows the principles of Representational State Transfer (REST), where application resources are identified by unique URLs and manipulated through standard HTTP methods. Common methods include \texttt{GET} for retrieving resources, \texttt{POST} for creating new resources, \texttt{PUT} or \texttt{PATCH} for updating existing resources and \texttt{DELETE} for removing them. This approach provides a standardized and stateless mechanism for communication between clients and the server.
+A RESTful API follows the principles of Representational State Transfer (REST), where application resources are identified by unique URLs and manipulated through standard HTTP methods (i.e. \texttt{GET} for retrieving resources, \texttt{POST} for creating new resources,\texttt{PUT} for updating existing resources). This approach provides a standardized and stateless mechanism for communication between clients and the server.\\
 Finally, the server listens for HTTP or HTTPS requests on a configurable network port. A network port is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
 
 For each servers or simply, computers, the port numbers range start from \texttt{0} to \texttt{65'535} and are conventionally divided into three categories:
@@ -22,22 +22,23 @@ For each servers or simply, computers, the port numbers range start from \texttt
 \end{itemize}
 
 
-By binding a server process to a specific port, operating system forwards all requests addressed to that port to the corresponding application that will handle the HTTP request and return a response (respecting the client-server model).
+By binding a server process to a specific port, operating system forwards all requests addressed to that port to the corresponding application that will handle the HTTP request and return a response (respecting the client-server model). \\
 
+\subsection{TCP/IP stack \& HTTP protocol}
 
-The HTTP is an application-layer protocol that defines the format and exchange of messages between clients and servers on the Internet. Rather than providing communication mechanisms itself, HTTP relies on the services offered by the underlying layers of the \textit{TCP/IP} networking stack, where each layer is responsible for a specific set of operations.
-the TCP/IP model division promote modularity, encapsulation, robustness and separation of responsibilities, thus to allow each layer to evolve independently without affecting the others.
+HTTP is an application-layer protocol that defines the format and exchange of messages between clients and servers on the Internet. Rather than providing communication mechanisms itself, HTTP relies on the services offered by the underlying layers of the \textit{TCP/IP} networking stack, where each layer is responsible for a specific set of operations. \\
+The TCP/IP model division promote modularity, encapsulation, robustness and separation of responsibilities, thus to allow each layer to evolve independently without affecting the others.
 
-The TCP/IP model is represented by four layers:
+The TCP/IP stack is represented by four layers:
 
 \begin{itemize}
-    \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as HTTP, HTTPS, FTP, SMTP, DNS operate at this level, defining how data is formatted and exchanged between communicating applications. \\
+    \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as \texttt{HTTP, HTTPS, FTP, SMTP, DNS} operate at this level, defining how data is formatted and exchanged between communicating applications. \\
     \textit{GeoMedia's server use the HTTPS protocol of this stack}.
 
-    \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are TCP (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \textbf{UDP (User Datagram Protocol)}, which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
+    \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are \texttt{TCP} (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \texttt{UDP} (User Datagram Protocol), which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
     \textit{GeoMedia's server adopt the TCP protocol of this stack}.
 
-    \item \textbf{Internet layer}: responsible for logical addressing and packet routing across interconnected networks. The \textbf{Internet Protocol (IP)} determines how packets are addressed and forwarded from the source host to the destination, regardless of the physical networks traversed. There are two principal versions of the Internet Protocol (IP): IPv4 and IPv6. While both protocols provide logical addressing and packet routing across interconnected networks, IPv6 introduces several improvements over its predecessor.\\
+    \item \textbf{Internet layer}: responsible for logical addressing and packet routing across interconnected networks. The Internet Protocol (IP) determines how packets are addressed and forwarded from the source host to the destination, regardless of the physical networks traversed. There are two principal versions of the Internet Protocol (IP): \texttt{IPv4} and \texttt{IPv6}. While both protocols provide logical addressing and packet routing across interconnected networks, IPv6 introduces several improvements over its predecessor.\\
     \textit{GeoMedia backend is deployed using IPv4 networking}.
 
     \item \textbf{Link layer}: handles communication over the local physical network. It is responsible for framing, physical addressing (e.g., MAC addresses), error detection on the local link, and transmitting data through the underlying network technology, such as Ethernet or Wi-Fi.
@@ -55,7 +56,7 @@ An HTTP message is composed of three main components:
 
 \subsection{Business logic}
 
-Conceptually, the server defines the endpoints and determines how requests are handled, retrieving or storing data through the data layer by executing the respective query commands or managing the file system. For example, hypermedia are stored in the server's file system, since storing them in the database as encoded text could result in worse performance and increased storage requirements. Conversely, to read the hypermedia referenced to a post whenever opened, the server must encode the media in Base64 format thus to encapsulated it in the HTTP response packet as shown in Listing~\ref{lst:hpmedia_management}, then the mobile app will provide to render to user.
+Conceptually, the server defines the endpoints and determines how requests are handled, retrieving or storing data through the data layer by executing the respective query commands or managing the file system. For instance, hypermedia are stored in the server's file system, since storing them in the database as encoded text could result in worse performance and increased storage requirements. Conversely, to read the hypermedia referenced to a post whenever requested, the server must encode the media in Base64 format thus to encapsulated it in the HTTP response packet as shown in Listing~\ref{lst:hpmedia_management}, then the mobile app will provide to render to user.
 
 \lstset{
     language=Python,
@@ -84,7 +85,8 @@ async def hpmedia_read_folder(postid: int):
     return files
 \end{lstlisting}
 
-However, for GeoMedia application, the business logic is implemented mainly in the data layer, leaving the server applies the final filters and logic; as previously shown in the implementation of the Haversine formula~\ref{haversine_formula}, used to compute the distance between the current location of the user and the posts. The same function is also leveraged by the \textit{Local collection}  feature as shown in Listing~\ref{lst:local_collection_implementation}.
+However, for GeoMedia application, the business logic is implemented mainly in the data layer, leaving the server applies the final filters and logic; as previously shown in the implementation of the Haversine formula~\ref{haversine_formula}, used to compute the distance between the current location of the user and the posts.\\
+The same function is also leveraged by the \textit{Local collection} feature as shown in Listing~\ref{lst:local_collection_implementation}.
 
 \lstset{
     language=Python,
@@ -133,8 +135,7 @@ async def collections_get_local(uid,curr_lat,curr_lon):
     return SQL_MANAGER.select_query(query)
 \end{lstlisting}
 
-In this implementation, the local collections are retrieved from the post that user is allowed to see from its current location. Then, the collection are ranked based on the number of visible posts belonging to each collection, and finally the ten most used collections are selected, retrieved from the database and returned to the calling function that will respond to the HTTP request.
-
+In this implementation, the local collections are retrieved from the posts that user is allowed to see from its current location together with additional constraints such as user-specific policies and time-sensitive filtering criteria. Then, the collection are ranked based on the number of visible posts belonging to each collection, and finally the ten most used collections are selected, retrieved from the database and returned to the calling function that will respond to the HTTP request.
 
 \section{Python FastAPI}
 
@@ -144,8 +145,7 @@ FastAPI is a web framework implemented in the Python backend to instantiate a HT
 The framework simplifies the definition of RESTful endpoints, allowing developers to associate a Python function directly with the HTTP method and resource path thought the use of decorators.
 The path may include both \textit{path parameter} which are embedded within the URL and \textit{query parameter} that are appended to the request URL as key-value pairs. FastAPI automatically validates these parameters according to the declared Python types and makes them available to corresponding request handler.
 
-
-In Listing~\ref{lst:endpoint_creation} is shown the implementation of the endpoint responsible for retrieving the posts visible from the current location of a target profile (function visible in the right image of Figure~\ref{fig:user-profile-overview}). The process is associated with \texttt{GET} method and defines query parameters (that are not part of the url) which are passed to the respective function associated to retrieve the corresponding information from the data layer (as shown in Listing~\ref{lst:post_user_retrieval}) and returns the result as an HTTP response.
+In Listing~\ref{lst:endpoint_creation} is shown the implementation of the endpoint responsible for retrieving the posts visible from the current location of a target profile (the results interpreted by the mobile app is previously shown in the right image of Figure~\ref{fig:user-profile-overview}).
 
 \lstset{
     language=Python,
@@ -162,12 +162,22 @@ In Listing~\ref{lst:endpoint_creation} is shown the implementation of the endpoi
     caption={HTTP Server Endpoint creation.},
     label={lst:endpoint_creation}
 ]
-
+# SERVER
 @app.get("/profile/show_allowed_post",tags=["USERS"])
-async def profile_show_allowed_post(uid: int, profile_id: int, curr_lat: float, curr_lon: float):
-    return await geomedia_helper.profile_show_allowed_post(uid,profile_id,curr_lat,curr_lon)
-
+async def profile_show_allowed_post_api(uid: int, profile_id: int, curr_lat: float, curr_lon: float):
+    return await geomedia_helper.profile_show_allowed_post( #
+        uid,        
+        profile_id, 
+        curr_lat,
+        curr_lon
+    )
 \end{lstlisting}
+
+The endpoint is associated with \texttt{GET} method and requires four query parameters: the identifier of the requesting user (\texttt{uid}), the identifier of the target profile (\texttt{profile\_id}) and the current geographic coordinates of the user (\texttt{cur\_lat} and \texttt{curr\_lon}). These parameters are passed to the \texttt{profile\_show\_allowed\_post} helper function, which implements the retrieval and filtering logic.
+
+As shown in Listing~\ref{lst:post_user_retrieval}, the helper function first retrieves the posts associated with the target profile by executing the \texttt{PROFILE\_GET\_ALLOWEDPOST} stored procedure through the data access layer. The query is executed using parameterized values, preventing the user-provided parameters from being directly interpolated into the SQL statement and consequently mitigating SQL injection risks.
+
+The retrieved posts are then filtered according to their geographical visibility area. For each post, the \texttt{check\_post\_area} function compares the post's configured visibility radius, expressed in kilometres, with the distance between the post's coordinates and the user's current location. Only posts whose visibility area contains the user's current position are added to the result set. Finally, the filtered collection is returned by the helper function and consequently exposed to the mobile client through the HTTP response.
 
 
 \lstset{
@@ -185,7 +195,7 @@ async def profile_show_allowed_post(uid: int, profile_id: int, curr_lat: float, 
     caption={Implementation of post retrieval of a target user visible from current location.},
     label={lst:post_user_retrieval}
 ]
-
+# GEOMEDIA HELPER
 async def profile_show_allowed_post(uid, profile_id, curr_lat, curr_lon):
     ## prepared statement to avoid SQL Injection
     query = """
@@ -218,7 +228,8 @@ async def profile_show_allowed_post(uid, profile_id, curr_lat, curr_lon):
 
 \subsection{Documentation}
 
-FastAPI automatically generates an API specification in \textit{OpenAPI} format, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via textit{Swagger UI} (typically available at \texttt{/docs}), which provides a comprehensive description of every available endpoint. Moreover, consent to group by endpoints in order to create some classification through tags, in GeoMedia as example, \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality  or \texttt{COLLECTIONS} for collection related endpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema, authentication requirements and the format and status codes of the corresponding responses. \\
+FastAPI automatically generates an API specification in \textit{OpenAPI} format, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via \textit{Swagger UI} (typically available at \texttt{/docs} after the base URI of the REST server), which provides a comprehensive description of every available endpoint. \\
+Moreover, consent to group by endpoints in order to create some classification through tags, in GeoMedia as example, \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality  or \texttt{COLLECTIONS} for collection related endpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema, authentication requirements and the format and status codes of the corresponding responses. \\
 Since the documentation is generated directly from the application source code, it remains synchronized with the API implementation throughout the development process.
 
 An example of GeoMedia backend API documentation is shown in Figure~\ref{fig:swagger_docs}
@@ -226,16 +237,16 @@ An example of GeoMedia backend API documentation is shown in Figure~\ref{fig:swa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{server/Swagger.png}
+    \includegraphics[width=1.0\textwidth]{server/Swagger.png}
     \caption{GeoMedia API documentation example}
     \label{fig:swagger_docs}
 \end{figure}
 
 \subsection{NodeJS HTTP Comparison}
 
-The first version of the GeoMedia backend adopted HTTP native module of NodeJS for the application layer. Although the high performance and event-driven, asynchronous execution model, this solution became increasingly difficult to maintain as the number of API endpoints and application features grew. In specific, the absence of a well-structured framework reduced modularity and created a codebase that was progressively harder to extend.
+The first version of the GeoMedia adopted HTTP native module of NodeJS for the application layer. Although the high performance and event-driven asynchronous execution model, this solution became increasingly difficult to maintain as the number of API endpoints and application features grew. In specific, the absence of a well-structured framework reduced modularity and created a codebase that was progressively harder to extend.
 
-Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework, which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components.
+Compared to FastAPI, Node.JS ecosystem commonly relies on ``Express framework'', which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components.
 
 
 Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
@@ -245,18 +256,15 @@ Therefore, while Express offers greater flexibility and a mature ecosystem, Fast
 
 In order to ensure the privacy, integrity, availability and confidentiality of data, GeoMedia, must adopt some mitigation techniques to prevent cyber-attacks especially because the platform processes user accounts, user-generated content and location-related information.
 
-The security concerns implemented follows a defends in every layer of the application architecture. The complementary adoption of different mechanism consists in secure communication protocols, authentication and authorization and preventing injection attacks.
+The security concerns implemented follows a defends in every layer of the application architecture. The complementary adoption of different mechanism consists in secure communication protocols, authentication and authorization, and finally preventing injection attacks.
 
-Moreover, user privacy is a core principle of GeoMedia. As an open-source application, its codebase allows users to analyse and validate the application's behaviour, as well as inspect how user data is collected, processed, and managed.
-
+Moreover, user privacy is a core principle of GeoMedia. As an open-source application, its codebase allows users to analyse and validate the application's behaviour, as well as inspect how user data is collected, processed and managed.
 
 \subsection{Account Verification}
 
 To ensure the authenticity of account, users, during the registration provide an email address that will be associated to their account. On registration, the backend generates a One-Time Password (OTP) that is sent to the registered email address and must be entered within a limited period of time (imposed to 1 hour). Once successfully verified, the account is verified and user is allowed to utilize the platform.
 
-
-The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address supplied during registration. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure, is mitigated by limiting the number of verification attempts up to five, as implemented in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts has been reached, the account results blocked and user must contact the GeoMedia back-office or proceed with a new account.
-
+The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address supplied during registration. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure is mitigated by limiting the number of verification attempts up to five, as implemented in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts has been reached, the account results blocked and user must contact the GeoMedia back-office or proceed with a new account.
 
 \lstset{
     language=SQL,
@@ -273,50 +281,46 @@ The use of a time-limited OTP provides an additional security layer compared to 
     caption={OTP verification processed by data layer, and brute-force mitigation.},
     label={lst:otp_verification}
 ]
-
 PROCEDURE [dbo].[AUTH_CHECK_OTP] @JSON NVARCHAR(MAX)
 AS BEGIN
-IF EXISTS(
-        SELECT * FROM USERS WHERE USERNAME = JSON_VALUE(@JSON, '$.USERNAME') AND OTPCODE = CAST(JSON_VALUE(@JSON, '$.OTP') AS INT)
-        AND DATEDIFF(hour, OTPDATE, GETDATE())<= 1 --OTP generated within an hour
+    IF EXISTS(
+        SELECT * FROM USERS 
+        WHERE USERNAME = JSON_VALUE(@JSON, '$.USERNAME')
+        AND OTPCODE = CAST(JSON_VALUE(@JSON, '$.OTP') AS INT)
+        AND DATEDIFF(hour, OTPDATE, GETDATE())<= 1 --OTP within an hour
         AND BLOCKED=0 --TO PREVENT OTP BRUTEFORCE
     )
     BEGIN
-        --VERIFY THE PROFILE
+        --VERIFY THE PROFILE AND PROCEED
+        ...
     ELSE
     BEGIN
-          UPDATE USERS
-            SET WRONG_OTP_ATTEMPT=WRONG_OTP_ATTEMPT+1,
-            BLOCKED = IIF(WRONG_OTP_ATTEMPT>4,1,0) -- UP TO 5 ATTEMPTS
-            WHERE USERNAME = JSON_VALUE(@JSON, '$.USERNAME')
-                
+        UPDATE USERS SET WRONG_OTP_ATTEMPT=WRONG_OTP_ATTEMPT+1,
+        BLOCKED = IIF(WRONG_OTP_ATTEMPT>4,1,0) -- UP TO 5 ATTEMPTS
+        WHERE USERNAME = JSON_VALUE(@JSON, '$.USERNAME')
     END
-
 \end{lstlisting}
-
 
 The OTP generation and verification operations are performed in the Data Layer, in this case the server operates just as intermediary for the HTTP requests.
 
 
 \subsection{HTTPs and packet confidentiality}
 \label{sub:http_sec}
-All communication between the client and GeoMedia's backend is performed through HTTPS. HTTPS relies on TLS (Transport Layer Security) to provide confidentiality and integrity for data exchanged between the client and server. This prevents an attacker positioned between the client and the server from trivially observing or modifying authentication requests.\\
+All communication between the client and GeoMedia's backend is performed through HTTPS, which relies on TLS (Transport Layer Security) to provide confidentiality and integrity for data exchanged between the client and server. This prevents an attacker positioned between the client and the server from trivially observing or modifying authentication requests.\\
 
 Finally, the communication process between clients and server, can be summarized as:
-
 \begin{enumerate}
-\item The client establishes a connection with the server and requests a secure TLS connection.
-\item The server provides a digital certificate containing its public key and information about its identity.
-\item The client verifies the certificate against trusted Certificate Authorities (CAs).
-\item During the TLS handshake, the client and server securely establish shared session keys using public-key cryptography.
-\item Once the handshake is completed, the HTTP traffic is encrypted and authenticated using symmetric cryptography and the established session keys.
+    \item The client establishes a connection with the server and requests a secure TLS connection.
+    \item The server provides a digital certificate containing its public key and information about its identity.
+    \item The client verifies the certificate against trusted Certificate Authorities (CAs).
+    \item During the TLS handshake, the client and server securely establish shared session keys using public-key cryptography.
+    \item Once the handshake is completed, the HTTP traffic is encrypted and authenticated using symmetric cryptography and the established session keys.
 \end{enumerate}
 
+%TODO: reference to duck.org and lets encrypt?
 
-As additional security mechanism, GeoMedia, to verify the integrity and authenticity of messages exchanged between trusted components adopt HMAC (Hash-based Message Authentication Code) mechanism.
 
-HMAC combines a cryptographic hash function with a secret key. Despite simple hash, that only provides a digest of the input, HMAC requires knowledge of a shared secret key. The receiver that possess the same secret can verify whether a message was generated by the authorized GeoMedia official application or control if a third part has modified the packet.
-
+As additional security mechanism, GeoMedia, to verify the integrity and authenticity of messages exchanged between trusted components adopt HMAC (Hash-based Message Authentication Code) mechanism, which combines a cryptographic hash function with a secret key. Despite simple hash, that only provides a digest of the input, HMAC requires knowledge of a shared secret key. The receiver that possess the same secret can verify whether a message was generated by the authorized GeoMedia official application or control if a third part has modified the packet.
 
 Consequently, a recipient possessing the same secret can verify whether a message was generated by an authorized party and whether its content has been modified.
 
@@ -327,14 +331,8 @@ Conceptually, an HMAC can be represented as:
 \]
 where \(K\) represents the secret key and \(m\) represents the message.
 
-In particular, GeoMedia generates an HMAC for each request using the URL path, query parameters, a nonce plus a timestamp as the message. The HMAC is computed using a shared secret key known by both the client and the server. The timestamp and nonce are subsequently validated by the server to control the validity of the request and mitigate replay attacks. In this way, a previously captured request cannot be reused indefinitely, as the server can reject requests containing an expired timestamp or an already-used nonce.
-
-
-\subsection{Password handling}
-
-Another cryptographic technique adopted by GeoMedia is the MD5 hash function. Unlike encryption, hashing is a one-way process that transforms an input, such as a password, into a fixed-length digest. 
-In GeoMedia, the MD5 hash is computed by the client mobile application before the password is transmitted to the backend, which store the digest on the server through the data layer.
-
+In particular, GeoMedia generates an HMAC for each request using the URL path, query parameters, a nonce plus a timestamp as the message. The HMAC is computed using a shared secret key known by both the client and the server.\\
+The timestamp and nonce are subsequently validated by the server to control the validity of the request and mitigate replay attacks. In this way, a previously captured request cannot be reused indefinitely, as the server can reject requests containing an expired timestamp (for GeoMedia, 5 minutes from the sending) or an already-used nonce.
 
 \subsection{Password handling}
 
@@ -402,7 +400,7 @@ The value supplied by the user is subsequently bound to the parameter by the dat
 }
 
 \begin{lstlisting}[
-    caption={Request example for SQL Injection.},
+    caption={Example of HTTP request for SQL Injection.},
     label={lst:sqlinj_mal_req}
 ]
 import requests
@@ -412,12 +410,9 @@ requests.delete("https://geomediasrv.duckdns.org:9911/post/1",
 )
 \end{lstlisting}
 
-% Prepared statements therefore represent a primary defense against SQL Injection. However, they should be complemented by additional controls such as input validation, least-privilege database accounts, and appropriate error handling.
-
 
 Another injection attack that targets website and web-application is the cors-site scripting, where an attack submit malicious HTML or JavaScript as part of a content (such as post, profile field, comments etc.). Then, the rendering of the content without appropriate sanitation or encoding, makes the user's device (such as the browser) execute the malicious script.\\
-However, this attack cannot be performed against GeoMedia as the React Native mobile application does not use a WebView component. In fact, the app renders user interface using native platform component translated during building process, while JavaScript code is bundled in binary form. Nevertheless, this attack may be feasible in others mobile framework such as IonicFramework, which was used in the first version of GeoMedia, as parts of the application are executed within a WebView. 
-
+However, this attack cannot be performed against GeoMedia as the React Native mobile application does not use a WebView component. In fact, the app renders user interface using native platform component translated during building process, while JavaScript code is bundled in binary form. Nevertheless, this attack may be feasible in others mobile framework such as Ionic Framework, which was used in the first version of GeoMedia, as parts of the application are executed within a WebView. 
 
 \subsection{Content Moderation and Abuse Prevention}
 
@@ -428,7 +423,7 @@ The moderation process can involve either manual review or automated classificat
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{GeoMedia/Report.png}
+    \includegraphics[width=0.9\textwidth]{GeoMedia/Report.png}
         \caption{Post reporting.}
     \label{fig:post-reporting}
 \end{figure}
@@ -439,14 +434,11 @@ The use of reports from distinct users is important because it reduces the effec
 
 \subsection{GDPR and Privacy Considerations}
 
-Since GeoMedia processes personal data and is operated within the European context, security mechanisms must also be considered in relation to the General Data Protection Regulation (GDPR).
+Since GeoMedia processes personal data and operating within the European context, security mechanisms must also be considered in relation to the General Data Protection Regulation (GDPR).
 
-As Cybersecurity focuses primarily on protecting systems and informations against unauthorized access, alteration and destruction; Privacy, concerns how personal data is collected, processed, stored and shared.
+Cybersecurity and privacy address different aspects of the protection of digital systems and their users. While cybersecurity is concerned with safeguarding systems, networks and data from threats such as unauthorized access, modification or destruction, privacy focuses on ensuring that personal information is collected, processed, stored and disclosed in an appropriate and controlled manner.
 
-GeoMedia apply principles such as data minimization, collecting only necessary information and actuate mechanism such as authentication and encryption thus to respect the confidentiality.
-
-Authentication-related information, security logs and other potentially sensitive data should also be protected against unauthorized access.
-
+GeoMedia adopts privacy-oriented principles such as data minimization, collecting only the information necessary to provide its services. Moreover implements security mechanisms such as authentication and encryption to preserve data confidentiality. Authentication-related information, security logs and other potentially sensitive data are also protected against unauthorized access.
 
 \subsection{Security Summary}
 
@@ -493,5 +485,4 @@ The main security mechanisms adopted by GeoMedia can be summarized in the table~
 \end{table}
 
 
-
-Overall, GeoMedia adopts a layered security model in which preventive, detective, and corrective controls operate together. This approach allows the platform to address both traditional application-level threats, such as SQL Injection and XSS, and threats specific to an Online Social Network, including account abuse, malicious user-generated content, automated reporting, and unauthorized access to protected resources.
+Overall, GeoMedia adopts a layered security model in which preventive, detective and corrective controls operate together. This approach allows the platform to address both traditional application-level threats, such as SQL Injection and threats specific to an Online Social Network, including account abuse, malicious user-generated content, automated reporting or unauthorized access to protected resources.
