@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  25 AUG 2026 16:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  25 AUG 2026 18:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3337,18 +3337,18 @@ Chapter 6.
 [59
 
 ] [60] [61] [62] [63] [64]
-Overfull \hbox (16.60413pt too wide) in paragraph at lines 171--173
+Overfull \hbox (16.60413pt too wide) in paragraph at lines 168--170
 [][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 [65]
-<../images/server/Swagger.png, id=1238, 757.83125pt x 467.7475pt>
+<../images/server/Swagger.png, id=1231, 757.83125pt x 467.7475pt>
 File: ../images/server/Swagger.png Graphic file (type png)
 <use ../images/server/Swagger.png>
-Package pdftex.def Info: ../images/server/Swagger.png  used on input line 232.
+Package pdftex.def Info: ../images/server/Swagger.png  used on input line 229.
 (pdftex.def)             Requested size: 336.60242pt x 207.758pt.
- [66 <build/../images/server/Swagger.png>] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+ [66] [67 <build/../images/server/Swagger.png>] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
@@ -3356,58 +3356,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--307
 <../images/GeoMedia/Report.png, id=1311, 1180.41pt x 847.165pt>
 File: ../images/GeoMedia/Report.png Graphic file (type png)
 <use ../images/GeoMedia/Report.png>
-Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 434.
+Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 431.
 
 (pdftex.def)             Requested size: 336.60242pt x 241.57379pt.
  [73 <build/../images/GeoMedia/Report.png>]
-Overfull \hbox (7.7298pt too wide) in paragraph at lines 462--494
+Overfull \hbox (7.7298pt too wide) in paragraph at lines 459--491
  [][] 
  []
 
-) (./chapters/data_layer.tex [74]
+[74]) (./chapters/data_layer.tex [75]
 Chapter 7.
-[75
+[76
 
 ]
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
  input line 42.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1331, page=1, 343.6589pt x 270.6361
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1335, page=1, 343.6589pt x 270.6361
 pt>
 File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf , page1 used on
  input line 56.
 (pdftex.def)             Requested size: 297.0pt x 233.89052pt.
-) [76] [77 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [78] [79]
+) [77] [78 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [79] [80]
 Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-[80] [81] [82] [83] [84] [85] [86]) (./chapters/conclusions.tex [87]
+[81] [82] [83] [84] [85] [86] [87]) (./chapters/conclusions.tex [88]
 Chapter 8.
-[88
+[89
 
-] [89] [90] [91]
-<../images/QRCODE_GEOMEDIA.png, id=1642, 116.435pt x 116.435pt>
+] [90] [91] [92]
+<../images/QRCODE_GEOMEDIA.png, id=1646, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 60.
 (pdftex.def)             Requested size: 138.60242pt x 138.61621pt.
- [92 <build/../images/QRCODE_GEOMEDIA.png>])
-(./preface/acknowledgements.tex [93]
+ [93 <build/../images/QRCODE_GEOMEDIA.png>])
+(./preface/acknowledgements.tex [94]
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-) [94
+) [95
 
-] (build/thesis.acr) (build/thesis.gls [95
+] (build/thesis.acr) (build/thesis.gls [96
 
 
 
 ]) (./appendix/bibliography.tex
-[96
+[97
 
 
 ]
@@ -3454,7 +3454,7 @@ Package biblatex Warning: No driver for 'paper'.
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[97
+[98
 
 
 ]
@@ -3501,14 +3501,14 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[98] [99] [100] [101]
+[99] [100] [101] [102]
 Overfull \hbox (2.93666pt too wide) in paragraph at lines 13--13
 []\T1/cmr/m/n/10.95 (-20) Meta Open Source. \T1/cmr/m/it/10.95 (-20) Re-act Na-
 tive of-fi-cial page. \T1/cmr/m/n/10.95 (-20) 2015. \T1/cmr/m/sc/10.95 (-20) ur
 l\T1/cmr/m/n/10.95 (-20) : [][]$\T1/cmtt/m/n/10.95 https : / / reactnative .
  []
 
-[102] [103]) [104] (build/thesis.aux)
+[103] [104]) [105] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3522,10 +3522,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 45836 strings out of 469431
- 847689 string characters out of 5468909
- 2135137 words of memory out of 5000000
- 72567 multiletter control sequences out of 15000+600000
+ 45838 strings out of 469431
+ 847712 string characters out of 5468909
+ 2135131 words of memory out of 5000000
+ 72568 multiletter control sequences out of 15000+600000
  665282 words of font info for 247 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,13n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3552,10 +3552,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 t1095.pfb>
-Output written on build/thesis.pdf (114 pages, 14334161 bytes).
+Output written on build/thesis.pdf (115 pages, 14334759 bytes).
 PDF statistics:
- 2415 PDF objects out of 2487 (max. 8388607)
- 2103 compressed objects within 22 object streams
- 857 named destinations out of 1000 (max. 500000)
+ 2420 PDF objects out of 2487 (max. 8388607)
+ 2107 compressed objects within 22 object streams
+ 858 named destinations out of 1000 (max. 500000)
  61669 words of extra memory for PDF output out of 61914 (max. 10000000)
 

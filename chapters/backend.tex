@@ -1,23 +1,20 @@
-\chapter{Geomedia Backend}
+\chapter{Backend}
 \label{cap:backend}
 
-The application layer consists of an HTTPS server responsible for implementing the platform's business logic and handling requests from client applications, namely the mobile application. The main role is to process user requests and provide the required functionalities, such as content retrieval, content uploading or authentication, but also implement core operations for GeoMedia such as the restrictions of post visible from user position by implementing the Haversine Formula.\ref{haversine_formula}
-
+The application layer consists of an HTTP-RESTful server responsible for implementing the platform's business logic and handling requests from mobile clients application. The main role is to process user requests and provide the required functionalities, such as content retrieval, content uploading or authentication, but also implement core operations for GeoMedia such as the restrictions of post visible from user position by implementing the previously mentioned Haversine Formula.\ref{haversine_formula}
 Furthermore, this layer acts as virtual bridge between the mobile application and the data layer, as previously introduced in the Chapter~\ref{cap:architecture}.\\
-However, as previously mentioned, this design follows a monolithic architecture, in which the HTTPS server operates as a single, self-contained unit responsible for handling all application functionalities and requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. To improve performance, scalability, maintainability, and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
+However, as previously mentioned, this design follows a monolithic architecture, in which the HTTP server operates as a single, self-contained unit responsible for handling all application functionalities and client requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. To improve performance, scalability, maintainability and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
 
-
-To implement the backend of the GeoMedia platform, the Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (known as Swagger). 
-
+To implement the backend of the GeoMedia platform, the Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (namely known as ``Swagger''). 
 
 \section{REST Server}
 \label{sec:rest_server}
 
 A REST server is a software application that implements the HTTP/HTTPS protocol and continuously listens for incoming client requests. It exposes one or more RESTful endpoints through which clients can interact with the services offered by the application.
+A RESTful API follows the principles of Representational State Transfer (REST), where application resources are identified by unique URLs and manipulated through standard HTTP methods. Common methods include \texttt{GET} for retrieving resources, \texttt{POST} for creating new resources, \texttt{PUT} or \texttt{PATCH} for updating existing resources and \texttt{DELETE} for removing them. This approach provides a standardized and stateless mechanism for communication between clients and the server.
+Finally, the server listens for HTTP or HTTPS requests on a configurable network port. A network port is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
 
-More specifically, the server listens for HTTP or HTTPS requests on a configurable network port. A network port is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
-
-For each server or simply, computer, the port numbers range start from \texttt{0} to \texttt{65'535} and are conventionally divided into three categories:
+For each servers or simply, computers, the port numbers range start from \texttt{0} to \texttt{65'535} and are conventionally divided into three categories:
 \begin{itemize}
     \item \textbf{Well-known ports (0--1023)}: Reserved for standard services and protocols, such as SMTP (port 25, mail protocol), HTTP (port 80), HTTPS (port 443) or SSH (port 22, remote connection).
     \item \textbf{Registered ports (1024--49'151)}: Assigned to specific applications and services, although they may also be used by custom applications.
