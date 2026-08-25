@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  25 AUG 2026 23:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  26 AUG 2026 00:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3371,7 +3371,7 @@ Chapter 7.
 
 ]
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
- input line 42.
+ input line 38.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1341, page=1, 343.6589pt x 270.6361
 pt>
@@ -3381,7 +3381,7 @@ Package pdftex.def Info: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf , page1 used on
  input line 56.
 (pdftex.def)             Requested size: 297.0pt x 233.89052pt.
 ) [77] [78 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
@@ -3553,7 +3553,7 @@ re/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 t1095.pfb>
-Output written on build/thesis.pdf (115 pages, 14336223 bytes).
+Output written on build/thesis.pdf (115 pages, 14336159 bytes).
 PDF statistics:
  2426 PDF objects out of 2487 (max. 8388607)
  2113 compressed objects within 22 object streams

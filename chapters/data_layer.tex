@@ -1,21 +1,17 @@
 \chapter{Data Layer}
 \label{cap:datalayer}
 
-The Data Layer, also referred as Data Access Layer (DAL) represent the access and handling to data from one or more source such as different relational database, NoSQL database, file systems or others persistent storage.
+The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represent the access and handling to data from one or more source such as different relational database, NoSQL database, file systems or others persistent storage.
 
-Data Layer commonly used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
+This layer commonly used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
 
+For GeoMedia, the persistence layer is implemented using a Relational Database Management System (RDBMS), that represent the most common and well-established approach for the structured management, storage, and retrieval of data. The RDBMS organizes information into logically related tables composed of rows and columns, while providing mechanisms for defining relationships, enforcing data integrity and efficiently executing complex queries and update operations through Structured Query Language (SQL) instructions.
 
-For GeoMedia, the data layer is implemented using a Relational Database Management System (RDBMS), that represent the most common and well-established approach for the structured management, storage and retrieval of data. The RDBMS organizes information into logically related tables composed of rows and columns, while providing mechanisms for defining relationships, enforcing data integrity and efficiently executing complex queries and update operations through Structured Query Language (SQL) instructions.
+Microsoft SQL Server (MSSQL) has been adopted and implemented as the underlying relational database management system due to its robustness, scalability and comprehensive support for enterprise-level data management. In addition to standard relational database capabilities, SQL Server provides advanced mechanisms for transaction management, data indexing and performance optimization.
 
-For the implementation of GeoMedia, Microsoft SQL Server (MSSQL) has been selected as the underlying relational database management system due to its robustness, scalability, and comprehensive support for enterprise-level data management. In addition to standard relational database capabilities, SQL Server provides advanced mechanisms for transaction management, data indexing and performance optimization.
-
-
-MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance, and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as discussed in the microservices section (Figure \ref{fig:UML-arch-micro}), or the system can be migrated to the Standard edition by acquiring the appropriate license.
+MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as discussed in the microservices section (Figure~\ref{fig:UML-arch-micro}), or the system can be migrated to the Standard edition by acquiring the appropriate license.
 
 \section{Database}
-
-The database designed for the application follows some well known concepts such as
 
 The database schema designed for the GeoMedia framework follows established relational database design principles, with particular attention to normalization, data integrity, and the appropriate definition of relationships between entities.
 Specifically, the main principles adopted during the design are:
