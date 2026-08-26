@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  26 AUG 2026 00:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  26 AUG 2026 11:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3371,7 +3371,7 @@ Chapter 7.
 
 ]
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
- input line 38.
+ input line 36.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1341, page=1, 343.6589pt x 270.6361
 pt>
@@ -3381,34 +3381,34 @@ Package pdftex.def Info: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf , page1 used on
  input line 56.
 (pdftex.def)             Requested size: 297.0pt x 233.89052pt.
 ) [77] [78 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-[81] [82] [83] [84] [85] [86] [87]) (./chapters/conclusions.tex [88]
+[81] [82] [83] [84] [85]) (./chapters/conclusions.tex [86]
 Chapter 8.
-[89
+[87
 
-] [90] [91] [92]
-<../images/QRCODE_GEOMEDIA.png, id=1652, 116.435pt x 116.435pt>
+] [88] [89] [90]
+<../images/QRCODE_GEOMEDIA.png, id=1597, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 60.
 (pdftex.def)             Requested size: 138.60242pt x 138.61621pt.
- [93 <build/../images/QRCODE_GEOMEDIA.png>])
-(./preface/acknowledgements.tex [94]
+ [91 <build/../images/QRCODE_GEOMEDIA.png>])
+(./preface/acknowledgements.tex [92]
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-) [95
+) [93
 
-] (build/thesis.acr) (build/thesis.gls [96
+] (build/thesis.acr) (build/thesis.gls [94
 
 
 
 ]) (./appendix/bibliography.tex
-[97
+[95
 
 
 ]
@@ -3455,7 +3455,7 @@ Package biblatex Warning: No driver for 'paper'.
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[98
+[96
 
 
 ]
@@ -3502,14 +3502,14 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[99] [100] [101] [102]
+[97] [98] [99] [100]
 Overfull \hbox (2.93666pt too wide) in paragraph at lines 13--13
 []\T1/cmr/m/n/10.95 (-20) Meta Open Source. \T1/cmr/m/it/10.95 (-20) Re-act Na-
 tive of-fi-cial page. \T1/cmr/m/n/10.95 (-20) 2015. \T1/cmr/m/sc/10.95 (-20) ur
 l\T1/cmr/m/n/10.95 (-20) : [][]$\T1/cmtt/m/n/10.95 https : / / reactnative .
  []
 
-[103] [104]) [105] (build/thesis.aux)
+[101] [102]) [103] (build/thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3523,10 +3523,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 46866 strings out of 469431
- 866165 string characters out of 5468909
- 2149155 words of memory out of 5000000
- 73590 multiletter control sequences out of 15000+600000
+ 46805 strings out of 469431
+ 865120 string characters out of 5468909
+ 2149765 words of memory out of 5000000
+ 73578 multiletter control sequences out of 15000+600000
  665282 words of font info for 247 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,13n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3553,10 +3553,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sft
 t1095.pfb>
-Output written on build/thesis.pdf (115 pages, 14336159 bytes).
+Output written on build/thesis.pdf (113 pages, 14328956 bytes).
 PDF statistics:
- 2426 PDF objects out of 2487 (max. 8388607)
- 2113 compressed objects within 22 object streams
- 864 named destinations out of 1000 (max. 500000)
+ 2360 PDF objects out of 2487 (max. 8388607)
+ 2050 compressed objects within 21 object streams
+ 815 named destinations out of 1000 (max. 500000)
  61669 words of extra memory for PDF output out of 61914 (max. 10000000)
 

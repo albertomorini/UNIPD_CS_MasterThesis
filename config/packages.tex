@@ -135,7 +135,7 @@
         const, let, var, if, else, return, true, false, null,
         import, from, export, default, async, await,
         function, class, extends, new, this, ref,
-        map
+        map, for, foreach, map, filter
     },
     sensitive=true,
     morecomment=[l]{//},
@@ -199,7 +199,8 @@
     morekeywords={
         SELECT, FROM, WHERE, INSERT, INTO, VALUES,
         UPDATE, SET, DELETE, CREATE, TABLE, AND, OR,
-        NULL, JOIN, ON, AS, ORDER, BY, GROUP, PROCEDURE, BEGIN, IF, EXISTS, ELSE, END
+        NULL, JOIN, ON, AS, ORDER, BY, GROUP, PROCEDURE, BEGIN, IF, EXISTS, ELSE, END, CONSTRAINT, FOREIGN, KEY, REFERENCES, DECLARE, EXEC,
+        WITH, CROSS APPLY, OPENJSON, DATEFROMPARTS
     },
     sensitive=false,
     morecomment=[l]{--},
@@ -217,4 +218,31 @@
     frame=single,
     breaklines=true,
     captionpos=b
+}
+
+% PYTHON
+\lstdefinelanguage{Python}{
+    morekeywords={
+        and, as, assert, async, await, break, case, class, continue,
+        def, del, elif, else, except, finally, for, from, global,
+        if, import, in, is, lambda, match, nonlocal, not, or, pass,
+        raise, return, try, while, with, yield,
+        True, False, None
+    },
+    sensitive=true,
+    morecomment=[l]{\#},
+    morestring=[b]',
+    morestring=[b]"
+}
+% shell
+
+\lstdefinelanguage{Shell}{
+    morekeywords={
+        if, then, else, elif, fi, for, while, do, done,
+        case, esac, in, function, select, time, docker, 
+    },
+    sensitive=true,
+    morecomment=[l]{\#},
+    morestring=[b]',
+    morestring=[b]"
 }

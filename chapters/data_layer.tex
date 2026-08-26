@@ -1,30 +1,28 @@
 \chapter{Data Layer}
 \label{cap:datalayer}
 
-The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represent the access and handling to data from one or more source such as different relational database, NoSQL database, file systems or others persistent storage.
-
-This layer commonly used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
+The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represent the access and handling to data from one or more source such as different relational database, NoSQL database, file systems or others persistent storage. This layer is commonly used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
 
 For GeoMedia, the persistence layer is implemented using a Relational Database Management System (RDBMS), that represent the most common and well-established approach for the structured management, storage, and retrieval of data. The RDBMS organizes information into logically related tables composed of rows and columns, while providing mechanisms for defining relationships, enforcing data integrity and efficiently executing complex queries and update operations through Structured Query Language (SQL) instructions.
 
 Microsoft SQL Server (MSSQL) has been adopted and implemented as the underlying relational database management system due to its robustness, scalability and comprehensive support for enterprise-level data management. In addition to standard relational database capabilities, SQL Server provides advanced mechanisms for transaction management, data indexing and performance optimization.
 
-MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as discussed in the microservices section (Figure~\ref{fig:UML-arch-micro}), or the system can be migrated to the Standard edition by acquiring the appropriate license.
+MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as presented in the previously Figure ~\ref{fig:UML-arch-micro}, or the system can be migrated to the Standard edition by acquiring the appropriate license.
 
 \section{Database}
 
-The database schema designed for the GeoMedia framework follows established relational database design principles, with particular attention to normalization, data integrity, and the appropriate definition of relationships between entities.
+The database schema designed for the GeoMedia framework follows established relational database design principles, with particular attention to normalization, data integrity, and the appropriate definition of relationships between entities. \\
 Specifically, the main principles adopted during the design are:
 
 \begin{itemize}
 
-    \item \textbf{Normalization}: the database schema is structured to minimize data redundancy and prevent insertion, update, and deletion anomalies, while maintaining clear relationships between entities.
+    \item \textbf{Normalization}: the database schema is structured to minimize data redundancy and prevent insertion, update and anomalies avoidance, while maintaining clear relationships between entities.
 
     \item \textbf{Referential integrity}: primary and foreign key constraints are used to ensure that relationships between related entities remain consistent and that references to non-existent records are avoided.
 
-    \item \textbf{ACID properties}: database transactions follow the principles of Atomicity, Consistency, Isolation, and Durability, ensuring that operations are executed reliably and that the database remains in a valid state.
+    \item \textbf{ACID properties}: database transactions follow the principles of Atomicity, Consistency, Isolation and Durability, ensuring that operations are executed reliably and that the database remains in a valid state.
 
-    \item \textbf{Data integrity and consistency}: constraints such as \texttt{NOT NULL}, \texttt{UNIQUE}, and \texttt{CHECK} are employed where appropriate to prevent invalid or inconsistent data from being stored.
+    \item \textbf{Data integrity and consistency}: constraints such as \texttt{NOT NULL}, \texttt{UNIQUE}, and \texttt{CHECK} are applied thus to prevent invalid or inconsistent data from being stored.
 
 \end{itemize}
 
@@ -46,15 +44,55 @@ The entities individuated are:
     \item \textbf{Posts}: storing post information and then representing the core entity for integration and references.
     \item \textbf{Collections}: that works as containers for posts, dictating logic properties on posts and allowing special features (e.g. sequential posts).
     \item \textbf{Hypermedia}: operates as register with path of hypermedia stored by server layer in the file system.
-    \item \textbf{Interactions}: used to store the user interaction with posts (actually just ``like'' reactions) and marks the view, used both for view counter and managing post sequentiality features. The table is also a starting point for comment extension.
-    \item \textbf{Reports}: store the report raised by users referenced to posts and then enable the moderation process of the platform.
+    \item \textbf{Interactions}: used to store the user interaction with posts (actually just `like' reactions) and marks the view, used both for view counter and managing post sequentiality features. The table is also a starting point for comments extension.
+    \item \textbf{Reports}: store the report raised by users referenced to posts and then enable the posts moderation process.
     \item \textbf{Topics}: works as a container of interests that will be seen by GeoMedia application in form of hashtags. Moreover, these can be associated both to collections than to the user.
-    \item \textbf{Interests}: that works as register to link users to their topic saved.
+    \item \textbf{Interests}: that works as register to link users to their topic of interest.
 \end{itemize}
 
 
-In order to ensure the separation of GeoMedia's data from other databases hosted on the same database server, a dedicated database is created for the application using the \texttt{CREATE DATABASE GEOMEDIA} instruction. The database contains all the tables required to store the application's data, together with the corresponding stored procedures and functions. 
-Through stored procedures (precompiled SQL routines), data can be manipulated through more complex operations, while business logic can be encapsulated within the database. This approach improves the maintainability and extensibility of the system, while potentially improving performance by reducing the amount of data processing required at the application level. Finally, the stored procedures provide the results whenever requested by the server, as an example shown in Listing~\ref{lst:db_sql_merge} which deals with storing the topic of interest (in term of hashtags) of a users; specifically, the procedure execute a merge query operation, that basically performs an \texttt{insert} (creation) whenever the record do not exists, otherwise process an update by matching with key attributes.
+In order to ensure the separation of GeoMedia's data from other databases hosted on the same database server, a dedicated database is created for the application using the \texttt{CREATE DATABASE GEOMEDIA} instruction. The database contains all the tables required to store the application's data, as example the table \textit{POSTS} as shown in the Listing~\ref{lst:db_post_table}.
+
+\lstset{
+    language=SQL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}[
+    caption={SQL definition of the Posts table.},
+    label={lst:db_post_table}
+]
+CREATE TABLE GEOMEDIA.dbo.POSTS (
+	ID int IDENTITY PRIMARY KEY,
+	AUTHOR_ID int NOT NULL, -- author of post
+	TITLE varchar(50) NOT NULL, --title of the post
+	COMMENT varchar(MAX) NULL,
+	DC datetime NOT NULL,
+	DM datetime DEFAULT getdate() NOT NULL,
+	LATITUDE float NOT NULL, --latitude coordinate
+	LONGITUDE float NOT NULL, --longitude coordinate
+	ALTITUDE float NOT NULL, -- altitude for future developments
+	VISIBILITY_AREA_KM float NOT NULL, -- visibility range
+	EXCL_DATE_START datetime NULL, --exclusivity time start
+	EXCL_DATE_END datetime NULL, --exclusivity time end
+	RECURRENT int NULL, -- (0 = no reccurent, 1 = monthly, 2 = yearly)
+	COLLECTION_ID int, 
+	VIEWERS nvarchar(MAX) NULL, -- exclusivity viewers
+    CONSTRAINT FK_POSTS_AUTHOR_ID FOREIGN KEY (AUTHOR_ID) REFERENCES GEOMEDIA.dbo.USERS(ID);
+    CONSTRAINT FK_POSTS_COLLECTION FOREIGN KEY (COLLECTION_ID) REFERENCES GEOMEDIA.dbo.COLLECTIONS(ID);
+);
+\end{lstlisting}
+
+The RDBMS aside tables and views (virtual tables based on predefined queries), contains several functions and stored procedures (precompiled SQL routines), that manipulate data through complex operations, encapsulating the business logic within the database. This approach improves the maintainability and extensibility of the system, while potentially improving performance by reducing the amount of data processing required at the application level. Finally, the stored procedures provide the results whenever requested by the server, 
+as an example is shown in Listing~\ref{lst:db_sql_merge}, which implements the synchronization of a user's interests, represented as hashtags. The procedure receives the user identifier and a JSON object containing the desired interests. The JSON data is first parsed using \texttt{OPENJSON} and stored in a temporary table variable. The stored procedure then removes existing interests that are no longer present in the provided set, creates missing hashtags and associates them with the user while preventing duplicate relationships through \texttt{NOT EXISTS} checks. Finally, the procedure invokes \texttt{PROFILE\_INTEREST\_GET} to retrieve the updated list of interests.
+
+This operation therefore implements merge-like behaviour: existing records are preserved when they are still present in the input, missing records are created and obsolete associations are removed.
 
 \lstset{
     language=SQL,
@@ -75,7 +113,6 @@ CREATE PROCEDURE [dbo].[PROFILE_INTEREST_MERGE]
 @UID INT, @JSON NVARCHAR(MAX)
 AS
 BEGIN
-    
     DECLARE @TABLE TABLE (
         VAL VARCHAR(200),
         ENTITY VARCHAR(200)
@@ -95,14 +132,13 @@ BEGIN
         INNER JOIN HASHTAGS HT ON HT.TITLE = T.VAL AND T.ENTITY = 'HASHTAG'
         WHERE HT.ID = EXTERNAL_REF AND ENTITY = T.ENTITY
     )
-    --- CREATE HASHTAG IF NOT EXISTS
+    -- CREATE HASHTAG IF NOT EXISTS
     INSERT INTO HASHTAGS (TITLE, DC, UC)
     SELECT T.VAL, GETDATE(), @UID
     FROM @TABLE T
     WHERE T.ENTITY = 'HASHTAG' AND NOT EXISTS(SELECT * FROM HASHTAGS WHERE TITLE = T.VAL )
     -- INSERT HASHTAG ON INTERESTS
     INSERT INTO INTERESTS ([USER_ID], EXTERNAL_REF,ENTITY)
-    -- SELECT @UID, ISNULL(HT.ID,COLLETION.ID--> TO DO WITH CASE WHEN), T.ENTITY
     SELECT @UID, HT.ID, T.ENTITY
     FROM @TABLE T INNER JOIN HASHTAGS HT ON HT.TITLE = T.VAL
     WHERE NOT EXISTS (
@@ -118,65 +154,17 @@ END;
 \end{lstlisting}
 
 
-
-
-Instead for example of database structure, the SQL definition of the \textit{Posts} table is shown in Listing~\ref{lst:db_post_table}.
-
-
-\lstset{
-    language=SQL,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\color{red},
-    commentstyle=\color{green!60!black},
-    stringstyle=\color{red},
-    showstringspaces=false,
-    frame=single,
-    breaklines=true
-}
-
-\begin{lstlisting}[
-    caption={SQL definition of the Posts table.},
-    label={lst:db_post_table}
-]
-
-CREATE TABLE GEOMEDIA.dbo.POSTS (
-	ID int IDENTITY(1, 1) NOT NULL,
-	AUTHOR_ID int NOT NULL, -- author of post
-	TITLE varchar(50) NOT NULL, --title of the post
-	COMMENT varchar(MAX) NULL,
-	DC datetime NULL,
-	DM datetime DEFAULT getdate() NULL,
-	LATITUDE float NULL, --latitude coordinate
-	LONGITUDE float NULL, --longitude coordinate
-	ALTITUDE float NULL, -- altitude for future developments
-	VISIBILITY_AREA_KM float, -- visibility range
-	EXCL_DATE_START datetime NULL, --exclusivity time start
-	EXCL_DATE_END datetime NULL, --exclusivity time end
-	RECURRENT int NULL, -- recurrency (0 = no reccurent, 1 = monthly, 2 = yearly)
-	COLLECTION_ID int, 
-	VIEWERS nvarchar(MAX) NULL, -- exclusivity viewers
-	CONSTRAINT PK__POSTS__3214EC27ECDD25A2 PRIMARY KEY (ID),
-    CONSTRAINT FK__POSTS__AUTHOR_ID__4F7CD00D FOREIGN KEY (AUTHOR_ID) REFERENCES GEOMEDIA.dbo.USERS(ID);
-    CONSTRAINT FK__POSTS__AUTHOR_ID__7C4F7684 FOREIGN KEY (AUTHOR_ID) REFERENCES GEOMEDIA.dbo.USERS(ID);
-    CONSTRAINT FK__POSTS__COLLECTIO__7D439ABD FOREIGN KEY (COLLECTION_ID) REFERENCES GEOMEDIA.dbo.COLLECTIONS(ID);
-);
-
-\end{lstlisting}
-
-
 \section{Sequential post implementation}
 
-The algorithm responsible for managing post sequentiality is implemented in the stored procedure \texttt{POST\_GET\_MAP}. The procedure is responsible for retrieving the posts available to the requesting user, applying the visibility and temporal constraints defined by the application and finally determining the appropriate order of sequential posts. Meanwhile, the radius-based area filter is performed by the backend, as described in Section~\ref{haversine_formula}, on the dataset returned by the stored procedure. \\
+The algorithm responsible for managing post sequentiality is implemented in the stored procedure \texttt{POST\_GET\_MAP}. The procedure is responsible for retrieving the posts available to the requesting user, applying the visibility and temporal constraints defined by the application and finally determining the appropriate order of sequential posts. Meanwhile, the radius-based area filter is performed by the backend on the dataset returned by the stored procedure, as previously described in Section~\ref{haversine_formula}. \\
 
 In particular, the procedure handles sequential posts by identifying the first post in the defined sequence that has not yet been viewed by the requesting user, allowing the framework to progressively expose posts according the sequence defined in the respective collections selected by user. \\
 The sequentiality logic is implemented through a CTE (Common Table Expression), that extracts the ordering information associated with collections from \texttt{SEQUENTIALS} field stored in JSON format, then applying the SQL Server built-in function \texttt{OPENJSON} parse the structure in form of table with corresponding  \texttt{order\_id} and \texttt{post\_id} values. \\
-The orders values are stored temporarily in the \texttt{@SEQQ} table variable, subsequently used to associate each posts with its position within the sequence. INstead, a second CTE \texttt{NEXTPOST} identifies the first post in the sequence that has not yet been viewed by the requesting users. \\
-This is achieved by comparing the posts associated with the collections against the records stored in the \texttt{INTERACTIONS} table, where the value \texttt{VIEW} in field \texttt{SCOPE} marks the post as seen by the user. \\
+The orders values are stored temporarily in the \texttt{@SEQQ} table variable, subsequently used to associate each posts with its position within the sequence. Instead, a second CTE \texttt{NEXTPOST} identifies the first post in the sequence that has not yet been viewed by the requesting users. This is achieved by comparing the posts associated with the collections against the records stored in the \texttt{INTERACTIONS} table, where the value \texttt{VIEW} in field \texttt{SCOPE} marks the post as seen by the user. \\
 The results are ordered according to the sequential \texttt{order\_id}, ensuring that the next available post is selected according to the sequence defined by collection owner.
-Finally, the procedure combines the next post to be displayed of respective collections with sequentiality enabled, and posts that are not associated with a sequence. Additional filters are applied to respect account visibility (both post than collection), temporal restrictions and respective recurrence rules.
+Finally, the procedure combines the next post to be displayed of respective collections with sequentiality enabled, and posts that are not associated with a sequence. Additional filters are applied to respect account visibility (both singular post as collection), temporal restrictions and respective recurrence rules.
 
 The implementation of this logic is shown in Listing~\ref{lst:db_sp_post_seq}.
-
 
 \lstset{
     language=SQL,
@@ -234,64 +222,63 @@ BEGIN
         SELECT P.ID, P.AUTHOR_ID, P.TITLE, P.COMMENT, P.DC, P.DM, P.LATITUDE, P.LONGITUDE, P.VISIBILITY_AREA_KM, P.EXCL_DATE_START, P.EXCL_DATE_END, P.RECURRENT, P.COLLECTION_ID, P.VIEWERS, P.order_id, P.post_id, C.COLOR, C.ICON, C.TITLE AS CATEGORY_NAME
         FROM NEXTPOST P
     INNER JOIN COLLECTIONS C ON C.ID = P.COLLECTION_ID
-    UNION
-    --- UNION WITH POST WITHOUT SEQUENCE
-    SELECT P.ID, P.AUTHOR_ID, P.TITLE, P.COMMENT, P.DC, P.DM, P.LATITUDE, P.LONGITUDE, P.VISIBILITY_AREA_KM, P.EXCL_DATE_START, P.EXCL_DATE_END, P.RECURRENT, P.COLLECTION_ID, P.VIEWERS, NULL AS order_id, NULL AS post_id, C.COLOR, C.ICON, C.TITLE AS CATEGORY_NAME
-    FROM POSTS P
-    INNER JOIN COLLECTIONS C ON C.ID = P.COLLECTION_ID
-    AND (
-        --COLLECTION TIME LIMITING CHECK
-            (C.RECURRENT IS NULL and (GETDATE()> ISNULL(C.EXCL_DATE_START, DATEADD(DAY,-1, GETDATE()))
-                OR GETDATE() < ISNULL(C.EXCL_DATE_END, DATEADD(DAY, 1, GETDATE())))
-            )
-        -- NO C.RECURRENTCY
-            OR  (C.RECURRENT = 1 AND (DAY(GETDATE()) BETWEEN DAY(C.EXCL_DATE_START) AND DAY(C.EXCL_DATE_START))) --EACH DAYS, IGNORING MONTHS
-                OR (C.RECURRENT = 2 AND  (DATEFROMPARTS(2000, MONTH(GETDATE()), DAY(GETDATE())) BETWEEN DATEFROMPARTS(2000, MONTH(C.EXCL_DATE_START), DAY(C.EXCL_DATE_START))
-                    AND DATEFROMPARTS(2000, MONTH(C.EXCL_DATE_END), DAY(C.EXCL_DATE_END)))
-            ) -- EVERY YEAR, SAME DAYS SAME MONTH
-        )
-    WHERE C.SEQUENTIALS IS NULL -- NO SEQUENTIALITY INDICATED (GENERAL  POSTS)
-        AND ( P.VIEWERS IS NULL OR P.VIEWERS = '[]' OR @UID IN (
-            SELECT VALUE FROM OPENJSON(P.VIEWERS, '$'))
-            AND
-            (
-                (P.RECURRENT IS NULL
-                    and (GETDATE()> ISNULL(P.EXCL_DATE_START, DATEADD(DAY,-1, GETDATE()))
-                        OR GETDATE() < ISNULL(P.EXCL_DATE_END, DATEADD(DAY, 1, GETDATE())))
-                    --IF NULL, MAKE IT FROM YESTERDAY TILL TOMORROW
-                )
-                -- NO P.RECURRENTCY
-                    OR 
-                (P.RECURRENT = 1 AND (DAY(GETDATE()) BETWEEN DAY(P.EXCL_DATE_START) AND DAY(P.EXCL_DATE_START))) --EACH DAYS, IGNORING MONTHS
-                    OR (P.RECURRENT = 2 AND 
-                    (DATEFROMPARTS(2000, MONTH(GETDATE()), DAY(GETDATE())) BETWEEN DATEFROMPARTS(2000, MONTH(P.EXCL_DATE_START), DAY(P.EXCL_DATE_START))
-                    AND DATEFROMPARTS(2000, MONTH(P.EXCL_DATE_END), DAY(P.EXCL_DATE_END)))
-                )
-                -- EVERY YEAR, SAME DAYS SAME MONTH
-            ) AND ( @UID IN (
-                    --CHECK IF THE USER REQUESTING IS ENABLED TO THAT CATEGORY
-                    SELECT VALUE FROM OPENJSON(C.VIEWERS, '$')
-                ) OR C.VIEWERS = '[]'
-            )
-        )
-        AND C.ID IN ( SELECT VALUE FROM OPENJSON(@COLLECTIONS_CHOSEN, '$'))
-        -- NB: THE VISIBILITY_AREA_KM FILTER IS MADE ON BACKEND OF THE SERVER
-END;
+    UNION --- UNION WITH POST WITHOUT SEQUENCE
+    ...
+    
+    END;
 \end{lstlisting}
-
+% SELECT P.ID, P.AUTHOR_ID, P.TITLE, P.COMMENT, P.DC, P.DM, P.LATITUDE, P.LONGITUDE, P.VISIBILITY_AREA_KM, P.EXCL_DATE_START, P.EXCL_DATE_END, P.RECURRENT, P.COLLECTION_ID, P.VIEWERS, NULL AS order_id, NULL AS post_id, C.COLOR, C.ICON, C.TITLE AS CATEGORY_NAME
+% FROM POSTS P
+% INNER JOIN COLLECTIONS C ON C.ID = P.COLLECTION_ID
+% AND (
+%     --COLLECTION TIME LIMITING CHECK
+%         (C.RECURRENT IS NULL and (GETDATE()> ISNULL(C.EXCL_DATE_START, DATEADD(DAY,-1, GETDATE()))
+%             OR GETDATE() < ISNULL(C.EXCL_DATE_END, DATEADD(DAY, 1, GETDATE())))
+%         )
+%     -- NO C.RECURRENTCY
+%         OR  (C.RECURRENT = 1 AND (DAY(GETDATE()) BETWEEN DAY(C.EXCL_DATE_START) AND DAY(C.EXCL_DATE_START))) --EACH DAYS, IGNORING MONTHS
+%             OR (C.RECURRENT = 2 AND  (DATEFROMPARTS(2000, MONTH(GETDATE()), DAY(GETDATE())) BETWEEN DATEFROMPARTS(2000, MONTH(C.EXCL_DATE_START), DAY(C.EXCL_DATE_START))
+%                 AND DATEFROMPARTS(2000, MONTH(C.EXCL_DATE_END), DAY(C.EXCL_DATE_END)))
+%         ) -- EVERY YEAR, SAME DAYS SAME MONTH
+%     )
+% WHERE C.SEQUENTIALS IS NULL -- NO SEQUENTIALITY INDICATED (GENERAL  POSTS)
+%     AND ( P.VIEWERS IS NULL OR P.VIEWERS = '[]' OR @UID IN (
+%         SELECT VALUE FROM OPENJSON(P.VIEWERS, '$'))
+%         AND
+%         (
+%             (P.RECURRENT IS NULL
+%                 and (GETDATE()> ISNULL(P.EXCL_DATE_START, DATEADD(DAY,-1, GETDATE()))
+%                     OR GETDATE() < ISNULL(P.EXCL_DATE_END, DATEADD(DAY, 1, GETDATE())))
+%                 --IF NULL, MAKE IT FROM YESTERDAY TILL TOMORROW
+%             )
+%             -- NO P.RECURRENTCY
+%                 OR 
+%             (P.RECURRENT = 1 AND (DAY(GETDATE()) BETWEEN DAY(P.EXCL_DATE_START) AND DAY(P.EXCL_DATE_START))) --EACH DAYS, IGNORING MONTHS
+%                 OR (P.RECURRENT = 2 AND 
+%                 (DATEFROMPARTS(2000, MONTH(GETDATE()), DAY(GETDATE())) BETWEEN DATEFROMPARTS(2000, MONTH(P.EXCL_DATE_START), DAY(P.EXCL_DATE_START))
+%                 AND DATEFROMPARTS(2000, MONTH(P.EXCL_DATE_END), DAY(P.EXCL_DATE_END)))
+%             )
+%             -- EVERY YEAR, SAME DAYS SAME MONTH
+%         ) AND ( @UID IN (
+%                 --CHECK IF THE USER REQUESTING IS ENABLED TO THAT CATEGORY
+%                 SELECT VALUE FROM OPENJSON(C.VIEWERS, '$')
+%             ) OR C.VIEWERS = '[]'
+%         )
+%     )
+%     AND C.ID IN ( SELECT VALUE FROM OPENJSON(@COLLECTIONS_CHOSEN, '$'))
 
 
 \section{Docker Deployment}
 
 To deploy the Data Layer and so, implement Microsoft SQL Server, GeoMedia adopts Docker~\cite{site:docker-official}, which is a containerization platform that allows applications and their dependencies to be packaged and executed in isolated, reproducible environments called \textit{containers}. \\
-This approach simplifies deployment by ensuring that the software environment required by an application remains consistent across different machines, while also providing a lightweight alternative to traditional virtual machines. Moreover, the Microsoft SQL Server image, with this techniques is independent from the underlying host operating systems and can be configured and replicate easily facilitating both the development (i.e. more instance for a production and test database) as the deployment.
+This approach simplifies deployment by ensuring that the software environment required by an application remains consistent across different machines, while also providing a lightweight alternative to traditional virtual machines (VM). Moreover, the Microsoft SQL Server image, with this techniques is independent from the underlying host operating systems and can be configured and replicate easily facilitating both the development (i.e. more instance for a production and test database) as the deployment.
 
 In order to satisfy the GeoMedia requirements, SQL Server must be configured with a compatibility level of 130 or higher, which is required for the use of the \texttt{OPENJSON} built-in function introduced in SQL Server 2016.
 
 To create the Docker \textit{container}, it is sufficient to execute the terminal command shown in Listing~\ref{lst:db_docker_deploy}.
 
 \lstset{
-    language=Python,
+    language=Shell,
     basicstyle=\ttfamily\small, %\small?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
@@ -305,24 +292,26 @@ To create the Docker \textit{container}, it is sufficient to execute the termina
     caption={Docker command to create the Microsoft SQL Server container.},
     label={lst:db_docker_deploy}
 ]
-docker run -e 'ACCEPT_EULA=Y' \ #accept lincense
+docker run \
+    -e 'ACCEPT_EULA=Y' \ #accept lincense
     -e 'SA_PASSWORD=changeme' \ #sa password for admin
-   -e 'MSSQL_PID=Express' \ #pid
-   -p 1433:1433 \ #default port
-   --name sqlserver \ #container name
-   -d mcr.microsoft.com/mssql/server:2022-latest #the image
+    -e 'MSSQL_PID=Express' \ #pid
+    -p 1433:1433 \ #default port
+    --name sqlserver \ #container name
+    -d mcr.microsoft.com/mssql/server:2022-latest #the image
 \end{lstlisting}
 
-Subsequently, using a DBMS client, the SQL queries required to create the database, its tables, stored procedures, and other database objects are executed, resulting in the initialization of a new GeoMedia database instance.
+Subsequently, a DBMS client is used to execute the SQL scripts required to create the database, including its tables, stored procedures and other database objects, thereby initializing a new GeoMedia database instance.
 
-Finally, the application layer (server http) can be configured with the connection parameters such as:
+Finally, the application layer (the http server) can be configured with the connection parameters such as:
 \begin{itemize}
     \item \textbf{Address}: IPv4/IPv6 address or server name where the RDBMS is hosted. GeoMedia uses a single-server deployment, therefore \texttt{localhost} is used in the local deployment.
-    \item \textbf{Port}: TCP/IP port used by the SQL Server instance. The default port is \texttt{1433}.
+    \item \textbf{Port}: TCP/IP port used by the SQL Server instance, the default port is \texttt{1433}.
     \item \textbf{User}: username of a database user with the specific roles and permissions required. For GeoMedia, the user should just require permission of read and execute stored procedure, since the input and updates operations are demanded to the appropriate stored procedures. The default administrative account \texttt{sa} is avoided for security reasons.
     \item \textbf{Password}: password associated with the database user.
     \item \textbf{Database}: name of the target database to which the application connects, in this case \texttt{GEOMEDIA}.
-    \item \textbf{Instance}: optional SQL Server instance name, whenever the server is configured with multiple independent database engine. In the GeoMedia deployment, a single SQL Server instance is used
+    \item \textbf{Instance}: optional SQL Server instance name, whenever the server is configured with multiple independent database engine. \\
+    In the GeoMedia deployment, a single SQL Server instance is used.
 \end{itemize}
 
 Meanwhile the connection from the Python HTTP server to Microsoft SQL Server is provided by the library \texttt{pymssql}~\cite{site:pymssql}, offering an high-level API interface toward the database.
@@ -352,7 +341,6 @@ def create_connection():
         password=CONFIG["password"],
         database=CONFIG["database"],
     )
-# ----------------------------------------------------
 # EXECUTE QUERY
 def execute_query(query, params=None, fetch=True):
     conn = create_connection()
@@ -368,15 +356,12 @@ def execute_query(query, params=None, fetch=True):
 
         conn.commit()
         return result
-
     except Exception as e:
         conn.rollback()
         print("SQL ERROR:: ", e)
         raise
-
     finally:
         conn.close()
-# ----------------------------------------------------
 # SELECT
 def select_query(query, params=None):
     return execute_query(query, params=params, fetch=True)
