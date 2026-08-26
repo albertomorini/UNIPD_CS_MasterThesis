@@ -219,11 +219,10 @@ To accomplish this objective, GeoMedia adopts \texttt{react-native-vision-camera
 export default function OpenCamera(
     { onClose, storePhoto }: { onClose: () => void; storePhoto: (b64: string) => void }
 ) {
-    ...
+    ... //others components and logic functions
     return (
         <View style={StyleSheet.absoluteFill}>
-            <Camera
-                ref={camera}
+            <Camera ref={camera}
                 style={StyleSheet.absoluteFill}
                 device={device}
                 isActive={true}
@@ -237,7 +236,6 @@ export default function OpenCamera(
                     <Text style={styles.icon}>X</Text>
                 </TouchableOpacity>
             </ThemedText>
-
             <ThemedText style={styles.controlsBottom, styles?.controlsTopLeft}>
                 {/* FLASH */}
                 <TouchableOpacity style={styles.iconButton} onPress={toggleFlash}>
@@ -267,6 +265,13 @@ export default function OpenCamera(
 \end{lstlisting}
 
 The respective results of camera integration can be seen in Figure~\ref{fig:geomedia_camera}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{GeoMedia/geo_camera.png}
+        \caption{GeoMedia integrated camera and file uploaded carousel view.}
+    \label{fig:geomedia_camera}
+\end{figure}
 
 
 Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports various file formats, including audio files and PDF documents. \\
