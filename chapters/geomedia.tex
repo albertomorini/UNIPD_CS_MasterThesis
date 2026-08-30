@@ -104,7 +104,23 @@ The geographical position of a post is automatically retrieved from the user's c
 
 To determine which posts are visible to a user, GeoMedia evaluates the geographical distance between the user's current position and the location associated with each stored post. Only posts whose visibility radius includes the user's current position are returned by the server and displayed on the mobile devices.
 
-The server computes these distances using an implementation of the Haversine formula~\cite{article:sinnott1984haversine}. Specifically, the implementation, reported in Listing~\ref{lst:haversine}, calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
+The server computes these distances using an implementation of the Haversine formula~\cite{article:sinnott1984haversine}, which calculates the great-circle distance between two points on the Earth's surface based on their latitude and longitude coordinates:
+
+\begin{equation}
+d = 2R\arcsin\left(
+\sqrt{
+\sin^2\left(\frac{\varphi_2-\varphi_1}{2}\right)
++
+\cos(\varphi_1)\cos(\varphi_2)
+\sin^2\left(\frac{\lambda_2-\lambda_1}{2}\right)
+}
+\right).
+\label{eq:haversine}
+\end{equation}
+
+where $\varphi_1$ and $\varphi_2$ denote the latitudes of the two points, $\lambda_1$ and $\lambda_2$ their longitudes, $R$ the Earth's radius ($R = 6{,}371{,}000~\mathrm{m}$) and $d$ the resulting great-circle distance.
+
+The implementation, reported in Listing~\ref{lst:haversine}, calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
 
 The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae~\cite{site:vincenty-formulae} provide higher accuracy, overall the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
 

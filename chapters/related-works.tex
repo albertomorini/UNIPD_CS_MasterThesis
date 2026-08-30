@@ -11,8 +11,15 @@ Although several other social media platforms utilize the GPS capabilities of mo
 \label{sec:foursquare-swarm}
 
 Foursquare Swarm is the spin-off of a formerly app, Foursquare City Guide, which provide personalized recommendations of nearby places to the users' current location based on its interests or previous browsing history and check-ins (locations previously visited by the user).
-Foursquare was discontinued in 2024 and its functionalities have been integrated into Swarm, which in addition allows users to share their position with relatives, maintaining a personal life-log of visited places, which can be shared with others.\\
+Foursquare was discontinued in 2024 and its functionalities have been integrated into Swarm, which in addition allows users to share their position with relatives, maintaining a personal life-log of visited places, which can be shared with others as illustrated in Figure~\ref{fig:swarm-functionalities}.
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../images/StateOfArt/swarm/swarm_functionalities.png}
+    \caption{Foursquare Swarm functionalities. Screenshots adapted from the app's Google Play Store~\cite{site:foursquare_swarm_google_play}.}
+    \label{fig:swarm-functionalities}
+\end{figure}
 
 For each visited location, users may leave reviews or upload multimedia content; however, these contributions are strictly tied to physical place, such as stores, cafés, restaurants or other kind of attractions as shown in Figure~\ref{fig:swarm-show-up}. Users cannot publish content at arbitrary geographic coordinates, nor can they restrict post visibility, as all content is publicly accessible.
 The application further encourages the usage through a gamification system, in which users earn badges for visiting locations and uploading content. These mechanisms are broadly comparable to those implemented in other platforms such as Google Maps.
@@ -27,34 +34,34 @@ The application further encourages the usage through a gamification system, in w
 
 \subsection{Dodgeball and Google Latitude}
 
-Dodgeball was a service that simply allowed users to share their current locations with friends through a map, and served as a precursor to Foursquare City Guide and Foursquare Swarm same functionality. 
+Dodgeball was a service that allowed users to share their current locations with friends through a map, and served as a precursor to Foursquare City Guide and Foursquare Swarm same functionality. 
 Later was acquired by Google and rebranded as `Google Latitude'~\cite{site:google-latitude} discontinued in 2013 and integrated into another discontinued social media by Google (Google+~\cite{site:google-plus}) and finally migrated into Google Maps in 2018.
 
 
 \section{Snapchat}
 \label{sec:snapchat}
 
-Snapchat~\cite{site:snapchat} has been one of the most used social media platforms worldwide~\cite{site:snapchat-usage}, mainly thanks to its instant messaging service and multimedia functionality, such as time-based content, which makes uploaded content visible only for 24 hours or visible only once to a user. This encourages users to check it daily in order not to miss anything and to keep up with relatives' lives. As a negative effect, these features have fueled some social impacts such as FoMO (Fear of Missing Out)~\cite{site:social-fomo,site:social-fomo-snapchat}, leading users to become increasingly attached to the social platform and also creating self-comparison with content posted by other users. This problem is not strictly related to Snapchat, but is very common in every self-centric social media platform.
+Snapchat~\cite{site:snapchat} has been one of the most used social media platforms worldwide~\cite{site:snapchat-usage}, mainly thanks to its instant messaging service, camera filters but specifically to a time-based multimedia functionality that makes uploaded content visible only for 24 hours or visible only once to a user. This encourages users to check it daily in order not to miss anything and to keep up with relatives' lives. As a negative effect, these features have fueled some social impacts such as $\text{FoMO}_{\glslink{fomo}{g}}$ (Fear of Missing Out), leading users to become increasingly attached to the social platform and also creating self-comparison with content posted by other users. This problem is not strictly related to Snapchat, but is very common in every user-centric social media platform~\cite{site:social-fomo, site:social-fomo-snapchat}.
 Other concerns are raised by privacy and safety caused from the possibility to share current location into a geographic map~\cite{site:snapchat-privacy}, as done by Swarm and others (Section ~\ref{sec:foursquare-swarm}), Snapchat also enrich the map by showing geographic closer content to user, grouped into a unified cluster of information, as illustrated in Figure~\ref{fig:snapchat-explained}. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png}
+    \includegraphics[width=0.85\textwidth]{../images/StateOfArt/snapchat/SNAPCHAT_EXPLAINED.png}
     \caption{Snapchat functionalities}
     \label{fig:snapchat-explained}
 \end{figure}
 
 
-Moreover, as the Swarm app, allows users can log visited locations, including public places such as bars, stores or museums. This enables the association of user-generated content with specific points of interest (POI) and  supports the aggregation of geographically and contextually related content to represent events, such as concerts or other real-word gatherings, as illustrated in Figure~\ref{fig:snapchat-my-places}
+Moreover, as the Swarm app, allows users can log visited locations, including public places such as bars, stores or museums. This enables the association of user-generated content with specific points of interest and  supports the aggregation of geographically and contextually related content to represent events, such as concerts or other real-word gatherings, as illustrated in Figure~\ref{fig:snapchat-my-places}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png}
+    \includegraphics[width=0.85\textwidth]{../images/StateOfArt/snapchat/SNAPCHAT_MyPlaces.png}
     \caption{Snapchat my place functionality}
     \label{fig:snapchat-my-places}
 \end{figure}
 
-Snapchat represents a notable example of the adoption of the ``mobile-first'' paradigm, especially in social media applications. The platform leverages not only GPS module but also a variety of mobile device sensors, including the camera for augmented reality (AR) experiences and the microphone to records voice-based content. By integrating these hardware features into its core functionality, the app delivers a highly immersive and personalized user experience.
+Snapchat represents a notable example of the adoption of the ``mobile-first'' paradigm, especially in social media applications. The platform leverages not only GPS module but also a variety of mobile device sensors, including the camera for $\text{AR}_{\glslink{augmentedreality}{g}}$ experiences and the microphone to records voice-based content. By integrating these hardware features into its core functionality, the app delivers a highly immersive and personalized user experience.
 
 
 \section{Instagram}
@@ -125,11 +132,11 @@ There are several other social media platforms that integrate map features and g
 \subsection{Jagat}
 
 Jagat offers several functionalities and highly responsive performance, but also a crowded and ambiguous User Interface (UI) that may be difficult to understand for first-time users, as it displays too many buttons and pieces of information simultaneously, as can be seen in Figure~\ref{fig:jagatt-showcase}. \\
-Similar to Snapchat~\ref{fig:snapchat-my-places} or Swarm~\ref{sec:foursquare-swarm}, Jagat provide a real-time map enriched with the current location of friends but with more metadata like users' movement speed, or time spent in a specific location or they device battery level. These features raise significant privacy and safety concerns due to the amount of personal information collected and shared. It also enables users to upload photos and videos, not anchored to any specific location but whenever users want; this functionality is also implemented by GeoMedia.
+Similar to Snapchat~\ref{fig:snapchat-my-places} or Swarm~\ref{sec:foursquare-swarm}, Jagat provide a real-time map enriched with the current location of friends but with more metadata like users' movement speed, or time spent in a specific location or they device battery level. It also enables users to upload photos and videos, not anchored to any specific location but whenever users want; this functionality is also implemented by GeoMedia.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.40\textwidth]{../images/StateOfArt/Jagat/jagat_showcase.PNG}
+    \includegraphics[width=0.50\textwidth]{../images/StateOfArt/Jagat/jagat_showcase.PNG}
     \caption{Jagatt map interface}
     \label{fig:jagatt-showcase}
 \end{figure}
@@ -144,7 +151,7 @@ An example of Auglinn usage is shown in Figure~\ref{fig:auglinn-showcase}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\textwidth]{../images/StateOfArt/auglin/auglin_merged.png}
+    \includegraphics[width=1.2\textwidth]{../images/StateOfArt/auglin/auglin_merged.png}
     \caption{Auglinn show case}
     \label{fig:auglinn-showcase}
 \end{figure}
