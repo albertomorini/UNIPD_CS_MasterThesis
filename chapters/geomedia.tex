@@ -7,9 +7,9 @@
 GeoMedia introduces a geographically oriented social platform in which users can upload and share content in the form of posts. Each post acts as a container for the information that users want to publish, enabling location-based interactions and content discovery.
 
 
-The original concept focused exclusively on textual comments (called \textit{GeoComments}), then extended to support any kind of multimedia content. Finally enriched with the concept of collections, which act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
+The original concept focused exclusively on textual comments (called \textit{GeoComments}), then it was extended to support any kind of multimedia content. Finally, GeoMedia, was enriched with the concept of collections, that act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
 
-To realize the idea behind the application, an appropriate software architecture (later explained in Cap.~\ref{cap:architecture}) and different supporting technologies must be adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thus to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend that operates as coordinator for implementing the system's business logic and determining which content should be provided to the users' requests (basing on their current position and others metadata).
+To realize the idea behind the application, an appropriate software architecture (later explained in Cap.~\ref{cap:architecture}) and different supporting technologies are adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as a mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thus to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend. The latter operates as coordinator for implementing the system's business logic and determining which content should be provided to the users' requests (basing on their current position and others metadata).
 
 \section{Collections}
 
@@ -22,11 +22,11 @@ Users can also configure the visibility of each collection according to the foll
     \item \textbf{Time}: restricts the visibility of the collection to a specific date range. Additionally, recurring visibility intervals can be configured on a monthly basis (repeating on the specified days of each month) or on a yearly basis (repeating during the specified month and days each year).
 \end{itemize}
 
-Additionally to defining who can view the collection, owners of a collection can specify which users are authorized to create post within it. This distinction between viewers and contributors provides finer-grained access control, enriching users experiences while enabling more effective moderation and content management.
+Furthermore, to defining who can view the collection, owners of a collection can specify which users are authorized to create post within it. This distinction between viewers and contributors provides finer-grained access control, enriching users experiences while enabling more effective moderation and content management.
 
-For each collection, the owner can also enable or disable the~\textit{remote posting} feature. When enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map. Instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content and strengthening the connection between the online content and the physical world.
+For each collection, the owner can also enable or disable the~\textit{remote posting} feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because contents are strictly linked to the physical world.
 
-Moreover, another functionality capable to provide a sophisticated feature is the~\textit{sequential post}, enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
+Moreover, another functionality is the~\textit{sequential post}, enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
 
 Figure~\ref{fig:collection-overview} shows the explained functionalities with the respective order:
 
@@ -60,7 +60,7 @@ Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can
 The ``Map'' section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows \textit{remote posting}, at the location selected by its creator.
 
 To improve visual recognition, each marker adopts the color assigned to its collection, allowing users to associate the context to which the post belongs. \\
-By selecting a marker, the complete content of the corresponding post is displayed and express appreciation by liking the post, or, whenever a post contains an attached media file, users can download it regardless of its file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users' privacy, posts displayed in viewer mode are represented as lists and rather than on a map, thus to hide the positions of the creator and preserving the gamified experience of discovery through the map. However, this feature provide a peek of some content of the user in way to provide users potential related posts.
+By selecting a marker, the complete content of the corresponding post is displayed and express appreciation by liking the post, or, whenever a post contains an attached media file, users can download it regardless of its file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users privacy, posts displayed in viewer mode are represented as lists and rather than on a map, thereby to hide creator positions and preserving the gamified experience of discovery through the map. However, this feature provide a peek of some content of the user in way to provide users potential related posts.
 
 
 As shown in Figure~\ref{fig:map-overview}, the interface (analyzed in the opportune section~\ref{sub:ui_and_usability}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts near the current location, this feature is called ``local collections''.\\
@@ -81,7 +81,7 @@ Moreover, GeoMedia offer different modalities toward the discovery of collection
 \end{figure}
 
 GeoMedia also supports multiple styles among five different map themes, through the application settings, allowing the interface to better adapt to personal preferences and different usage scenarios. 
-The user's current position is continuously tracked through GPS, allowing posts to appear or disappear as the user moves through the physical environment. The map automatically shifts its center to the user's current location unless the user manually navigates the map.
+The user's current position is continuously tracked through GPS, allowing posts to appear or disappear as they move through the physical environment. The map automatically shifts its center to the user's current location unless the user manually navigates the map.
 
 \subsection{Post creation}
 
@@ -96,7 +96,7 @@ Through the map component, users can also access to the post creation section, w
 \end{itemize}
 
 
-The geographical position of a post is automatically retrieved from the user's current GPS location. Each post is therefore characterized by its latitude, longitude, and altitude. Although altitude is not currently exploited by the platform, it is stored to support future extensions of the system.
+The geographical position of a post is automatically retrieved from the user's current GPS location. Each post is therefore characterized by its latitude, longitude, and altitude. Although altitude is not currently exploited by the platform, it is managed and stored to support future extensions of the system.
 
 
 \subsection{Haversine formula}
@@ -148,7 +148,7 @@ def check_post_area(areaKM, post_lat, post_lon, curr_lat, curr_lon):
     return d <= areaKM * 1000
 \end{lstlisting}
 
-The implementation of the formula is provided by a function which determines whether a post is visible to the requesting user and returns a Boolean value accordingly. The function require the following arguments:
+As shown by the code in Listing~\ref{lst:haversine}, the implementation of the formula is provided by a function which determines whether a post is visible to the requesting user and returns a Boolean value accordingly. The function require the following arguments:
 \begin{itemize}
     \item \texttt{areaKM} (\texttt{float}): the maximum distance, in kilometres,
     within which the post is visible.
@@ -166,7 +166,7 @@ The implementation of the formula is provided by a function which determines whe
 
 The exclusivity feature assume an important role in GeoMedia, as it allows the application to be adapted to different use cases and real-world scenarios by providing fine-grained control over content visibility.
 
-As previously described, collections act as containers for posts. Consequently, posts inherit the visibility constraints defined at the collection level and may additionally introduce narrower restrictions. In other words, if a user cannot access a collection, they cannot access any of the posts contained within it. \\
+As previously described, collections act as containers for posts. Consequently, posts inherit the visibility constraints defined at the collection level and may additionally introduce narrower restrictions. In practical terms, if a user cannot access a collection, they cannot access any of the posts contained within it. \\
 Respectively, access to a collection does not automatically imply access to all its posts, as individual posts may apply additional limitations as:
 
 \begin{itemize}
@@ -178,7 +178,7 @@ Respectively, access to a collection does not automatically imply access to all 
     \end{itemize}
     \item \textbf{Post-specific time limitation}: applies temporal restrictions directly to a single post, narrowing the visibility inherited from the collection.
     \item \textbf{Post-specific user limitation}: restricts access to a single post for a specific group of users, narrowing the permissions inherited from the collection.
-    \item \textbf{Sequentiality limitation}: collections that enable sequential access expose only the next available post (or the first post when starting the sequence) according to the order defined by the creator. This mechanism allows creators to guide users through a predefined path or experience.
+    \item \textbf{Sequentiality limitation}: collections that enable sequential access exposes only the next available post (or the first post when starting the sequence) according to the order defined by the creator. This mechanism allows creators to guide users through a predefined ordered chain of contents.
 \end{itemize}
 
 
@@ -191,12 +191,12 @@ For instance:
     \item \textbf{Local tours}: Through collections, which act as containers for multiple related posts, users can select specific layers created by a guide or organization and access only the content belonging to that experience. Furthermore, the sequentiality feature can enrich guided tours by introducing a predefined order, allowing the next attraction or point of interest to become available only after the previous one has been visited.\\
     Posts can be created remotely by different authors (such as professional guides) and promoted across related collections through the use of hashtags. As a further development, this functionality enable a monetization mechanisms for the platform, allowing creators to provide exclusive paid experiences directly through the platform.
 
-    \item \textbf{Recurrent posts}: GeoMedia allows users to define post visibility not only through geographical constraints but also through temporal conditions. A post can be associated with a specific date and time interval and can optionally be configured with a recurrence pattern, such as monthly or yearly availability. This enables scenarios where the same content becomes available periodically without requiring manual recreation, relevant for scenario such as anniversaries, birthdays or recurrent celebrations.
+    \item \textbf{Recurrent posts}: GeoMedia allows users to define post visibility not only through geographical constraints but also through temporal conditions. A post can be associated with a specific date and time interval and can optionally be configured with a recurrence pattern, such as monthly or yearly availability. This enables scenarios where the same content becomes available periodically without requiring their manual recreation. This feature can be useful for scenario such as anniversaries, birthdays or recurrent celebrations.
 
     \item \textbf{Gamification}: Collections with sequentiality enabled allow creators to define a specific order in which posts should be discovered. Only the first available post is initially displayed, while subsequent posts become accessible only after seen the previous one and satisfying visibility conditions defined by their geographical position, time constraints and user permissions.\\
-    This mechanism introduces gamification possibilities within the social platform, enabling experiences such as digital scavenger hunts, interactive events, city tours or location-based challenges, where users progressively unlock new content by exploring the real world.
+    This mechanism introduces gamification possibilities within the social platform, enabling experiences e.g. digital scavenger hunts, interactive events, city tours or location-based challenges, where users progressively unlock new content by exploring the real world.
 
-    \item \textbf{Augmented Reality}: GeoMedia does not currently implement Augmented Reality (AR) functionality; however, it includes an in-app camera component that can be leveraged for future AR-based enhancements. This feature could enable the integration of digital information above the real-word environment, visualizing for example historical information or media content. With this development, the mobile application would improve the user experience by providing a more immersive and interactive way to explore and interact with geographically referenced content.
+    \item \textbf{Augmented Reality}: GeoMedia does not currently implement Augmented Reality functionality; however, it includes an in-app camera component that can be leveraged for future AR-based enhancements. This feature could enable the integration of digital information above the real-word environment, visualizing for example historical information or media content. With this development, the mobile application would improve the user experience by providing a more immersive and interactive way to explore and interact with geographically referenced content.
 
 \end{itemize}
 
@@ -204,7 +204,7 @@ For instance:
 
 % 3 senza di PADOVA
 
-An interesting scenario can be adopted by the City of Padua, thus to illustrate through the app one of its well-known sayings: ``citt\`a dei tre senza'' (literally, ``the city of the three without''). \\
+An interesting scenario can be adopted by the City of Padua, for illustrating one of its well-known sayings: ``citt\`a dei tre senza'' (literally, ``the city of the three without''). \\
 This expression refers to three notable things that Padua has but or hasn't in a metaphorical way:
 \begin{itemize}
     \item \textbf{The lawn without grass}: referring to \textit{Prato della Valle}, which despite its name (``meadow of the valley''), feature ornamental grass and is not a lawn in the traditional sense;
@@ -223,7 +223,7 @@ In this case, digital markers at these location as shown in Figure~\ref{fig:tre-
 
 \section{User}
 
-Even if not a profile-centric social network, GeoMedia, allows users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
+Even if GeoMedia is not a profile-centric social network, GeoMedia, allows users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
 
 In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distributed across months or which in which collections they are active as pie-chart. As shown in Figure \ref{fig:user-profile-overview}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
 \begin{figure}[H]
@@ -236,9 +236,9 @@ In addition, the GeoMedia mobile application provides users with infographic-bas
 \section{Functional comparison}
 
 While GeoMedia incorporates functionalities commonly found in existing social media platforms presented in Chapter~\ref{cap:relatedwork}, it extends their capabilities through several distinctive features. 
-Moreover, GeoMedia distinguishes itself from other social networks by promoting a content-centric rather than profile-centric approach, while protecting user privacy in an ethically responsible manner. \\
+Moreover, GeoMedia distinguishes itself from other social networks by promoting a content-centric rather than profile-centric approach, with the aim of preserving more users privacy. \\
 
-Table~\ref{tab:comparison} provides a comparative overview of the supported functionalities across the analyzed platforms.
+Table~\ref{tab:comparison} provides a comparative overview of the supported functionalities across the analyzed platforms in this Section.
 
 
 \begin{table}[H]
