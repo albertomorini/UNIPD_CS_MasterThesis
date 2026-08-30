@@ -1,11 +1,11 @@
 \chapter{State of Art}
 \label{cap:relatedwork}
 
-GeoMedia positions itself among existing online social media platforms, by offering functionality centered on the content sharing linked to specific geographical coordinates. Content is visible only within the specified radius and can be further restricted through time-sensitive parameters, user-based policies and more. This flexibility enables a wide range of real-world applications, including scavenger hunts, interactive city guides and other location-based experiences.
+GeoMedia positions itself among existing online social media platforms, by offering functionalities centered on contents sharing linked to specific geographical coordinates. Contents is visible by users only within the specified radius and can be further restricted through time-sensitive parameters, user-based policies and more. This flexibility enables a wide range of real-world applications, including scavenger hunts, interactive city guides and other location-based experiences.
 
-The platform enables users to discover and interact with the physical environment through a map enriched by content contributed by others users and characterized with pictures or other multimedia resources. The posts are collected into different topic collections, which works as layers and additional filtering parameter.
+The platform enables users to discover and interact with the physical environment through a map enriched by contents created by others users and characterized with pictures or other multimedia resources. The posts are collected into different topic collections, which works as layers and additional filtering parameter.
 
-Although several other social media platforms utilize the GPS capabilities of mobile devices to enhance user experience and provide location-aware features, none fully realize the underlying concept of GeoMedia or offer the same degree of flexibility for creating diverse application scenarios and interactivity in exploration of uploaded content.
+Although several other social media platforms utilize the GPS capabilities of mobile devices to enhance user experience and provide location-aware features, none of them fully realize the underlying concept of GeoMedia or offer the same degree of flexibility for creating diverse application scenarios and interactivity in exploration of uploaded content.
 
 \section{Foursquare Swarm}
 \label{sec:foursquare-swarm}
@@ -14,7 +14,7 @@ Foursquare Swarm is the spin-off of a formerly app, Foursquare City Guide, which
 Foursquare was discontinued in 2024 and its functionalities have been integrated into Swarm, which in addition allows users to share their position with relatives, maintaining a personal life-log of visited places, which can be shared with others.\\
 
 
-For each visited location, users may leave reviews or upload multimedia content; however, these contributions are strictly tied to physical place, such as stores, cafés, restaurants or other kind of attractions as shown in Figure~\ref{fig:swarm-show-up}. Users cannot publish content at arbitrary geographic coordinates, nor can restrict post visibility, as all content is publicly accessible.
+For each visited location, users may leave reviews or upload multimedia content; however, these contributions are strictly tied to physical place, such as stores, cafés, restaurants or other kind of attractions as shown in Figure~\ref{fig:swarm-show-up}. Users cannot publish content at arbitrary geographic coordinates, nor can they restrict post visibility, as all content is publicly accessible.
 The application further encourages the usage through a gamification system, in which users earn badges for visiting locations and uploading content. These mechanisms are broadly comparable to those implemented in other platforms such as Google Maps.
 
 \begin{figure}[H]
@@ -69,8 +69,6 @@ The platform was initially released in October 2010 exclusively for iOS devices.
 A major development was the introduction of the ``Stories'' feature, which provide the same mechanism created by Snapchat~\ref{sec:snapchat}, that allows users to publish content that remains visible for only 24 hours after publication. The addition of this ability contributed significantly to Instagram surpassing Snapchat in user engagement metrics by 2019~\cite{site:instagram-stories-usage}.
 
 To enrich the media sharing, Instagram provides a variety of creative tools, including photographic filters, image-editing capabilities, and even a live-streaming functionality. The platform also popularized the use of hashtags as a content categorization mechanism, enabling users to discover media and connect with communities centered around shared interests and topics.
-
-
 Instagram to encourage content discovery adopt a sophisticated recommendation systems that leverage contextual information, including geographic location derived from GPS or cellular network data. Such $\text{metadata}_{\glslink{metadata}{g}}$ contributes to the generation of personalized recommendations, allowing users to discover nearby profiles, locations and content that align with their interests and current position~\cite{site:instagram-explore-system}.
 
 Despite its popularity, Instagram has been the subject of significant criticism. Concerns have been raised regarding user privacy, large-scale behavioral profiling and the potential influence of recommendation algorithms on user behavior. Additional controversies involve the platform's impact on adolescent mental health, content moderation practices and the dissemination of illegal or inappropriate content.
@@ -90,7 +88,7 @@ Despite its numerous functionalities, Instagram introduced in 2022 a map-based c
 
 
 
-In 2026, this functionality underwent a redesign: content is no longer presented as spatial clusters on the map (as implemented in Snapchat, Figure~\ref{fig:snapchat-my-places}), instead is represented in a grid-based layout when a specific place is selected via the search-bar of the Explore section, as illustrated in Figure~\ref{fig:instagram-map-content-2026}. Anchoring posts to specific places rather than geographical coordinate. \\
+In 2026, this functionality underwent a redesign: contents are no longer presented as spatial clusters on the map (as implemented in Snapchat, Figure~\ref{fig:snapchat-my-places}), instead is represented in a grid-based layout when a specific place is selected via the search-bar of the Explore section, as illustrated in Figure~\ref{fig:instagram-map-content-2026}. Anchoring posts to specific places rather than geographical coordinate. \\
 In addition, Instagram provides functionality for sharing real-time location with users connections (followers), similarly to other social media platforms discussed in Sections~\ref{sec:snapchat} and~\ref{sec:foursquare-swarm}.
 
 
@@ -105,12 +103,11 @@ In addition, Instagram provides functionality for sharing real-time location wit
 \section{Google Maps}
 \label{sec:google-maps}
 
-Google Maps~\cite{site:google-maps} is one of the services provided by Google Inc., initially released as a web-based platform and following the wide adoption of mobile devices, extended for both iOS and Android systems. The service provides satellite imagery, aerial photography, route planning and 360° interactive panoramic views, commonly known as Street View~\cite{site:google-streetview}. The application consents users to explore their surroundings by displaying stores, attractions or others Point of Interests closer to their current location leveraging GPS and phone-cell antenna, or to explore other areas by scrolling the map. \\
+Google Maps~\cite{site:google-maps} is one of the services provided by Google Inc., initially released as a web-based platform and following the wide adoption of mobile devices, extended for both iOS and Android systems. The service provides satellite imagery, aerial photography, route planning and 360° interactive panoramic views, commonly known as Street View~\cite{site:google-streetview}. The application consents users to explore their surroundings by displaying stores, attractions or others Point of Interests closer to their current location leveraging GPS and phone-cell antenna, or to explore other areas by scrolling the map.
 The platform also introduce categories in order to organize POI into related topics such as restaurants, coffee shops or other predefined types created by the staff of Google, as shown in Figure~\ref{fig:google-map-showcase}.
 For each place, users may submit reviews by commenting or uploading pictures and videos, thus to create a collaborative information ecosystem. Similarly to Foursquare Swarm~\ref{sec:foursquare-swarm}, Google Maps also introduces gamification elements such as badges and user levels to incentivize contributions and improve the quality of place-based reviews.
 
-Google Maps further provides APIs and libraries that allows the development of integrations to its services into third-party applications. In fact, the GeoMedia client app~\ref{cap:mobileapp} through the React Native library adopted, render the Google Map as default map framework for Android devices. \\
-This service is also well integrated in its ecosystem and Android platforms as well, in fact, exists several standard features, for an instance `recent places' for places visited by users (within their smartphone) or to have the routing to home or work, enabled and suggested when connected to the car or started in Android Auto~\cite{site:android-auto}.
+Google Maps further provides APIs and libraries that allows the integrations to its services into third-party applications. As an example, GeoMedia client app~\ref{cap:mobileapp} through the React Native library adopted, render the Google Map as default map framework for Android devices. This service is also well integrated in its ecosystem and Android platforms as well, in fact, exists several standard features, for an instance `recent places' for places visited by users (within their smartphone) or to have the routing to home or work, enabled and suggested when connected to the car or started in Android Auto~\cite{site:android-auto}.
 
 \begin{figure}[H]
     \centering
@@ -127,10 +124,8 @@ There are several other social media platforms that integrate map features and g
 
 \subsection{Jagat}
 
-Jagat offers several functionalities and highly responsive performance, despite a difficult usability perspective for first-time users, which can appear crowded and confusing, as it displays too many buttons and pieces of information simultaneously, as can be seen in Figure~\ref{fig:jagatt-showcase}. \\
-Similar to Snapchat~\ref{fig:snapchat-my-places} or Swarm~\ref{sec:foursquare-swarm}, Jagat provide a real-time map enriched with the current location of friends but with more metadata like users' movement speed, or time spent in a specific location or they device battery level. These features raise significant privacy and safety concerns due to the amount of personal information collected and shared.
-
-As social media platform, it also enables users to upload photos and videos, not anchored to any specific location but whenever users want; functionality implemented also by GeoMedia.
+Jagat offers several functionalities and highly responsive performance, but also a crowded and ambiguous User Interface (UI) that may be difficult to understand for first-time users, as it displays too many buttons and pieces of information simultaneously, as can be seen in Figure~\ref{fig:jagatt-showcase}. \\
+Similar to Snapchat~\ref{fig:snapchat-my-places} or Swarm~\ref{sec:foursquare-swarm}, Jagat provide a real-time map enriched with the current location of friends but with more metadata like users' movement speed, or time spent in a specific location or they device battery level. These features raise significant privacy and safety concerns due to the amount of personal information collected and shared. It also enables users to upload photos and videos, not anchored to any specific location but whenever users want; this functionality is also implemented by GeoMedia.
 
 \begin{figure}[H]
     \centering
@@ -142,7 +137,7 @@ As social media platform, it also enables users to upload photos and videos, not
 
 \subsection{Auglinn}
 
-Available for both Android and iOS platforms, and also for the web, Auglinn is the application closest to GeoMedia's functionalities. It provides a platform that allows users to create messages enriched with multimedia content and share them with other users through a geographical map. Moreover, Auglinn also offers augmented reality (AR) functionalities to display location-based messages, which can be created either remotely or on demand through a mobile device.
+Available for both Android and iOS platforms, and also for the web, Auglinn is the application closest to GeoMedia's functionalities. It provides a platform that allows users to create messages enriched with multimedia content and share them with other users through a geographical map. Moreover, Auglinn also offers Augmented Reality functionalities to display location-based messages, which can be created either remotely or on demand through a mobile device.
 It also allows users to create different public, view-only, or private spaces, which act like containers for content (called ``notes'' or ``boxes'') and set an expiration time for them, as GeoMedia as well. Other users can respectively interact by commenting, saving, liking or sharing notes found.
 
 An example of Auglinn usage is shown in Figure~\ref{fig:auglinn-showcase}
