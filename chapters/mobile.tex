@@ -8,21 +8,19 @@ Therefore, the mobile application represents the most important component within
 \section{React Native framework}
 
 
-React Native~\cite{site:react-native}, commonly abbreviated as RN, is an open-source software development framework created by Meta Platforms (formerly Facebook Inc.) for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all or at least the most of the application logic across different platforms, such as Android and iOS. Consequently, it reduces development and maintenance efforts while preserving the performance and user experience expected from native applications.
+React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all or at least the most of the application logic across different platforms, such as Android and iOS. Consequently, it reduces development and maintenance efforts while preserving the performance and user experience expected from native applications.
 
 
 Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between JavaScript (or TypeScript) based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
-More specifically, React Native consents to write application logic using web-oriented programming languages, such as JavaScript or TypeScript, while adopting a styling approach similar to CSS for interface design. UI elements are represented through reusable components, which can be considered analogous to HTML elements in traditional web development. Finally, during the deployment process, these components are translated into their corresponding native platform components, this enable the app to achieve a native-like user experience while maintaining a shared development environment.
+More specifically, React Native consents to write application logic using web-oriented programming languages, such as JavaScript or TypeScript, while adopting a styling approach similar to~$\acrshort{css}_{\glslink{css}{g}}$ for interface design. UI elements are represented through reusable components, which can be considered analogous to HTML elements in traditional web development. Finally, during the deployment process, these components are translated into their corresponding native platform components: enable the app to achieve a native-like user experience while maintaining a shared development environment.
 
 React Native represents a suitable technological option, allowing the platform to reach both Android than iOS markets. Overall, React Native is well supported by various components and libraries that can fully satisfy the requirements designed to create GeoMedia framework.
 
 
-% //TODO: SPECIFY THE FOLDER PROJECT? AND COMPILATION COMMANDS?
-
 \subsection{Ionic Framework comparison}
 
-A first version of GeoMedia was developed using Ionic Framework~\cite{site:ionic-frameworks}, which is a valid framework for web development with the capability of encapsulating web applications into mobile applications. 
-This approach could seem to be similar to ReactNative but it's core is totally different, since IonicFramework rerender and interprets the components on running time, as web browsers process web pages, while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
+A first version of GeoMedia was developed using Ionic Framework~\cite{site:ionic-frameworks}, which is a framework for web development with the capability of encapsulating web applications into mobile applications. 
+This approach could seem to be similar to ReactNative but its core is totally different, since IonicFramework rerender and interprets the components on running time, as web browsers process web pages, while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
 
 Moreover, one of the main advantages of Ionic is the possibility for developers to work with different web frameworks such as ReactJS, AngularJS or VueJS, while integrating Ionic's components.
 
@@ -71,6 +69,200 @@ Overall GeoMedia for the Android version developed use several dependencies pack
     \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture thus to attach pictures in the post without leaving GeoMedia.
 \end{itemize}
 
+% \begin{table}[H]
+
+% \centering
+
+% \renewcommand{\arraystretch}{1.4}
+% \setlength{\arrayrulewidth}{0.6pt}
+
+% \begin{tabular}{|
+% >{\raggedright\arraybackslash}p{3cm}|
+% >{\centering\arraybackslash}p{5cm}|
+% >{\centering\arraybackslash}p{2cm}|
+% >{\centering\arraybackslash}p{2.5cm}|
+% }
+
+% \hline
+
+% \cellcolor[HTML]{A8BCA7}
+% \textbf{Library}
+% &
+% \cellcolor[HTML]{A8BCA7}
+% \textbf{Purpose in GeoMedia}
+% &
+% \cellcolor[HTML]{A8BCA7}
+% \textbf{Latest Version}
+% &
+% \cellcolor[HTML]{A8BCA7}
+% \textbf{Source}
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{@gorhom/bottom-sheet}
+% &
+% Customizable bottom sheet components used to display collections and additional content within the map interface.
+% &
+% 5.2.14
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{@react-native-community/geolocation}
+% &
+% Provides access to device geolocation services, enabling the application to retrieve the user's current position.
+% &
+% 3.4.0
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{@react-native-community/slider}
+% &
+% Provides a slider component used to select the distance range for post visibility.
+% &
+% 5.2.1
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{@shopify/flash-list}
+% &
+% Provides a high-performance list component optimized for rendering large collections of data.
+% &
+% 2.3.2
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{expo}
+% &
+% Provides the development framework and runtime environment used to build, test, and deploy the React Native application.
+% &
+% 57.0.17
+% &
+% Official documentation
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{expo-router}
+% &
+% Provides file-based routing for navigation between the different screens of the application.
+% &
+% 57.0.17
+% &
+% Official documentation
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{expo-secure-store}
+% &
+% Provides secure local storage for sensitive information using the secure storage mechanisms of the underlying operating system.
+% &
+% 57.0.2
+% &
+% Official documentation
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-gesture-handler}
+% &
+% Provides native-driven gesture recognition for interactions such as swipes, taps, and drag operations.
+% &
+% 3.2.1
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-gifted-charts}
+% &
+% Provides customizable chart components used to visualize statistical information on the user profile.
+% &
+% 1.4.78
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-maps}
+% &
+% Provides interactive map components for displaying geographic information, markers, and user locations.
+% &
+% 1.29.0
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-reanimated-carousel}
+% &
+% Provides an animated carousel used to display files attached to posts through horizontal scrolling.
+% &
+% 5.1.1
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-share}
+% &
+% Provides access to the native sharing facilities of the operating system for sharing media and documents attached to posts.
+% &
+% 12.3.1
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-sortables}
+% &
+% Provides sortable components that allow users to reorder items through drag-and-drop interactions.
+% &
+% 1.10.0
+% &
+% Official repository
+
+% \\ \hline
+
+% \cellcolor[HTML]{ECF4FF}
+% \textbf{react-native-vision-camera}
+% &
+% Provides high-performance access to the device camera, enabling users to capture images and attach them to posts.
+% &
+% 5.2.3
+% &
+% Official documentation
+
+% \\ \hline
+
+% \end{tabular}
+
+% \caption{React Native libraries used in the development of GeoMedia.}
+% \label{tab:react-native-libraries}
+
+% \end{table}
+
+
+
+
 A particular emphasis should be placed on libraries that provide access to device APIs and hardware features, such as sensors and other physical components.
 
 \subsubsection{Map \& GPS}
@@ -83,7 +275,7 @@ In addition, the library exposes several callback functions and hooks that allow
 
 
 In order to access Google Maps services on Android, a Google Maps API key is required, which serves as an authentication token that links the application to a Google Cloud Project (a Google suite that offers access to other products such as shared services, computing resources, and others), enabling access to the Google Maps SDK and its associated services. \\
-The API key follows the pricing policy defined by Google. Specifically, it applies a `pay-as-you-go' pricing model~\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7\$.
+The API key follows the pricing policy defined by Google. Specifically, it applies a ``pay-as-you-go'' pricing model~\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7\$.
 
 An implementation of map rendering is shown in Listing~\ref{lst:implementation_map_view}
 
@@ -94,25 +286,20 @@ An implementation of map rendering is shown in Listing~\ref{lst:implementation_m
     label={lst:implementation_map_view}
 ]
 <MapView
-        ref={mapRef}
-        style={styles.map}
-        showsUserLocation={true}
-        toolbarEnabled={true}
+        ref={mapRef} style={styles.map}
+        showsUserLocation={true} toolbarEnabled={true}
         followsUserLocation={true}
         initialRegion={{
             latitude: UserPosition.latitude,
             longitude: UserPosition.longitude,
-            latitudeDelta: 0.1,
-            longitudeDelta: 0.1,
+            latitudeDelta: 0.1, longitudeDelta: 0.1
         }}
-        customMapStyle={
-            mapPreferenceStyle == "system" ? 
-                colorScheme == "dark" ? MapDarkMode : MapLightMode
-                : mapPreferenceStyle
+        customMapStyle={ mapPreferenceStyle == "system" ? 
+            colorScheme == "dark" ? MapDarkMode : MapLightMode
+            : mapPreferenceStyle
         }
         onUserLocationChange={(event) => {
             const { latitude, longitude } = event.nativeEvent.coordinate;
-
             if (positionChanged(latitude, longitude)) {
                 setUserPosition({ latitude: latitude, longitude: longitude });
                 get_posts_map({ latitude: latitude, longitude: longitude }) //retrieve new posts
@@ -124,36 +311,27 @@ An implementation of map rendering is shown in Listing~\ref{lst:implementation_m
                 latitude: UserPosition.latitude,
                 longitude: UserPosition.longitude,
             },
-            pitch: 30, // like the angle
-            heading: 0, // direction the camera faces (0 = north)
-            zoom: 13.7, // optional, overrides altitude
-        }}
-        pitchEnabled={true}
-        showsCompass={false}
-        showsBuildings={true}
-        showsMyLocationButton={false} //custom button
+            pitch: 30,  heading: 0, zoom: 13.7
+            // the angle, direction the camera faces (0 = north)
+            }}
+        pitchEnabled={true} showsCompass={false}
+        showsBuildings={true} showsMyLocationButton={false} //custom button
     >
-        {//rendering the markers
-            postMarkers?.map((p, index) => (
-                <Marker
-                    key={p?.ID}
-                    coordinate={{
-                        latitude: p?.LATITUDE,
-                        longitude: p?.LONGITUDE,
-                    }}
-                    pinColor={p?.COLOR}
-                    title={p?.TITLE}
-                    onPress={() => { ///redirect to post viewer
-                        router.push({
-                            pathname: 'viewer/PostViewer',
-                            params: {
-                                postid: p?.ID,
-                            }
-                        });
-                    }}
-                />
-            ))
-        }
+        {postMarkers?.map((p, index) => ( //rendering the markers
+            <Marker key={p?.ID}
+                coordinate={{
+                    latitude: p?.LATITUDE, 
+                    longitude: p?.LONGITUDE 
+                }}
+                pinColor={p?.COLOR} title={p?.TITLE}
+                onPress={() => { ///redirect to post viewer
+                    router.push({
+                        pathname: 'viewer/PostViewer',
+                        params: { postid: p?.ID }
+                    });
+                }}
+            />
+        ))}
     </MapView>
 \end{lstlisting}
 
@@ -189,15 +367,16 @@ The location permission request and location retrieval, is implemented through t
         Geolocation.getCurrentPosition(position => {
             const { latitude, longitude } = position.coords;
             if (positionChanged(latitude, longitude, UserPosition)) {
-                setUserPosition(prev => ({ ...prev, latitude: latitude, longitude: longitude }));
+                setUserPosition(prev => ({ ...prev, 
+                    latitude: latitude,
+                    longitude: longitude 
+                }));
                 get_posts_map({ latitude: latitude, longitude: longitude })
             }
             // set map with center on user location 
             mapRef.current?.animateToRegion({
-                latitude,
-                longitude,
-                latitudeDelta: 0.03, //zoom
-                longitudeDelta: 0.03, //zoom
+                latitude, longitude,
+                latitudeDelta: 0.03, longitudeDelta: 0.03 //zoom
             }, 1000);
             return { latitude: latitude, longitude: longitude }
         },
@@ -207,7 +386,7 @@ The location permission request and location retrieval, is implemented through t
 
 \subsubsection{File sharing \& camera access}
 
-Another external implementation involving device sensors is camera operativity. This functionality, which is always granted through the permission model, allows GeoMedia to access the smartphone camera capabilities in order to capture images and upload them during the post creation process. \\
+Another external implementation involving device sensors is camera operability. This functionality, which is always granted through the permission model, allows GeoMedia to access the smartphone camera capabilities in order to capture images and upload them during the post creation process. \\
 To accomplish this objective, GeoMedia adopts \texttt{react-native-vision-camera} a popular and third-party component. This library provides a set of hook functions that encapsulate the underlying camera access logic and simplify the management and storage of captured images, as shown in Listing~\ref{lst:camera_implementation}.
 
 
@@ -329,7 +508,7 @@ Furthermore, the sharing functionality allows users to distribute the post conte
     \label{fig:android-sharing}
 \end{figure}
 
-The Android sharing menu cannot be modified by any application, it strictly dependent on the \texttt{Intent filters} declared by others app present in the device, and the Operating System provide the sharing request handlers.
+The Android sharing menu cannot be modified by any application, it is strictly dependent on the \texttt{Intent filters} declared by others app present in the device, and the Operating System provide the sharing request handlers.
 
 \section{App flowchart}
 
@@ -386,8 +565,8 @@ GeoMedia implements these properties to provide meaningful descriptions and sema
 
 \subsection{Customization}
 
-GeoMedia mobile application as user experience support also personal customization by supporting both light and dark themes and can automatically follow the device's system-wide appearance settings, thus to adapt user preferences. \\
-In addition, GeoMedia allows user to change map colors among five different map styles:
+GeoMedia mobile application supports also personal customization by supporting both light and dark themes and can automatically follow the device's system-wide appearance settings, thus to adapt user preferences. \\
+In addition, the app allows user to change map colors among five different map styles:
 
 \begin{itemize}
 \item \textbf{Light}: the default map style for the light theme;
