@@ -1,22 +1,22 @@
 # Fdb version 4
-["biber build/thesis"] 1788125395.2942 "build/thesis.bcf" "build/thesis.bbl" "build/thesis" 1788125416.88577 0
-  "appendix/bibliography.bib" 1788124420.00298 18195 123b365359b01828a3184363c605352b ""
-  "build/thesis.bcf" 1788125416.57699 114159 1222ea4715a2533753808316d9b915fd "pdflatex"
+["biber build/thesis"] 1788210354.23743 "build/thesis.bcf" "build/thesis.bbl" "build/thesis" 1788210792.66525 0
+  "appendix/bibliography.bib" 1788210321.08952 18582 7144bb598e3f6a90d4fc7ae319ba4e0e ""
+  "build/thesis.bcf" 1788210792.40446 114305 993b96b152a0d59015f81342322b81d0 "pdflatex"
   (generated)
   "build/thesis.bbl"
   "build/thesis.blg"
   (rewritten before read)
-["cusdep acn acr build/thesis"] 1788123200.96923 "build/thesis.acn" "build/thesis.acr" "build/thesis" 1788125416.88607 0
-  "build/thesis.acn" 1788125416.5793 161 fb00a828e3d191c88300c6d0bf3c03ca "pdflatex"
+["cusdep acn acr build/thesis"] 1788156078.07433 "build/thesis.acn" "build/thesis.acr" "build/thesis" 1788210792.66546 0
+  "build/thesis.acn" 1788210792.40635 161 d8a4c4b1e3484c4f69c17f0ff8603707 "pdflatex"
   (generated)
   "build/thesis.acr"
   (rewritten before read)
-["cusdep glo gls build/thesis"] 1788124778.57832 "build/thesis.glo" "build/thesis.gls" "build/thesis" 1788125416.88565 0
-  "build/thesis.glo" 1788125416.5793 632 34e4a544f259d76fd6175f518823b52c "pdflatex"
+["cusdep glo gls build/thesis"] 1788210435.6908 "build/thesis.glo" "build/thesis.gls" "build/thesis" 1788210792.66515 0
+  "build/thesis.glo" 1788210792.40635 632 0e391e19975d164381664c815eedfab2 "pdflatex"
   (generated)
   "build/thesis.gls"
   (rewritten before read)
-["pdflatex"] 1788125410.32424 "thesis.tex" "thesis.pdf" "thesis" 1788125416.88611 0
+["pdflatex"] 1788210787.09358 "thesis.tex" "thesis.pdf" "thesis" 1788210792.66549 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1775415801 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1775415801 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -328,25 +328,26 @@
   "build/../images/panoramic_others.png" 1787741190.65716 401322 d2dcfd92aaa9a8dcc68d1d6d5b8cb4f6 ""
   "build/../images/server/Swagger.png" 1786912624.51504 62822 6d51a7d9264af05345b8dc0985415fe2 ""
   "build/../images/unipd-logo.jpeg" 1788098355.06891 51231 91a12283772855cd3380c22942607609 ""
-  "build/pdfa.xmpi" 1788125410.66195 5536 81e6caec571a306fe6b6cfdffb367943 "pdflatex"
-  "build/thesis.acr" 1788124778.64749 438 b7e0cc500d6a2f62ed1b136c349593b9 "cusdep acn acr build/thesis"
-  "build/thesis.aux" 1788125416.55641 66183 4b5a4986b99229ce1d2fcce3786f1a23 "pdflatex"
-  "build/thesis.bbl" 1788125396.21028 100957 bf9d87c9452ae76972175c78db9ab1fe "biber build/thesis"
-  "build/thesis.gls" 1788124778.70574 1245 6b229cb856288a399d08a30ed96b5811 "cusdep glo gls build/thesis"
-  "build/thesis.lof" 1788125416.5793 3706 3f2a512fd3923fd8c4d2529ce2932c18 "pdflatex"
-  "build/thesis.lol" 1788125416.5793 2700 46adfccd52078309028101967e5c4423 "pdflatex"
-  "build/thesis.lot" 1788125416.5793 595 eba43e4a5b901827a30363f80f024b8b "pdflatex"
-  "build/thesis.run.xml" 1788125416.5793 2361 0b114c967324307582a57f6eb5529b18 "pdflatex"
-  "build/thesis.toc" 1788125416.5793 5482 289ecd324e515ae1e51fb2355245f7b7 "pdflatex"
+  "build/pdfa.xmpi" 1788210787.38775 5536 516cfe76c36c8b99ea6a2f57ccfa27fc "pdflatex"
+  "build/thesis.acr" 1788210435.79525 438 5654e5530e3095ee69fdb645b2ff9772 "cusdep acn acr build/thesis"
+  "build/thesis.aux" 1788210792.38446 67188 1984825f422baf90496a7b4d900bc75a "pdflatex"
+  "build/thesis.bbl" 1788210355.11528 103276 79e939c227e72245724062490bb97ca2 "biber build/thesis"
+  "build/thesis.gls" 1788210435.75153 1245 99ea4aecdd5085c182c4470a885f7b0e "cusdep glo gls build/thesis"
+  "build/thesis.lof" 1788210792.40635 3728 b1c4f853c2a8665d5e920909886ef751 "pdflatex"
+  "build/thesis.lol" 1788210792.40635 2700 65df13e45f7150531c21b386ff8eda51 "pdflatex"
+  "build/thesis.lot" 1788210792.40635 615 4cfdb71f8ed7df9e838a324f41404763 "pdflatex"
+  "build/thesis.run.xml" 1788210792.40635 2361 0b114c967324307582a57f6eb5529b18 "pdflatex"
+  "build/thesis.toc" 1788210792.40635 5554 2bd06540e84091cdbb14c39882a44a06 "pdflatex"
   "chapters/architecture.tex" 1787664164.25937 8630 f1bb23e51791384a28543074fba952a5 ""
   "chapters/backend.tex" 1787694407.92267 32403 6b526979c8d5da7b6451f1d4e7e4b4ce ""
-  "chapters/conclusions.tex" 1787741846.88669 12065 485664a6fa7607989401b8b1e06f81a1 ""
+  "chapters/conclusions.tex" 1788210168.69351 12643 f600caaa44635413c052a6be74f6261d ""
   "chapters/data_layer.tex" 1787736790.68176 21953 5ef26aa1dbadf0769cdecdbbc88f1803 ""
-  "chapters/geomedia.tex" 1788125410.01194 23067 35917a2621fdfaa3e856cb12fa249fc1 ""
-  "chapters/introduction.tex" 1788122874.16486 9250 a0ea360ecfe9f00ad983153dee76368d ""
+  "chapters/geomedia.tex" 1788210786.89428 23212 d9b9528db6fd5cbf83c9b937a9d43089 ""
+  "chapters/introduction.tex" 1788210429.33527 11813 bb634b6ef953c62b5794de5abda1831a ""
   "chapters/mobile.tex" 1787747335.67258 44274 cfcc0c469ef6c96299c62ed1a67fb11a ""
   "chapters/related-works.tex" 1788124918.273 15415 1f7c299128b6f250f7c31b07e35d2cf3 ""
-  "config/packages.tex" 1787736553.73136 6654 96d6f1ab2291657bb3660a0adc6c8804 ""
+  "chapters/testing.tex" 1788155794.03175 45 17e272fa4f4ab45e66587eb5bbc0c6d0 ""
+  "config/packages.tex" 1788210400.8142 6632 91086072b452ad541643488ad55b5492 ""
   "config/thesis-config.tex" 1787038091.6984 5508 700385557b038975e4beaa1b70116171 ""
   "config/variables.tex" 1786912624.4039 1035 1be066139b0c40964ff19378ff9d2547 ""
   "images/GeoMedia_App_Flowchart.drawio.svg" 1786912624.41504 695907 1fe5237f345726f4a78819eb3d43cdd2 ""
@@ -357,7 +358,7 @@
   "preface/quote.tex" 1787578788.23368 254 718c401a318d796d50c0ef7c61d4a629 ""
   "preface/table-of-contents.tex" 1787038155.39556 462 2c4701a39c042945d952663b316dacdc ""
   "preface/title-page.tex" 1788098511.82022 1683 211c6bc2c88150a5d354f1db9aec6a1a ""
-  "structure.tex" 1787607072.06796 2669 f483aa7b19d257ac9cedadbd517ca8b8 ""
+  "structure.tex" 1788155834.95033 2702 c7b0af16d80ebad2a141e11ad024c95a ""
   "svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf" 1786912624.51604 287359 34f8dfa8c877f0b165e8e087606d025a ""
   "svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf_tex" 1786912624.51704 2130 f40f7f5ad59c0adffe6ad2082206ae67 ""
   "svg-inkscape/GeoMedia_ER_svg-tex.pdf" 1787133938.01874 29263 a960d71be23a8fae5120c109bf04e5f6 ""

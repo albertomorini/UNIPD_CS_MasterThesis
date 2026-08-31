@@ -124,7 +124,8 @@ The implementation, reported in Listing~\ref{lst:haversine}, calculates the grea
 
 The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae~\cite{site:vincenty-formulae} provide higher accuracy, overall the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
 
-For short-range distance calculations, the error introduced by the spherical approximation is negligible compared with the uncertainty of standard GPS positioning. At distances of approximately 30 km, the deviation from an ellipsoidal model is generally within a few meters, while for distances below a few kilometers it is typically reduced to the meter or sub-meter range.
+For short-range distance calculations, the error introduced by the spherical approximation is sufficiently small for the requirements of GeoMedia, particularly when compared with the positioning uncertainty of standard GPS receivers~\cite{site:gps-accuracy}.
+% At distances of approximately 30 km, the deviation from an ellipsoidal model is generally within a few meters, while for distances below a few kilometers it is typically reduced to the meter or sub-meter range.
 
 
 \lstset{
@@ -212,7 +213,8 @@ For instance:
     \item \textbf{Gamification}: Collections with sequentiality enabled allow creators to define a specific order in which posts should be discovered. Only the first available post is initially displayed, while subsequent posts become accessible only after seen the previous one and satisfying visibility conditions defined by their geographical position, time constraints and user permissions.\\
     This mechanism introduces gamification possibilities within the social platform, enabling experiences e.g. digital scavenger hunts, interactive events, city tours or location-based challenges, where users progressively unlock new content by exploring the real world.
 
-    \item \textbf{Augmented Reality}: GeoMedia does not currently implement Augmented Reality functionality; however, it includes an in-app camera component that can be leveraged for future AR-based enhancements. This feature could enable the integration of digital information above the real-word environment, visualizing for example historical information or media content. With this development, the mobile application would improve the user experience by providing a more immersive and interactive way to explore and interact with geographically referenced content.
+    %  SPOSTATO IN FUTURE WORKS
+    % \item \textbf{Augmented Reality}: GeoMedia does not currently implement Augmented Reality functionality; however, it includes an in-app camera component that can be leveraged for future AR-based enhancements. This feature could enable the integration of digital information above the real-word environment, visualizing for example historical information or media content. With this development, the mobile application would improve the user experience by providing a more immersive and interactive way to explore and interact with geographically referenced content.
 
 \end{itemize}
 
@@ -220,7 +222,7 @@ For instance:
 
 % 3 senza di PADOVA
 
-An interesting scenario can be adopted by the City of Padua, for illustrating one of its well-known sayings: ``citt\`a dei tre senza'' (literally, ``the city of the three without''). \\
+An interesting scenario can be adopted by the City of Padua, for illustrating one of its well-known sayings: ``citt\`a dei tre senza'' (literally, ``the city of the three without'')~\cite{site:pd-tre-senza}. \\
 This expression refers to three notable things that Padua has but or hasn't in a metaphorical way:
 \begin{itemize}
     \item \textbf{The lawn without grass}: referring to \textit{Prato della Valle}, which despite its name (``meadow of the valley''), feature ornamental grass and is not a lawn in the traditional sense;
@@ -266,13 +268,13 @@ Table~\ref{tab:comparison} provides a comparative overview of the supported func
 \setlength{\arrayrulewidth}{0.6pt}
 
 \begin{tabular}{|
->{\columncolor[HTML]{ECF4FF}\raggedright\arraybackslash}p{2.5cm}|
->{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.6cm}|
+>{\columncolor[HTML]{ECF4FF}\raggedright\arraybackslash}p{2cm}|
+>{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{2cm}|
 >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.2cm}|
 >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.2cm}|
 >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
->{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
->{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
+>{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.8cm}|
+>{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.8cm}|
 >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
 }
 
@@ -295,7 +297,7 @@ Table~\ref{tab:comparison} provides a comparative overview of the supported func
 
 &
 \cellcolor[HTML]{a8bca7}
-\textbf{Foursquare Swarm}
+\textbf{Swarm}
 
 &
 \cellcolor[HTML]{a8bca7}

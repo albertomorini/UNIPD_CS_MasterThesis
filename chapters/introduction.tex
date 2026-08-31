@@ -40,20 +40,30 @@ To address these issues, social media platforms have adopted various moderation 
 
 \section{Thesis structure}
 
-In the Second chapter~\ref{chap:}
-
-
 In this subsection, a brief description of the rest of the thesis is given:
 
-TODO:
+The second chapter~\ref{cap:relatedwork} investigates the current state of the art in the field of geolocated content and social networking platforms. Several existing location-aware OSNs are examined and systematically compared with GeoMedia. The analysis provides the necessary background for positioning GeoMedia within the existing platforms and identifying the distinctive characteristics.
 
-To enhance readability and ensure clarity, this thesis adopts the following typographical conventions:
-\begin{itemize}
-    \item Acronyms, abbreviations and technical terms are defined in the glossary;
-    \item First occurrences of glossary terms use the format: TODO;
-    % \item Foreign language terms and technical jargon appear in italic;
-    \item Code examples use monospace formatting when discussed within text or proper custom coloring form to be used within the rest of sections.
-\end{itemize}
+The third chapter~\ref{cap:geomedia} introduces GeoMedia and provides a comprehensive overview of the platform as a whole. It describes the fundamental concepts and the functionalities offered to its users compared with other related OSNs.
+
+The fourth chapter~\ref{cap:architecture} presents the software architecture adopted for the implementation of the GeoMedia framework. Moreover, it compares different software design in terms of communication mechanisms, extensibility and maintainability of the platform.
 
 
-% "The remainder of this paper is organized as follows: Section 2 re-views relevant related work in the domain of location-based socialnetworks and geolocation in mobile applications. Section 3 intro-duces the design and main features of the GeoMedia platform. Sec-tion 4 describes the system architecture, detailing the presentation,application, and data layers. Section 5 focuses on the developmentof the mobile application, including its main components, such asthe map interface, exclusive posts, and media handling. Section 6presents the backend server implementation and its integrationwith the database, while Section 7 outlines the database schemaand the use of stored procedures to manage data efficiently. Finally,Sections 8 and 9 present directions for future work and concludethe paper, respectively."
+The fifth chapter~\ref{cap:mobile} focuses on the development of the Android mobile application, which represents the client-side component through which users interact with the GeoMedia platform. The chapter follows the app development process from its initial design to the implementation of its functionalities. It compares different frameworks and integration with physical device features such as camera, GPS and the connection with the services exposed by the back-end.
+
+The sixth chapter~\ref{cap:backend} examines the server-side implementation of GeoMedia. It describes the structure of the back-end application and the process responsible for exposing the platform's core functionality to its clients. The chapter details the organization of the server-side components, the implementation of the business logic, the handling of client requests and the mechanisms employed to support communication between the application layer and the underlying data infrastructure.
+
+The seventh chapter~\ref{cap:datalayer} addresses the data management layer of the GeoMedia platform. It describes the data model adopted by the system and explains how the information is stored and manipulated on the demand of the application layer.
+
+The eighth chapter~\ref{cap:testing} reports the results of the test made involving different users. It aims to determine the usability of the system and evaluate the overall platform while also identifying accessability issues and limitations.
+
+Finally, Chapter~\ref{cap:future_works} concludes the thesis by bringing together the main results and contributions of the GeoMedia project. IT proposes several directions for future work, including functional extensions, architectural improvements and opportunities for further research and experimentation.
+
+% To enhance readability and ensure clarity, this thesis adopts the following typographical conventions:
+% \begin{itemize}
+%     \item Acronyms, abbreviations and technical terms are defined in the glossary;
+%     \item First occurrences of glossary terms use the format:  $\text{UX}_{\glslink{gps}{g}}$;
+%     \item Foreign-language terms and technical terminology are typeset in ``apix'' to distinguish them from the surrounding text.
+%     \item Code examples use monospace formatting when discussed within text or proper custom coloring form to be used within the rest of sections.
+% \end{itemize}
+
