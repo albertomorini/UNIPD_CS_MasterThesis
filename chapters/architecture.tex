@@ -63,7 +63,7 @@ Instead, to establish the connection between the others layer (application and d
 
 Another valid alternative to the architecture design adopted, is the microservices structure. This paradigm sees the system decomposed into a set of small and independent services, each responsible for a specific business capability~\cite{article:microservices-explained}.
 
-Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually providing RESTful APIs. In fact, this design concerns mainly  the backend structure such as application and data layer, more than the client which still represent the single point of interaction with the users.
+Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually following the REST architectural style~\cite{article:rest-api}. REST-based~$\acrshort{api}_{\glslink{apig}{g}}$ support distributed system by adopting constraints such as client-server separation, stateless communication, cache-ability and uniform interface to support scalable and interoperable systems. This design primarily concerns mainly the backend structure such as application and data layer, more than the client which still represent the single point of interaction with the users.
 
 This design compared to the a monolithic solution provides high degree of modularity and flexibility and others several key advantages, such as:
 
@@ -79,7 +79,7 @@ This design compared to the a monolithic solution provides high degree of modula
     \item \textbf{Continuous deployment:} updates can be released independently for each service, enabling faster development cycles and reducing deployment risks.
 \end{itemize}
 
-Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality, authentication or service orchestration tend to outweigh the architectural benefits. 
+Despite these advantages, the adoption of a microservices architecture represent an additional complexity which can be avoided for simple projects or applications with low usage. In fact, the challenge related to network communication, together with issues such as data confidentiality, authentication or service orchestration tend to outweigh the architectural benefits~\cite{article:microsvervices-vs-monolithic}. 
 
 The three-tier architecture designed for GeoMedia represents a monolithic solution that is sufficient for the current size and usage of the application, successfully supporting its functional requirements. Nevertheless, the clear separation between the presentation, application and data layers ensures that the software remains extensible and can progressively evolve towards a microservices architecture without requiring a complete redesign.
 
@@ -89,7 +89,7 @@ A concept of the microservice adoption for GeoMedia is shown in the UML in Figur
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.70\textwidth]{UML_Arch_MicroServices.png}
+    \includegraphics[width=0.90\textwidth]{UML_Arch_MicroServices.png}
         \caption{Microservices Software Architecture UML.}
     \label{fig:UML-arch-micro}
 \end{figure}
