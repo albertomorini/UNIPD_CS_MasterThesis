@@ -8,8 +8,7 @@ Therefore, the mobile application represents the most important component within
 \section{React Native framework}
 
 
-React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all or at least the most of the application logic across different platforms, such as Android and iOS. Consequently, it reduces development and maintenance efforts while preserving the performance and user experience expected from native applications.
-
+React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all or at least the most of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
 
 Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between JavaScript (or TypeScript) based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
 More specifically, React Native consents to write application logic using web-oriented programming languages, such as JavaScript or TypeScript, while adopting a styling approach similar to~$\acrshort{css}_{\glslink{css}{g}}$ for interface design. UI elements are represented through reusable components, which can be considered analogous to HTML elements in traditional web development. Finally, during the deployment process, these components are translated into their corresponding native platform components: enable the app to achieve a native-like user experience while maintaining a shared development environment.
@@ -494,7 +493,7 @@ This diagram describes the main operations performed by users and the correspond
 \label{sub:ui_and_usability}
 
 As an Online Social Network, GeoMedia, aims to be used by a potentially large and diverse user base. Consequently, usability represents an important aspect of the system design, especially for the mobile application, where the limited screen size and touch-based interaction introduce additional challenges. During the development of the mobile app, established usability principles were taken into consideration. \\
-In particular, the interface follows the \emph{thumb-friendly} design principle, according to which frequently performed actions should be positioned within areas of the screen that can be easily reached with the user's thumb when operating the device with one hand. This approach aims to reduce unnecessary hand movements and make common interactions more accessible as shown in Figure~\ref{fig:geomedia_thumb_rule}.
+In particular, the interface follows the \emph{thumb-friendly} design principle, according to which frequently performed actions should be positioned within areas of the screen that can be easily reached with the user's thumb when operating the device with one hand. This approach aims to reduce unnecessary hand movements and make common interactions more accessible as stated in WebPage~\cite{site:thumb-rule} and as illustrated in Figure~\ref{fig:geomedia_thumb_rule}.
 
 \begin{figure}[H]
     \centering
@@ -524,7 +523,8 @@ Accessibility was also considered during the implementation of the mobile applic
 \end{lstlisting}
 
 
-Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} that can be used to specify the semantic purpose of an interface element. While \texttt{accessibilityLabel} provide semantic information to assistive tools (e.g. screen readers). This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements, a fact also highlighted in~\cite{article:perinello2024}. Moreover, React Native thought these properties can also implement features such as headings and text abbreviations. Overral GeoMedia, implements these properties to provide meaningful descriptions and semantic roles for interactive elements, allowing users relying on assistive technologies such as screen readers to understand and interact with the application especially while moving through physical world.
+Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} that can be used to specify the semantic purpose of an interface element. While \texttt{accessibilityLabel} provide semantic information to assistive tools (e.g. screen readers). This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements, a fact also highlighted in~\cite{article:perinello2024}. Moreover, these properties can enrich the semantic information exposed by components, allowing developers to identify elements as headings or navigation elements and to specify text abbreviations where appropriate. Overall, GeoMedia uses these properties to provide meaningful descriptions and semantic roles for interactive elements, enabling users who rely on assistive technologies, such as screen readers, to better understand and interact with the application and particularly while navigating the physical world.
+
 
 Another accessibility feature would be the customization of the interface according to the user's dominant hand, which is not currently supported by the app. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience especially while moving through physical environment.
 
@@ -553,9 +553,7 @@ Android application development is freely available, with the main exception for
 
 \subsection{Development}
 
-The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application (APK). The official React Native documentation recommends \texttt{Expo} framework as the default starting point for most applications, as it provides a production-ready framework with integrated tooling, while still allowing the transition to native workflows when advanced platform-specific functionalities are required.
-
-
+The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application (APK). The official React Native documentation recommends \texttt{Expo} framework as the default starting point for most applications, as it provides a production-ready framework with integrated tooling, while still allowing to customize the underlying Android or iOS projects adding native code when platform-specific functionality is required~\cite{site:expo-native}.
 
 To develop a React Native application using the Expo framework, the development environment must satisfy a number of software prerequisites:
 
@@ -563,6 +561,7 @@ To develop a React Native application using the Expo framework, the development 
     \item \textbf{Node.js}: provides the JavaScript runtime environment required to execute development tools and includes the \textit{npm} package manager.
     \item \textbf{NPM}: the default package manager for Node.js, used to install and manage project dependencies.
     \item \textbf{Expo}: the framework used to simplify the development, testing, and deployment of React Native applications. It is installed and managed through \textit{npm} and is typically initialized using the \texttt{create-expo-app} utility.
+    To build GeoMedia has been used the version 54.0.33.
 \end{itemize}
 
 Once the prerequisites have been installed, a new Expo project can be created by executing the command \texttt{npx create-expo-app@latest}. The application can then be launched on a target platform using the command \texttt{npx expo run:\$platform\$}, where the platform is \texttt{android} or \texttt{ios}. \\
@@ -621,7 +620,7 @@ For GeoMedia, the manifest was manually modified (from the React Native generate
 A snippet of some of configured permissions and the clear-text traffic option is shown in Listing~\ref{lst:android_manifest}. The \texttt{usesCleartextTraffic} attribute was explicitly enabled because Android 9 (API level 28) introduced a default restriction on unencrypted HTTP communication, requiring applications that rely on HTTP connections to enable in explicitly manner.
 
 \begin{lstlisting}[
-    language=xml,
+    language=XML,
     caption={Android Manifest snippet.},
     label={lst:android_manifest}
 ]

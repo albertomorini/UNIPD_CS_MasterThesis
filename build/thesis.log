@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  1 SEP 2026 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  1 SEP 2026 23:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3256,44 +3256,44 @@ Chapter 5.
 [36
 
 ] [37]
-<../images/GeoMedia/IonicComparison.png, id=753, 669.50125pt x 761.84625pt>
+<../images/GeoMedia/IonicComparison.png, id=755, 669.50125pt x 761.84625pt>
 File: ../images/GeoMedia/IonicComparison.png Graphic file (type png)
 <use ../images/GeoMedia/IonicComparison.png>
 Package pdftex.def Info: ../images/GeoMedia/IonicComparison.png  used on input 
-line 31.
+line 30.
 (pdftex.def)             Requested size: 316.80121pt x 360.509pt.
  [38 <build/../images/GeoMedia/IonicComparison.png>] [39] [40]
 [41] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
 [43] [44]
-<../images/GeoMedia/geo_camera.png, id=873, 821.31844pt x 575.14874pt>
+<../images/GeoMedia/geo_camera.png, id=875, 821.31844pt x 575.14874pt>
 File: ../images/GeoMedia/geo_camera.png Graphic file (type png)
 <use ../images/GeoMedia/geo_camera.png>
 Package pdftex.def Info: ../images/GeoMedia/geo_camera.png  used on input line 
-427.
+426.
 (pdftex.def)             Requested size: 396.0pt x 277.30568pt.
  [45]
-Overfull \hbox (1.01826pt too wide) in paragraph at lines 433--436
+Overfull \hbox (1.01826pt too wide) in paragraph at lines 432--435
 \T1/cmr/m/n/10.95 (-20) In or-der to up-load files to-ward the server through H
 TTP pack-ets in \T1/cmtt/m/n/10.95 application/json
  []
 
 [46 <build/../images/GeoMedia/geo_camera.png>]
-<../images/GeoMedia/PostViewerSharing.png, id=912, 1379.1525pt x 1029.8475pt>
+<../images/GeoMedia/PostViewerSharing.png, id=914, 1379.1525pt x 1029.8475pt>
 File: ../images/GeoMedia/PostViewerSharing.png Graphic file (type png)
 <use ../images/GeoMedia/PostViewerSharing.png>
 Package pdftex.def Info: ../images/GeoMedia/PostViewerSharing.png  used on inpu
-t line 474.
+t line 473.
 (pdftex.def)             Requested size: 356.39758pt x 266.13547pt.
  [47]
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_App_Flowchart.drawio_sv
-g-tex.pdf' is 1 on input line 488.
+g-tex.pdf' is 1 on input line 487.
 
 (./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, id=942, page=1, 952.
+<./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf, id=944, page=1, 952.
 36798pt x 604.07181pt>
 File: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf Graphic file (ty
 pe pdf)
@@ -3302,21 +3302,21 @@ Package pdftex.def Info: ./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.p
 df , page1 used on input line 56.
 (pdftex.def)             Requested size: 356.39758pt x 226.05627pt.
 ) [48 <build/../images/GeoMedia/PostViewerSharing.png>]
-<../images/GeoMedia/Access.png, id=949, 641.39626pt x 847.165pt>
+<../images/GeoMedia/Access.png, id=952, 641.39626pt x 847.165pt>
 File: ../images/GeoMedia/Access.png Graphic file (type png)
 <use ../images/GeoMedia/Access.png>
-Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 501.
+Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 500.
 
 (pdftex.def)             Requested size: 336.60242pt x 444.60023pt.
  [49 <./svg-inkscape/GeoMedia_App_Flowchart.drawio_svg-tex.pdf>] [50 <build/../
 images/GeoMedia/Access.png>] [51] [52]
-[53] [54]
-<../images/apk_signing.png, id=1091, 608.2725pt x 570.63188pt>
+[53] [54] [55]
+<../images/apk_signing.png, id=1101, 608.2725pt x 570.63188pt>
 File: ../images/apk_signing.png Graphic file (type png)
 <use ../images/apk_signing.png>
-Package pdftex.def Info: ../images/apk_signing.png  used on input line 609.
+Package pdftex.def Info: ../images/apk_signing.png  used on input line 608.
 (pdftex.def)             Requested size: 356.39758pt x 334.35379pt.
- [55] [56 <build/../images/apk_signing.png>] [57])
+ [56 <build/../images/apk_signing.png>] [57])
 (./chapters/backend.tex [58]
 Chapter 6.
 [59
@@ -3327,7 +3327,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
  []
 
 [60] [61] [62] [63] [64] [65]
-<../images/server/Swagger.png, id=1242, 757.83125pt x 467.7475pt>
+<../images/server/Swagger.png, id=1250, 757.83125pt x 467.7475pt>
 File: ../images/server/Swagger.png Graphic file (type png)
 <use ../images/server/Swagger.png>
 Package pdftex.def Info: ../images/server/Swagger.png  used on input line 223.
@@ -3339,45 +3339,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--288
  []
 
 [69] [70] [71] [72]
-<../images/GeoMedia/Report.png, id=1332, 1180.41pt x 847.165pt>
+<../images/GeoMedia/Report.png, id=1347, 1180.41pt x 847.165pt>
 File: ../images/GeoMedia/Report.png Graphic file (type png)
 <use ../images/GeoMedia/Report.png>
-Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 400.
+Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 399.
 
 (pdftex.def)             Requested size: 356.39758pt x 255.78021pt.
  [73 <build/../images/GeoMedia/Report.png>]
-Overfull \hbox (7.7298pt too wide) in paragraph at lines 423--455
+Overfull \hbox (7.7298pt too wide) in paragraph at lines 422--454
  [][] 
  []
 
-) (./chapters/data_layer.tex [74] [75]
+) (./chapters/data_layer.tex [74]
 Chapter 7.
-[76
+[75
 
 ]
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
  input line 36.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1355, page=1, 343.6589pt x 270.6361
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1368, page=1, 343.6589pt x 270.6361
 pt>
 File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf , page1 used on
  input line 56.
 (pdftex.def)             Requested size: 297.0pt x 233.89052pt.
-) [77] [78 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [79] [80]
+) [76] [77 <./svg-inkscape/GeoMedia_ER_svg-tex.pdf>] [78] [79]
 Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-[81] [82] [83] [84] [85]) (./chapters/testing.tex [86]
+[80] [81] [82] [83] [84]) (./chapters/testing.tex [85]
 Chapter 8.
-<../images/github_release.png, id=1594, 903.375pt x 666.23906pt>
+<../images/github_release.png, id=1606, 903.375pt x 666.23906pt>
 File: ../images/github_release.png Graphic file (type png)
 <use ../images/github_release.png>
 Package pdftex.def Info: ../images/github_release.png  used on input line 12.
 (pdftex.def)             Requested size: 336.60242pt x 248.24297pt.
-[87
+[86
 
  <build/../images/github_release.png>]
 
@@ -3385,7 +3385,7 @@ Package caption Warning: \label without proper reference on input line 28.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab:sus_results' on page 88 undefined on input line 2
+LaTeX Warning: Reference `tab:sus_results' on page 87 undefined on input line 2
 3.
 
 
@@ -3393,27 +3393,27 @@ Overfull \hbox (44.80267pt too wide) in paragraph at lines 32--144
  [][] 
  []
 
-[88]) (./chapters/conclusions.tex [89]
+[87]) (./chapters/conclusions.tex [88]
 Chapter 9.
-[90
+[89
 
-] [91] [92] [93] [94]
-<../images/QRCODE_GEOMEDIA.png, id=1640, 116.435pt x 116.435pt>
+] [90] [91] [92] [93]
+<../images/QRCODE_GEOMEDIA.png, id=1652, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 63.
 (pdftex.def)             Requested size: 138.60242pt x 138.61621pt.
- [95 <build/../images/QRCODE_GEOMEDIA.png>])
-(./preface/acknowledgements.tex [96]) [97
+ [94 <build/../images/QRCODE_GEOMEDIA.png>])
+(./preface/acknowledgements.tex [95]) [96
 
-] (build/thesis.acr) (build/thesis.gls [98
-
-
-
-] [99
+] (build/thesis.acr) (build/thesis.gls [97
 
 
-]) (./appendix/bibliography.tex [100]
+
+] [98
+
+
+]) (./appendix/bibliography.tex [99]
 
 Package biblatex Warning: Type 'book' not found on input line 7.
 
@@ -3461,7 +3461,7 @@ Package biblatex Warning: No driver for 'paper'.
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[101
+[100
 
 
 ]
@@ -3494,6 +3494,19 @@ Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
 
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+[101]
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
+
 Overfull \hbox (21.186pt too wide) in paragraph at lines 10--10
 \T1/cmtt/m/n/10.95 Social _ Media _ Using _ Sentiment _ Analysis / links / 60b8
 e34992851cb13d73e858 /
@@ -3503,7 +3516,10 @@ e34992851cb13d73e858 /
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
 
-[102]
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 10.
+
 
 Package biblatex Warning: No driver for 'paper'.
 (biblatex)                Using fallback driver on input line 10.
@@ -3533,7 +3549,7 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[103] [104] [105] [106] [107]
+[102] [103] [104] [105] [106] [107]
 Overfull \hbox (2.93666pt too wide) in paragraph at lines 13--13
 []\T1/cmr/m/n/10.95 (-20) Meta Open Source. \T1/cmr/m/it/10.95 (-20) Re-act Na-
 tive of-fi-cial page. \T1/cmr/m/n/10.95 (-20) 2015. \T1/cmr/m/sc/10.95 (-20) ur
@@ -3554,11 +3570,11 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 47026 strings out of 469431
- 871465 string characters out of 5468909
- 2170018 words of memory out of 5000000
- 73810 multiletter control sequences out of 15000+600000
- 665521 words of font info for 250 fonts, out of 8000000 for 9000
+ 47105 strings out of 469431
+ 874035 string characters out of 5468909
+ 2179620 words of memory out of 5000000
+ 73877 multiletter control sequences out of 15000+600000
+ 665723 words of font info for 252 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,13n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
@@ -3586,10 +3602,10 @@ lic/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 ti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on build/thesis.pdf (119 pages, 15532829 bytes).
+Output written on build/thesis.pdf (119 pages, 15537029 bytes).
 PDF statistics:
- 2504 PDF objects out of 2984 (max. 8388607)
- 2175 compressed objects within 22 object streams
- 795 named destinations out of 1000 (max. 500000)
+ 2547 PDF objects out of 2984 (max. 8388607)
+ 2217 compressed objects within 23 object streams
+ 803 named destinations out of 1000 (max. 500000)
  61716 words of extra memory for PDF output out of 61914 (max. 10000000)
 

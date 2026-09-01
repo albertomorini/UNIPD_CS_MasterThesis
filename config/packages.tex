@@ -165,16 +165,23 @@
 \lstdefinelanguage{XML}{
   morestring=[b]",
   morecomment=[s]{<!--}{-->},
-  moredelim=[s][\color{blue!70!black}]{<}{>},
-  stringstyle=\color{orange!80!black},
-  commentstyle=\color{gray!70}\itshape
+  morekeywords={
+    manifest,
+    uses-permission,
+    application,
+    meta-data
+  },
+  keywordstyle=\color{blue!70!black},
+  stringstyle=\color{red!80!black},
+  commentstyle=\color{gray!70}\itshape,
+  sensitive=true
 }
 
 \lstset{
   language=XML,
   basicstyle=\ttfamily\small,
   keywordstyle=\color{blue!70!black},
-  stringstyle=\color{orange!80!black},
+  stringstyle=\color{red!80!black},
   commentstyle=\color{gray!70}\itshape,
   breaklines=true,
   frame=single,

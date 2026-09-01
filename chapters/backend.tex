@@ -5,7 +5,7 @@ The application layer consists of an HTTP-RESTful server responsible for impleme
 However, this design follows a monolithic architecture, in which the HTTP server operates as a single, self-contained unit responsible for handling all application functionalities and client requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. \\
 To improve performance, scalability, maintainability and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
 
-To implement the backend of the GeoMedia platform, Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (known as ``Swagger''). 
+To implement the backend of the GeoMedia platform, Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (known as ``Swagger'')~\cite{site:swagger}. 
 
 \section{REST Server}
 \label{sec:rest_server}
@@ -171,7 +171,7 @@ async def profile_show_allowed_post_api(uid: int, profile_id: int, curr_lat: flo
 
 The endpoint is associated with \texttt{GET} method and requires four query parameters: the identifier of the requesting user (\texttt{uid}), the identifier of the target profile (\texttt{profile\_id}) and the current geographic coordinates of the user (\texttt{cur\_lat} and \texttt{curr\_lon}). These parameters are passed to the \texttt{profile\_show\_allowed\_post} helper function, which implements the retrieval and filtering logic.
 
-As shown in Listing~\ref{lst:post_user_retrieval}, the helper function first retrieves the posts associated with the target profile by executing the \texttt{PROFILE\_GET\_ALLOWEDPOST} stored procedure through the data access layer. The query is executed using parameterized values, preventing the user-provided parameters from being directly interpolated into the SQL statement and consequently mitigating SQL injection risks.
+As shown in Listing~\ref{lst:post_user_retrieval}, the helper function first retrieves the posts associated with the target profile by executing the \texttt{PROFILE\_GET\_ALLOWEDPOST} stored procedure through the data access layer. The query is executed using parameterized values, preventing the user-provided parameters from being directly interpolated into the SQL statement and therefore mitigating SQL injection risks.
 
 The retrieved posts are then filtered according to their geographical visibility area: for each post, the \texttt{check\_post\_area} function compares the post's configured visibility radius, expressed in kilometres, with the distance between the post's coordinates and the user's current location. Only posts whose visibility area contains the user's current position are added to the result set. Finally, the filtered collection is returned by the helper function and consequently exposed to the mobile client through the HTTP response.
 
@@ -214,7 +214,7 @@ async def profile_show_allowed_post(uid, profile_id, curr_lat, curr_lon):
 
 \subsection{Documentation}
 
-FastAPI automatically generates an API specification in \textit{OpenAPI} format, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via \textit{Swagger UI} (typically available at \texttt{/docs} after the base URI of the REST server), which provides a comprehensive description of every available endpoint. Moreover, developers are allowed to group by endpoints in order to create some classification through tags, in GeoMedia as example, \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality  or \texttt{COLLECTIONS} for collection related endpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema, authentication requirements and the format and status codes of the corresponding responses. \\
+FastAPI automatically generates an API specification in OpenAPI format, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via Swagger UI (typically available at \texttt{/docs} after the base URI of the REST server), which provides a comprehensive description of every available endpoint. Moreover, developers are allowed to group by endpoints in order to create some classification through tags, in GeoMedia as example, \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality  or \texttt{COLLECTIONS} for collection related endpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema, authentication requirements and the format and status codes of the corresponding responses. \\
 Since the documentation is generated directly from the application source code, it remains synchronized with the API implementation throughout the development process. An example of GeoMedia backend API documentation is shown in Figure~\ref{fig:swagger_docs}
 
 
@@ -229,7 +229,7 @@ Since the documentation is generated directly from the application source code, 
 
 The first version of the GeoMedia adopted HTTP native module of NodeJS for the application layer. Although the high performance and event-driven asynchronous execution model, this solution became increasingly difficult to maintain as the number of API endpoints and application features grew. In particular, the absence of a well-structured framework reduced modularity and created a codebase that was progressively harder to extend.
 
-Compared to FastAPI, Node.JS ecosystem commonly relies on ``Express framework'', which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components. Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
+Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework~\cite{site:expressjs}, which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components. Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
 
 
 \section{Cybersecurity \& Privacy}
@@ -314,17 +314,19 @@ The timestamp and nonce are subsequently validated by the server to control the 
 
 \subsection{Password handling}
 
-Another encryption techniques, adopted by GeoMedia, is the MD5 hash function, which it's an injective function that represent one-way only to encrypt a text such as password, in order that neither seeing the digest (result of the hash) can be reverse to obtain original password. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
+Another cybersecurity practice adopted by GeoMedia, is the MD5 hash function, designed to be a one-way function to transform an textual input, such as password, into a fixed-size digest. The resulting digest cannot be reversed to obtain the original input~\cite{article:hash-md5}. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
+
+
 
 
 \subsection{Protection Against SQL Injection}
 
-SQL Injection is a major application-layer vulnerability in systems that interact with relational databases. The vulnerability occurs when user-controlled input is incorporated directly into SQL statements, allowing an attacker to manipulate the intended query.
+SQL Injection is a major application-layer vulnerability in systems that interact with relational databases. The vulnerability occurs when user-controlled input is incorporated directly into SQL statements, allowing an attacker to manipulate the intended query~\cite{article:defeating-sqlinjection}.
 
 For example, constructing a query through string concatenation is unsafe:
 
 \begin{verbatim}
-SELECT * FROM users WHERE email = ' + userEmail + '
+SELECT * FROM users WHERE email = ` + userEmail + '
 \end{verbatim}
 
 An attacker could provide specially crafted input that changes the semantic meaning of the SQL query.
@@ -354,11 +356,8 @@ Listing~\ref{lst:prepared_statement_sqlinj} shows the use of a prepared statemen
 async def post_delete(postid: int, password: str):
     writeLog(f"Requested deletion for: {postid} = with pas[10]{password[:10]}")
     # Perpared statement to avoid SQL INJECTION
-    query = """
-    EXEC POST_DELETE @POSTID=%s, @PASSWORD=%s
-    """
+    query = """EXEC POST_DELETE @POSTID=%s, @PASSWORD=%s"""
     return SQL_MANAGER.insert_query(query, (postid, password))
-
 \end{lstlisting}
 
 
@@ -387,13 +386,13 @@ requests.delete("https://geomediasrv.duckdns.org:9911/post/1",
 \end{lstlisting}
 
 
-Another injection attack that targets website and web-application is the cors-site scripting, where an attack submit malicious HTML or JavaScript as part of a content (such as post, profile field, comments etc.). Then, the rendering of the content without appropriate sanitation or encoding, makes the user's device (such as the browser) execute the malicious script.\\
+Another injection attack that targets website and web-application is the cors-site scripting, where an attack submit malicious HTML or JavaScript as part of a content (such as post, profile field, comments etc.)~\cite{article:defeating-xss}. Then, the rendering of the content without appropriate sanitation or encoding, makes the user's device (such as the browser) execute the malicious script.\\
 However, this attack cannot be performed against GeoMedia as the React Native mobile application does not use a WebView component. In fact, the app renders user interface using native platform component translated during building process, while JavaScript code is bundled in binary form. Nevertheless, this attack may be feasible in others mobile framework such as Ionic Framework, which was used in the first version of GeoMedia, as parts of the application are executed within a WebView. 
 
 \subsection{Content Moderation and Abuse Prevention}
 
-GeoMedia allows users to create and distribute content. Consequently, cybersecurity is not limited to protecting the technical infrastructure but also includes mechanisms for mitigating platform abuse. Users are able to report a posts through an opportune form shown in Figure~\ref{fig:post-reporting}, and to flag potentially harmful posts providing a mandatory motivation. When a post receives more than three reports from distinct users, it is automatically hidden from the map and cannot be seen since the moderation process has evaluate the content attainability.\\
-The moderation process can involve either manual review or automated classification, in latter case,  Large Language Models (LLMs) can be used to analyse potentially harmful comments, while computer vision models or multimodal LLMs can be adopted to identify inappropriate images. Because automated classification systems may produce false positives and false negatives, LLM-based moderation should not necessarily be considered an infallible security mechanism. 
+GeoMedia allows users to create and distribute content. Therefore, cybersecurity is not limited to protecting the technical infrastructure but also includes mechanisms for mitigating platform abuse. Users are able to report a posts through an opportune form shown in Figure~\ref{fig:post-reporting}, and to flag potentially harmful posts providing a mandatory motivation. When a post receives more than three reports from distinct users, it is automatically hidden from the map and cannot be seen since the moderation process has evaluate the content attainability.\\
+The content review process, actually implemented through manual operations, is designed to integrate automated classification techniques. In latter case, Large Language Models (LLMs) can be used to analyse potentially harmful comments, while computer vision models or multimodal LLMs can be adopted to identify inappropriate images. Because automated classification systems may produce misclassifications, AI-based moderation should not be considered an infallible decision mechanism: particularly sensitive or ambiguous results may therefore benefit from escalation to human review~\cite{article:llm-moderation}.
 
 \begin{figure}[H]
     \centering
