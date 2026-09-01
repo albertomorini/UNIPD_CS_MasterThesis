@@ -271,10 +271,7 @@ The map component represent the core functionality of GeoMedia, implemented usin
 
 On the Android platform, the Google Maps component provides a wide range of features. These include graphical customization of the map through styling properties, as well as the display of commercial, historical or other points of interest, such as coffee shops, restaurants or retail stores. In GeoMedia, these elements remain visible and serve as useful landmarks, helping users orient themselves within the displayed environment and among the posts published through the app itself. In fact, the map supports the rendering of additional geographical elements with specific coordinates, known as markers. Each marker acts as a visual placeholder that identifies the physical location associated with a post.
 
-In addition, the library exposes several callback functions and hooks that allow developers to implement custom logic. One such feature is continuous background user location tracking, which GeoMedia leverages to dynamically load location-aware posts as the user moves through the physical environment. This approach ensures that the displayed content remains relevant to the user's current location. To optimize network usage and avoid unnecessary server requests caused by minor location variations, GeoMedia applies a 50-meter movement threshold, triggering a new request and post update only when the user's displacement exceeds this distance (or collection selected are changed).
-
-
-In order to access Google Maps services on Android, a Google Maps API key is required, which serves as an authentication token that links the application to a Google Cloud Project (a Google suite that offers access to other products such as shared services, computing resources, and others), enabling access to the Google Maps SDK and its associated services. \\
+In addition, the library exposes several callback functions and hooks that allow developers to implement custom logic. Callback functions are functions passed as arguments to another procedure, enabling application-specific logic to be executed in response to particular events or operations. Instead, ``React Hooks''~\cite{site:react-hook} are functions that enable components to access features such as state management with \texttt{useState} procedure, allowing values displayed in the UI to be dynamically updated. While the hook-function \texttt{useEffect} allows to perform custom logic in response to changes in states or values, for example implemented to track in background, the user location which GeoMedia leverages to dynamically load location-aware posts as the user moves through the physical environment. This approach ensures that the displayed content remains relevant to the user's current location. To optimize network usage and avoid unnecessary server requests caused by minor location variations, GeoMedia applies a 50-meter movement threshold, triggering a new request and post update only when the user's displacement exceeds this distance (or collection selected are changed). In order to access Google Maps services on Android, a Google Maps API key is required, which serves as an authentication token that links the application to a Google Cloud Project (a Google suite that offers access to other products such as shared services, computing resources, and others), enabling access to the Google Maps SDK and its associated services. \\
 The API key follows the pricing policy defined by Google. Specifically, it applies a ``pay-as-you-go'' pricing model~\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7\$.
 
 An implementation of map rendering is shown in Listing~\ref{lst:implementation_map_view}
@@ -342,12 +339,13 @@ Along with the map rendering, the integration of the GPS module provides the cur
     \item \textbf{Latitude}: the angular distance north or south of the Equator, used to identify the vertical position on the Earth's surface.
     \item \textbf{Altitude}: the vertical distance of the user above mean sea level, estimated by the GPS sensor.
 \end{itemize}
-Even though altitude is not currently used by GeoMedia, it is stored for future developments.
+
+Although altitude is not currently used by GeoMedia, it is stored for future developments.
 
 This set of information is repeatedly used throughout GeoMedia, both for displaying nearby posts and during the post creation process, where the user's current position is automatically assigned as the post location. Specifically, when the current position is used, the altitude is also stored. Conversely, when the location is selected remotely, the altitude is not available. This is because the altitude can be estimated by the GPS sensor, whereas the altitude of a manually selected location cannot be reliably determined, as different points may correspond to buildings with multiple floors, skyscrapers or mountainous areas.\\
 In order to access device resources and user data, Android (as well as the iOS platform) adopts a permission-based security model. This requires users to explicitly grant permissions before applications can access protected system features, hardware components and sensitive information.
 
-The location permission request and location retrieval, is implemented through the API provided by \texttt{@react-native-community/geolocation} library as shown in Listing~\ref{lst:location_retriving_snippet}
+The location permission request and location retrieval, is implemented through the API provided by \texttt{@react-native-community/geolocation} library as shown in Listing~\ref{lst:location_retriving_snippet}. \\
 
 \begin{lstlisting}[
     language=Javascript,
@@ -401,34 +399,13 @@ export default function OpenCamera(
     ... //others components and logic functions
     return (
         <View style={StyleSheet.absoluteFill}>
-            <Camera ref={camera}
-                style={StyleSheet.absoluteFill}
-                device={device}
-                isActive={true}
-                photo={true} // enable photo capture
-                enableZoomGesture={true}
-                torch={flash === 'on' ? 'on' : 'off'} // continuous torch (flash preview)
+            <Camera ref={camera} style={StyleSheet.absoluteFill}
+                device={device} isActive={true}
+                photo={true} enableZoomGesture={true}
+                torch={flash === 'on' ? 'on' : 'off'}
             />
-            <ThemedText style={styles.controlsTop}> {/*CONTROLS*/}
-                {/* CLOSE */}
-                <TouchableOpacity style={[styles.iconButton, styles.iconClose]} onPress={onClose}>
-                    <Text style={styles.icon}>X</Text>
-                </TouchableOpacity>
-            </ThemedText>
-            <ThemedText style={styles.controlsBottom, styles?.controlsTopLeft}>
-                {/* FLASH */}
-                <TouchableOpacity style={styles.iconButton} onPress={toggleFlash}>
-                    <Text style={styles.icon, styles?.iconFlash}>
-                        {flash === 'on' ? 'FLASH' : flash === 'auto' ? 'FLASH auto' : 'FLASH off'}
-                    </Text>
-                </TouchableOpacity>
-            </ThemedText>
-            <ThemedText style={styles.controlsBottom, styles?.controlsRight}>
-                {/* REVERSE CAMERA */}
-                <TouchableOpacity style={styles.iconButton} onPress={toggleCamera}>
-                    <Text style={styles.icon}>REVERSE</Text>
-                </TouchableOpacity>
-            </ThemedText>
+            {/*CONTROLS BUTTON: close, flash, reverse camera*/}
+            ...
             {/* CAPTURE BUTTON */}
             <View style={styles.controlsBottom}>
                 <TouchableOpacity style={styles.captureButton} onPress={async () => {
@@ -463,36 +440,27 @@ In order to upload files toward the server through HTTP packets in \texttt{appli
     label={lst:file_picking_snippet}
 ]
 async function file_pick() {
-    try {
-        const result = await DocumentPicker.getDocumentAsync({
-            type: "*/*", //all extension
-            multiple: true,
-            copyToCacheDirectory: true,
-        });
+    const result = await DocumentPicker.getDocumentAsync({
+        type: "*/*", //all extension
+        multiple: true, copyToCacheDirectory: true,
+    });
 
-        if (result.canceled) return;
+    if (result.canceled) return 0;
 
-        let files = []
-        for (const asset of result.assets) {
-            const { name, uri } = asset; //filename and uri path
-            const mimetype = asset?.mimeType;
+    let files = []
+    for (const asset of result.assets) {
+        const { name, uri } = asset; //filename and uri path
+        const mimetype = asset?.mimeType;
 
-            //BASE64 computing
-            const file = new FileSystem.File(uri); //load the file
-            const base64 = await file.base64();
+        //BASE64 computing
+        const file = new FileSystem.File(uri); //load the file
+        const base64 = await file.base64();
 
-            files.push({
-                FILENAME: name,
-                UPDATED: true,
-                BASE64: base64,
-                MIME_TYPE: mimetype
-            })
-        }
-        setFilesAttached(prev => [...prev, ...files])
-    } catch (error) {
-        console.error("Error picking or reading file:", error);
-        Alert.alert("Error reading files", error)
+        files.push({
+            FILENAME: name, UPDATED: true, BASE64: base64, MIME_TYPE: mimetype
+        })
     }
+    setFilesAttached(prev => [...prev, ...files])
 }
 \end{lstlisting}
 
@@ -528,8 +496,6 @@ This diagram describes the main operations performed by users and the correspond
 As an Online Social Network, GeoMedia, aims to be used by a potentially large and diverse user base. Consequently, usability represents an important aspect of the system design, especially for the mobile application, where the limited screen size and touch-based interaction introduce additional challenges. During the development of the mobile app, established usability principles were taken into consideration. \\
 In particular, the interface follows the \emph{thumb-friendly} design principle, according to which frequently performed actions should be positioned within areas of the screen that can be easily reached with the user's thumb when operating the device with one hand. This approach aims to reduce unnecessary hand movements and make common interactions more accessible as shown in Figure~\ref{fig:geomedia_thumb_rule}.
 
-However, the current implementation does not account for differences in users' dominant hand. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience especially while moving through physical environment.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{GeoMedia/Access.png}
@@ -537,10 +503,11 @@ However, the current implementation does not account for differences in users' d
     \label{fig:geomedia_thumb_rule}
 \end{figure}
 
-Moreover, GeoMedia incorporates gesture-based interactions and haptic feedback to provide a more natural and intuitive interaction experience. Gestures allow users to interact with the application through direct and familiar touch-based actions, while haptic feedback provides immediate physical feedback in response to specific interactions. As an instance, for sequential posts, in Figure~\ref{fig:collection-overview}, users can reorder posts through a drag-and-drop gesture, providing a seamless and intuitive interaction experience.\\
-Together, these mechanisms aim to improve the perceived responsiveness of the interface and make interactions feel more engaging and consistent.
+Moreover, GeoMedia incorporates gesture-based interactions and haptic feedback to provide a more natural and intuitive interaction experience. Gestures allow users to interact with the application through direct and familiar touch-based actions, while haptic feedback provides immediate physical feedback in response to specific interactions. As an example, for sequential posts, in Figure~\ref{fig:collection-overview}, users can reorder posts through a drag-and-drop gesture, providing a seamless and intuitive interaction experience. Together, these mechanisms aim to improve the perceived responsiveness of the interface and make interactions feel more engaging and consistent.
 
-The design of GeoMedia was also influenced by established social networking applications with which users are likely to be familiar, such as WhatsApp and Instagram. In particular, the application adopts a bottom navigation menu to provide access to its main sections. Reusing a familiar navigation pattern reduces the need for users to learn a new interaction model and contributes to a more predictable and consistent user experience.
+The design of GeoMedia was also influenced by established social networking applications with which users are likely to be familiar with, such as WhatsApp and Instagram. In particular, the application adopts a bottom navigation menu to provide access to its main sections. Reusing a widely adopted navigation pattern reduces the need for users to learn a new interaction model and contributes to a more predictable and consistent user experience.
+
+\section{Accessability}
 
 Accessibility was also considered during the implementation of the mobile application. GeoMedia provides support for screen-reader technologies, including Android's TalkBack, by assigning appropriate accessibility roles and descriptive labels to interactive components. This allows assistive technologies to communicate the purpose and state of interface elements to users who rely on them. An example of this implementation is shown in Listing~\ref{lst:accessability_role_react}.
 
@@ -550,20 +517,18 @@ Accessibility was also considered during the implementation of the mobile applic
     label={lst:accessability_role_react}
 ]
 <TouchableOpacity style={[style.buttons.full_screen, style.colors.geomedia_green]} onPress={() => { saveInfo() }}
-    accessibilityRole="button"
-    accessibilityLabel={langselected?.save}
+    accessibilityRole="button" accessibilityLabel={langselected?.save}
 >
     <ThemedText>{langselected.save}</ThemedText>
 </TouchableOpacity>
 \end{lstlisting}
 
 
-Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} and \texttt{accessibilityLabel}, providing semantic information to assistive features. For instance, \texttt{accessibilityRole} can be used to specify the semantic purpose of an interface element,meanwhile \texttt{accessibilityLabel} provides a descriptive text that can be announced by screen readers. \\
-This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements. Perinello and Gaggi's analysis of React Native and Flutter~\cite{article:perinello2024}, highlights this as an enhancing approach to accessibility, in which accessibility properties can be applied directly to existing components; moreover, React Native thought these properties can also implement features such as headings and text abbreviations.
+Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} that can be used to specify the semantic purpose of an interface element. While \texttt{accessibilityLabel} provide semantic information to assistive tools (e.g. screen readers). This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements, a fact also highlighted in~\cite{article:perinello2024}. Moreover, React Native thought these properties can also implement features such as headings and text abbreviations. Overral GeoMedia, implements these properties to provide meaningful descriptions and semantic roles for interactive elements, allowing users relying on assistive technologies such as screen readers to understand and interact with the application especially while moving through physical world.
 
-GeoMedia implements these properties to provide meaningful descriptions and semantic roles for interactive elements, allowing users relying on assistive technologies such as screen readers to understand and interact with the application especially while moving through physical world.
+Another accessibility feature would be the customization of the interface according to the user's dominant hand, which is not currently supported by the app. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience especially while moving through physical environment.
 
-\subsection{Customization}
+\section{Customization}
 
 GeoMedia mobile application supports also personal customization by supporting both light and dark themes and can automatically follow the device's system-wide appearance settings, thus to adapt user preferences. \\
 In addition, the app allows user to change map colors among five different map styles:
@@ -579,158 +544,16 @@ In addition, the app allows user to change map colors among five different map s
 These options provide users with greater control over the application's visual appearance and allow the map to be adapted to different environmental conditions and individual preferences.
 
 
-\subsection{SUS Questionaire results}
-
-In order to get the qualitative evaluation of GeoMedia's usability, a quantitative assessment was conducted using the \emph{System Usability Scale} (SUS) among 15 different people with different ages, background and devices.\\
-The SUS is a standardized questionnaire originally proposed by researcher John Brooke~\cite{article:brook_sus} to provide a quick and practical measure of the perceived usability of a system. Composed by ten statements evaluate using a five-point Likert scale, ranging from ``Strongly disagree'' to ``Strongly agree''. \\
-For each statement has been computed the mean value across all participants, thus to provide an overview to analyse the general tendency. Moreover, the standard deviation was calculated to indicate the variability of participants' responses across the questions.
-
-The results of the Questionnaire are reported in Table~\ref{tab:sus_results}
-
-
-\begin{table}[H]
-\centering
-\label{tab:sus_results}
-\renewcommand{\arraystretch}{1.4}
-\setlength{\arrayrulewidth}{0.6pt}
-
-\begin{tabular}{|
->{\centering\arraybackslash\columncolor[HTML]{ECF4FF}}p{1.2cm}|
->{\raggedright\arraybackslash\columncolor[HTML]{ECF4FF}}p{9.5cm}|
->{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
->{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
-}
-\hline
-
-\cellcolor[HTML]{a8bca7}
-\textbf{Item}
-&
-\cellcolor[HTML]{a8bca7}
-\textbf{Statement}
-&
-\cellcolor[HTML]{a8bca7}
-\textbf{Mean}
-&
-\cellcolor[HTML]{a8bca7}
-\textbf{SD}
-\\ \hline
-
-1
-&
-I think that I would like to use this system frequently.
-&
-2.54
-&
-1.21
-\\ \hline
-
-2
-&
-I found the system unnecessarily complex.
-&
-1.54
-&
-0.78
-\\ \hline
-
-3
-&
-I thought the system was easy to use.
-&
-3.61
-&
-1.21
-\\ \hline
-
-4
-&
-I think that I would need assistance to use the system.
-&
-1.60
-&
-0.70
-\\ \hline
-
-5
-&
-I found the various functions in the system were well integrated.
-&
-4.00
-&
-0.82
-\\ \hline
-
-6
-&
-I thought there was too much inconsistency in the system.
-&
-1.70
-&
-0.82
-\\ \hline
-
-7
-&
-I would imagine that most people would learn to use the system very quickly.
-&
-4.10
-&
-0.74
-\\ \hline
-
-8
-&
-I found the system very cumbersome to use.
-&
-1.50
-&
-0.71
-\\ \hline
-
-9
-&
-I felt very confident using the system.
-&
-4.20
-&
-0.79
-\\ \hline
-
-10
-&
-I needed to learn a lot of things before I could get going with the system.
-&
-1.80
-&
-0.92
-\\ \hline
-
-\end{tabular}
-\caption{Analysis of SUS questionnaire responses.}
-\end{table}
-
-
-
-Reporting both the mean and standard deviation provides a more complete representation of the results by describing both the overall usability level and the consistency of participants' perceptions.
-
-The usability evaluation of GeoMedia produced generally positive results. The highest scores were obtained for users' confidence in operating the system, its learnability and the integration of its functionalities, all receiving scores of \texttt{4 or higher out of 5}. These results suggest that users perceived the system as accessible and coherent, with functionalities that could be understood and operated with relative ease. In contrast, the low score concern the agreement with negative statement concerning system complexity, the need for assistance, inconsistency and cumbersome use; receiving score below of \texttt{2 out of 5}. The disagreement with these affirmations indicate that GeoMedia was perceived as relatively simple, consistent and easy to use.
-
-Overall, the first SUS statement, concerning users' intention to use the system frequently, received a comparatively lower value and was therefore investigated further through follow-up analysis involving six of fifteen participants. As an outcome of the interviews, several new or missing features and potential improvements were identified, which are taken into consideration in the conclusion chapter and discussed as possible directions for future development.
-
 
 \section{Android application}
 
-Android is an operating system developed by Google, originally designed for mobile devices such as smartphones and tablets, and later extended to a wider range of platforms, including televisions, vehicles, smartwatches and other embedded systems. It is based on a modified version of the Linux kernel and was first released in 2008. Since then, it has become the most widely adopted operating system for smartphones worldwide\cite{site:android-usage}.
-
-Android provides a high degree of customization, allowing manufacturers such as Samsung, Motorola or others, to modify the user interface and include proprietary applications as part of their devices. Despite these customizations, Android remains an open platform that allows users to install applications from several different stores or, more brutally through APK file, that contain the package and executable code to install the app.
+Android is an operating system developed by Google, originally designed for mobile devices such as smartphones and tablets, and later extended to a wider range of platforms, including televisions, vehicles, smartwatches and other embedded systems. It is based on a modified version of the Linux kernel and was first released in 2008. Since then, it has become the most widely adopted operating system for smartphones worldwide\cite{site:android-usage}. Android provides a high degree of customization, allowing manufacturers such as Samsung, Motorola or others, to modify the user interface and include proprietary applications as part of their devices. Despite these customizations, Android remains an open platform that allows users to install applications from several different stores or, more brutally through APK file, that contain the package and executable code to install the app.
 
 Android application development is freely available, with the main exception for deployment phases to in the official Google stores, where developers need to make one-time payment for a developer license that enable them to upload as many apps they want. Furthermore, Android development is platform-independent, representing a significant advantage over competing platforms such as Apple, where application compilation and deployment require dedicated software tools available only on macOS (Apple Inc operating systems for PC).
 
 \subsection{Development}
 
-The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application (APK).
-
-The official React Native documentation recommends \texttt{Expo} framework as the default starting point for most applications, as it provides a production-ready framework with integrated tooling, while still allowing the transition to native workflows when advanced platform-specific functionalities are required.
+The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application (APK). The official React Native documentation recommends \texttt{Expo} framework as the default starting point for most applications, as it provides a production-ready framework with integrated tooling, while still allowing the transition to native workflows when advanced platform-specific functionalities are required.
 
 
 
@@ -755,6 +578,7 @@ The generated project directory contains the application source code, static ass
 
 
 \subsection{Deployment}
+\label{sub:deployment}
 
 The deployment phase can be carried out through different distribution channels. From directly sharing the application package (APK) to publication on dedicated application stores which apply their own policies, technical requirements and review procedures. 
 
@@ -762,22 +586,13 @@ For the GeoMedia application, the following distribution platforms were consider
 
 \begin{itemize}
     \item \textbf{Google Play Store}: the official Android application marketplace maintained by Google. Publishing an application requires the creation of a Google Play Developer account, compliance with Google's Developer Program Policies and finally the review of the application along automated processes. \\
-    Furthermore, for newly registered personal developer accounts, Google requires a closed testing phase involving at least \textbf{12 testers for a minimum of 14 consecutive days} before production access can be requested.
+    Furthermore, for newly registered personal developer accounts, Google requires a closed testing phase involving at least 12 testers for a minimum of 14 consecutive days before production access can be requested.
 
     \item \textbf{F-Droid}: an open-source Android application repository that distributes only Free and Open Source Software (FOSS). Applications published on F-Droid must comply with its transparency and open-source requirements, making it a suitable distribution channel for projects released under open-source licenses.
 
     \item \textbf{Obtainium}: an alternative application manager that allows users to install and update applications directly from their official release sources, such as GitHub repositories, without relying on a centralized application store. This approach enables rapid distribution while preserving direct control over application releases.
 
 \end{itemize}
-
-For testing phase, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently and checking the previous version as shown in Figure~\ref{fig:github_release}. Moreover, this approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{github_release.png}
-    \caption{GitHub release page for GeoMedia}
-    \label{fig:github_release}
-\end{figure}
 
 
 \subsection{APK signing}
@@ -826,7 +641,7 @@ A snippet of some of configured permissions and the clear-text traffic option is
 
 \section{Network capability}
 
-As designed, the communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in chapter~\ref{sec:rest_server}). However, to perform the sending of respective HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} has been implemented in Listing~\ref{lst:dorequest_wrapper}.
+The communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in chapter~\ref{sec:rest_server}). However, to perform the sending of HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} (see Listing~\ref{lst:dorequest_wrapper}).
 
 
 \begin{lstlisting}[
@@ -837,7 +652,6 @@ As designed, the communication among the mobile devices and the server of GeoMed
 export const doRequest = (api, body = {}, method = "POST") => {
     const nonce = Crypto.randomUUID(); 
     const timestamp = Date.now().toString();
-
     let methods_no_body = ["GET", "DELETE"];
     if (methods_no_body.includes(method)) {
         if (body && Object.keys(body).length > 0) {
@@ -848,15 +662,12 @@ export const doRequest = (api, body = {}, method = "POST") => {
     // Sign the FINAL path, including query parameters
     const dataToSign = "/" + api + timestamp + nonce;
     const signature = CryptoJS.HmacSHA256(
-        dataToSign,
-        SHARED_KEY
+        dataToSign, SHARED_KEY
     ).toString(CryptoJS.enc.Hex);
 
     const headers = {
-        "Content-Type": "application/json",
-        "X-Timestamp": timestamp,
-        "X-Nonce": nonce,
-        "X-Signature": signature
+        "Content-Type": "application/json", "X-Timestamp": timestamp,
+        "X-Nonce": nonce, "X-Signature": signature
     };
 
     if (methods_no_body.includes(method)) {
@@ -865,7 +676,6 @@ export const doRequest = (api, body = {}, method = "POST") => {
             headers: new Headers(headers),
         }).then(res => res.json());
     }
-
     return fetch(URL + api, {
         method,
         headers: new Headers(headers),

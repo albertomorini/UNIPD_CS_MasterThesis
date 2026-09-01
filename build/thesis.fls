@@ -787,11 +787,6 @@ INPUT build/../images/GeoMedia/Access.png
 INPUT build/../images/GeoMedia/Access.png
 INPUT build/../images/GeoMedia/Access.png
 INPUT build/../images/GeoMedia/Access.png
-INPUT build/../images/github_release.png
-INPUT build/../images/github_release.png
-INPUT build/../images/github_release.png
-INPUT build/../images/github_release.png
-INPUT build/../images/github_release.png
 INPUT build/../images/apk_signing.png
 INPUT build/../images/apk_signing.png
 INPUT build/../images/apk_signing.png
@@ -832,6 +827,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
 INPUT ./chapters/testing.tex
 INPUT ./chapters/testing.tex
 INPUT chapters/testing.tex
+INPUT build/../images/github_release.png
+INPUT build/../images/github_release.png
+INPUT build/../images/github_release.png
+INPUT build/../images/github_release.png
+INPUT build/../images/github_release.png
 INPUT ./chapters/conclusions.tex
 INPUT ./chapters/conclusions.tex
 INPUT ./chapters/conclusions.tex

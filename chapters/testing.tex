@@ -1,3 +1,153 @@
 
 \chapter{Testing phase}
 \label{cap:testing}
+
+% Va anche ampliato un poco, devi sicuramente scrivere quanti utenti hanno compilato il questionario, se hai preso le generalità anagrafiche devi descriverle, etc... insomma devi descrivere il campione e come lo hai raggiunto.
+
+
+For testing phase, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently and checking the previous version as shown in Figure~\ref{fig:github_release}. Moreover, this approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid as previously mentioned in the subsection~\ref{sub:deployment}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{github_release.png}
+    \caption{GitHub release page for GeoMedia}
+    \label{fig:github_release}
+\end{figure}
+
+\section{SUS Questionaire results}
+
+In order to get the qualitative evaluation of GeoMedia's usability, a quantitative assessment was conducted using the \emph{System Usability Scale} (SUS) among 15 different people with different ages, background and devices.\\
+The SUS is a standardized questionnaire originally proposed by researcher John Brooke~\cite{article:brook_sus} to provide a quick and practical measure of the perceived usability of a system. Composed by ten statements evaluate using a five-point Likert scale, ranging from ``Strongly disagree'' to ``Strongly agree''. \\
+For each statement has been computed the mean value across all participants, thus to provide an overview to analyse the general tendency. Moreover, the standard deviation was calculated to indicate the variability of participants' responses across the questions.
+
+The results of the Questionnaire are reported in Table~\ref{tab:sus_results}
+
+
+\begin{table}[H]
+\centering
+\label{tab:sus_results}
+\renewcommand{\arraystretch}{1.4}
+\setlength{\arrayrulewidth}{0.6pt}
+
+\begin{tabular}{|
+>{\centering\arraybackslash\columncolor[HTML]{ECF4FF}}p{1.2cm}|
+>{\raggedright\arraybackslash\columncolor[HTML]{ECF4FF}}p{9.5cm}|
+>{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
+>{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{1.5cm}|
+}
+\hline
+
+\cellcolor[HTML]{a8bca7}
+\textbf{Item}
+&
+\cellcolor[HTML]{a8bca7}
+\textbf{Statement}
+&
+\cellcolor[HTML]{a8bca7}
+\textbf{Mean}
+&
+\cellcolor[HTML]{a8bca7}
+\textbf{SD}
+\\ \hline
+
+1
+&
+I think that I would like to use this system frequently.
+&
+2.54
+&
+1.21
+\\ \hline
+
+2
+&
+I found the system unnecessarily complex.
+&
+1.54
+&
+0.78
+\\ \hline
+
+3
+&
+I thought the system was easy to use.
+&
+3.61
+&
+1.21
+\\ \hline
+
+4
+&
+I think that I would need assistance to use the system.
+&
+1.60
+&
+0.70
+\\ \hline
+
+5
+&
+I found the various functions in the system were well integrated.
+&
+4.00
+&
+0.82
+\\ \hline
+
+6
+&
+I thought there was too much inconsistency in the system.
+&
+1.70
+&
+0.82
+\\ \hline
+
+7
+&
+I would imagine that most people would learn to use the system very quickly.
+&
+4.10
+&
+0.74
+\\ \hline
+
+8
+&
+I found the system very cumbersome to use.
+&
+1.50
+&
+0.71
+\\ \hline
+
+9
+&
+I felt very confident using the system.
+&
+4.20
+&
+0.79
+\\ \hline
+
+10
+&
+I needed to learn a lot of things before I could get going with the system.
+&
+1.80
+&
+0.92
+\\ \hline
+
+\end{tabular}
+\caption{Analysis of SUS questionnaire responses.}
+\end{table}
+
+
+
+Reporting both the mean and standard deviation provides a more complete representation of the results by describing both the overall usability level and the consistency of participants' perceptions.
+
+The usability evaluation of GeoMedia produced generally positive results. The highest scores were obtained for users' confidence in operating the system, its learnability and the integration of its functionalities, all receiving scores of 4 or higher out of 5. These results suggest that users perceived the system as accessible and coherent, with functionalities that could be understood and operated with relative ease. In contrast, the low score concern the agreement with negative statement concerning system complexity, the need for assistance, inconsistency and cumbersome use; receiving score below of 2 out of 5. The disagreement with these affirmations indicate that GeoMedia was perceived as relatively simple, consistent and easy to use.
+
+Overall, the first SUS statement, concerning users' intention to use the system frequently, received a comparatively lower value and was therefore investigated further through follow-up analysis involving six of fifteen participants. As an outcome of the interviews, several new or missing features and potential improvements were identified, which are taken into consideration in the conclusion chapter and discussed as possible directions for future development.
