@@ -616,7 +616,6 @@ The signing process can be performed through Android Studio, which is also used 
 The Android Manifest is a configuration file that defines essential information about an Android application, including its identifier, permissions and required system capabilities.
 For GeoMedia, the manifest was manually modified (from the React Native generated) to allow clear-text HTTP traffic, enabling users to configure their own server endpoints and adapt the application to different environments.
 
-
 A snippet of some of configured permissions and the clear-text traffic option is shown in Listing~\ref{lst:android_manifest}. The \texttt{usesCleartextTraffic} attribute was explicitly enabled because Android 9 (API level 28) introduced a default restriction on unencrypted HTTP communication, requiring applications that rely on HTTP connections to enable in explicitly manner.
 
 \begin{lstlisting}[

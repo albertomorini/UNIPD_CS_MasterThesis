@@ -151,3 +151,46 @@ Reporting both the mean and standard deviation provides a more complete represen
 The usability evaluation of GeoMedia produced generally positive results. The highest scores were obtained for users' confidence in operating the system, its learnability and the integration of its functionalities, all receiving scores of 4 or higher out of 5. These results suggest that users perceived the system as accessible and coherent, with functionalities that could be understood and operated with relative ease. In contrast, the low score concern the agreement with negative statement concerning system complexity, the need for assistance, inconsistency and cumbersome use; receiving score below of 2 out of 5. The disagreement with these affirmations indicate that GeoMedia was perceived as relatively simple, consistent and easy to use.
 
 Overall, the first SUS statement, concerning users' intention to use the system frequently, received a comparatively lower value and was therefore investigated further through follow-up analysis involving six of fifteen participants. As an outcome of the interviews, several new or missing features and potential improvements were identified, which are taken into consideration in the conclusion chapter and discussed as possible directions for future development.
+
+
+\section{Feedbacks}
+
+During the SUS questionnaire, several general comments and suggestions for further development were received.
+
+\begin{itemize}
+    \item \textbf{Content creation}: Some users suggests a faster way for creating and sharing posts, thus to foster users to publish content. One possible extension would be the adoption of QR codes, whose, distributed across a city or in specific location that once scanned with device's camera automatically open GeoMedia application with predefined post structure (such as the collection or related metadata fields). The users would then only be required to provide a comment or to take a picture thought the app. \\
+    The QR codes, are a type of two-dimensional matrix barcodes that could be printed in stickers or papers, in example, the Figure~\ref{fig:qrcode_geomedia} represent the hyperlink for the GitHub official repository for GeoMedia framework.    
+    
+    \item \textbf{Usability improvements}: Several usability-related suggestions were provided by the participants. One suggestion concerned the post creation phase, where media content could be expanded by default rather than requiring the user to manually activate the corresponding toggle. \\
+    Another suggestion involved the behaviour of the bottom sheet used for limitation in post or collection creation: participants proposed enabling it to be dismissed by tapping outside its boundaries, rather than requiring the user to interact with the dedicated closed button or by drag down the component. \\
+    The last graphical and usability suggestion is to extend the application's color theme to reflect the map theme selected, now implemented just for light-dark mode (forced thought the setting or as default, the system configuration of the device). For instance, when selecting themes such as ``Retro'' (light brown) or ``Dark Night'' (blue), the corresponding colour palette could be applied consistently across the entire app rather than being limited to the map.
+
+    \item \textbf{Place research}:  Participants suggested introducing the possibility of searching for specific places during the post-creation process, similarly to conventional search services that provide results for restaurants, museums or other points of interest (POIs). Although this functionality may appear in partially in contrast with GeoMedia's focus on coordinate anchored content, it would not fundamentally conflict the framework core idea, and could therefore be considered as potential future extension.
+    
+    
+    \item \textbf{Profile suggestions}:  Another suggestion concerned the possibility of displaying posts created by friends even out of the limited range of the posts, or to introduce a ``overview mode'' capable to access geographically remote content. This specific functionality could go in contrast with the content-centric nature of GeoMedia, but a less intrusive alternative could involve the prioritising or recommending posts created by users' friends. \\
+    A related suggestion is to introduce a users ranking based on expertise or domain knowledge. For example, users identified as experts in specific field, such as history teachers, could provide more detailed and curated content. Such features, could contribute to improving the quality and reliability of content, while maintaining the location centred nature of the platform.
+    
+    \item \textbf{GNSS integration}: An advanced improvement could be the integration of multi-band GNSS (Global Navigation Satellite System) alongside the GPS, to improving position accuracy and provide coverage for any user on Earth including air, desert and sea zones.
+    
+    \item \textbf{Comments}: The final suggestion concerned the comments or instant message among users located in closer proximity to one another. This approach has been discussed previously in the context of Nostr protocol and mesh networks (section~\ref{sub:nostr}). However, the comment feature is easily applicable and already prepared in the design of Data Layer (table \texttt{INTERACTIONS}).
+    
+\end{itemize}
+
+
+% However, the current implementation does not account for differences in users' dominant hand. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience especially while moving through physical environment.
+
+
+Another important consideration for making GeoMedia more usable and more engaging is ensuring that sufficient content is available across different locations. Since the platform relies on geolocated content, its usefulness is strongly influenced by the density and geographical distribution of posts. For instance, if a first-time user opens the application in a remote or less populated area and finds little or no available content, the experience may appear empty and provide limited motivation for further interaction. Therefore, populating the platform across a broad range of locations represents an important challenge for user adoption and engagement.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{QRCODE_GEOMEDIA.png}
+    \caption{QR Code example, referring to GeoMedia GitHub repository.}
+    \label{fig:qrcode_geomedia}
+\end{figure}
+
+
+Overall, the application received an average rating of 4.3 out of 5 from the participants.
+

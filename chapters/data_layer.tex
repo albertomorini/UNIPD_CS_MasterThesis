@@ -1,18 +1,19 @@
 \chapter{Data Layer}
 \label{cap:datalayer}
 
-The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represent the access and handling to data from one or more source such as different relational database, NoSQL database, file systems or others persistent storage. This layer is commonly used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
+The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represent the access and handling to data from one or more source such as different relational database, Non-Relational database, file systems or others persistent storage. This layer is used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
 
 For GeoMedia, the persistence layer is implemented using a Relational Database Management System (RDBMS), that represent the most common and well-established approach for the structured management, storage, and retrieval of data. The RDBMS organizes information into logically related tables composed of rows and columns, while providing mechanisms for defining relationships, enforcing data integrity and efficiently executing complex queries and update operations through Structured Query Language (SQL) instructions.
 
-Microsoft SQL Server (MSSQL) has been adopted and implemented as the underlying relational database management system due to its robustness, scalability and comprehensive support for enterprise-level data management. In addition to standard relational database capabilities, SQL Server provides advanced mechanisms for transaction management, data indexing and performance optimization.
+Microsoft SQL Server has been adopted and implemented as the underlying relational database management system due to its robustness, scalability and comprehensive support for enterprise-level data management. In addition to standard relational database capabilities, SQL Server provides advanced mechanisms for transaction management, data indexing and performance optimization.
 
 MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as presented in the previously Figure ~\ref{fig:UML-arch-micro}, or the system can be migrated to the Standard edition by acquiring the appropriate license.
 
 \section{Database}
 
-The database schema designed for the GeoMedia framework follows established relational database design principles, with particular attention to normalization, data integrity, and the appropriate definition of relationships between entities. \\
-Specifically, the main principles adopted during the design are:
+The database schema designed for the GeoMedia platform follows established relational database principles, with particular attention to: normalization, referential integrity, transaction reliability and data consistency~\cite{article:db-principles}. 
+
+Specifically, the fundamentals adopted are:
 
 \begin{itemize}
 
@@ -40,7 +41,7 @@ The Entity–Relationship (ER) diagram in Figure~\ref{fig:geomedia_ER} provides 
 
 The entities individuated are:
 \begin{itemize}
-    \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. Moreover, create a reference to posts, reactions and eventual post reports.
+    \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. The table uses an auto-incrementing ID as its primary key, ensuring the uniqueness of each record and its used to create a reference to posts, reactions and eventual post reports.
     \item \textbf{Posts}: storing post information and then representing the core entity for integration and references.
     \item \textbf{Collections}: that works as containers for posts, dictating logic properties on posts and allowing special features (e.g. sequential posts).
     \item \textbf{Hypermedia}: operates as register with path of hypermedia stored by server layer in the file system.
@@ -55,7 +56,7 @@ In order to ensure the separation of GeoMedia's data from other databases hosted
 
 \lstset{
     language=SQL,
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\footnotesize,
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
@@ -92,7 +93,7 @@ CREATE TABLE GEOMEDIA.dbo.POSTS (
 The RDBMS aside tables and views (virtual tables based on predefined queries), contains several functions and stored procedures (precompiled SQL routines), that manipulate data through complex operations, encapsulating the business logic within the database. This approach improves the maintainability and extensibility of the system, while potentially improving performance by reducing the amount of data processing required at the application level. Finally, the stored procedures provide the results whenever requested by the server, 
 as an example is shown in Listing~\ref{lst:db_sql_merge}, which implements the synchronization of a user's interests, represented as hashtags. The procedure receives the user identifier and a JSON object containing the desired interests. The JSON data is first parsed using \texttt{OPENJSON} and stored in a temporary table variable. The stored procedure then removes existing interests that are no longer present in the provided set, creates missing hashtags and associates them with the user while preventing duplicate relationships through \texttt{NOT EXISTS} checks. Finally, the procedure invokes \texttt{PROFILE\_INTEREST\_GET} to retrieve the updated list of interests.
 
-This operation therefore implements merge-like behaviour: existing records are preserved when they are still present in the input, missing records are created and obsolete associations are removed.
+This operation therefore implements a merge-like behaviour: existing records are preserved when they are still present in the input, missing records are created and obsolete associations are removed.
 
 \lstset{
     language=SQL,
@@ -160,7 +161,7 @@ The algorithm responsible for managing post sequentiality is implemented in the 
 
 In particular, the procedure handles sequential posts by identifying the first post in the defined sequence that has not yet been viewed by the requesting user, allowing the framework to progressively expose posts according the sequence defined in the respective collections selected by user. \\
 The sequentiality logic is implemented through a CTE (Common Table Expression), that extracts the ordering information associated with collections from \texttt{SEQUENTIALS} field stored in JSON format, then applying the SQL Server built-in function \texttt{OPENJSON} parse the structure in form of table with corresponding  \texttt{order\_id} and \texttt{post\_id} values. \\
-The orders values are stored temporarily in the \texttt{@SEQQ} table variable, subsequently used to associate each posts with its position within the sequence. Instead, a second CTE \texttt{NEXTPOST} identifies the first post in the sequence that has not yet been viewed by the requesting users. This is achieved by comparing the posts associated with the collections against the records stored in the \texttt{INTERACTIONS} table, where the value \texttt{VIEW} in field \texttt{SCOPE} marks the post as seen by the user. \\
+The orders values are stored temporarily in the \texttt{@SEQQ} table variable, and subsequently they are used to associate each posts with its position within the sequence. A second CTE \texttt{NEXTPOST} identifies the first post in the sequence that has not yet been viewed by the requesting users. This is achieved by comparing the posts associated with the collections against the records stored in the \texttt{INTERACTIONS} table, where the value \texttt{VIEW} in field \texttt{SCOPE} marks the post as seen by the user. \\
 The results are ordered according to the sequential \texttt{order\_id}, ensuring that the next available post is selected according to the sequence defined by collection owner.
 Finally, the procedure combines the next post to be displayed of respective collections with sequentiality enabled, and posts that are not associated with a sequence. Additional filters are applied to respect account visibility (both singular post as collection), temporal restrictions and respective recurrence rules.
 
@@ -168,7 +169,7 @@ The implementation of this logic is shown in Listing~\ref{lst:db_sp_post_seq}.
 
 \lstset{
     language=SQL,
-    basicstyle=\ttfamily\small, %\footnotesize?
+    basicstyle=\ttfamily\footnotesize, %\footnotesize?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
@@ -270,7 +271,7 @@ BEGIN
 
 \section{Docker Deployment}
 
-To deploy the Data Layer and so, implement Microsoft SQL Server, GeoMedia adopts Docker~\cite{site:docker-official}, which is a containerization platform that allows applications and their dependencies to be packaged and executed in isolated, reproducible environments called \textit{containers}. \\
+To deploy the Data Layer and to implement Microsoft SQL Server, GeoMedia adopts Docker~\cite{site:docker-official}, which is a containerization platform that allows applications and their dependencies to be packaged and executed in isolated, reproducible environments called \textit{containers}. \\
 This approach simplifies deployment by ensuring that the software environment required by an application remains consistent across different machines, while also providing a lightweight alternative to traditional virtual machines (VM). Moreover, the Microsoft SQL Server image, with this techniques is independent from the underlying host operating systems and can be configured and replicate easily facilitating both the development (i.e. more instance for a production and test database) as the deployment.
 
 In order to satisfy the GeoMedia requirements, SQL Server must be configured with a compatibility level of 130 or higher, which is required for the use of the \texttt{OPENJSON} built-in function introduced in SQL Server 2016.
@@ -279,7 +280,7 @@ To create the Docker \textit{container}, it is sufficient to execute the termina
 
 \lstset{
     language=Shell,
-    basicstyle=\ttfamily\small, %\small?
+    basicstyle=\ttfamily\footnotesize, %\small?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
@@ -303,24 +304,23 @@ docker run \
 
 Subsequently, a DBMS client is used to execute the SQL scripts required to create the database, including its tables, stored procedures and other database objects, thereby initializing a new GeoMedia database instance.
 
-Finally, the application layer (the http server) can be configured with the connection parameters such as:
+Finally, the application layer (the HTTP server) can be configured with the connection parameters such as:
 \begin{itemize}
     \item \textbf{Address}: IPv4/IPv6 address or server name where the RDBMS is hosted. GeoMedia uses a single-server deployment, therefore \texttt{localhost} is used in the local deployment.
     \item \textbf{Port}: TCP/IP port used by the SQL Server instance, the default port is \texttt{1433}.
-    \item \textbf{User}: username of a database user with the specific roles and permissions required. For GeoMedia, the user should just require permission of read and execute stored procedure, since the input and updates operations are demanded to the appropriate stored procedures. The default administrative account \texttt{sa} is avoided for security reasons.
+    \item \textbf{User}: username of a database user with the specific roles and permissions required. For GeoMedia, the user should require permission of read and execute stored procedures, since the input and updates operations are demanded to the appropriate stored procedures. The default administrative account \texttt{sa} is avoided for security reasons.
     \item \textbf{Password}: password associated with the database user.
     \item \textbf{Database}: name of the target database to which the application connects, in this case \texttt{GEOMEDIA}.
     \item \textbf{Instance}: optional SQL Server instance name, whenever the server is configured with multiple independent database engine. \\
     In the GeoMedia deployment, a single SQL Server instance is used.
 \end{itemize}
 
-Meanwhile the connection from the Python HTTP server to Microsoft SQL Server is provided by the library \texttt{pymssql}~\cite{site:pymssql}, offering an high-level API interface toward the database.
-
+The connection from the Python HTTP server to Microsoft SQL Server is provided by the library \texttt{pymssql}~\cite{site:pymssql}, offering an high-level API interface toward the database.
 A snippet illustrating the database connection and query execution is provided in Listing~\ref{lst:db_python_sql}, implemented through the application layer of GeoMedia.
 
 \lstset{
     language=Python,
-    basicstyle=\ttfamily\small, %\small?
+    basicstyle=\ttfamily\footnotesize, %\small?
     keywordstyle=\color{red},
     commentstyle=\color{green!60!black},
     stringstyle=\color{red},
