@@ -9,14 +9,14 @@ In specific, a three tier model~\cite{article:three-tier} is composed by the fol
     In GeoMedia, this is represented by the mobile application.
     
     \item \textbf{Application layer (Business Logic layer):} that implements the core functionalities of the platform and applies the business logic to process user requests. This layer acts as an intermediary between the presentation and data layers, encapsulating the application's logic and coordinating the exchange of data to ensure consistency and proper execution of system operations.\\
-    In GeoMedia, this layer is represented by the server-side component that processes client requests and communicates with the data layer through a RESTful interface.
+    In GeoMedia, this layer is represented by the HTTP server which processes client requests and communicates with the data layer.
 
     \item \textbf{Data layer (Persistence layer):} that is responsible for managing data storage and performing data operations such as the creation, retrieval, update and deletion (CRUD) of persistent data. It provides an interface to databases or other storage systems while abstracting and encapsulating the underlying data access details from the upper layers.\\
     In GeoMedia, this layer is represented by the Database Management System (DBMS) that provides a full solution for data handling.
     
 \end{itemize}
 
-This solution provide a classic and simple architecture, by exploiting technology functionalities such Network communication with TCP/IP stack, these actors are able to establish a communication among each other and then to exchange information and activate business process.
+This solution provide a classic and simple architecture. By exploiting technology functionalities such Network communication with TCP/IP stack, these actors are able to establish a communication among each other and then to exchange information and activate business process.
 
 The~\acrshort{uml} schema in the Figure~\ref{fig:UML-arch} can represent graphically the architecture established.
 \begin{figure}[H]
@@ -54,7 +54,7 @@ The~\acrshort{uml} schema in the Figure~\ref{fig:UML-arch} can represent graphic
 
 
 Regarding GeoMedia, the communication is implemented through the HTTP protocol~\cite{article:http}, which adoption as the underlying communication protocol of the Web makes it a well-established choice for communication between distributed software components. HTTP is a request-response protocol based on the client-server model that create a virtual link between the application layer (as server) that returns a response to the client (presentation layer) with the data requested.
-The data, referred to as packets, can be manipulated through intermediary network nodes (proxy servers, NAT, web caches, etc.) while respecting the TCP/IP structure. In order to ensure the confidentiality and security of the data, HTTP allows the adoption of SSL certificates (HTTPS), making the communication encrypted with the public key of the server (and decipherable only with the secret key available only to the application layer).
+The data, referred to as packets, can be manipulated through intermediary network nodes (e.g. proxy servers, NAT, web caches, etc.) while respecting the TCP/IP structure. In order to ensure the confidentiality and security of the data, HTTP allows the adoption of SSL certificates (HTTPS), making the communication encrypted with the public key of the server (and decipherable only with the secret key available only to the application layer).
 
 Instead, to establish the connection between the others layer (application and data) the protocol depends on the data layer, which in the case of GeoMedia the DBMS is implemented by Microsoft SQL Server (MSSQL) that operate through the TCP/IP stack with TDS (Tabular Data Stream) protocol.
 
@@ -65,7 +65,7 @@ Another valid alternative to the architecture design adopted, is the microservic
 
 Each microservice encapsulates its own business logic and expose its functionalities through interfaces, usually following the REST architectural style~\cite{article:rest-api}. REST-based~$\acrshort{api}_{\glslink{apig}{g}}$ support distributed system by adopting constraints such as client-server separation, stateless communication, cache-ability and uniform interface to support scalable and interoperable systems. This design primarily concerns mainly the backend structure such as application and data layer, more than the client which still represent the single point of interaction with the users.
 
-This design compared to the a monolithic solution provides high degree of modularity and flexibility and others several key advantages, such as:
+This solution compared to the a monolithic solution provides high degree of modularity and flexibility and others several key advantages, such as:
 
 \begin{itemize}
     \item \textbf{Scalability:} individual services can be scaled independently according to their workload, reducing infrastructure costs and improving resource utilization.

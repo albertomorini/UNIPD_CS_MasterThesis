@@ -7,26 +7,26 @@
 GeoMedia introduces a geographically oriented social platform in which users can upload and share content in the form of posts. Each post acts as a container for the information that users want to publish, enabling location-based interactions and content discovery.
 
 
-The original concept focused exclusively on textual comments (called \textit{GeoComments}), then it was extended to support any kind of multimedia content. Finally, GeoMedia, was enriched with the concept of collections, that act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
+The original concept focused exclusively on textual comments (called ``GeoComments''), then it was extended to support any kind of multimedia content. Finally, GeoMedia, was enriched with the concept of collections, that act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
 
-To realize the idea behind the application, an appropriate software architecture (later explained in Cap.~\ref{cap:architecture}) and different supporting technologies are adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as a mobile application. This app allows user to discover the physical world while leveraging GPS capabilities of the device, thus to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend. The latter operates as coordinator for implementing the system's business logic and determining which content should be provided to the users' requests (basing on their current position and others metadata).
+To realize the idea behind the application, an appropriate software architecture (later explained in Chapter~\ref{cap:architecture}) and different supporting technologies are adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as a mobile application. This app allows user to discover the physical world by leveraging GPS capabilities of the device, thus to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend. The latter operates as coordinator for implementing the system's business logic and determining which content should be provided to the users' requests (basing on their current position and others metadata).
 
 \section{Collections}
 
-Collections represent containers for posts that users can create and customize by assigning a title, an icon and a color, thus to provide personalization feature and to be easily distinguishable from other collections.
+Collections represent containers for posts that users can create and customize by assigning a title, an icon and a color, thus to provide personalization feature and to be easily distinguishable from others collections.
 
 Users can also configure the visibility of each collection according to the following dimensions:
 
 \begin{itemize}
-    \item \textbf{Users}: specifies which users are authorized to view the collection in the different sections of the application (e.g., the map view and the collections list).
+    \item \textbf{Users}: specifies which users are authorized to view the collection in the different sections of the application (e.g. the map view and the collections list).
     \item \textbf{Time}: restricts the visibility of the collection to a specific date range. Additionally, recurring visibility intervals can be configured on a monthly basis (repeating on the specified days of each month) or on a yearly basis (repeating during the specified month and days each year).
 \end{itemize}
 
 Furthermore, to defining who can view the collection, owners of a collection can specify which users are authorized to create post within it. This distinction between viewers and contributors provides finer-grained access control, enriching users experiences while enabling more effective moderation and content management.
 
-For each collection, the owner can also enable or disable the~\textit{remote posting} feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because contents are strictly linked to the physical world.
+For each collection, the owner can also enable or disable the ``remote posting'' feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because contents are strictly linked to the physical world.
 
-Moreover, another functionality is the~\textit{sequential post}, enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
+Moreover, another functionality is the~ ``sequential post'', enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
 
 Figure~\ref{fig:collection-overview} shows the explained functionalities with the respective order:
 
@@ -45,7 +45,7 @@ Figure~\ref{fig:collection-overview} shows the explained functionalities with th
 \end{figure}
 
 
-Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections of specific interests, toward to create a personalized feed in the ``For you'' section of collections. 
+Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections based of specific interests, toward the creation of a personalized feed in the ``For you'' section. 
 
 \begin{figure}[H]
     \centering
@@ -57,10 +57,10 @@ Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can
 
 \section{Map}
 
-The ``Map'' section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows \textit{remote posting}, at the location selected by its creator.
+The ``Map'' section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows ``remote posting'', at the location selected by its creator.
 
 To improve visual recognition, each marker adopts the color assigned to its collection, allowing users to associate the context to which the post belongs. \\
-By selecting a marker, the complete content of the corresponding post is displayed and express appreciation by liking the post, or, whenever a post contains an attached media file, users can download it regardless of its file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users privacy, posts displayed in viewer mode are represented as lists and rather than on a map, thereby to hide creator positions and preserving the gamified experience of discovery through the map. 
+By selecting a marker, the complete content of the corresponding post is displayed and users can express appreciation by liking the post, or, whenever a post contains an attached media file or more, users are allowed to download them regardless of the file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users privacy, in latter case, posts are displayed as lists and rather than on a map, thereby to hide creator positions and preserving the gamified experience of discovery through the map. 
 
 % However, this feature provide a peek of some content of the user in way to provide users potential related posts. ~ ambiguo
 
@@ -93,12 +93,12 @@ Through the map component, users can also access to the post creation section, w
     \item \textbf{Title}: the title of the post.
     \item \textbf{Visibility Range (km)}: the geographical distance within  the post is visible to other users (between 0.2 -- 30.0~km).
     \item \textbf{Description (optional)}: a textual description with no practical limitation on its length.
-    \item \textbf{Media (optional)}: allows users to attach one or more files from the mobile device, including images, videos, audio recordings or any other supported file type. Alternatively, the integrated cameras, both front- and rear-facing, can be used to capture a photograph and share it within the post.
+    \item \textbf{Media (optional)}: allows users to attach one or more files from the mobile device, including images, videos, audio recordings or any other file format. Alternatively, the integrated cameras, both front and rear-facing, can be used to capture a photograph and share it within the post.
     \item \textbf{Visibility Constraints}: optional restrictions that limit the accessibility of the post according to temporal conditions (a date-time interval with optional recurrence) or user-based permissions (specifying which users are allowed to access the post).
 \end{itemize}
 
 
-The geographical position of a post is automatically retrieved from the user's current GPS location. Each post is therefore characterized by its latitude, longitude, and altitude. Although altitude is not currently exploited by the platform, it is managed and stored to support future extensions of the system.
+The geographical position of a post is automatically retrieved from the user's current GPS location. Each post is therefore characterized by its latitude, longitude and altitude. Although altitude is not currently exploited by the platform, it is managed and stored to support future extensions of the system.
 
 
 \subsection{Haversine formula}
@@ -122,11 +122,11 @@ d = 2R\arcsin\left(
 
 where $\varphi_1$ and $\varphi_2$ denote the latitudes of the two points, $\lambda_1$ and $\lambda_2$ their longitudes, $R$ the Earth's radius ($R = 6{,}371{,}000~\mathrm{m}$) and $d$ the resulting great-circle distance.
 
-The implementation, reported in Listing~\ref{lst:haversine}, calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated with each post to determine whether the post is within the user's area of visibility.
+The implementation, reported in Listing~\ref{lst:haversine}, calculates the great-circle distance between two points on the Earth's surface from their latitude and longitude coordinates. The resulting distance is then compared with the visibility radius associated to each post to determine whether the post is within the user's area of visibility.
 
-The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae~\cite{site:vincenty-formulae} provide higher accuracy, overall the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications requiring frequent geographical distance calculations.
+The Haversine formula models the Earth as a sphere and provides an efficient approximation of the distance between two geographic coordinates. Although ellipsoidal models such as Vincenty's formulae~\cite{site:vincenty-formulae} provide higher accuracy, overall the precision offered by the Haversine formula is sufficient for this application, where the visibility of a post depends on whether a user is located within a predefined proximity range. Furthermore, its low computational complexity makes it particularly suitable for backend applications that require frequent geographical distance calculations.
 
-For short-range distance calculations, the error introduced by the spherical approximation is sufficiently small for the requirements of GeoMedia, particularly when compared with the positioning uncertainty of standard GPS receivers~\cite{site:gps-accuracy}.
+For short-range distance calculations, the error introduced by the spherical approximation is sufficiently small for the requirements of GeoMedia~\cite{site:gps-accuracy}.
 % At distances of approximately 30 km, the deviation from an ellipsoidal model is generally within a few meters, while for distances below a few kilometers it is typically reduced to the meter or sub-meter range.
 
 
@@ -169,7 +169,7 @@ def check_post_area(areaKM, post_lat, post_lon, curr_lat, curr_lon):
 
 As shown by the code in Listing~\ref{lst:haversine}, the implementation of the formula is provided by a function which determines whether a post is visible to the requesting user and returns a Boolean value accordingly. The function require the following arguments:
 \begin{itemize}
-    \item \texttt{areaKM} (\texttt{float}): the maximum distance, in kilometres,
+    \item \texttt{areaKM} (\texttt{float}): the maximum distance, expressed in kilometres,
     within which the post is visible.
 
     \item \texttt{post\_lat} (\texttt{float}): latitude of the post.
@@ -197,7 +197,7 @@ Respectively, access to a collection does not automatically imply access to all 
     \end{itemize}
     \item \textbf{Post-specific time limitation}: applies temporal restrictions directly to a single post, narrowing the visibility inherited from the collection.
     \item \textbf{Post-specific user limitation}: restricts access to a single post for a specific group of users, narrowing the permissions inherited from the collection.
-    \item \textbf{Sequentiality limitation}: collections that enable sequential access exposes only the next available post (or the first post when starting the sequence) according to the order defined by the creator. This mechanism allows creators to guide users through a predefined ordered chain of contents.
+    \item \textbf{Sequentiality limitation}: collections that enable sequential access exposes only the next available post (or the first post when starting the sequence), for each single user, according to the order defined by the creator. This mechanism allows creators to guide users through a predefined ordered chain of content.
 \end{itemize}
 
 
@@ -236,7 +236,7 @@ In this case, digital markers at these location as shown in Figure~\ref{fig:tre-
  
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{GeoMedia/map/tre_senza.png}
+    \includegraphics[width=0.8\textwidth]{GeoMedia/map/tre_senza.png}
         \caption{City of Padua use case for its saying of ``Tre senza''.}
     \label{fig:tre-senza-screen}
 \end{figure}
@@ -260,15 +260,14 @@ Moreover, GeoMedia distinguishes itself from other social networks by promoting 
 
 Table~\ref{tab:comparison} provides a comparative overview of the supported functionalities across the analyzed platforms in this Section.
 
-
 \begin{table}[H]
-
 \centering
+\small
 
 \renewcommand{\arraystretch}{1.4}
-
 \setlength{\arrayrulewidth}{0.6pt}
 
+\makebox[\linewidth][c]{%
 \begin{tabular}{|
 >{\columncolor[HTML]{ECF4FF}\raggedright\arraybackslash}p{2cm}|
 >{\centering\arraybackslash\columncolor[HTML]{EFEFEF}}p{2cm}|
@@ -284,31 +283,24 @@ Table~\ref{tab:comparison} provides a comparative overview of the supported func
 
 \cellcolor[HTML]{a8bca7}
 \textit{\textbf{Feature}}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{GeoMedia}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{Jagat}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{Aulinn}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{Swarm}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{Snapchat}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{Instagram}
-
 &
 \cellcolor[HTML]{a8bca7}
 \textbf{Google Maps}
@@ -316,97 +308,41 @@ Table~\ref{tab:comparison} provides a comparative overview of the supported func
 \\ \hline
 
 Remote location posting
-& \checkmark
-& \checkmark
-& \checkmark
-& \checkmark
-& --
-& \checkmark
-& \checkmark
-
+& \checkmark & \checkmark & \checkmark & \checkmark & -- & \checkmark & \checkmark
 \\ \hline
 
 Location-based restrictions
-& \checkmark
-& --
-& --
-& --
-& --
-& --
-& --
-
+& \checkmark & -- & -- & -- & -- & -- & --
 \\ \hline
 
 Time restrictions
-& \checkmark
-& --
-& --
-& --
-& \checkmark
-& \checkmark
-& --
-
+& \checkmark & -- & -- & -- & \checkmark & \checkmark & --
 \\ \hline
 
 Sequential posts
-& \checkmark
-& --
-& --
-& --
-& --
-& --
-& --
-
+& \checkmark & -- & -- & -- & -- & -- & --
 \\ \hline
 
 Multi-author collections
-& Selective contributors
-& --
-& --
-& --
-& --
-& Everyone
-& Everyone
-
+& Selective contributors & -- & -- & -- & -- & Everyone & Everyone
 \\ \hline
 
 User-based restrictions
-& Selective viewers
-& --
-& --
-& --
-& Selective viewers
-& Selective viewers
-& --
-
+& Selective viewers & -- & -- & -- & Selective viewers & Selective viewers & --
 \\ \hline
 
 Topic-based content
-& \checkmark
-& --
-& --
-& \checkmark
-& --
-& --
-& \checkmark
-
+& \checkmark & -- & -- & \checkmark & -- & -- & \checkmark
 \\ \hline
 
 User statistics
-& \checkmark
-& --
-& --
-& \checkmark
-& --
-& --
-& \checkmark
-
+& \checkmark & -- & -- & \checkmark & -- & -- & \checkmark
 \\ \hline
 
-\end{tabular}
+\end{tabular}%
+}
 
 \caption{Functional comparison of GeoMedia and related social media platforms.}
-
 \label{tab:comparison}
 
 \end{table}
