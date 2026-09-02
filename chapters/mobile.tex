@@ -37,229 +37,41 @@ A visual comparison between the Ionic previous version of GeoMedia and the React
 
 One of the main strengths of React Native is its extensive ecosystem of free and open-source libraries and components. These resources are widely documented and maintained by the community, with the official React Native Directory~\cite{site:react-native-directory} serving as the primary reference for discovering and evaluating compatible packages.
 
-Overall GeoMedia for the Android version developed use several dependencies packages, the most important are:
-\begin{itemize}
-    \item \textbf{@gorhom/bottom-sheet}: provides customizable bottom sheet components that can be expanded or collapsed to display additional content without leaving the current screen, used mainly in the map component to render collections.
+Overall GeoMedia for the Android version developed use several dependencies packages, the most important with their the version supported are enlisted in the table~\ref{tab:dependencies}.
+
+The version notation follows the standardized Semantic Versioning (SemVer) convention~\cite{site:semver}. In this notation, the caret symbol is represented by caret character (\texttt{\string^}) and indicates that the dependency is permitted to be updated to newer compatible versions without changing the leftmost non-zero version component. For example, the notation \texttt{\string^2.3.1} allows versions from 2.3.1 up to, but not including, 3.0.0. This approach provides access to compatible updates while reducing the risk of introducing breaking changes. Instead, the tilde symbol is represented by tilde catcher (\texttt{\string~}) and indicates that only backward-compatible patch-level updates are permitted. For example, the notation \texttt{\string~54.0.33} allows versions from 54.0.33 up to, but not including, 54.1.0. This notation therefore restricts updates to the patch version while preventing automatic updates to newer minor versions.
+
+% \begin{itemize}
+%     \item \textbf{@gorhom/bottom-sheet}: provides customizable bottom sheet components that can be expanded or collapsed to display additional content without leaving the current screen, used mainly in the map component to render collections.
     
-    \item \textbf{@react-native-community/geolocation}: provides access to the device's geolocation services, enabling the application to retrieve the user's current position.
+%     \item \textbf{@react-native-community/geolocation}: provides access to the device's geolocation services, enabling the application to retrieve the user's current position.
     
-    \item \textbf{@react-native-community/slider}: offers a slider component that allows users to select value within a specified, applied for chose the distance range in the post visibility.
+%     \item \textbf{@react-native-community/slider}: offers a slider component that allows users to select value within a specified, applied for chose the distance range in the post visibility.
     
-    \item \textbf{@shopify/flash-list}: offers a high-performance list component optimized for rendering large collections of data with improved memory usage and scrolling performance.
+%     \item \textbf{@shopify/flash-list}: offers a high-performance list component optimized for rendering large collections of data with improved memory usage and scrolling performance.
     
-    \item \textbf{expo}: provides the development framework and runtime environment for building, testing and deploying React Native applications, together with a wide range of native APIs.
+%     \item \textbf{expo}: provides the development framework and runtime environment for building, testing and deploying React Native applications, together with a wide range of native APIs.
     
-    \item \textbf{expo-router}: implements a file-based routing system that simplifies navigation between the different screens of the application.
+%     \item \textbf{expo-router}: implements a file-based routing system that simplifies navigation between the different screens of the application.
     
-    \item \textbf{expo-secure-store}: securely stores sensitive information, such as user credentials, by leveraging the secure storage facilities provided by the underlying operating system.
+%     \item \textbf{expo-secure-store}: securely stores sensitive information, such as user credentials, by leveraging the secure storage facilities provided by the underlying operating system.
     
-    \item \textbf{react-native-gesture-handler}: enables advanced gesture recognition, including swipes, taps and drag interactions, providing a more responsive and native user experience.
+%     \item \textbf{react-native-gesture-handler}: enables advanced gesture recognition, including swipes, taps and drag interactions, providing a more responsive and native user experience.
     
-    \item \textbf{react-native-gifted-charts}: provides customizable chart components for visualizing statistical information about the usage on the user profile.
+%     \item \textbf{react-native-gifted-charts}: provides customizable chart components for visualizing statistical information about the usage on the user profile.
     
-    \item \textbf{react-native-maps}: integrates interactive maps into the application, allowing the visualization of geographic information and user locations.
+%     \item \textbf{react-native-maps}: integrates interactive maps into the application, allowing the visualization of geographic information and user locations.
     
-    \item \textbf{react-native-reanimated-carousel}: implements an animated carousel component for displaying file attached into a post  through horizontal scrolling.
+%     \item \textbf{react-native-reanimated-carousel}: implements an animated carousel component for displaying file attached into a post  through horizontal scrolling.
     
-    \item \textbf{react-native-share}: through the native sharing facilities of the operating system, allows to share or store the media attached in a post such as images or documents.
+%     \item \textbf{react-native-share}: through the native sharing facilities of the operating system, allows to share or store the media attached in a post such as images or documents.
     
-    \item \textbf{react-native-sortables}: provides sortable list components that allow users to reorder items through drag-and-drop interactions, used to arrange the post whenever the sequentals features is active in a collection.
+%     \item \textbf{react-native-sortables}: provides sortable list components that allow users to reorder items through drag-and-drop interactions, used to arrange the post whenever the sequentals features is active in a collection.
     
-    \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture thus to attach pictures in the post without leaving GeoMedia.
-\end{itemize}
+%     \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture thus to attach pictures in the post without leaving GeoMedia.
+% \end{itemize}
 
-% \begin{table}[H]
-
-% \centering
-
-% \renewcommand{\arraystretch}{1.4}
-% \setlength{\arrayrulewidth}{0.6pt}
-
-% \begin{tabular}{|
-% >{\raggedright\arraybackslash}p{3cm}|
-% >{\centering\arraybackslash}p{5cm}|
-% >{\centering\arraybackslash}p{2cm}|
-% >{\centering\arraybackslash}p{2.5cm}|
-% }
-
-% \hline
-
-% \cellcolor[HTML]{A8BCA7}
-% \textbf{Library}
-% &
-% \cellcolor[HTML]{A8BCA7}
-% \textbf{Purpose in GeoMedia}
-% &
-% \cellcolor[HTML]{A8BCA7}
-% \textbf{Latest Version}
-% &
-% \cellcolor[HTML]{A8BCA7}
-% \textbf{Source}
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{@gorhom/bottom-sheet}
-% &
-% Customizable bottom sheet components used to display collections and additional content within the map interface.
-% &
-% 5.2.14
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{@react-native-community/geolocation}
-% &
-% Provides access to device geolocation services, enabling the application to retrieve the user's current position.
-% &
-% 3.4.0
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{@react-native-community/slider}
-% &
-% Provides a slider component used to select the distance range for post visibility.
-% &
-% 5.2.1
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{@shopify/flash-list}
-% &
-% Provides a high-performance list component optimized for rendering large collections of data.
-% &
-% 2.3.2
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{expo}
-% &
-% Provides the development framework and runtime environment used to build, test, and deploy the React Native application.
-% &
-% 57.0.17
-% &
-% Official documentation
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{expo-router}
-% &
-% Provides file-based routing for navigation between the different screens of the application.
-% &
-% 57.0.17
-% &
-% Official documentation
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{expo-secure-store}
-% &
-% Provides secure local storage for sensitive information using the secure storage mechanisms of the underlying operating system.
-% &
-% 57.0.2
-% &
-% Official documentation
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-gesture-handler}
-% &
-% Provides native-driven gesture recognition for interactions such as swipes, taps, and drag operations.
-% &
-% 3.2.1
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-gifted-charts}
-% &
-% Provides customizable chart components used to visualize statistical information on the user profile.
-% &
-% 1.4.78
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-maps}
-% &
-% Provides interactive map components for displaying geographic information, markers, and user locations.
-% &
-% 1.29.0
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-reanimated-carousel}
-% &
-% Provides an animated carousel used to display files attached to posts through horizontal scrolling.
-% &
-% 5.1.1
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-share}
-% &
-% Provides access to the native sharing facilities of the operating system for sharing media and documents attached to posts.
-% &
-% 12.3.1
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-sortables}
-% &
-% Provides sortable components that allow users to reorder items through drag-and-drop interactions.
-% &
-% 1.10.0
-% &
-% Official repository
-
-% \\ \hline
-
-% \cellcolor[HTML]{ECF4FF}
-% \textbf{react-native-vision-camera}
-% &
-% Provides high-performance access to the device camera, enabling users to capture images and attach them to posts.
-% &
-% 5.2.3
-% &
-% Official documentation
-
-% \\ \hline
-
-% \end{tabular}
-
-% \caption{React Native libraries used in the development of GeoMedia.}
-% \label{tab:react-native-libraries}
-
-% \end{table}
-
-
+\input{tables/dep.tex}
 
 
 A particular emphasis should be placed on libraries that provide access to device APIs and hardware features, such as sensors and other physical components.

@@ -462,6 +462,8 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /usr/share/texmf-dist/tex/latex/seqsplit/seqsplit.sty
+INPUT /usr/share/texmf-dist/tex/latex/seqsplit/seqsplit.sty
 INPUT ./config/thesis-config.tex
 INPUT ./config/thesis-config.tex
 INPUT ./config/thesis-config.tex
@@ -758,6 +760,9 @@ INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT build/../images/GeoMedia/IonicComparison.png
 INPUT build/../images/GeoMedia/IonicComparison.png
+INPUT ./tables/dep.tex
+INPUT ./tables/dep.tex
+INPUT tables/dep.tex
 INPUT build/../images/GeoMedia/geo_camera.png
 INPUT build/../images/GeoMedia/geo_camera.png
 INPUT build/../images/GeoMedia/geo_camera.png
