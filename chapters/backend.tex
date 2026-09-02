@@ -1,20 +1,20 @@
 \chapter{Backend}
 \label{cap:backend}
 
-The application layer consists of an HTTP-RESTful server responsible for implementing the platform's business logic and it process every request from the client mobile application, such as content uploading or authentication. Furthermore, this layer acts as virtual bridge between the mobile application and the data layer, designed in the software architecture illustrated in the Chapter~\ref{cap:architecture}.\\
+The application layer consists of an HTTP--RESTful server responsible for implementing the platform's business logic and it process every request from the client mobile application, such as content uploading or authentication. Furthermore, this layer acts as virtual bridge between the mobile application and the data layer, as designed in the software architecture illustrated in the Chapter~\ref{cap:architecture}.\\
 However, this design follows a monolithic architecture, in which the HTTP server operates as a single, self-contained unit responsible for handling all application functionalities and client requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. \\
 To improve performance, scalability, maintainability and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
 
-To implement the backend of the GeoMedia platform, Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous programming and automatic API documentation (known as ``Swagger'')~\cite{site:swagger}. 
+To implement the backend of the GeoMedia platform, Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was implemented as it offers high performance, native support for asynchronous programming and automatic API documentation (known as \textit{Swagger})~\cite{site:swagger}. 
 
 \section{REST Server}
 \label{sec:rest_server}
 
 A REST server is a software application that implements the HTTP/HTTPS protocol and continuously listens for incoming client requests. It exposes one or more RESTful endpoints through which clients can interact with the services offered by the application.
-A RESTful API follows the principles of Representational State Transfer (REST), where application resources are identified by unique URLs and manipulated through standard HTTP methods (i.e. \texttt{GET} for retrieving resources, \texttt{POST} for creating new resources,\texttt{PUT} for updating existing resources). This approach provides a standardized and stateless mechanism for communication between clients and the server.\\
+A RESTful API follows the principles of Representational State Transfer (REST), where application resources are identified by unique URLs and manipulated through standard HTTP methods (i.e. \texttt{GET} for retrieving resources, \texttt{POST} for creating new resources, \texttt{PUT} for updating existing resources). This approach provides a standardized and stateless mechanism for communication between clients and the server.\\
 Finally, the server listens for HTTP or HTTPS requests on a configurable network port. A network port is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
 
-For each servers or simply, computers, the port numbers range start from \texttt{0} to \texttt{65'535} and are conventionally divided into three categories:
+For each servers or simply, computers, the port numbers range start from \texttt{0} to \texttt{65535} and are conventionally divided into three categories:
 \begin{itemize}
     \item \textbf{Well-known ports (0--1023)}: reserved for standard services and protocols, such as SMTP (port 25, mail protocol), HTTP (port 80), HTTPS (port 443) or SSH (port 22, remote connection).
     \item \textbf{Registered ports (1024--49151)}: assigned to specific applications and services, although they may also be used by custom applications.
@@ -33,7 +33,7 @@ The TCP/IP stack is represented by four layers:
 
 \begin{itemize}
     \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as \texttt{HTTP, HTTPS, FTP, SMTP, DNS} operate at this level, defining how data is formatted and exchanged between communicating applications. \\
-    GeoMedia's server use the HTTPS protocol of this stack.
+    GeoMedia's server uses HTTPS (HTTP over TLS$_{\glslink{tls}{g}}$, which provides end-to-end encryption) as the protocol for this layer of the stack.
 
     \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are \texttt{TCP} (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \texttt{UDP} (User Datagram Protocol), which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
     GeoMedia's server adopt the TCP protocol of this stack.
@@ -86,7 +86,7 @@ async def hpmedia_read_folder(postid: int):
 \end{lstlisting}
 
 However, in GeoMedia framework, the business logic is implemented mainly in the data layer, leaving the server applies the final filters and logic; as previously shown in the implementation of the Haversine formula~\ref{haversine_formula}, used to compute the distance between the current location of the user and the posts.\\
-The same function is also leveraged by the ``Local collection'' feature as shown in Listing~\ref{lst:local_collection_implementation}.
+The same function is also leveraged by the \textit{Local collection} feature as shown in Listing~\ref{lst:local_collection_implementation}.
 
 \lstset{
     language=Python,
@@ -227,7 +227,7 @@ Since the documentation is generated directly from the application source code, 
 
 \subsection{NodeJS HTTP Comparison}
 
-The first version of the GeoMedia adopted HTTP native module of NodeJS for the application layer. Although the high performance and event-driven asynchronous execution model, this solution became increasingly difficult to maintain as the number of API endpoints and application features grew. In particular, the absence of a well-structured framework reduced modularity and created a codebase that was progressively harder to extend.
+The first version of the GeoMedia used the HTTP native module of NodeJS for the application layer. Although the high performance and event-driven asynchronous execution model, this solution became increasingly difficult to maintain as the number of API endpoints and application features grew. In particular, the absence of a well-structured framework reduced modularity and created a codebase that was progressively harder to extend.
 
 Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework~\cite{site:expressjs}, which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components. Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
 
@@ -298,7 +298,7 @@ The communication process between clients and server, can be summarized as:
 %TODO: reference to duck.org and lets encrypt?
 
 
-As an additional security mechanism, GeoMedia, to verify the integrity and authenticity of messages exchanged between trusted components, adopt HMAC (Hash-based Message Authentication Code)$_{\glslink{hmacg}{g}}$ mechanism, which combines a cryptographic hash function with a secret key. Despite simple hash, that only provides a digest of the input, HMAC requires knowledge of a shared secret key. The receiver that possess the same secret can verify whether a message was generated by the authorized GeoMedia official application or control if a third part has modified the packet.
+As an additional security mechanism, GeoMedia, to verify the integrity and authenticity of messages exchanged between trusted components, integrate HMAC (Hash-based Message Authentication Code)$_{\glslink{hmacg}{g}}$ mechanism, which combines a cryptographic hash function with a secret key. Despite simple hash, that only provides a digest of the input, HMAC requires knowledge of a shared secret key. The receiver that possess the same secret can verify whether a message was generated by the authorized GeoMedia official application or control if a third part has modified the packet.
 
 Consequently, a recipient possessing the same secret can verify whether a message was generated by an authorized party and whether its content has been modified.
 
@@ -314,7 +314,7 @@ The timestamp and nonce are subsequently validated by the server to control the 
 
 \subsection{Password handling}
 
-Another cybersecurity practice adopted by GeoMedia, is the MD5 hash function, designed to be a one-way function to transform an textual input, such as password, into a fixed-size digest. The resulting digest cannot be reversed to obtain the original input~\cite{article:hash-md5}. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
+Another cybersecurity practice utilized by GeoMedia, is the MD5 hash function, designed to be a one-way function to transform an textual input, such as password, into a fixed-size digest. The resulting digest cannot be reversed to obtain the original input~\cite{article:hash-md5}. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
 
 
 
@@ -392,7 +392,7 @@ However, this attack cannot be performed against GeoMedia as the React Native mo
 \subsection{Content Moderation and Abuse Prevention}
 
 GeoMedia allows users to create and distribute content. Therefore, cybersecurity is not limited to protecting the technical infrastructure but also includes mechanisms for mitigating platform abuse. Users are able to report a posts through an opportune form shown in Figure~\ref{fig:post-reporting}, and to flag potentially harmful posts providing a mandatory motivation. When a post receives more than three reports from distinct users, it is automatically hidden from the map and cannot be seen since the moderation process has evaluate the content attainability.\\
-The content review process, actually implemented through manual operations, is designed to integrate automated classification techniques. In latter case, Large Language Models (LLMs) can be used to analyse potentially harmful comments, while computer vision models or multimodal LLMs can be adopted to identify inappropriate images. Because automated classification systems may produce misclassifications, AI-based moderation should not be considered an infallible decision mechanism: particularly sensitive or ambiguous results may therefore benefit from escalation to human review~\cite{article:llm-moderation}.
+The content review process, actually implemented through manual operations, is designed to integrate automated classification techniques. In latter case, Large Language Models (LLMs) can be used to analyse potentially harmful comments, while computer vision models or multimodal LLMs can be utilized to identify inappropriate images. Because automated classification systems may produce misclassifications, AI-based moderation should not be considered an infallible decision mechanism: particularly sensitive or ambiguous results may therefore benefit from escalation to human review~\cite{article:llm-moderation}.
 
 \begin{figure}[H]
     \centering

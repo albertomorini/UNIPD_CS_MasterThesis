@@ -7,7 +7,7 @@
 GeoMedia introduces a geographically oriented social platform in which users can upload and share content in the form of posts. Each post acts as a container for the information that users want to publish, enabling location-based interactions and content discovery.
 
 
-The original concept focused exclusively on textual comments (called ``GeoComments''), then it was extended to support any kind of multimedia content. Finally, GeoMedia, was enriched with the concept of collections, that act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
+The original concept focused exclusively on textual comments (called \textit{GeoComments}), then it was extended to support any kind of multimedia content. Finally, GeoMedia, was enriched with the concept of collections, that act as layers for group posts and provide more sophisticated and domain-specific use cases, allowing users to organize and restrict the scope of displayed content. 
 
 To realize the idea behind the application, an appropriate software architecture (later explained in Chapter~\ref{cap:architecture}) and different supporting technologies are adopted. The client layer, which represent the primary point of interaction between users and the platform, is implemented as a mobile application. This app allows user to discover the physical world by leveraging GPS capabilities of the device, thus to interact with the application layers and relative posts. Moreover, the mobile app needs to communicate with a backend. The latter operates as coordinator for implementing the system's business logic and determining which content should be provided to the users' requests (basing on their current position and others metadata).
 
@@ -24,9 +24,9 @@ Users can also configure the visibility of each collection according to the foll
 
 Furthermore, to defining who can view the collection, owners of a collection can specify which users are authorized to create post within it. This distinction between viewers and contributors provides finer-grained access control, enriching users experiences while enabling more effective moderation and content management.
 
-For each collection, the owner can also enable or disable the ``remote posting'' feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because contents are strictly linked to the physical world.
+For each collection, the owner can also enable or disable the \textit{remote posting} feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because contents are strictly linked to the physical world.
 
-Moreover, another functionality is the~ ``sequential post'', enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
+Moreover, another functionality is the \textit{sequential post}, enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
 
 Figure~\ref{fig:collection-overview} shows the explained functionalities with the respective order:
 
@@ -45,7 +45,7 @@ Figure~\ref{fig:collection-overview} shows the explained functionalities with th
 \end{figure}
 
 
-Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections based of specific interests, toward the creation of a personalized feed in the ``For you'' section. 
+Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can be associated with an unlimited number of hashtags, which serve as thematic labels for content classification. These hashtags facilitate users to discover topics and identify collections based of specific interests, toward the creation of a personalized feed in the \textit{For you} section. 
 
 \begin{figure}[H]
     \centering
@@ -57,7 +57,7 @@ Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can
 
 \section{Map}
 
-The ``Map'' section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows ``remote posting'', at the location selected by its creator.
+The \textit{Map} section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows \textit{remote posting}, at the location selected by its creator.
 
 To improve visual recognition, each marker adopts the color assigned to its collection, allowing users to associate the context to which the post belongs. \\
 By selecting a marker, the complete content of the corresponding post is displayed and users can express appreciation by liking the post, or, whenever a post contains an attached media file or more, users are allowed to download them regardless of the file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users privacy, in latter case, posts are displayed as lists and rather than on a map, thereby to hide creator positions and preserving the gamified experience of discovery through the map. 
@@ -65,7 +65,7 @@ By selecting a marker, the complete content of the corresponding post is display
 % However, this feature provide a peek of some content of the user in way to provide users potential related posts. ~ ambiguo
 
 
-As shown in Figure~\ref{fig:map-overview}, the interface (analyzed in the opportune section~\ref{sub:ui_and_usability}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts near the current location, this feature is called ``local collections''.\\
+As shown in Figure~\ref{fig:map-overview}, the interface (analyzed in the opportune section~\ref{sub:ui_and_usability}) has been designed to provide a simple and intuitive user experience. In particular, it highlights the most relevant collections available around the user's current location by prioritizing those containing the largest number of posts near the current location, this feature is called \textit{local collections}.\\
 Moreover, GeoMedia offer different modalities toward the discovery of collections, such as:
 \begin{itemize}
     \item \textbf{For you}: that provide a personalized feed for user,  to discover collections based on their interests topic selected within the same page.
@@ -224,10 +224,10 @@ For instance:
 
 % 3 senza di PADOVA
 
-An interesting scenario can be adopted by the City of Padua, for illustrating one of its well-known sayings: ``citt\`a dei tre senza'' (literally, ``the city of the three without'')~\cite{site:pd-tre-senza}. \\
+An interesting scenario can be adopted by the City of Padua, for illustrating one of its well-known sayings: \textit{citt\`a dei tre senza} (literally, \textit{the city of the three without})~\cite{site:pd-tre-senza}. \\
 This expression refers to three notable things that Padua has but or hasn't in a metaphorical way:
 \begin{itemize}
-    \item \textbf{The lawn without grass}: referring to \textit{Prato della Valle}, which despite its name (``meadow of the valley''), feature ornamental grass and is not a lawn in the traditional sense;
+    \item \textbf{The lawn without grass}: referring to \textit{Prato della Valle}, which despite its name (\textit{meadow of the valley}), feature ornamental grass and is not a lawn in the traditional sense;
     \item \textbf{The saint without a name}: referring to \textit{Sant'Antonio da Padova} who was actually born in Portugal and only spent the last years of his life in Padua.
     \item \textbf{The caf\'e withouth doors}: referring to one of the most historic Italian caf\'e, \textit{Caff\'e Pedrocchi}, which during wartime remained with doors opened all day and night to provide shelter.
 \end{itemize}
@@ -237,7 +237,7 @@ In this case, digital markers at these location as shown in Figure~\ref{fig:tre-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{GeoMedia/map/tre_senza.png}
-        \caption{City of Padua use case for its saying of ``Tre senza''.}
+        \caption{City of Padua use case for its saying of \textit{Tre senza}.}
     \label{fig:tre-senza-screen}
 \end{figure}
 

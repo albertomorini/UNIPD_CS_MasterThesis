@@ -4,6 +4,9 @@
 
 % Va anche ampliato un poco, devi sicuramente scrivere quanti utenti hanno compilato il questionario, se hai preso le generalità anagrafiche devi descriverle, etc... insomma devi descrivere il campione e come lo hai raggiunto.
 
+To evaluate the whole framework, GeoMedia app was tested by a group of 15 users over a period of approximately one month. The participants had diverse educational and professional backgrounds. Specifically, 3 participants had no background in information technology, 5 were Computer Science students, and 7 were professionals working in the IT sector. The participants also varied in age, ranging from 24 to 61 years old.
+
+\section{Distribution}
 
 For testing phase, GeoMedia was distributed through a direct download link to the application's GitHub Releases page, allowing users to download and install the APK independently and checking the previous version as shown in Figure~\ref{fig:github_release}. Moreover, this approach was chosen to simplify the deployment process and facilitate early testing without requiring users to participate in Google Play's closed testing program or to install alternative application stores, such as F-Droid as previously mentioned in the subsection~\ref{sub:deployment}. 
 
@@ -14,10 +17,11 @@ For testing phase, GeoMedia was distributed through a direct download link to th
     \label{fig:github_release}
 \end{figure}
 
+
 \section{SUS Questionaire results}
 
 In order to get the qualitative evaluation of GeoMedia's usability, a quantitative assessment was conducted using the \emph{System Usability Scale} (SUS) among 15 different people with different ages, background and devices.\\
-The SUS is a standardized questionnaire originally proposed by researcher John Brooke~\cite{article:brook_sus} to provide a quick and practical measure of the perceived usability of a system. Composed by ten statements evaluate using a five-point Likert scale, ranging from ``Strongly disagree'' to ``Strongly agree''. \\
+The SUS is a standardized questionnaire originally proposed by researcher John Brooke~\cite{article:brook_sus} to provide a quick and practical measure of the perceived usability of a system. Composed by ten statements evaluate using a five-point Likert scale, ranging from \textit{Strongly disagree} to \textit{Strongly agree}. \\
 For each statement has been computed the mean value across all participants, thus to provide an overview to analyse the general tendency. Moreover, the standard deviation was calculated to indicate the variability of participants' responses across the questions.
 
 The results of the Questionnaire are reported in Table~\ref{tab:sus_results}
@@ -25,7 +29,6 @@ The results of the Questionnaire are reported in Table~\ref{tab:sus_results}
 
 \begin{table}[H]
 \centering
-\label{tab:sus_results}
 \renewcommand{\arraystretch}{1.4}
 \setlength{\arrayrulewidth}{0.6pt}
 
@@ -142,6 +145,7 @@ I needed to learn a lot of things before I could get going with the system.
 
 \end{tabular}
 \caption{Analysis of SUS questionnaire responses.}
+\label{tab:sus_results}
 \end{table}
 
 
@@ -163,12 +167,12 @@ During the SUS questionnaire, several general comments and suggestions for furth
     
     \item \textbf{Usability improvements}: Several usability-related suggestions were provided by the participants. One suggestion concerned the post creation phase, where media content could be expanded by default rather than requiring the user to manually activate the corresponding toggle. \\
     Another suggestion involved the behaviour of the bottom sheet used for limitation in post or collection creation: participants proposed enabling it to be dismissed by tapping outside its boundaries, rather than requiring the user to interact with the dedicated closed button or by drag down the component. \\
-    The last graphical and usability suggestion is to extend the application's color theme to reflect the map theme selected, now implemented just for light-dark mode (forced thought the setting or as default, the system configuration of the device). For instance, when selecting themes such as ``Retro'' (light brown) or ``Dark Night'' (blue), the corresponding colour palette could be applied consistently across the entire app rather than being limited to the map.
+    The last graphical and usability suggestion is to extend the application's color theme to reflect the map theme selected, now implemented just for light-dark mode (forced thought the setting or as default, the system configuration of the device). For instance, when selecting themes such as \textit{Retro} (light brown) or \textit{Dark Night} (blue), the corresponding colour palette could be applied consistently across the entire app rather than being limited to the map.
 
     \item \textbf{Place research}:  Participants suggested introducing the possibility of searching for specific places during the post-creation process, similarly to conventional search services that provide results for restaurants, museums or other points of interest (POIs). Although this functionality may appear in partially in contrast with GeoMedia's focus on coordinate anchored content, it would not fundamentally conflict the framework core idea, and could therefore be considered as potential future extension.
     
     
-    \item \textbf{Profile suggestions}:  Another suggestion concerned the possibility of displaying posts created by friends even out of the limited range of the posts, or to introduce a ``overview mode'' capable to access geographically remote content. This specific functionality could go in contrast with the content-centric nature of GeoMedia, but a less intrusive alternative could involve the prioritising or recommending posts created by users' friends. \\
+    \item \textbf{Profile suggestions}:  Another suggestion concerned the possibility of displaying posts created by friends even out of the limited range of the posts, or to introduce a \textit{overview mode} capable to access geographically remote content. This specific functionality could go in contrast with the content-centric nature of GeoMedia, but a less intrusive alternative could involve the prioritising or recommending posts created by users' friends. \\
     A related suggestion is to introduce a users ranking based on expertise or domain knowledge. For example, users identified as experts in specific field, such as history teachers, could provide more detailed and curated content. Such features, could contribute to improving the quality and reliability of content, while maintaining the location centred nature of the platform.
     
     \item \textbf{GNSS integration}: An advanced improvement could be the integration of multi-band GNSS (Global Navigation Satellite System) alongside the GPS, to improving position accuracy and provide coverage for any user on Earth including air, desert and sea zones.
@@ -187,10 +191,11 @@ Another important consideration for making GeoMedia more usable and more engagin
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.35\textwidth]{QRCODE_GEOMEDIA.png}
-    \caption{QR Code example, referring to GeoMedia GitHub repository.}
+    \caption{QR Code example, referring to GeoMedia GitHub repository~\cite{site:geomedia-repository}.}
     \label{fig:qrcode_geomedia}
 \end{figure}
 
 
 Overall, the application received an average rating of 4.3 out of 5 from the participants.
+
 
