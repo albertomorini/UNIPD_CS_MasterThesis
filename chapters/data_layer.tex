@@ -21,7 +21,7 @@ Specifically, the fundamentals adopted are:
 
     \item \textbf{Referential integrity}: primary and foreign key constraints are used to ensure that relationships between related entities remain consistent and that references to non-existent records are avoided.
 
-    \item \textbf{ACID properties}: database transactions follow the principles of Atomicity, Consistency, Isolation and Durability, ensuring that operations are executed reliably and that the database remains in a valid state.
+    \item \textbf{ACID properties}: database transactions follow the principles of Atomicity, Consistency, Isolation and Durability, ensuring that operations are executed correctly without compromise the database state and consistency.
 
     \item \textbf{Data integrity and consistency}: constraints such as \texttt{NOT NULL} or \texttt{UNIQUE} are applied thus to prevent invalid or inconsistent data from being stored.
 
@@ -42,12 +42,12 @@ The Entity–Relationship (ER) diagram in Figure~\ref{fig:geomedia_ER} provides 
 The entities individuated are:
 \begin{itemize}
     \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. The table uses an auto-incrementing ID as its primary key, ensuring the uniqueness of each record and its used to create a reference to others tables (e.g. posts, reactions and eventual post reports).
-    \item \textbf{Posts}: storing post information and then representing the core entity for integration and references.
+    \item \textbf{Posts}: storing published content information and then representing the core entity for integration and references.
     \item \textbf{Collections}: that works as containers for posts, dictating logic properties on posts and allowing special features (e.g. sequential posts).
     \item \textbf{Hypermedia}: operates as register with path of hypermedia stored by server layer in the file system.
     \item \textbf{Interactions}: used to store the user interaction with posts (actually just \textit{like} reactions) and marks the view, used both for view counter and managing post sequentiality features. The table is also a starting point for comments extension.
     \item \textbf{Reports}: store the report raised by users referenced to posts and then enable the posts moderation process.
-    \item \textbf{Topics}: works as a container of interests that will be seen by GeoMedia application in form of hashtags. Moreover, these can be associated both to collections than to the user.
+    \item \textbf{Topics}: works as a container of interests that will be seen by GeoMedia application in form of hashtags. Moreover, these can be associated both to collections than to the users preferences.
     \item \textbf{Interests}: that works as register to link users to their topic of interest.
 \end{itemize}
 
@@ -90,8 +90,8 @@ CREATE TABLE GEOMEDIA.dbo.POSTS (
 );
 \end{lstlisting}
 
-The RDBMS aside tables and views (virtual tables based on predefined queries), contains several functions and stored procedures (precompiled SQL routines), that manipulate data through complex operations, encapsulating the business logic within the database. This approach improves the maintainability and extensibility of the system, while potentially improving performance by reducing the amount of data processing required at the application level. Finally, the stored procedures provide the results whenever requested by the server, 
-as an example is shown in Listing~\ref{lst:db_sql_merge}, which implements the synchronization of a user's interests, represented as hashtags. The procedure receives the user identifier and a JSON object containing the desired interests. The JSON data is first parsed using \texttt{OPENJSON} and stored in a temporary table variable. The stored procedure then removes existing interests that are no longer present in the provided set, creates missing hashtags and associates them with the user while preventing duplicate relationships through \texttt{NOT EXISTS} checks. Finally, the procedure invokes \texttt{PROFILE\_INTEREST\_GET} to retrieve the updated list of interests.
+The RDBMS aside tables and views (virtual tables based on predefined queries), contains several functions and stored procedures (precompiled SQL routines), that manipulate data through complex operations, encapsulating the business logic within the database. This approach improves the maintainability and extensibility of the system, while potentially improving performance by reducing the amount of data processing required at the application level. \\
+Therefore, the stored procedures provide the results whenever requested by the server, as an example is reported in Listing~\ref{lst:db_sql_merge}, which implements the synchronization of a user's interests, represented by hashtags. The procedure receives the user identifier and a JSON object containing the desired interests. The JSON data is first parsed using \texttt{OPENJSON} and stored in a temporary table variable, then: existing interests that are no longer present in the provided set are removed, missing hashtags are created and consequently associated to the user profile in the respective table. Duplicates relationships are avoided through \texttt{NOT EXISTS} checks. Finally, the procedure invokes \texttt{PROFILE\_INTEREST\_GET} to retrieve and returns the updated list of interests.
 
 This operation therefore implements a merge-like behaviour: existing records are preserved when they are still present in the input, missing records are created and obsolete associations are removed.
 
@@ -157,15 +157,15 @@ END;
 
 \section{Sequential post implementation}
 
-The algorithm responsible for managing post sequentiality is implemented in the stored procedure \texttt{POST\_GET\_MAP}. The procedure is responsible for retrieving the posts available to the requesting user, applying the visibility and temporal constraints defined by the application and finally determining the appropriate order of sequential posts. Meanwhile, the radius-based area filter is performed by the backend on the dataset returned by the stored procedure, as previously described in Section~\ref{haversine_formula}. \\
+The algorithm responsible for managing post sequentiality is implemented in the stored procedure \texttt{POST\_GET\_MAP}. The procedure is responsible for retrieving the posts available to the requesting user, applying the visibility and temporal constraints defined by the application and finally determining the appropriate order of sequential posts. Meanwhile, the radius-based area filter is performed on the dataset returned by the stored procedure, by the backend layer, as previously described in Section~\ref{haversine_formula}. \\
 
 In particular, the procedure handles sequential posts by identifying the first post in the defined sequence that has not yet been viewed by the requesting user, allowing the framework to progressively expose posts according the sequence defined in the respective collections selected by user. \\
-The sequentiality logic is implemented through a CTE (Common Table Expression), that extracts the ordering information associated with collections from \texttt{SEQUENTIALS} field stored in JSON format, then applying the SQL Server built-in function \texttt{OPENJSON} parse the structure in form of table with corresponding  \texttt{order\_id} and \texttt{post\_id} values. \\
+The sequentiality logic is implemented through a CTE (Common Table Expression)$_{\glslink{cte}{g}}$, that extracts and store into a volatile-table, the sorting information associated with collections from \texttt{SEQUENTIALS} field stored in JSON format, then applying the SQL Server built-in function \texttt{OPENJSON} parse the structure in form of table with corresponding  \texttt{order\_id} and \texttt{post\_id} values. \\
 The orders values are stored temporarily in the \texttt{@SEQQ} table variable, and subsequently they are used to associate each posts with its position within the sequence. A second CTE \texttt{NEXTPOST} identifies the first post in the sequence that has not yet been viewed by the requesting users. This is achieved by comparing the posts associated with the collections against the records stored in the \texttt{INTERACTIONS} table, where the value \texttt{VIEW} in field \texttt{SCOPE} marks the post as seen by the user. \\
 The results are ordered according to the sequential \texttt{order\_id}, ensuring that the next available post is selected according to the sequence defined by collection owner.
-Finally, the procedure combines the next post to be displayed of respective collections with sequentiality enabled, and posts that are not associated with a sequence. Additional filters are applied to respect account visibility (both singular post as collection), temporal restrictions and respective recurrence rules.
+Finally, the procedure combines the next post to be displayed of respective collections with sequentiality enabled, and posts that are not associated with a sequence. Additional filters are applied to respect account visibility (both singular post as collection), temporal restrictions and respective recurrency rules.
 
-The implementation of this logic is shown in Listing~\ref{lst:db_sp_post_seq}.
+The implementation of this algorithm is shown in Listing~\ref{lst:db_sp_post_seq}.
 
 \lstset{
     language=SQL,
@@ -294,9 +294,9 @@ To create the Docker \textit{container}, it is sufficient to execute the termina
     label={lst:db_docker_deploy}
 ]
 docker run \
-    -e 'ACCEPT_EULA=Y' \ #accept lincense
-    -e 'SA_PASSWORD=changeme' \ #sa password for admin
-    -e 'MSSQL_PID=Express' \ #pid
+    -e `ACCEPT_EULA=Y' \ #accept lincense
+    -e `SA_PASSWORD=changeme' \ #sa password for admin
+    -e `MSSQL_PID=Express' \ #pid
     -p 1433:1433 \ #default port
     --name sqlserver \ #container name
     -d mcr.microsoft.com/mssql/server:2022-latest #the image
@@ -309,14 +309,14 @@ Finally, the application layer (the HTTP server) can be configured with the conn
     \item \textbf{Address}: IPv4/IPv6 address or server name where the RDBMS is hosted. GeoMedia uses a single-server deployment, therefore \texttt{localhost} is used in the local deployment.
     \item \textbf{Port}: TCP/IP port used by the SQL Server instance, the default port is \texttt{1433}.
     \item \textbf{User}: username of a database user with the specific roles and permissions required. For GeoMedia, the user should require permission of read and execute stored procedures, since the input and updates operations are demanded to the appropriate stored procedures. The default administrative account \texttt{sa} is avoided for security reasons.
-    \item \textbf{Password}: password associated with the database user.
+    \item \textbf{Password}: password associated with the system administrator database user.
     \item \textbf{Database}: name of the target database to which the application connects, in this case \texttt{GEOMEDIA}.
     \item \textbf{Instance}: optional SQL Server instance name, whenever the server is configured with multiple independent database engine. \\
     In the GeoMedia deployment, a single SQL Server instance is used.
 \end{itemize}
 
 The connection from the Python HTTP server to Microsoft SQL Server is provided by the library \texttt{pymssql}~\cite{site:pymssql}, offering an high-level API interface toward the database.
-A snippet illustrating the database connection and query execution is provided in Listing~\ref{lst:db_python_sql}, implemented through the application layer of GeoMedia.
+A snippet illustrating the database connection and query execution is provided in Listing~\ref{lst:db_python_sql}, implemented in the application layer of GeoMedia.
 
 \lstset{
     language=Python,

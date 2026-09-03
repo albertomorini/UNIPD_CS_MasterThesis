@@ -33,7 +33,7 @@ The TCP/IP stack is represented by four layers:
 
 \begin{itemize}
     \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as \texttt{HTTP, HTTPS, FTP, SMTP, DNS} operate at this level, defining how data is formatted and exchanged between communicating applications. \\
-    GeoMedia's server uses HTTPS (HTTP over TLS$_{\glslink{tls}{g}}$, which provides end-to-end encryption) as the protocol for this layer of the stack.
+    GeoMedia's server uses HTTPS (HTTP over \acrshort{tls} $_{\glslink{tlsg}{g}}$, which provides end-to-end encryption) as the protocol for this layer of the stack.
 
     \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are \texttt{TCP} (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \texttt{UDP} (User Datagram Protocol), which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
     GeoMedia's server adopt the TCP protocol of this stack.
