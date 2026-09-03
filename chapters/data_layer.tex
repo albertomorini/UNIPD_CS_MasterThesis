@@ -1,13 +1,13 @@
 \chapter{Data Layer}
 \label{cap:datalayer}
 
-The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represent the access and handling to data from one or more source such as different relational database, Non-Relational database, file systems or others persistent storage. This layer is used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
+The Data Layer, also referred as Data Access Layer (DAL) or Persistence Layer represents the access and handling to data from one or more source such as: different relational database, non-relational database, file system or others persistent storage. This layer is used to centralize data access logic, reducing redundances and providing a consistent interface for retrieving or storing data.
 
-For GeoMedia, the persistence layer is implemented using a Relational Database Management System (RDBMS), that represent the most common and well-established approach for the structured management, storage, and retrieval of data. The RDBMS organizes information into logically related tables composed of rows and columns, while providing mechanisms for defining relationships, enforcing data integrity and efficiently executing complex queries and update operations through Structured Query Language (SQL) instructions.
+For GeoMedia, the persistence layer is implemented using a Relational Database Management System (RDBMS), that represent the most common and well-established approach for the structured management, storage and retrieval of data. The RDBMS organizes information into logically related tables composed of rows and columns, while providing mechanisms for defining relationships, enforcing data integrity and efficiently executing complex queries and update operations through Structured Query Language (SQL) instructions.
 
 Microsoft SQL Server has been adopted and implemented as the underlying relational database management system due to its robustness, scalability and comprehensive support for enterprise-level data management. In addition to standard relational database capabilities, SQL Server provides advanced mechanisms for transaction management, data indexing and performance optimization.
 
-MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as presented in the previously Figure ~\ref{fig:UML-arch-micro}, or the system can be migrated to the Standard edition by acquiring the appropriate license.
+MSSQL is freely available through the Express edition, which introduces some limitations in terms of storage (up to 10 GB per database), performance and administration tooling. However, for the scope of this project, these limitations are considered acceptable. If the platform needs to scale in the future, the GeoMedia database can either be split across multiple instances, as previously presented in microservices chapter (Fig.~\ref{fig:UML-arch-micro}), or the system can be migrated to the Standard edition by acquiring the appropriate license.
 
 \section{Database}
 
@@ -17,13 +17,13 @@ Specifically, the fundamentals adopted are:
 
 \begin{itemize}
 
-    \item \textbf{Normalization}: the database schema is structured to minimize data redundancy and prevent insertion, update and anomalies avoidance, while maintaining clear relationships between entities.
+    \item \textbf{Normalization}: the database schema is structured to minimize data redundancy, ambiguities avoidance, prevent anomalies and inconsistencies, while maintaining clear relationships between entities.
 
     \item \textbf{Referential integrity}: primary and foreign key constraints are used to ensure that relationships between related entities remain consistent and that references to non-existent records are avoided.
 
     \item \textbf{ACID properties}: database transactions follow the principles of Atomicity, Consistency, Isolation and Durability, ensuring that operations are executed reliably and that the database remains in a valid state.
 
-    \item \textbf{Data integrity and consistency}: constraints such as \texttt{NOT NULL}, \texttt{UNIQUE}, and \texttt{CHECK} are applied thus to prevent invalid or inconsistent data from being stored.
+    \item \textbf{Data integrity and consistency}: constraints such as \texttt{NOT NULL} or \texttt{UNIQUE} are applied thus to prevent invalid or inconsistent data from being stored.
 
 \end{itemize}
 
@@ -41,11 +41,11 @@ The Entity–Relationship (ER) diagram in Figure~\ref{fig:geomedia_ER} provides 
 
 The entities individuated are:
 \begin{itemize}
-    \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. The table uses an auto-incrementing ID as its primary key, ensuring the uniqueness of each record and its used to create a reference to posts, reactions and eventual post reports.
+    \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. The table uses an auto-incrementing ID as its primary key, ensuring the uniqueness of each record and its used to create a reference to others tables (e.g. posts, reactions and eventual post reports).
     \item \textbf{Posts}: storing post information and then representing the core entity for integration and references.
     \item \textbf{Collections}: that works as containers for posts, dictating logic properties on posts and allowing special features (e.g. sequential posts).
     \item \textbf{Hypermedia}: operates as register with path of hypermedia stored by server layer in the file system.
-    \item \textbf{Interactions}: used to store the user interaction with posts (actually just `like' reactions) and marks the view, used both for view counter and managing post sequentiality features. The table is also a starting point for comments extension.
+    \item \textbf{Interactions}: used to store the user interaction with posts (actually just \textit{like} reactions) and marks the view, used both for view counter and managing post sequentiality features. The table is also a starting point for comments extension.
     \item \textbf{Reports}: store the report raised by users referenced to posts and then enable the posts moderation process.
     \item \textbf{Topics}: works as a container of interests that will be seen by GeoMedia application in form of hashtags. Moreover, these can be associated both to collections than to the user.
     \item \textbf{Interests}: that works as register to link users to their topic of interest.
