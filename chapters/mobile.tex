@@ -11,7 +11,6 @@ Therefore, the mobile application represents the most important component within
 React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all or at least the most, of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
 
 Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between JavaScript (or TypeScript) based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
-% More specifically, React Native consents to write application logic using web-oriented programming languages, such as JavaScript or TypeScript, while adopting a styling approach similar to~$\acrshort{css}_{\glslink{css}{g}}$ for interface design. UI elements are represented through reusable components, which can be considered analogous to HTML elements in traditional web development.
 During the deployment process, web-oriented components are translated into their corresponding native platform counterparts: enabling the application to achieve a native-like user experience while maintaining a shared development environment.
 
 React Native represents a suitable technological option, allowing the platform to reach both Android than iOS markets. Overall, the framework is well supported by various components and libraries that can fully satisfy the requirements designed to create GeoMedia framework.
@@ -295,17 +294,18 @@ Furthermore, the sharing functionality allows users to distribute the post conte
 
 The Android sharing menu cannot be modified by any application, it is strictly dependent on the \texttt{Intent filters} declared by others app present in the device, and the Operating System provide the sharing request handlers.
 
-\section{App flowchart}
+\section{Activity diagram}
 
-To provide a comprehensive overview of the application structure and user interactions, a workflow diagram of GeoMedia is presented in the Figure.~\ref{fig:app-flowchart} \\
-This diagram describes the main operations performed by users and the corresponding processes executed by the application, highlighting the interaction between the user interface, internal components and external services. The representation of the application flowchart clarify the sequence of actions and the dependencies between different functionalities especially during app design process. 
+To provide a comprehensive overview of the application structure and user interactions, a UML activity diagram~\cite{site:omg2017uml} of GeoMedia mobile application is presented in Figure~\ref{fig:app-flowchart}. This diagram describe the main actions performed by users and corresponding activities and processes executed by the application. The activity diagram clarifies the sequence of actions and the dependencies between different components, especially during the app design process.
 
 \begin{figure}[H]
     \centering
-    \includesvg[width=0.9\textwidth]{images/GeoMedia_App_Flowchart.drawio.svg}
-    \caption{Application flowchart}
+    \includegraphics[width=1.0\textwidth]{GeoMedia/geomedia_activity_diagram.drawio.png}
+    \caption{GeoMedia thumb-rule comparison~\cite{site:oangle-thumb-rule-mobile-ui}}
+    \caption{Activity diagram of GeoMedia app.}
     \label{fig:app-flowchart}
 \end{figure}
+
 
 \section{Usability}
 \label{sub:ui_and_usability}
