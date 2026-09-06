@@ -85,7 +85,7 @@ async def hpmedia_read_folder(postid: int):
     return files
 \end{lstlisting}
 
-However, in GeoMedia framework, most of the business logic and data manipulation, is implemented in the data layer, leaving the server applies the final filters and logic. As previously shown in the implementation of the Haversine formula~\ref{haversine_formula}, used to compute the distance between the current location of the user and the posts.\\
+However, in GeoMedia framework, most of the business logic and data manipulation is implemented in the data layer, leaving the server applies the final filters and logic. As previously shown in the implementation of the Haversine formula~\ref{haversine_formula}, used to compute the distance between the current location of the user and the posts.\\
 The same function is also leveraged by the \textit{Local collection} feature as implemented in Listing~\ref{lst:local_collection_implementation}.
 
 \lstset{
@@ -237,7 +237,7 @@ The security measures implemented follows a defends in every layer of the applic
 
 To ensure the authenticity of account, users, during the registration provide an email address that will be associated to their account. During the registration process, the backend generates a One-Time Password (OTP) that is sent to the provided email address and must be entered within a limited period of time (imposed to 1 hour). Once successfully verified, the account is verified and user is allowed to utilize the platform.
 
-The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address supplied during registration. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure is mitigated by limiting the number of verification attempts up to five, as shown in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts has been reached, the account results blocked and user must contact the GeoMedia back-office or proceed with a new account.
+The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address supplied during registration. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure is mitigated by limiting the number of verification attempts up to five, as shown in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts is reached, the account results blocked and user must contact the GeoMedia back-office or proceed with a new account.
 
 \lstset{
     language=SQL,
@@ -308,7 +308,7 @@ The timestamp and nonce are subsequently validated by the server to control the 
 
 \subsection{Password handling}
 
-Another cybersecurity practice utilized by GeoMedia, is the MD5 hash function, designed to be a one-way function to transform an textual input, such as password, into a fixed-size digest. The resulting digest cannot be reversed to obtain the original input~\cite{article:hash-md5}. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
+Another cybersecurity practice utilized by GeoMedia, is the MD5 hash function, which is designed to be a one-way function to transform an textual input, such as password, into a fixed-size digest. The resulting digest cannot be reversed to obtain the original input~\cite{article:hash-md5}. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
 
 
 
@@ -427,7 +427,7 @@ The main security mechanisms adopted by GeoMedia can be summarized in the table~
 \\ \hline
 
 \textbf{HTTPS/TLS}
-& Protects data exchanged between clients and backend services, applying encryption.
+& IT protects data exchanged between clients and backend services, applying encryption.
 \\ \hline
 
 \textbf{HMAC}

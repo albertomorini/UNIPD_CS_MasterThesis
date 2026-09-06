@@ -24,7 +24,7 @@ Users can also configure the visibility of each collection according to the foll
 
 Furthermore, to defining who can view the collection, owners of a collection can specify which users are authorized to create post within it. This distinction between viewers and contributors provides finer-grained access control, enriching users experiences while enabling more effective moderation and content management.
 
-For each collection, the owner can also enable or disable the \textit{remote posting} feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case, makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because contents are strictly linked to the physical world.
+For each collection, the owner can also enable or disable the \textit{remote posting} feature: when enabled, content creators are allowed to manually select the geographical location associated with a new post, by dragging a marked through the map; instead, when disabled, posts can only be created at the user's current geographical coordinations (latitude, longitude and altitude) provided by GPS module of mobile device. This last case makes the platform suitable for a wide variety of scenarios, such as restaurant reviews, traffic reports and real-time local information: avoiding the likelihood of unrelated or misleading content because posts are strictly linked to the physical world.
 
 Moreover, another functionality is the \textit{sequential post}, enabling the discovering of content in a specific order in which a post becomes visible only after the previous one has been viewed.
 
@@ -60,7 +60,7 @@ Finally, as shown in Figure~\ref{fig:topics-and-suggestions} each collection can
 The \textit{Map} section represents the core component of GeoMedia, providing an interactive geographical map enriched with location-based posts. Each post is represented by a marker positioned at the geographical coordinates where it was created or, when the associated collection allows \textit{remote posting}, at the location selected by its creator.
 
 To improve visual recognition, each marker adopts the color assigned to its collection, allowing users to associate the context to which the post belongs. \\
-By selecting a marker, the complete content of the corresponding post is displayed and users can express appreciation by liking the post, or, whenever a post contains an attached media file or more, users are allowed to download them regardless of the file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users privacy, in latter case, posts are displayed as lists and rather than on a map, thereby to hide creator positions and preserving the gamified experience of discovery through the map. 
+By selecting a marker, the complete content of the corresponding post is displayed and users can express appreciation by liking the post, or, whenever a post contains an attached media file or more, users are allowed to download them regardless of the file format. Furthermore, users, can view the creator's profile, checking its statistic displayed in graphs or browse other posts of the same creator which are accessible from current location (and others metadata). To preserve users's privacy, in the latter case, posts are displayed as lists and rather than on a map, thereby hiding the creator positions and preserving the gamified experience of discovery through the map. 
 
 % However, this feature provide a peek of some content of the user in way to provide users potential related posts. ~ ambiguo
 
@@ -197,7 +197,7 @@ Respectively, access to a collection does not automatically imply access to all 
     \end{itemize}
     \item \textbf{Post-specific time limitation}: applies temporal restrictions directly to a single post, narrowing the visibility inherited from the collection.
     \item \textbf{Post-specific user limitation}: restricts access to a single post for a specific group of users, narrowing the permissions inherited from the collection.
-    \item \textbf{Sequentiality limitation}: collections that enable sequential access exposes only the next available post (or the first post when starting the sequence), for each single user, according to the order defined by the creator. This mechanism allows creators to guide users through a predefined ordered chain of content.
+    \item \textbf{Sequentiality limitation}: collections that enable sequential feature makes available only the next post (or the first post when starting the sequence), for each single user, according to the order defined by the creator. This mechanism allows creators to guide users through a predefined ordered chain of content.
 \end{itemize}
 
 
@@ -208,7 +208,7 @@ For instance:
 
 \begin{itemize}
     \item \textbf{Local tours}: Through collections, which act as containers for multiple related posts, users can select specific layers created by a guide or organization and access only the content belonging to that experience. Furthermore, the sequentiality feature can enrich guided tours by introducing a predefined order, allowing the next attraction or point of interest to become available only after the previous one has been visited.\\
-    Posts can be created remotely by different authors (such as professional guides) and promoted across related collections through the use of hashtags. As a further development, this functionality enable a monetization mechanisms for the platform, allowing creators to provide exclusive paid experiences directly through the platform.
+    Posts can be created remotely by different authors (such as professional guides) and promoted across related collections through the use of hashtags. As a further development, this functionality may enables a monetization mechanisms for the platform, allowing creators to provide exclusive paid experiences directly through the platform.
 
     \item \textbf{Recurrent posts}: GeoMedia allows users to define post visibility not only through geographical constraints but also through temporal conditions. A post can be associated with a specific date and time interval and can optionally be configured with a recurrence pattern, such as monthly or yearly availability. This enables scenarios where the same content becomes available periodically without requiring their manual recreation. This feature can be useful for scenario such as anniversaries, birthdays or recurrent celebrations.
 
@@ -243,7 +243,7 @@ In this case, digital markers at these location as shown in Figure~\ref{fig:tre-
 
 \section{User}
 
-Even if GeoMedia is not a profile-centric social network, GeoMedia, allows users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
+Even if GeoMedia is not a profile-centric social network, it allows users the ability to personalize their profiles by specifying basic personal information, such as their first and last name but also to upload a profile picture. These features allow users to establish a recognizable identity within the platform and enhance the overall user experience.
 
 In addition, the GeoMedia mobile application provides users with infographic-based statistics that summarize their activity on the platform, such as the number of published posts distributed across months or which in which collections they are active as pie-chart. As shown in Figure \ref{fig:user-profile-overview}, these visual summaries offer users an immediate overview of their contributions and engagement within the application.
 \begin{figure}[H]
