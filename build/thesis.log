@@ -3536,4 +3536,99 @@ Package biblatex Warning: No driver for 'paper'.
 
 
 Package biblatex Warning: No driver for 'paper'.
-(biblatex)                Using fallback driver 
+(biblatex)                Using fallback driver on input line 9.
+
+
+Package biblatex Warning: No driver for 'paper'.
+(biblatex)                Using fallback driver on input line 9.
+
+
+Package biblatex Warning: Split bibliography detected.
+(biblatex)                Many simple split bibliography setups with
+(biblatex)                non-overlapping bibliographies benefit from
+(biblatex)                setting 'defernumbers=true'.
+(biblatex)                See the documentation for details.
+(biblatex)                This warning can be suppressed with
+(biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
+
+[102] [103] [104]
+Overfull \hbox (8.51106pt too wide) in paragraph at lines 12--12
+[]\T1/cmr/m/n/10.95 (-20) Google Inc. \T1/cmr/m/it/10.95 (-20) An-droid: Clear-
+t-ext com-mu-ni-ca-tions. \T1/cmr/m/n/10.95 (-20) 2024. \T1/cmr/m/sc/10.95 (-20
+) url\T1/cmr/m/n/10.95 (-20) : [][]$\T1/cmtt/m/n/10.95 https : / / developer .
+ []
+
+[105] [106] [107] [108]
+Overfull \hbox (8.3806pt too wide) in paragraph at lines 12--12
+[]\T1/cmr/m/n/10.95 (-20) Meta Open Source. \T1/cmr/m/it/10.95 (-20) Re-act Na-
+tive of-fi-cial page. \T1/cmr/m/n/10.95 (-20) 2015. \T1/cmr/m/sc/10.95 (-20) ur
+l\T1/cmr/m/n/10.95 (-20) : [][]$\T1/cmtt/m/n/10.95 https : / / reactnative .
+ []
+
+[109] [110]) [111] (build/thesis.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package logreq Info: Writing requests to 'thesis.run.xml'.
+\openout1 = `thesis.run.xml'.
+
+ ) ) 
+Here is how much of TeX's memory you used:
+ 47389 strings out of 469431
+ 880307 string characters out of 5468909
+ 2205792 words of memory out of 5000000
+ 74070 multiletter control sequences out of 15000+600000
+ 670746 words of font info for 284 fonts, out of 8000000 for 9000
+ 61 hyphenation exceptions out of 8191
+ 99i,14n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{cite.0@article:db-principles} has been referenced b
+ut does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@site:omg2017uml} has been referenced but doe
+s not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@site:https-handshake} has been referenced bu
+t does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@site:instagram-privacy} has been referenced 
+but does not exist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/f
+onts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/cm-super/sfbi1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfb
+x1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr
+/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
+/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><
+/usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texm
+f-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.p
+fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/
+texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti10
+00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+tt1095.pfb>
+Output written on build/thesis.pdf (120 pages, 16292228 bytes).
+PDF statistics:
+ 2630 PDF objects out of 2984 (max. 8388607)
+ 2339 compressed objects within 24 object streams
+ 838 named destinations out of 1000 (max. 500000)
+ 71951 words of extra memory for PDF output out of 74296 (max. 10000000)
+
