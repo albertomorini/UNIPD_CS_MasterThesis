@@ -2,16 +2,16 @@
 \label{cap:mobile}
 
 In order to provide its core functionalities, GeoMedia client relies on mobile devices, such as smartphones and tablets, where GPS capabilities and internet connectivity can be leveraged to enable the discovery of the surrounding environment. Through the mobile application, users can visualize nearby posts based on their location and contribute with new content by capturing images using the integrated camera.
-Therefore, the mobile application represents the most important component within the entire platform. Its development introduces additional design challenges related to User Experience (UX), usability, performance limitations of mobile devices and the protection of user privacy.
+Therefore, the mobile application represents the most important component within the entire platform. Its development introduces additional design challenges related to User Experience (UX), accessibility, the performance limitations of mobile devices and the protection of user privacy.
 
 
 \section{React Native framework}
 
 
-React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all, or at least the most, of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
+React Native (RN)~\cite{site:react-native}, is an open-source development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all, or at least the most, of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
 
-Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between JavaScript (or TypeScript) based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
-During the deployment process, web-oriented components are translated into their corresponding native platform counterparts: enabling the application to achieve a native-like user experience while maintaining a shared development environment.
+Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between JavaScript (or TypeScript) based components and platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
+During the deployment process, web-oriented components are translated into their corresponding native platform counterparts.
 
 React Native represents a suitable technological option, allowing the platform to reach both Android than iOS markets. Overall, the framework is well supported by various components and libraries that can fully satisfy the requirements designed to create GeoMedia framework.
 
@@ -19,7 +19,7 @@ React Native represents a suitable technological option, allowing the platform t
 \subsection{Ionic Framework Comparison}
 
 A first version of GeoMedia was developed using Ionic Framework~\cite{site:ionic-frameworks}, which is a framework for web development with the capability of encapsulating web applications into mobile applications. 
-This approach appears to be similar to ReactNative but its core is totally different, since IonicFramework rerender and interprets the components on running time, as web browsers process web pages, while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
+This approach appears to be similar to ReactNative but its core is totally different, since Ionic Framework rerender and interprets the components on running time, as web browsers process web pages; while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
 
 Moreover, one of the main advantages of Ionic is the possibility for developers to work with different web frameworks such as ReactJS, AngularJS or VueJS, while integrating Ionic's components.
 
@@ -39,7 +39,10 @@ One of the main strengths of React Native is its extensive ecosystem of free and
 
 Overall, GeoMedia for the developed Android version employs several dependencies packages, the most important with their the version supported are enlisted in the Table~\ref{tab:dependencies}.
 
-The version notation follows the standardized Semantic Versioning (SemVer) convention~\cite{site:semver}. This notation is composed of three components in the form \texttt{MAJOR.MINOR.PATCH}, to indicate respectively: potential breaking changes, backward-compatible additions and bug fixes. Moreover, the caret symbol (\texttt{\string^}) indicates that the dependency is permitted to be updated to newer compatible versions without changing the leftmost non-zero version component. For example, the notation \texttt{\string^2.3.1} allows versions from 2.3.1 up to, but not including, 3.0.0. This approach provides access to compatible updates while reducing the risk of introducing breaking changes. Instead, the tilde symbol (\texttt{\string~}) means that only backward-compatible patch-level updates are permitted. For example, the notation \texttt{\string~54.0.33} allows versions from 54.0.33 up to, but not including, 54.1.0. This notation therefore restricts updates to the patch version while preventing automatic updates to newer minor versions.
+The version notation follows the standardized Semantic Versioning (SemVer) convention~\cite{site:semver}. This notation is composed of three components in the form \texttt{MAJOR.MINOR.PATCH}, to indicate respectively: potential breaking changes, backward-compatible additions and bug fixes. Specifically, the caret symbol (\texttt{\string^}) indicates that the dependency is permitted to be updated to newer compatible versions without changing the leftmost non-zero version component. For example, the notation \texttt{\string^2.3.1} allows versions from 2.3.1 up to, but not including, 3.0.0. 
+% This approach provides access to compatible updates while reducing the risk of introducing breaking changes. 
+Instead, the tilde symbol (\texttt{\string~}) means that only backward-compatible patch-level updates are permitted. For example, the notation \texttt{\string~54.0.33} allows versions from 54.0.33 up to, but not including, 54.1.0. 
+% This notation therefore restricts updates to the patch version while preventing automatic updates to newer minor versions.
 
 
 \input{tables/dep.tex}
@@ -47,14 +50,14 @@ The version notation follows the standardized Semantic Versioning (SemVer) conve
 
 A particular emphasis should be placed on libraries that provide access to device APIs and hardware features, such as sensors and other physical components.
 
-\subsubsection{Map \& GPS}
+\subsubsection{Map \& GPS Integrations}
 \label{subsub:map_and_gps}
 
 The map component represent the core functionality of GeoMedia, implemented using the \texttt{react-native-maps} library, which during the compilation process is translated into the corresponding native implementation for each platform, namely Google Maps on Android and Apple Maps on iOS.
 
 On the Android platform, the Google Maps component provides a wide range of features. These include graphical customization of the map through styling properties, as well as the display of commercial, historical or other points of interest, such as coffee shops, restaurants or retail stores. In GeoMedia, these elements remain visible and serve as useful landmarks, helping users orient themselves within the displayed environment and among the posts published through the app itself. In fact, the map supports the rendering of additional geographical elements with specific coordinates, known as markers. Each marker acts as a visual placeholder that identifies the physical location associated with a post.
 
-In addition, the library exposes several callback functions and hooks that allow developers to implement custom logic. \textit{Callback} functions are functions passed as arguments to another procedure, enabling application-specific logic to be executed in response to particular events or operations. Instead, \textit{React Hooks}~\cite{site:react-hook} are functions that enable components to access features such as state management with \texttt{useState} procedure, allowing values displayed in the UI to be dynamically updated. While the hook-function \texttt{useEffect} allows to perform custom logic in response to changes in states or values, for example implemented to track the user location which GeoMedia leverages in background, to dynamically load location-aware posts as the user moves through the physical environment. This approach ensures that the displayed content remains relevant to the user's current location. To optimize network usage and avoid unnecessary server requests caused by minor location variations, GeoMedia applies a 50-meter movement threshold, triggering a new request and post updates only when the user's displacement exceeds this distance (or collection selected are changed).\\
+In addition, the library exposes several callback functions and hooks that allow developers to implement custom logic. \textit{Callback} functions are functions passed as arguments to another procedure, enabling application-specific logic to be executed in response to particular events or operations. Instead, \textit{React Hooks}~\cite{site:react-hook} are functions that enable components to access features such as state management with \texttt{useState} procedure, allowing values displayed in the UI to be dynamically updated. While the hook-function \texttt{useEffect} allows to perform custom logic in response to changes in states or values, for example implemented to track the user location which GeoMedia leverages in background, to dynamically load location-aware posts as the user moves through the physical environment. This approach ensures that the displayed content remains relevant to the user's current location. To optimize network usage and avoid unnecessary server requests caused by minor location variations, GeoMedia applies a 50-meter movement threshold, triggering a new request and post updates only when the user's displacement exceeds this distance (or collections selected are changed).\\
 In order to access Google Maps services on Android, a Google Maps API key is required, which serves as an authentication token that links the application to a \textit{Google Cloud Project} (a Google suite that offers access to other products such as shared services, computing resources and others), enabling access to the \textit{Google Maps SDK}$_{\glslink{sdk}{g}}$ and its associated services. The API key follows the pricing policy defined by Google. Specifically, it applies a \textit{pay-as-you-go} pricing model~\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7\$.
 
 An implementation of map rendering is shown in Listing~\ref{lst:implementation_map_view}
@@ -81,9 +84,9 @@ An implementation of map rendering is shown in Listing~\ref{lst:implementation_m
         }
         onUserLocationChange={(event) => {
             const { latitude, longitude } = event.nativeEvent.coordinate;
-            if (positionChanged(latitude, longitude)) {
+            if (positionChanged(latitude, longitude)) { //retrieve new posts
                 setUserPosition({ latitude: latitude, longitude: longitude });
-                get_posts_map({ latitude: latitude, longitude: longitude }) //retrieve new posts
+                get_posts_map({ latitude: latitude, longitude: longitude }) 
             }
         }}
         zoomEnabled={true}
@@ -126,9 +129,9 @@ Along with the map rendering, the integration of the GPS module provides the cur
 
 Although altitude is not currently used by GeoMedia, it is stored for future developments.
 
-This set of information is repeatedly used throughout GeoMedia, both for displaying nearby posts and during the post creation process, where the user's current position is automatically assigned as the post location. Specifically, when the current position is used, the altitude is also stored. Conversely, when the location is selected remotely, the altitude is not available. This is because the altitude can be estimated by the GPS sensor, whereas the altitude of a manually selected location cannot be reliably determined, as different points may correspond to buildings with multiple floors, skyscrapers or mountainous areas.\\
+This set of information is repeatedly used throughout GeoMedia, both for displaying nearby posts and during the post creation process, where the user's current position is automatically assigned as the post location. Specifically, when the current position is used, the altitude is also retrieved. Conversely, when the location is selected remotely, the altitude is not available, because the altitude can be estimated by the GPS sensor, whereas, a manually selected location cannot be reliably determined as different points may correspond to buildings with multiple floors, skyscrapers or mountainous areas.\\
 In order to access device resources and user data, Android (as well as the iOS platform) adopts a permission-based security model. This requires users to explicitly grant permissions before applications can access protected system features, hardware components and sensitive information. 
-The location permission and retrieval is requested via \texttt{@react-native-community/geolocation} library, as indicated in Listing~\ref{lst:location_retriving_snippet}.
+The location permission and retrieval is requested via \texttt{@react-native-community/geolocation} library, as reported in Listing~\ref{lst:location_retriving_snippet}.
 
 
 \begin{lstlisting}[
@@ -216,9 +219,9 @@ The respective results of camera integration can be seen in Figure~\ref{fig:geom
 \end{figure}
 
 
-Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports various file formats, including audio files and PDF documents. \\
-To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, \texttt{expo-file-system} is adopted as illustrated in Listing~\ref{lst:file_picking_snippet}; the library doesn't provide any visual components, but just invoke the system native file selection interface. \\
-In order to upload files toward the server through HTTP packets in \texttt{application/json} content-type, selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, the server will decode and store files into the file system of the server.
+Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports any kind file formats, including audio files and PDF documents. \\
+To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, \texttt{expo-file-system} is adopted, as illustrated in Listing~\ref{lst:file_picking_snippet}, the library doesn't provide any visual components, but just invoke the system native file selection interface. \\
+In order to upload files toward the server through HTTP packets in \texttt{application/json}$_{\glslink{applicationjson}{g}}$ content-type, selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, the server will decode and store files into the file system of the server.
 
 \begin{lstlisting}[
     language=Javascript,
@@ -281,7 +284,7 @@ To provide a comprehensive overview of the application structure and user intera
 \label{sub:ui_and_usability}
 
 As an Online Social Network, GeoMedia, aims to be used by a potentially large and diverse user base. Consequently, usability represents an important aspect of the system design, especially for the mobile application, where the limited screen size and touch-based interaction introduce additional challenges. During the development of the mobile app, established usability principles were taken into consideration. \\
-In particular, the interface follows the \emph{thumb-friendly} design principle, according to which frequently performed actions should be positioned within areas of the screen that can be easily reached with the user's thumb when operating the device with one hand. This approach aims to reduce unnecessary hand movements and make common interactions more accessible as stated in WebPage~\cite{site:thumb-rule} and as illustrated in Figure~\ref{fig:geomedia_thumb_rule}.
+In particular, the interface follows the \emph{thumb-friendly} design principle, according to which frequently performed actions should be positioned within areas of the screen that can be easily reached with the user's thumb when operating the device with one hand. This approach aims to reduce unnecessary hand movements and make common interactions more accessible as illustrated in Figure~\ref{fig:geomedia_thumb_rule}.
 
 \begin{figure}[H]
     \centering
@@ -318,6 +321,7 @@ Specifically, accessibility in React Native is implemented through properties of
 Another accessibility feature would be the customization of the interface according to the user's dominant hand, which is not currently supported by the app. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience especially while moving through physical environment.
 
 \section{Customization}
+%TODO: LANG/SERVER?
 
 GeoMedia mobile application supports also personal customization by supporting both light and dark themes and can automatically follow the device's system-wide appearance settings, thus to adapt user preferences. \\
 In addition, the app allows user to change map colors among five different map styles:
@@ -335,25 +339,24 @@ These options provide users greater control over the application's visual appear
 
 \section{Android Application}
 
-Android is an operating system developed by Google, originally designed for mobile devices such as smartphones and tablets and later extended to a wider range of platforms, including televisions, vehicles, smartwatches and other embedded systems. It is based on a modified version of the Linux kernel and was first released in 2008. Since then, it has become the most widely adopted operating system for smartphones worldwide\cite{site:android-usage}. Android provides a high degree of customization, allowing manufacturers such as Samsung, Motorola or others, to modify the user interface and include proprietary applications as part of their devices. Despite these customizations, Android remains an open platform that allows users to install applications from several different stores or, more brutally through APK file, that contain the package and executable code to install the app.
+Android is an operating system developed by Google, originally designed for mobile devices such as smartphones and tablets and later extended to a wider range of platforms, including televisions, vehicles, smartwatches and other embedded systems. It is based on a modified version of the Linux kernel and was first released in 2008. Since then, it has become the most widely adopted operating system for smartphones worldwide~\cite{site:android-usage}. Android provides a high degree of customization, allowing manufacturers such as Samsung, Motorola or others, to modify the user interface and include proprietary applications as part of their devices. Despite these customizations, Android remains an open platform that allows users to install applications from several different stores or, more brutally through APK file, that contain the package and executable code to install the app.
 
-Android application development is freely available, with the main exception for deployment phases to in the official Google stores, where developers need to make one-time payment for a developer license that enable them to upload as many apps they want. Furthermore, Android development is platform-independent, representing a significant advantage over competing platforms such as Apple, where application compilation and deployment require dedicated software tools available only on macOS (Apple Inc operating systems for PC).
+Android application development is freely available, with the main exception for deployment phases to in the official Google store, where developers need to make one-time payment for a developer license that enable them to upload as many apps they want. Furthermore, Android development is platform-independent, representing a significant advantage over competing platforms such as Apple, where application compilation and deployment require dedicated software tools available only on macOS (Apple's operating system for Mac computers).
 
 \subsection{Development}
 
-The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application executable. The official React Native documentation recommends \texttt{Expo} framework as the default starting point for most applications, as it provides a production-ready framework with integrated tooling, while still allowing to customize the underlying Android or iOS projects adding native code when platform-specific functionality is required~\cite{site:expo-native}.
+The development of GeoMedia, since it's a React Native project see different tools cooperating through a well defined sequences in order to develop and build the final application executable. The official React Native documentation recommends \texttt{Expo framework} as the default starting point for most applications, as it provides a production-ready development environment with integrated tooling, while still allowing to customize the underlying Android or iOS projects adding native code when platform-specific functionality is required~\cite{site:expo-native}.
 
 To develop a React Native application using the Expo framework, the development environment must satisfy a number of software prerequisites:
 
 \begin{itemize}
-    \item \textbf{Node.js}: provides the JavaScript runtime environment required to execute development tools and includes the \textit{npm} package manager.
+    \item \textbf{Node.js}: provides the JavaScript runtime required to execute development tools and includes the \textit{npm} package manager.
     \item \textbf{NPM}: the default package manager for Node.js, used to install and manage project dependencies.
-    \item \textbf{Expo}: the framework used to simplify the development, testing, and deployment of React Native applications. It is installed and managed through \textit{npm} and is typically initialized using the \texttt{create-expo-app} utility.\\
-    To build GeoMedia has been used the version 54.0.33.
+    \item \textbf{Expo}: the framework used to simplify the development, testing, and deployment of React Native applications. It is installed and managed through \textit{npm} and is typically initialized using the \texttt{create-expo-app} utility.
+    \item \textbf{Android Studio}: provides the tools required to build and compile APKs, as well as to manage Android-specific configuration and dependencies.
 \end{itemize}
 
-Once the prerequisites have been installed, a new Expo project can be created by executing the command \texttt{npx create-expo-app@latest}. The application can then be launched on a target platform using the command \texttt{npx expo run:\$platform\$}, where the platform is \texttt{android} or \texttt{ios}. \\
-For Android, the application can be executed either on a virtual device (through emulator) or physical if debugging mode is enabled.
+Once the prerequisites have been installed, a new Expo project can be created by executing the command \texttt{npx create-expo-app@latest}. The application can then be run on a target platform using the command \texttt{npx expo run:\$platform\$}, where the platform is \texttt{android} or \texttt{ios}. For Android, the application can be tested either on a virtual device (through emulator) or physical if debugging mode is enabled.
 
 The generated project directory contains the application source code, static assets and several configuration files, including:
 
@@ -367,17 +370,17 @@ The generated project directory contains the application source code, static ass
 \subsection{Deployment}
 \label{sub:deployment}
 
-The deployment phase can be carried out through different distribution channels. From directly sharing the application package (APK) to publication on dedicated application stores which apply their own policies, technical requirements and review procedures. 
+The deployment phase can be carried out through different distribution channels: ranging from directly sharing the application package (APK) to publication on dedicated application stores, each of which apply their own policies, technical requirements and review procedures. 
 
 For the GeoMedia application, the following distribution platforms were considered:
 
 \begin{itemize}
     \item \textbf{Google Play Store}: the official Android application marketplace maintained by Google. Publishing an application requires the creation of a Google Play Developer account, compliance with Google's Developer Program Policies and finally the review of the application along automated processes. \\
-    Furthermore, for newly registered personal developer accounts, Google requires a closed testing phase involving at least 12 testers for a minimum of 14 consecutive days before production access can be requested.
+    Furthermore, for newly registered personal developer accounts, Google requires a closed testing phase involving at least 12 testers for a minimum of 14 consecutive days before production access can be requested~\cite{site:google-play-publishing}.
 
-    \item \textbf{F-Droid}: an open-source Android application repository that distributes only Free and Open Source Software (FOSS). Applications published on F-Droid must comply with its transparency and open-source requirements, making it a suitable distribution channel for projects released under open-source licenses.
+    \item \textbf{F-Droid}: an open-source Android application repository that distributes only Free and Open Source Software (FOSS). Applications published on F-Droid must comply with its transparency and open-source requirements, making it a suitable distribution channel for projects released under open-source licenses~\cite{site:fdroid-inclusion-policy}.
 
-    \item \textbf{Obtainium}: an alternative application manager that allows users to install and update applications directly from their official release sources, such as GitHub repositories, without relying on a centralized application store. This approach enables rapid distribution while preserving direct control over application releases.
+    \item \textbf{Obtainium}: an alternative application manager that allows users to install and update applications directly from their official release sources, such as GitHub repositories, without relying on a centralized application store. This approach enables rapid distribution while preserving direct control over application releases~\cite{site:obtainium-sources}.
 
 \end{itemize}
 
@@ -427,7 +430,7 @@ The \texttt{usesCleartextTraffic} attribute was explicitly enabled because Andro
 
 \section{Network Capability}
 
-The communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in chapter~\ref{sec:rest_server}). However, to perform the sending of HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} (see Listing~\ref{lst:dorequest_wrapper}).
+The communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in Shapter~\ref{sec:rest_server}). However, to perform the sending of HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} (see Listing~\ref{lst:dorequest_wrapper}).
 
 
 \begin{lstlisting}[
@@ -471,4 +474,4 @@ export const doRequest = (api, body = {}, method = "POST") => {
 };
 \end{lstlisting}
 
-The wrapper function generates the HMAC signature required to authenticate the request on the server side (illustrated in chapter~\ref{sub:http_sec}) and then constructs the HTTP request by setting the appropriate method, headers and the optional body. Finally, it sends the request to the server and returns the response content parsed in JSON format to the calling procedure which will interprets the data.
+The wrapper function generates the HMAC signature required to authenticate the request on the server side (analyzed in Section~\ref{sub:http_sec}) and then constructs the HTTP request by setting the appropriate method, headers and the optional body. Finally, it sends the request to the server and returns the response content parsed in JSON format to the calling procedure which will interprets the data.

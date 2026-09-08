@@ -5,24 +5,25 @@ The application layer consists of an HTTP--RESTful server responsible for implem
 However, this design follows a monolithic architecture, in which the HTTP server operates as a single, self-contained unit responsible for handling all application functionalities and client requests. While this approach is well suited for relatively simple applications with limited traffic and modest computational requirements, it may become a limiting factor as the platform grows. \\
 To improve performance, scalability, maintainability and extensibility, the application layer can be decomposed into a set of independent microservices. In a microservices architecture, each service is responsible for a specific functionality and can be developed, deployed and scaled independently. This modular approach enhances fault isolation, simplifies maintenance and allows the system to adapt more efficiently to increasing workloads and evolving functional requirements.
 
-To implement the backend of the GeoMedia platform, Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was implemented as it offers high performance, native support for asynchronous procedures and automatic API documentation (known as \textit{Swagger})~\cite{site:swagger}. 
+To implement the backend of the GeoMedia platform, Python programming language was selected due to its rich ecosystem of libraries, readability and rapid development capabilities. In particular, the FastAPI framework was adopted as it offers high performance, native support for asynchronous procedures and automatic API documentation (known as \textit{Swagger})~\cite{site:swagger}. 
 
 \section{REST Server}
 \label{sec:rest_server}
 
 A REST server is a software application that implements the HTTP/HTTPS protocol and continuously listens for incoming client requests. It exposes one or more RESTful endpoints through which clients can interact with the services offered by the application.
 A RESTful API follows the principles of Representational State Transfer (REST), where application resources are identified by unique URLs and manipulated through standard HTTP methods (i.e. \texttt{GET} for retrieving resources, \texttt{POST} for creating new resources, \texttt{PUT} for updating existing resources). This approach provides a standardized and stateless mechanism for communication between clients and the server.\\
-Finally, the server listens for HTTP or HTTPS requests on a configurable network port. A network port is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
+Finally, the server listens for HTTP or HTTPS requests on a configurable network port, that is a logical communication endpoint that allows the operating system to route incoming network traffic to the application. 
 
-For each servers or simply, computers, the port numbers range start from \texttt{0} to \texttt{65535} and are conventionally divided into three categories:
+For each servers or simply, computers, the port numbers range start from \texttt{0} to \texttt{65,535} and are conventionally divided into three categories:
 \begin{itemize}
-    \item \textbf{Well-known ports (0--1023)}: reserved for standard services and protocols, such as SMTP (port 25, mail protocol), HTTP (port 80), HTTPS (port 443) or SSH (port 22, remote connection).
-    \item \textbf{Registered ports (1024--49151)}: assigned to specific applications and services, although they may also be used by custom applications.
-    \item \textbf{Dynamic or private ports (49152--65535)}: Typically allocated dynamically by the operating system for temporary client connections or available for private application use.
+    \item \textbf{Well-known ports (0--1,023)}: reserved for standard services and protocols, such as SMTP (port 25, mail protocol), HTTP (port 80), HTTPS (port 443) or SSH (port 22, remote connection).
+    \item \textbf{Registered ports (1,024--49,151)}: assigned to specific applications and services, although they may also be used by custom applications.
+    \item \textbf{Dynamic or private ports (49,152--65,535)}: Typically allocated dynamically by the operating system for temporary client connections or available for private application use.
 \end{itemize}
 
 
-By binding a server process to a specific port, operating system forwards all requests addressed to that port to the corresponding application that will handle the HTTP request and return a response (respecting the client-server model). \\
+By binding a server process to a specific port, the operating system forwards all requests addressed to that port to the corresponding application, which handles the HTTP request and returns a response, following the client-server model.
+
 
 \subsection{TCP/IP Stack \& HTTP Protocol}
 \label{sub:tcpipstack}
@@ -34,7 +35,8 @@ The TCP/IP stack is represented by four layers:
 
 \begin{itemize}
     \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as \texttt{HTTP, HTTPS, FTP, SMTP, DNS} operate at this level, defining how data is formatted and exchanged between communicating applications. \\
-    GeoMedia's server uses HTTPS (HTTP over \acrshort{tls} $_{\glslink{tlsg}{g}}$, which provides end-to-end encryption) as the protocol for this layer of the stack.
+    GeoMedia's server uses HTTPS (HTTP over \acrshort{tls} $_{\glslink{tlsg}{g}}$) which provides encryption and integrity protection for data transmitted between the client and server, as the protocol for this layer of the stack.
+    
 
     \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are \texttt{TCP} (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \texttt{UDP} (User Datagram Protocol), which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
     GeoMedia's server adopt the TCP protocol of this stack.
@@ -52,7 +54,7 @@ An HTTP message is composed of three main components:
 \begin{itemize}
     \item \textbf{Start line}: which specifies the HTTP method, like \texttt{GET} conventionally used for request a resource, \texttt{POST} conventionally used to upload data, \texttt{DELETE} to request the deletion of a resource and few others. Together with \texttt{parameters}: everything after the base url of server, such as query string or endpoints' path; start line indicates the the conventional operation to apply on the resource.  
     \item \textbf{Header}: a small portion of packet that contain metadata describing the request or response, such as the \texttt{Content-Type} which indicates the format of the transmitted data (e.g., \texttt{application/json}, \texttt{text/html}), authentication information, caching directives and others parameters.
-    \item \textbf{Body}: available only with methods such as \texttt{POST} or \texttt{PUT}, contains the actual payload exchanged between client and server, such as JSON objects, uploaded files or text.
+    \item \textbf{Body}: available only with methods such as \texttt{POST} or \texttt{PUT}, contains the actual payload exchanged between client and server, such as JSON objects$_{\glslink{json}{g}}$, uploaded files or text.
 \end{itemize}
 
 \subsection{Business Logic}
@@ -136,7 +138,7 @@ In this implementation, the local collections are individuated from the posts th
 
 \section{Python FastAPI}
 
-FastAPI is a web framework implemented in the Python backend to instantiate a HTTP-based service APIs. It uses Pydantic as validation library, moreover it provides a declarative way to specify the structure and types of data incoming request (e.g., HTTP bodies) and outgoing responses.
+FastAPI is a web framework implemented in the Python backend to build HTTP-based service APIs. It provides a declarative way to specify the structure and types of data contained in incoming requests (e.g., HTTP bodies) and outgoing responses.
 
 
 The framework simplifies the definition of RESTful endpoints, allowing developers to associate a Python function directly with the HTTP method and resource path thought the use of decorators.
@@ -210,7 +212,7 @@ async def profile_show_allowed_post(uid, profile_id, curr_lat, curr_lon):
 
 \subsection{Documentation}
 
-FastAPI automatically generates an API specification in OpenAPI format, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via Swagger UI (typically available at \texttt{/docs} after the base URI of the REST server), which provides a comprehensive description of every available endpoint. Moreover, developers are allowed to group by endpoints in order to create some classification through tags, in GeoMedia as example, \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality  or \texttt{COLLECTIONS} for collection related endpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema, authentication requirements and the format and status codes of the corresponding responses. \\
+FastAPI automatically generates an API specification in OpenAPI format~\cite{site:openapi-format}, represented as a JSON document. The framework also exposes interactive documentation endpoints, provided via Swagger UI (typically available at \texttt{/docs} after the base \gls{uri} of the REST server), which provides a comprehensive description of every available endpoint. Moreover, developers are allowed to group by endpoints in order to create some classification through tags, in GeoMedia as example: \texttt{AUTH} for authentication operations, \texttt{PROFILE} for profile functionality or \texttt{COLLECTIONS} for collection related endpoints. For each endpoint, the documentation specifies the supported HTTP method, expected request parameters, request body schema and authentication requirements, as well as the status codes and content type of the corresponding responses.\\
 Since the documentation is generated directly from the application source code, it remains synchronized with the API implementation throughout the development process. An example of GeoMedia backend API documentation is shown in Figure~\ref{fig:swagger_docs}
 
 
@@ -230,15 +232,16 @@ Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework~\cit
 
 \section{Cybersecurity \& Privacy}
 
-In order to ensure the privacy, integrity, availability and confidentiality of data, GeoMedia, must adopt some mitigation techniques to prevent cyber-attacks especially because the platform processes user accounts, user-generated content and location-related information.
+In order to ensure the privacy, integrity, availability and confidentiality of data, GeoMedia must adopt some mitigation techniques to prevent cyber-attacks especially because the platform processes user accounts, user-generated content and location-related information.
 
-The security measures implemented follows a defends in every layer of the application architecture. The complementary adoption of different mechanism consists in secure communication protocols, authentication and authorization, and finally preventing injection attacks. Moreover, user privacy is a core principle of GeoMedia, as an open-source application, its codebase allows to everyone to analyse and validate the application's behaviour, as well as inspect how user data is collected, processed and managed.
+The security measures implemented follows a defends in every layer of the application architecture. The complementary adoption of different mechanism consists in secure communication protocols, authentication and authorization, as well as measures to prevent injection attacks. Moreover, user privacy is a core principle of GeoMedia, as an open-source application, its codebase allows to everyone to analyse and validate the application's behaviour, as well as inspect how user data is collected, processed and managed.
 
 \subsection{Account Verification}
 
-To ensure the authenticity of account, users, during the registration provide an email address that will be associated to their account. During the registration process, the backend generates a One-Time Password (OTP) that is sent to the provided email address and must be entered within a limited period of time (imposed to 1 hour). Once successfully verified, the account is verified and user is allowed to utilize the platform.
 
-The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address supplied during registration. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure is mitigated by limiting the number of verification attempts up to five, as shown in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts is reached, the account results blocked and user must contact the GeoMedia back-office or proceed with a new account.
+To ensure the authenticity of account, during the registration process, users musts provide an email address. The latter is verified via the checking of an OTP (One-Time Password) sent by the backend. To validate the OTP and, consequently, the account, the user must enter the received code within a limited period of time, set to one hour. Once the OTP has been successfully verified, the account is considered verified and the user is allowed to use the platform.
+
+The use of a time-limited OTP provides an additional security layer compared to simply accepting an email address. In particular, the verification mechanism helps reduce the creation of accounts using invalid or inaccessible email addresses. The risk of brute-force attacks against the OTP verification procedure is mitigated by limiting the number of verification attempts up to five, as shown in Listing~\ref{lst:otp_verification}. Once the maximum number of attempts is reached, the account is blocked and user must contact the GeoMedia back-office or proceed with a new account.
 
 \lstset{
     language=SQL,
@@ -252,7 +255,7 @@ The use of a time-limited OTP provides an additional security layer compared to 
 }
 
 \begin{lstlisting}[
-    caption={OTP verification processed by data layer, and brute-force mitigation.},
+    caption={OTP verification processed by data layer and brute-force mitigation.},
     label={lst:otp_verification}
 ]
 PROCEDURE [dbo].[AUTH_CHECK_OTP] @JSON NVARCHAR(MAX)
