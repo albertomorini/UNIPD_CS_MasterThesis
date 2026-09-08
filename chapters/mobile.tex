@@ -2,7 +2,7 @@
 \label{cap:mobile}
 
 In order to provide its core functionalities, GeoMedia client relies on mobile devices, such as smartphones and tablets, where GPS capabilities and internet connectivity can be leveraged to enable the discovery of the surrounding environment. Through the mobile application, users can visualize nearby posts based on their location and contribute with new content by capturing images using the integrated camera.
-Therefore, the mobile application represents the most important component within the entire platform. Its development introduces additional design challenges related to User Experience (UX), accessibility, the performance limitations of mobile devices and the protection of user privacy.
+Therefore, the mobile application represents the most important component within the entire platform. Its development introduces additional design challenges related to User Experience (UX) and accessibility, as well as the performance limitations of mobile devices and user privacy.
 
 
 \section{React Native framework}
@@ -19,7 +19,7 @@ React Native represents a suitable technological option, allowing the platform t
 \subsection{Ionic Framework Comparison}
 
 A first version of GeoMedia was developed using Ionic Framework~\cite{site:ionic-frameworks}, which is a framework for web development with the capability of encapsulating web applications into mobile applications. 
-This approach appears to be similar to ReactNative but its core is totally different, since Ionic Framework rerender and interprets the components on running time, as web browsers process web pages; while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
+This approach appears to be similar to ReactNative but its core is totally different, since Ionic Framework rerenders and interprets the components on running time, as web browsers process web pages; while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
 
 Moreover, one of the main advantages of Ionic is the possibility for developers to work with different web frameworks such as ReactJS, AngularJS or VueJS, while integrating Ionic's components.
 
@@ -27,7 +27,7 @@ A visual comparison between the Ionic previous version of GeoMedia and the React
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{GeoMedia/IonicComparison.png}
+    \includegraphics[width=0.7\textwidth]{GeoMedia/IonicComparison.png}
         \caption{GeoMedia UI comparison between the Ionic Framework version (above) and the React Native version (below).}
     \label{fig:ionic-comparison}
 \end{figure}
@@ -58,10 +58,10 @@ The map component represent the core functionality of GeoMedia, implemented usin
 On the Android platform, the Google Maps component provides a wide range of features. These include graphical customization of the map through styling properties, as well as the display of commercial, historical or other points of interest, such as coffee shops, restaurants or retail stores. In GeoMedia, these elements remain visible and serve as useful landmarks, helping users orient themselves within the displayed environment and among the posts published through the app itself. In fact, the map supports the rendering of additional geographical elements with specific coordinates, known as markers. Each marker acts as a visual placeholder that identifies the physical location associated with a post.
 
 In addition, the library exposes several callback functions and hooks that allow developers to implement custom logic. \textit{Callback} functions are functions passed as arguments to another procedure, enabling application-specific logic to be executed in response to particular events or operations. Instead, \textit{React Hooks}~\cite{site:react-hook} are functions that enable components to access features such as state management with \texttt{useState} procedure, allowing values displayed in the UI to be dynamically updated. While the hook-function \texttt{useEffect} allows to perform custom logic in response to changes in states or values, for example implemented to track the user location which GeoMedia leverages in background, to dynamically load location-aware posts as the user moves through the physical environment. This approach ensures that the displayed content remains relevant to the user's current location. To optimize network usage and avoid unnecessary server requests caused by minor location variations, GeoMedia applies a 50-meter movement threshold, triggering a new request and post updates only when the user's displacement exceeds this distance (or collections selected are changed).\\
-In order to access Google Maps services on Android, a Google Maps API key is required, which serves as an authentication token that links the application to a \textit{Google Cloud Project} (a Google suite that offers access to other products such as shared services, computing resources and others), enabling access to the \textit{Google Maps SDK}$_{\glslink{sdk}{g}}$ and its associated services. The API key follows the pricing policy defined by Google. Specifically, it applies a \textit{pay-as-you-go} pricing model~\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7\$.
+In order to access Google Maps services on Android platform, a Google Maps API key is required, which serves as an authentication token that links the application to a \textit{Google Cloud Project} (a Google suite that offers access to other products such as shared services, computing resources and others), enabling access to the \textit{Google Maps SDK}$_{\glslink{sdk}{g}}$ and its associated services. The API key follows the pricing policy defined by Google. Specifically, it applies a \textit{pay-as-you-go} pricing model~\cite{site:gmaps-pricing}, in which the first 10,000 map loads (renderings) per month are free, while each additional 1,000 map loads costs 7\$. 
 
-An implementation of map rendering is shown in Listing~\ref{lst:implementation_map_view}
-
+An implementation of map rendering is shown in Listing~\ref{lst:implementation_map_view} 
+\newpage
 
 \begin{lstlisting}[
     language=Javascript,
@@ -69,37 +69,37 @@ An implementation of map rendering is shown in Listing~\ref{lst:implementation_m
     basicstyle=\ttfamily\footnotesize,
     label={lst:implementation_map_view}
 ]
-<MapView
-        ref={mapRef} style={styles.map}
-        showsUserLocation={true} toolbarEnabled={true}
-        followsUserLocation={true}
-        initialRegion={{
+<MapView 
+    ref={mapRef} style={styles.map}
+    showsUserLocation={true} toolbarEnabled={true}
+    followsUserLocation={true}
+    initialRegion={{
+        latitude: UserPosition.latitude,
+        longitude: UserPosition.longitude,
+        latitudeDelta: 0.1, longitudeDelta: 0.1
+    }}
+    customMapStyle={ mapPreferenceStyle == "system" ? 
+        colorScheme == "dark" ? MapDarkMode : MapLightMode
+        : mapPreferenceStyle
+    }
+    onUserLocationChange={(event) => {
+        const { latitude, longitude } = event.nativeEvent.coordinate;
+        if (positionChanged(latitude, longitude)) { //retrieve new posts
+            setUserPosition({ latitude: latitude, longitude: longitude });
+            get_posts_map({ latitude: latitude, longitude: longitude }) 
+        }
+    }}
+    zoomEnabled={true}
+    camera={{
+        center: {
             latitude: UserPosition.latitude,
             longitude: UserPosition.longitude,
-            latitudeDelta: 0.1, longitudeDelta: 0.1
+        },
+        pitch: 30,  heading: 0, zoom: 13.7
+        // the angle, direction the camera faces (0 = north)
         }}
-        customMapStyle={ mapPreferenceStyle == "system" ? 
-            colorScheme == "dark" ? MapDarkMode : MapLightMode
-            : mapPreferenceStyle
-        }
-        onUserLocationChange={(event) => {
-            const { latitude, longitude } = event.nativeEvent.coordinate;
-            if (positionChanged(latitude, longitude)) { //retrieve new posts
-                setUserPosition({ latitude: latitude, longitude: longitude });
-                get_posts_map({ latitude: latitude, longitude: longitude }) 
-            }
-        }}
-        zoomEnabled={true}
-        camera={{
-            center: {
-                latitude: UserPosition.latitude,
-                longitude: UserPosition.longitude,
-            },
-            pitch: 30,  heading: 0, zoom: 13.7
-            // the angle, direction the camera faces (0 = north)
-            }}
-        pitchEnabled={true} showsCompass={false}
-        showsBuildings={true} showsMyLocationButton={false} //custom button
+    pitchEnabled={true} showsCompass={false}
+    showsBuildings={true} showsMyLocationButton={false} //custom button
     >
         {postMarkers?.map((p, index) => ( //rendering the markers
             <Marker key={p?.ID}
@@ -129,7 +129,7 @@ Along with the map rendering, the integration of the GPS module provides the cur
 
 Although altitude is not currently used by GeoMedia, it is stored for future developments.
 
-This set of information is repeatedly used throughout GeoMedia, both for displaying nearby posts and during the post creation process, where the user's current position is automatically assigned as the post location. Specifically, when the current position is used, the altitude is also retrieved. Conversely, when the location is selected remotely, the altitude is not available, because the altitude can be estimated by the GPS sensor, whereas, a manually selected location cannot be reliably determined as different points may correspond to buildings with multiple floors, skyscrapers or mountainous areas.\\
+This set of information is repeatedly used throughout GeoMedia, both for displaying nearby posts and during the post creation process, where the user's current position is automatically assigned as the post location. Specifically, when the current position is used, the altitude is also retrieved. Conversely, when the location is selected remotely, the altitude is not available, because this dimension can be estimated by the GPS sensor, whereas, a manually selected location cannot be reliably determined as different points may correspond to buildings with multiple floors, skyscrapers or mountainous areas.\\
 In order to access device resources and user data, Android (as well as the iOS platform) adopts a permission-based security model. This requires users to explicitly grant permissions before applications can access protected system features, hardware components and sensitive information. 
 The location permission and retrieval is requested via \texttt{@react-native-community/geolocation} library, as reported in Listing~\ref{lst:location_retriving_snippet}.
 
@@ -221,7 +221,7 @@ The respective results of camera integration can be seen in Figure~\ref{fig:geom
 
 Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports any kind file formats, including audio files and PDF documents. \\
 To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, \texttt{expo-file-system} is adopted, as illustrated in Listing~\ref{lst:file_picking_snippet}, the library doesn't provide any visual components, but just invoke the system native file selection interface. \\
-In order to upload files toward the server through HTTP packets in \texttt{application/json}$_{\glslink{applicationjson}{g}}$ content-type, selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, the server will decode and store files into the file system of the server.
+To upload files toward the server through HTTP packets, adopting an \texttt{application/json}$_{\glslink{applicationjson}{g}}$ content-type, the selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, files are decoded and stored into the file system of the server.
 
 \begin{lstlisting}[
     language=Javascript,
@@ -256,7 +256,7 @@ async function file_pick() {
 
 
 During the visualization of a post, users can interact with the content by performing actions such as adding likes and browsing uploaded files through a carousel view (an horizontal scrollable gallery).\\
-Furthermore, the sharing functionality allows users to distribute the post content through external applications by exploiting the Android Intent mechanism, which enables communication between applications by describing the type of operation and data to be handled. The Android system then identifies the applications compatible with the requested content through their registered \texttt{Intent filters}$_{\glslink{intentfilters}{g}}$, as shown in Figure~\ref{fig:android-sharing}.
+Furthermore, the sharing functionality allows users to distribute the post content through external applications by exploiting the Android Intent mechanism, which enables communication between applications by describing the type of operation and data to be handled. The Android system then identifies the applications compatible with the request through their declared \texttt{Intent filters}$_{\glslink{intentfilters}{g}}$, as shown in Figure~\ref{fig:android-sharing}.
 
 
 \begin{figure}[H]
@@ -289,13 +289,13 @@ In particular, the interface follows the \emph{thumb-friendly} design principle,
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{GeoMedia/Access.png}
-    \caption{GeoMedia thumb-rule comparison~\cite{site:oangle-thumb-rule-mobile-ui}}
+    \caption{GeoMedia thumb-rule comparison~\cite{site:thumb-rule}}
     \label{fig:geomedia_thumb_rule}
 \end{figure}
 
 Moreover, GeoMedia incorporates gesture-based interactions and haptic feedback to provide a more natural and intuitive interaction experience. Gestures allow users to interact with the application through direct and familiar touch-based actions, while haptic feedback provides immediate physical feedback in response to specific interactions. As an example, for sequential posts, in Figure~\ref{fig:collection-overview}, users can reorder posts through a drag-and-drop gesture, providing a seamless and intuitive interaction experience. Together, these mechanisms aim to improve the perceived responsiveness of the interface and make interactions feel more engaging and consistent.
 
-The design of GeoMedia was also influenced by established social networking applications with which users are likely to be familiar with, such as Snapchat or Instagram. In particular, the application adopts a bottom navigation menu to provide access to its main sections. Reusing a widely adopted navigation pattern reduces the need for users to learn a new interaction model and contributes to a more predictable and consistent user experience.
+The design of GeoMedia was also influenced by established social networking applications that users are likely to be familiar with, such as Snapchat or Instagram. In particular, the application adopts a bottom navigation menu to provide access to its main sections. Reusing a widely adopted navigation pattern reduces the need for users to learn a new interaction model and contributes to a more predictable and consistent user experience.
 
 \section{Accessability}
 
@@ -336,6 +336,9 @@ In addition, the app allows user to change map colors among five different map s
 
 These options provide users greater control over the application's visual appearance and allow the map to be adapted to different environmental conditions and individual preferences.
 
+As additional customization and preferences, users are allowed through the settings component shown in Figure~\ref{???} to change the application language (currently between Italian and English version) or to set a custom instance of the GeoMedia backend.
+
+
 
 \section{Android Application}
 
@@ -356,7 +359,7 @@ To develop a React Native application using the Expo framework, the development 
     \item \textbf{Android Studio}: provides the tools required to build and compile APKs, as well as to manage Android-specific configuration and dependencies.
 \end{itemize}
 
-Once the prerequisites have been installed, a new Expo project can be created by executing the command \texttt{npx create-expo-app@latest}. The application can then be run on a target platform using the command \texttt{npx expo run:\$platform\$}, where the platform is \texttt{android} or \texttt{ios}. For Android, the application can be tested either on a virtual device (through emulator) or physical if debugging mode is enabled.
+Once the prerequisites have been installed, a new Expo project can be created by executing the command \texttt{npx create-expo-app@latest}. The application can then be run on a target platform using the command \texttt{npx expo run:\$platform}, where the platform is \texttt{android} or \texttt{ios}. For Android, the application can be tested either on a virtual device (through emulator) or physical if debugging mode is enabled.
 
 The generated project directory contains the application source code, static assets and several configuration files, including:
 
@@ -430,7 +433,7 @@ The \texttt{usesCleartextTraffic} attribute was explicitly enabled because Andro
 
 \section{Network Capability}
 
-The communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in Shapter~\ref{sec:rest_server}). However, to perform the sending of HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} (see Listing~\ref{lst:dorequest_wrapper}).
+The communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in Section~\ref{sec:rest_server}). However, to perform the sending of HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} (see Listing~\ref{lst:dorequest_wrapper}).
 
 
 \begin{lstlisting}[
@@ -474,4 +477,4 @@ export const doRequest = (api, body = {}, method = "POST") => {
 };
 \end{lstlisting}
 
-The wrapper function generates the HMAC signature required to authenticate the request on the server side (analyzed in Section~\ref{sub:http_sec}) and then constructs the HTTP request by setting the appropriate method, headers and the optional body. Finally, it sends the request to the server and returns the response content parsed in JSON format to the calling procedure which will interprets the data.
+The wrapper function generates the HMAC signature required to authenticate the request on the server side (analysed in Section~\ref{sub:http_sec}) and then constructs the HTTP request by setting the appropriate method, headers and the optional body. Finally, it sends the request to the server and returns the response content parsed in \gls{json} format to the calling procedure which will interprets the data.

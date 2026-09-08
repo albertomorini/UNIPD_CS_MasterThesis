@@ -134,21 +134,26 @@
         const, let, var, if, else, return, true, false, null,
         import, from, export, default, async, await,
         function, class, extends, new, this, ref,
-        map, for, foreach, map, filter, accessibilityLabel, accessibilityRole,
-        onPress, style
+        map, foreach, filter, style
+    },
+    morekeywords=[2]{
+        accessibilityLabel,
+        accessibilityRole,
+        onPress
     },
     basicstyle=\ttfamily\footnotesize,
     sensitive=true,
     morecomment=[l]{//},
     morecomment=[s]{/*}{*/},
     morestring=[b]',
-    morestring=[b]",
+    morestring=[b]"
 }
 
 \lstset{
     language=JavaScript,
     basicstyle=\ttfamily\footnotesize,
     keywordstyle=\color{jskeyword}\bfseries,
+    keywordstyle=[2]\color{jskeyword}\bfseries,
     stringstyle=\color{jsstring},
     commentstyle=\color{jscomment}\itshape,
     numberstyle=\tiny\color{gray},
@@ -162,6 +167,40 @@
     columns=fullflexible,
     keepspaces=true
 }
+
+
+% \lstdefinelanguage{JavaScript}{
+%     keywords={
+%         const, let, var, if, else, return, true, false, null,
+%         import, from, export, default, async, await,
+%         function, class, extends, new, this, ref,
+%         map, for, foreach, map, filter, accessibilityLabel, accessibilityRole, onPress, style
+%     },
+%     basicstyle=\ttfamily\footnotesize,
+%     sensitive=true,
+%     morecomment=[l]{//},
+%     morecomment=[s]{/*}{*/},
+%     morestring=[b]',
+%     morestring=[b]",
+% }
+
+% \lstset{
+%     language=JavaScript,
+%     basicstyle=\ttfamily\footnotesize,
+%     keywordstyle=\color{jskeyword}\bfseries,
+%     stringstyle=\color{jsstring},
+%     commentstyle=\color{jscomment}\itshape,
+%     numberstyle=\tiny\color{gray},
+%     numbers=left,
+%     numbersep=8pt,
+%     backgroundcolor=\color{jsbackground},
+%     frame=single,
+%     breaklines=true,
+%     showstringspaces=false,
+%     tabsize=4,
+%     columns=fullflexible,
+%     keepspaces=true
+% }
 
 
 \lstdefinelanguage{XML}{
