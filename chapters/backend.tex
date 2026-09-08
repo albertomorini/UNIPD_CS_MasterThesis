@@ -24,7 +24,7 @@ For each servers or simply, computers, the port numbers range start from \texttt
 
 By binding a server process to a specific port, operating system forwards all requests addressed to that port to the corresponding application that will handle the HTTP request and return a response (respecting the client-server model). \\
 
-\subsection{TCP/IP stack \& HTTP protocol}
+\subsection{TCP/IP Stack \& HTTP Protocol}
 \label{sub:tcpipstack}
 
 HTTP is an application-layer protocol that defines the format and exchange of messages between clients and servers on the Internet. Rather than providing communication mechanisms itself, HTTP relies on the services offered by the underlying layers of the \textit{TCP/IP} networking stack, where each layer is responsible for a specific set of operations. \\
@@ -55,7 +55,7 @@ An HTTP message is composed of three main components:
     \item \textbf{Body}: available only with methods such as \texttt{POST} or \texttt{PUT}, contains the actual payload exchanged between client and server, such as JSON objects, uploaded files or text.
 \end{itemize}
 
-\subsection{Business logic}
+\subsection{Business Logic}
 
 Conceptually, the server defines the endpoints and determines how requests are handled, retrieving and storing data through the data layer by executing the respective query commands or managing the file system. For instance, hypermedia are stored in the server's file system, since storing them in the database as encoded text could result in worse performance and increased storage requirements. Conversely, to read the hypermedia referenced to a post whenever requested, the server must encode the media in Base64 format thus to encapsulated it in the HTTP response packet as shown in Listing~\ref{lst:hpmedia_management}, then the mobile app will provide to render to user.
 
@@ -276,7 +276,7 @@ AS BEGIN
 The OTP generation and verification operations are performed in the Data Layer, in this case the server operates just as intermediary for the HTTP requests.
 
 
-\subsection{HTTPs and packet confidentiality}
+\subsection{HTTPs and Packet Confidentiality}
 \label{sub:http_sec}
 All communication between the client and GeoMedia's backend is performed through HTTPS, which relies on TLS (Transport Layer Security) to provide confidentiality and integrity for data exchanged between the client and server. This prevents an attacker positioned between the client and the server from trivially observing or modifying authentication requests.\\
 
@@ -307,7 +307,7 @@ where \(K\) represents the secret key and \(m\) represents the message.
 In particular, GeoMedia generates an HMAC for each request using as message: the URL path and query parameters, a nonce and a timestamp. The HMAC is computed using a shared secret key known by both the client and the server.\\
 The timestamp and nonce are subsequently validated by the server to control the validity of the request and mitigate \texttt{replay attacks}. In this way, a previously captured request cannot be reused indefinitely, as the server can reject requests containing an expired timestamp (older than five minutes) or an already-used nonce.
 
-\subsection{Password handling}
+\subsection{Password Handling}
 
 Another cybersecurity practice utilized by GeoMedia, is the \acrshort{md5} hash function, which is designed to be a one-way function to transform an textual input, such as password, into a fixed-size digest. The resulting digest cannot be reversed to obtain the original input~\cite{article:hash-md5}. The MD5 is applied from the client mobile application and stored by server in a respective table of data layer.
 

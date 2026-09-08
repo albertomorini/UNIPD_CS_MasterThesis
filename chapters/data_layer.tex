@@ -41,9 +41,9 @@ The Entity–Relationship (ER) diagram in Figure~\ref{fig:geomedia_ER} provides 
 
 The entities individuated are:
 \begin{itemize}
-    \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. The table uses an auto-incrementing ID as its primary key, ensuring the uniqueness of each record and its used to create a reference to others tables (e.g. posts, reactions and eventual post reports).
+    \item \textbf{Users}: which stores respective user informations and login credentials such as password and email. The table uses an auto-incrementing ID as its primary key, ensuring the uniqueness of each record and its used to create a reference to others tables (e.g., posts, reactions and eventual post reports).
     \item \textbf{Posts}: storing published content information and then representing the core entity for integration and references.
-    \item \textbf{Collections}: that works as containers for posts, dictating logic properties on posts and allowing special features (e.g. sequential posts).
+    \item \textbf{Collections}: that works as containers for posts, dictating logic properties on posts and allowing special features (e.g., sequential posts).
     \item \textbf{Hypermedia}: operates as register with path of hypermedia stored by server layer in the file system.
     \item \textbf{Interactions}: used to store the user interaction with posts (actually just \textit{like} reactions) and marks the view, used both for view counter and managing post sequentiality features. The table is also a starting point for comments extension.
     \item \textbf{Reports}: store the report raised by users referenced to posts and then enable the posts moderation process.
@@ -155,7 +155,7 @@ END;
 \end{lstlisting}
 
 
-\section{Sequential post implementation}
+\section{Sequential Post Implementation}
 
 The algorithm responsible for managing post sequentiality is implemented in the stored procedure \texttt{POST\_GET\_MAP}. The procedure is responsible for retrieving the posts available to the requesting user, applying the visibility and temporal constraints defined by the application and finally determining the appropriate order of sequential posts. Meanwhile, the radius-based area filter is performed on the dataset returned by the stored procedure, by the backend layer, as previously described in Section~\ref{haversine_formula}. \\
 

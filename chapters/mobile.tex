@@ -1,4 +1,4 @@
-\chapter{Mobile app}
+\chapter{Mobile App}
 \label{cap:mobile}
 
 In order to provide its core functionalities, GeoMedia client relies on mobile devices, such as smartphones and tablets, where GPS capabilities and internet connectivity can be leveraged to enable the discovery of the surrounding environment. Through the mobile application, users can visualize nearby posts based on their location and contribute with new content by capturing images using the integrated camera.
@@ -8,7 +8,7 @@ Therefore, the mobile application represents the most important component within
 \section{React Native framework}
 
 
-React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all or at least the most, of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
+React Native (RN)~\cite{site:react-native}, is an open-source software development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all, or at least the most, of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
 
 Under the hook, React Native relies on a component-based architecture, where user interfaces are defined through reusable React components. React itself is a framework originally designed for web application development, introducing an efficient rendering mechanism that updates only the components affected by changes in application state, avoiding unnecessary re-rendering operations. React Native extends this concept by enabling communication between JavaScript (or TypeScript) based components and native platform APIs, allowing applications to access specific peripherals like GPS, cameras, haptic feedback actuators or several other embedded sensors and functionalities.
 During the deployment process, web-oriented components are translated into their corresponding native platform counterparts: enabling the application to achieve a native-like user experience while maintaining a shared development environment.
@@ -16,10 +16,10 @@ During the deployment process, web-oriented components are translated into their
 React Native represents a suitable technological option, allowing the platform to reach both Android than iOS markets. Overall, the framework is well supported by various components and libraries that can fully satisfy the requirements designed to create GeoMedia framework.
 
 
-\subsection{Ionic Framework comparison}
+\subsection{Ionic Framework Comparison}
 
 A first version of GeoMedia was developed using Ionic Framework~\cite{site:ionic-frameworks}, which is a framework for web development with the capability of encapsulating web applications into mobile applications. 
-This approach could seem to be similar to ReactNative but its core is totally different, since IonicFramework rerender and interprets the components on running time, as web browsers process web pages, while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
+This approach appears to be similar to ReactNative but its core is totally different, since IonicFramework rerender and interprets the components on running time, as web browsers process web pages, while ReactNative compile and traduce into native components during the building phase, providing higher performance and more optimal resource utilization.
 
 Moreover, one of the main advantages of Ionic is the possibility for developers to work with different web frameworks such as ReactJS, AngularJS or VueJS, while integrating Ionic's components.
 
@@ -37,39 +37,10 @@ A visual comparison between the Ionic previous version of GeoMedia and the React
 
 One of the main strengths of React Native is its extensive ecosystem of free and open-source libraries and components. These resources are widely documented and maintained by the community, with the official React Native Directory~\cite{site:react-native-directory} serving as the primary reference for discovering and evaluating compatible packages.
 
-Overall GeoMedia for the Android version developed use several dependencies packages, the most important with their the version supported are enlisted in the table~\ref{tab:dependencies}.
+Overall, GeoMedia for the developed Android version employs several dependencies packages, the most important with their the version supported are enlisted in the Table~\ref{tab:dependencies}.
 
 The version notation follows the standardized Semantic Versioning (SemVer) convention~\cite{site:semver}. This notation is composed of three components in the form \texttt{MAJOR.MINOR.PATCH}, to indicate respectively: potential breaking changes, backward-compatible additions and bug fixes. Moreover, the caret symbol (\texttt{\string^}) indicates that the dependency is permitted to be updated to newer compatible versions without changing the leftmost non-zero version component. For example, the notation \texttt{\string^2.3.1} allows versions from 2.3.1 up to, but not including, 3.0.0. This approach provides access to compatible updates while reducing the risk of introducing breaking changes. Instead, the tilde symbol (\texttt{\string~}) means that only backward-compatible patch-level updates are permitted. For example, the notation \texttt{\string~54.0.33} allows versions from 54.0.33 up to, but not including, 54.1.0. This notation therefore restricts updates to the patch version while preventing automatic updates to newer minor versions.
 
-% \begin{itemize}
-%     \item \textbf{@gorhom/bottom-sheet}: provides customizable bottom sheet components that can be expanded or collapsed to display additional content without leaving the current screen, used mainly in the map component to render collections.
-    
-%     \item \textbf{@react-native-community/geolocation}: provides access to the device's geolocation services, enabling the application to retrieve the user's current position.
-    
-%     \item \textbf{@react-native-community/slider}: offers a slider component that allows users to select value within a specified, applied for chose the distance range in the post visibility.
-    
-%     \item \textbf{@shopify/flash-list}: offers a high-performance list component optimized for rendering large collections of data with improved memory usage and scrolling performance.
-    
-%     \item \textbf{expo}: provides the development framework and runtime environment for building, testing and deploying React Native applications, together with a wide range of native APIs.
-    
-%     \item \textbf{expo-router}: implements a file-based routing system that simplifies navigation between the different screens of the application.
-    
-%     \item \textbf{expo-secure-store}: securely stores sensitive information, such as user credentials, by leveraging the secure storage facilities provided by the underlying operating system.
-    
-%     \item \textbf{react-native-gesture-handler}: enables advanced gesture recognition, including swipes, taps and drag interactions, providing a more responsive and native user experience.
-    
-%     \item \textbf{react-native-gifted-charts}: provides customizable chart components for visualizing statistical information about the usage on the user profile.
-    
-%     \item \textbf{react-native-maps}: integrates interactive maps into the application, allowing the visualization of geographic information and user locations.
-    
-%     \item \textbf{react-native-reanimated-carousel}: implements an animated carousel component for displaying file attached into a post  through horizontal scrolling.
-    
-%     \item \textbf{react-native-share}: through the native sharing facilities of the operating system, allows to share or store the media attached in a post such as images or documents.
-    
-%     \item \textbf{react-native-sortables}: provides sortable list components that allow users to reorder items through drag-and-drop interactions, used to arrange the post whenever the sequentals features is active in a collection.
-    
-%     \item \textbf{react-native-vision-camera}: provides high-performance access to the device's camera, enabling image capture thus to attach pictures in the post without leaving GeoMedia.
-% \end{itemize}
 
 \input{tables/dep.tex}
 
@@ -294,13 +265,13 @@ Furthermore, the sharing functionality allows users to distribute the post conte
 
 The Android sharing menu cannot be modified by any application, it is strictly dependent on the \texttt{Intent filters} declared by others app present in the device, and the Operating System provide the sharing request handlers.
 
-\section{Activity diagram}
+\section{Activity Diagram}
 
 To provide a comprehensive overview of the application structure and user interactions, a UML activity diagram~\cite{site:omg2017uml} of GeoMedia mobile application is presented in Figure~\ref{fig:app-flowchart}. This diagram describe the main actions performed by users and corresponding activities and processes executed by the application. The activity diagram clarifies the sequence of actions and the dependencies between different components, especially during the app design process.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{GeoMedia/geomedia_activity_diagram.drawio.png}
+    \includegraphics[width=1.05\textwidth]{GeoMedia/geomedia_activity_diagram.drawio.png}
     \caption{Activity diagram of GeoMedia app.}
     \label{fig:app-flowchart}
 \end{figure}
@@ -341,7 +312,7 @@ Accessibility concepts were also considered during the implementation of the mob
 \end{lstlisting}
 
 
-Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} that can be used to specify the semantic purpose of an interface element. While \texttt{accessibilityLabel} provide semantic information to assistive tools (e.g. screen readers). This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements, a fact also highlighted in~\cite{article:perinello2024}. Moreover, these properties can enrich the semantic information exposed by components, allowing developers to identify elements as headings or navigation elements and to specify text abbreviations where appropriate. Overall, GeoMedia uses these properties to provide meaningful descriptions and semantic roles for interactive elements, enabling users who rely on assistive technologies, such as screen readers, to better understand and interact with the application and particularly while navigating the physical world.
+Specifically, accessibility in React Native is implemented through properties of some components, such as \texttt{accessibilityRole} that can be used to specify the semantic purpose of an interface element. While \texttt{accessibilityLabel} provide semantic information to assistive tools (e.g., screen readers). This approach is consistent with the accessibility model of React Native, which allows accessibility information to be added directly to components without requiring additional wrapper elements, a fact also highlighted in~\cite{article:perinello2024}. Moreover, these properties can enrich the semantic information exposed by components, allowing developers to identify elements as headings or navigation elements and to specify text abbreviations where appropriate. Overall, GeoMedia uses these properties to provide meaningful descriptions and semantic roles for interactive elements, enabling users who rely on assistive technologies, such as screen readers, to better understand and interact with the application and particularly while navigating the physical world.
 
 
 Another accessibility feature would be the customization of the interface according to the user's dominant hand, which is not currently supported by the app. In particular, left-handed users may experience reduced reachability when interacting with controls positioned according to a right-handed usage pattern. To further improve usability, GeoMedia could provide an option in the settings, for users to specify their dominant hand and dynamically adapt the placement of some buttons. This would allow the interface to better accommodate different interaction patterns and provide a more personalized and accessible user experience especially while moving through physical environment.
@@ -362,8 +333,7 @@ In addition, the app allows user to change map colors among five different map s
 These options provide users greater control over the application's visual appearance and allow the map to be adapted to different environmental conditions and individual preferences.
 
 
-
-\section{Android application}
+\section{Android Application}
 
 Android is an operating system developed by Google, originally designed for mobile devices such as smartphones and tablets and later extended to a wider range of platforms, including televisions, vehicles, smartwatches and other embedded systems. It is based on a modified version of the Linux kernel and was first released in 2008. Since then, it has become the most widely adopted operating system for smartphones worldwide\cite{site:android-usage}. Android provides a high degree of customization, allowing manufacturers such as Samsung, Motorola or others, to modify the user interface and include proprietary applications as part of their devices. Despite these customizations, Android remains an open platform that allows users to install applications from several different stores or, more brutally through APK file, that contain the package and executable code to install the app.
 
@@ -412,7 +382,7 @@ For the GeoMedia application, the following distribution platforms were consider
 \end{itemize}
 
 
-\subsection{APK signing}
+\subsection{APK Signing}
 
 In order to distribute the application, Android platform, require the APK to be digitally signed before the installation. The signing process consists of generating a cryptographic key pair, using developer's private key to create a digital signature and associate the mark with a certification containing the corresponding public key. During installation and updates, the operating system verifies the signature to ensure the APK's integrity and confirm that it originates from the same signing identity. \\
 This mechanism prevents unauthorized modification and redistribution of the application, as any alteration to the app executable invalidates its digital signature. Furthermore, the use of the same signing key across application updates allows Android to establish continuity between different versions and prevents an attacker from installing a modified application as a legitimate update.
@@ -455,7 +425,7 @@ The \texttt{usesCleartextTraffic} attribute was explicitly enabled because Andro
 </manifest>
 \end{lstlisting}
 
-\section{Network capability}
+\section{Network Capability}
 
 The communication among the mobile devices and the server of GeoMedia, is performed through network capabilities and adopting the HTTP protocol (explained in chapter~\ref{sec:rest_server}). However, to perform the sending of HTTP packets, the client app do not implements any external interfaces or packages, but a wrapper function for the JavaScript native method \texttt{fetch} (see Listing~\ref{lst:dorequest_wrapper}).
 
