@@ -5,7 +5,7 @@ In order to provide its core functionalities, GeoMedia client relies on mobile d
 Therefore, the mobile application represents the most important component within the entire platform. Its development introduces additional design challenges related to User Experience (UX) and accessibility, as well as the performance limitations of mobile devices and user privacy.
 
 
-\section{React Native framework}
+\section{React Native Framework}
 
 
 React Native (RN)~\cite{site:react-native}, is an open-source development framework created by Meta Platforms for building cross-platform mobile and recently even desktop applications. Unlike traditional development approaches, which require separate codebases for different operating systems, React Native enables developers to maintain a single codebase that is transformed and adapted during the deployment phase toward the destinations platform. This approach allows the reuse of all, or at least the most, of the application logic across different platforms, such as Android and iOS. Therefore, it reduces development and maintenance efforts through code reuse while maintaining performance levels and a user experience close to those of native applications~\cite{site:reactnative-performance}.
@@ -182,8 +182,8 @@ To accomplish this objective, GeoMedia adopts \texttt{react-native-vision-camera
     basicstyle=\ttfamily\footnotesize,
     label={lst:camera_implementation}
 ]
-export default function OpenCamera(
-    { onClose, storePhoto }: { onClose: () => void; storePhoto: (b64: string) => void }
+export default function OpenCamera( { onClose, storePhoto }:
+ { onClose: () => void; storePhoto: (b64: string) => void }
 ) {
     ... //others components and logic functions
     return (
@@ -222,6 +222,8 @@ The respective results of camera integration can be seen in Figure~\ref{fig:geom
 Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports any kind file formats, including audio files and PDF documents. \\
 To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, \texttt{expo-file-system} is adopted, as illustrated in Listing~\ref{lst:file_picking_snippet}, the library doesn't provide any visual components, but just invoke the system native file selection interface. \\
 To upload files toward the server through HTTP packets, adopting an \texttt{application/json}$_{\glslink{applicationjson}{g}}$ content-type, the selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, files are decoded and stored into the file system of the server.
+
+\newpage
 
 \begin{lstlisting}[
     language=Javascript,
@@ -288,7 +290,7 @@ In particular, the interface follows the \emph{thumb-friendly} design principle,
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{GeoMedia/Access.png}
+    \includegraphics[width=0.75\textwidth]{GeoMedia/Access.png}
     \caption{GeoMedia thumb-rule comparison~\cite{site:thumb-rule}}
     \label{fig:geomedia_thumb_rule}
 \end{figure}
@@ -336,7 +338,16 @@ In addition, the app allows user to change map colors among five different map s
 
 These options provide users greater control over the application's visual appearance and allow the map to be adapted to different environmental conditions and individual preferences.
 
-As additional customization and preferences, users are allowed through the settings component shown in Figure~\ref{???} to change the application language (currently between Italian and English version) or to set a custom instance of the GeoMedia backend.
+As additional customization and preferences, users are allowed through the settings component shown in Figure~\ref{fig:geomedia_settings} to change the application language (currently between Italian and English version) or to set a custom instance of the GeoMedia backend.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{GeoMedia/geomedia_settings.png}
+    \caption{GeoMedia settings section, enabling map customization, language version and custom server configuration.}
+    \label{fig:geomedia_settings}
+\end{figure}
 
 
 
@@ -410,6 +421,8 @@ The Android Manifest is a configuration file that defines essential information 
 For GeoMedia, the manifest was manually modified (from the React Native generated) to allow clear-text HTTP traffic, enabling users to configure their own server endpoints and adapt the application to different environments. A snippet of some of configured permissions and the clear-text traffic option is shown in Listing~\ref{lst:android_manifest}. 
 
 The \texttt{usesCleartextTraffic} attribute was explicitly enabled because Android 9 (API level 28) introduced a default restriction on unencrypted HTTP communication, requiring applications that rely on HTTP connections to enable in explicitly manner~\cite{site:android-http-cleartext}.
+
+\newpage
 
 \begin{lstlisting}[
     language=XML,
