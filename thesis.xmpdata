@@ -1,5 +1,5 @@
-  \Title{Document's title}
-  \Author{Author's name}
-  \Language{it-IT}
-  \Subject{Short description}
-  \Keywords{keyword1\sep keyword2\sep keyword3}
+\Title{GeoMedia: A Social Media for Location-Based and Time-Sensitive Content Sharing}
+\Author{Alberto Morini}
+\Language{en-EN}
+\Subject{Master's Thesis in Computer Science at University of Padua}
+\Keywords{Geomedia, Mobile Application, Software Architecture, OSNs, ThreeTierArchitecture, Android, AndroidDevelopment, REST API, HTTP}

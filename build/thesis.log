@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  9 SEP 2026 14:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  9 SEP 2026 23:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1273,6 +1273,9 @@ File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
 (/usr/share/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+)
+(/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
+File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
 (/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
@@ -2815,24 +2818,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (build/thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count527
@@ -2855,9 +2858,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 56.
-LaTeX Info: Redefining \it@ocap on input line 56.
-LaTeX Info: Redefining \it@ccap on input line 56.
+Package hyperref Info: Link coloring ON on input line 16.
+LaTeX Info: Redefining \it@ocap on input line 16.
+LaTeX Info: Redefining \it@ccap on input line 16.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen304
@@ -2872,16 +2875,16 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count533
-LaTeX Info: Redefining \microtypecontext on input line 56.
-Package microtype Info: Applying patch `item' on input line 56.
-Package microtype Info: Applying patch `toc' on input line 56.
-Package microtype Info: Applying patch `eqnum' on input line 56.
+LaTeX Info: Redefining \microtypecontext on input line 16.
+Package microtype Info: Applying patch `item' on input line 16.
+Package microtype Info: Applying patch `toc' on input line 16.
+Package microtype Info: Applying patch `eqnum' on input line 16.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 56.
+Package microtype Warning: Unable to apply patch `footnote' on input line 16.
 
-Package microtype Info: Applying patch `verbatim' on input line 56.
-LaTeX Info: Redefining \microtypesetup on input line 56.
+Package microtype Info: Applying patch `verbatim' on input line 16.
+LaTeX Info: Redefining \microtypesetup on input line 16.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2916,8 +2919,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
  (build/thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 56.
-Package biblatex Info: Reference segment=0 on input line 56.
+Package biblatex Info: Reference section=0 on input line 16.
+Package biblatex Info: Reference segment=0 on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -3195,22 +3198,25 @@ nput line 142.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 146.
  [24] [25] [26]
-<../images/GeoMedia/map/tre_senza.png, id=700, 1180.41pt x 852.18375pt>
-File: ../images/GeoMedia/map/tre_senza.png Graphic file (type png)
-<use ../images/GeoMedia/map/tre_senza.png>
-Package pdftex.def Info: ../images/GeoMedia/map/tre_senza.png  used on input li
-ne 233.
-(pdftex.def)             Requested size: 316.80121pt x 228.70132pt.
- [27]
-<../images/GeoMedia/user/user.png, id=708, 1370.11874pt x 662.475pt>
+
+LaTeX Warning: Reference `fig:Geom' on page 27 undefined on input line 227.
+
+<../images/GeoMedia/geomedia_usecase_localseq.png, id=698, 1376.14125pt x 649.6
+7719pt>
+File: ../images/GeoMedia/geomedia_usecase_localseq.png Graphic file (type png)
+<use ../images/GeoMedia/geomedia_usecase_localseq.png>
+Package pdftex.def Info: ../images/GeoMedia/geomedia_usecase_localseq.png  used
+ on input line 231.
+(pdftex.def)             Requested size: 396.0pt x 186.9443pt.
+[27]
+<../images/GeoMedia/user/user.png, id=706, 1370.11874pt x 662.475pt>
 File: ../images/GeoMedia/user/user.png Graphic file (type png)
 <use ../images/GeoMedia/user/user.png>
 Package pdftex.def Info: ../images/GeoMedia/user/user.png  used on input line 2
-45.
+43.
 (pdftex.def)             Requested size: 396.0pt x 191.46588pt.
-
-[28 <build/../images/GeoMedia/map/tre_senza.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 252--254
+ [28 <build/../images/GeoMedia/geomedia_usecase_localseq.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
@@ -3220,14 +3226,14 @@ Chapter 4.
 [31
 
 ]
-<../images/UML_Architecture.png, id=738, 363.3575pt x 427.5975pt>
+<../images/UML_Architecture.png, id=736, 363.3575pt x 427.5975pt>
 File: ../images/UML_Architecture.png Graphic file (type png)
 <use ../images/UML_Architecture.png>
 Package pdftex.def Info: ../images/UML_Architecture.png  used on input line 24.
 
 (pdftex.def)             Requested size: 178.19879pt x 209.70729pt.
  [32 <build/../images/UML_Architecture.png>] [33]
-<../images/UML_Arch_MicroServices.png, id=771, 827.09pt x 585.18625pt>
+<../images/UML_Arch_MicroServices.png, id=769, 827.09pt x 585.18625pt>
 File: ../images/UML_Arch_MicroServices.png Graphic file (type png)
 <use ../images/UML_Arch_MicroServices.png>
 Package pdftex.def Info: ../images/UML_Arch_MicroServices.png  used on input li
@@ -3239,7 +3245,7 @@ Chapter 5.
 [35
 
 ]
-<../images/GeoMedia/IonicComparison.png, id=788, 526.21594pt x 850.67813pt>
+<../images/GeoMedia/IonicComparison.png, id=786, 526.21594pt x 850.67813pt>
 File: ../images/GeoMedia/IonicComparison.png Graphic file (type png)
 <use ../images/GeoMedia/IonicComparison.png>
 Package pdftex.def Info: ../images/GeoMedia/IonicComparison.png  used on input 
@@ -3249,11 +3255,11 @@ line 30.
 ignored: Infi
 nite glue shrinkage found in box being split [38]
 ignored: Infinite glue shrinkage found 
-in box being split [39]) [40] [41]
+in box being split [39]) [40] [41] [42]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 74.
- [42] [43] [44] [45]
-<../images/GeoMedia/geo_camera.png, id=981, 821.31844pt x 575.14874pt>
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 111.
+ [43] [44] [45]
+<../images/GeoMedia/geo_camera.png, id=979, 821.31844pt x 575.14874pt>
 File: ../images/GeoMedia/geo_camera.png Graphic file (type png)
 <use ../images/GeoMedia/geo_camera.png>
 Package pdftex.def Info: ../images/GeoMedia/geo_camera.png  used on input line 
@@ -3266,14 +3272,14 @@ ts, adopt-ing an \T1/cmtt/m/n/10.95 application/json$[]$
  []
 
 [46 <build/../images/GeoMedia/geo_camera.png>]
-<../images/GeoMedia/PostViewerSharing.png, id=994, 1379.1525pt x 1029.8475pt>
+<../images/GeoMedia/PostViewerSharing.png, id=992, 1379.1525pt x 1029.8475pt>
 File: ../images/GeoMedia/PostViewerSharing.png Graphic file (type png)
 <use ../images/GeoMedia/PostViewerSharing.png>
 Package pdftex.def Info: ../images/GeoMedia/PostViewerSharing.png  used on inpu
 t line 266.
 (pdftex.def)             Requested size: 396.0pt x 295.69386pt.
  [47]
-<../images/GeoMedia/geomedia_activity_diagram.drawio.png, id=1025, 1782.66pt x 
+<../images/GeoMedia/geomedia_activity_diagram.drawio.png, id=1023, 1782.66pt x 
 971.63pt>
 File: ../images/GeoMedia/geomedia_activity_diagram.drawio.png Graphic file (typ
 e png)
@@ -3287,7 +3293,7 @@ Overfull \hbox (19.80121pt too wide) in paragraph at lines 279--280
  []
 
 [48 <build/../images/GeoMedia/PostViewerSharing.png>]
-<../images/GeoMedia/Access.png, id=1033, 641.39626pt x 847.165pt>
+<../images/GeoMedia/Access.png, id=1031, 641.39626pt x 847.165pt>
 File: ../images/GeoMedia/Access.png Graphic file (type png)
 <use ../images/GeoMedia/Access.png>
 Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 293.
@@ -3295,7 +3301,7 @@ Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 293.
 (pdftex.def)             Requested size: 297.0pt x 392.28596pt.
  [49 <build/../images/GeoMedia/geomedia_activity_diagram.drawio.png>] [50 <buil
 d/../images/GeoMedia/Access.png>] [51]
-<../images/GeoMedia/geomedia_settings.png, id=1064, 475.7775pt x 900.36375pt>
+<../images/GeoMedia/geomedia_settings.png, id=1062, 475.7775pt x 900.36375pt>
 File: ../images/GeoMedia/geomedia_settings.png Graphic file (type png)
 <use ../images/GeoMedia/geomedia_settings.png>
 Package pdftex.def Info: ../images/GeoMedia/geomedia_settings.png  used on inpu
@@ -3303,7 +3309,7 @@ t line 347.
 (pdftex.def)             Requested size: 138.60242pt x 262.29404pt.
  [52] [53 <build/../images/GeoMedia/geomedia_settings.png>]
 [54] [55]
-<../images/apk_signing.png, id=1092, 608.2725pt x 570.63188pt>
+<../images/apk_signing.png, id=1090, 608.2725pt x 570.63188pt>
 File: ../images/apk_signing.png Graphic file (type png)
 <use ../images/apk_signing.png>
 Package pdftex.def Info: ../images/apk_signing.png  used on input line 412.
@@ -3314,7 +3320,7 @@ Chapter 6.
 [60
 
 ] [61] [62] [63] [64] [65] [66]
-<../images/server/Swagger.png, id=1261, 757.83125pt x 467.7475pt>
+<../images/server/Swagger.png, id=1259, 757.83125pt x 467.7475pt>
 File: ../images/server/Swagger.png Graphic file (type png)
 <use ../images/server/Swagger.png>
 Package pdftex.def Info: ../images/server/Swagger.png  used on input line 222.
@@ -3330,7 +3336,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 298--299
  []
 
 [71] [72]
-<../images/GeoMedia/Report.png, id=1352, 1180.41pt x 847.165pt>
+<../images/GeoMedia/Report.png, id=1350, 1180.41pt x 847.165pt>
 File: ../images/GeoMedia/Report.png Graphic file (type png)
 <use ../images/GeoMedia/Report.png>
 Package pdftex.def Info: ../images/GeoMedia/Report.png  used on input line 391.
@@ -3349,7 +3355,7 @@ Chapter 7.
 Package svg Info: Last page of `./svg-inkscape/GeoMedia_ER_svg-tex.pdf' is 1 on
  input line 37.
  (./svg-inkscape/GeoMedia_ER_svg-tex.pdf_tex
-<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1380, page=1, 335.75438pt x 238.641
+<./svg-inkscape/GeoMedia_ER_svg-tex.pdf, id=1378, page=1, 335.75438pt x 238.641
 56pt>
 File: ./svg-inkscape/GeoMedia_ER_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/GeoMedia_ER_svg-tex.pdf, page 1>
@@ -3366,7 +3372,7 @@ Chapter 8.
 [87
 
 ]
-<../images/github_release.png, id=1618, 903.375pt x 666.23906pt>
+<../images/github_release.png, id=1616, 903.375pt x 666.23906pt>
 File: ../images/github_release.png Graphic file (type png)
 <use ../images/github_release.png>
 Package pdftex.def Info: ../images/github_release.png  used on input line 101.
@@ -3382,7 +3388,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--273
  []
 
 [91]
-<../images/QRCODE_GEOMEDIA.png, id=1643, 116.435pt x 116.435pt>
+<../images/QRCODE_GEOMEDIA.png, id=1641, 116.435pt x 116.435pt>
 File: ../images/QRCODE_GEOMEDIA.png Graphic file (type png)
 <use ../images/QRCODE_GEOMEDIA.png>
 Package pdftex.def Info: ../images/QRCODE_GEOMEDIA.png  used on input line 276.
@@ -3550,16 +3556,20 @@ l\T1/cmr/m/n/10.95 (-20) : [][]$\T1/cmtt/m/n/10.95 https : / / reactnative .
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 47520 strings out of 469431
- 883381 string characters out of 5468909
- 2115785 words of memory out of 5000000
- 74187 multiletter control sequences out of 15000+600000
- 671081 words of font info for 288 fonts, out of 8000000 for 9000
+ 47514 strings out of 469431
+ 883464 string characters out of 5468909
+ 2301154 words of memory out of 5000000
+ 74181 multiletter control sequences out of 15000+600000
+ 671004 words of font info for 287 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,14n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -3595,20 +3605,19 @@ public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
 /usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texm
 f-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
-uper/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.p
-fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/
-texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/font
-s/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf-dist/fonts/type1/public/
-cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti10
-00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/
-fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
-tt1095.pfb>
-Output written on build/thesis.pdf (123 pages, 16655848 bytes).
+uper/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.p
+fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/
+texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti10
+95.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sftt1095.pfb>
+Output written on build/thesis.pdf (123 pages, 16785148 bytes).
 PDF statistics:
- 2659 PDF objects out of 2984 (max. 8388607)
- 2365 compressed objects within 24 object streams
+ 2653 PDF objects out of 2984 (max. 8388607)
+ 2361 compressed objects within 24 object streams
  844 named destinations out of 1000 (max. 500000)
  71948 words of extra memory for PDF output out of 74296 (max. 10000000)
 

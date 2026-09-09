@@ -35,13 +35,13 @@ The stack is represented by four layers:
     \item \textbf{Application layer}: provides network services directly to user applications. Protocols such as \texttt{HTTP, HTTPS, FTP, SMTP, DNS} operate at this level, defining how data is formatted and exchanged between communicating applications. \\
     GeoMedia's server uses HTTPS (HTTP over \acrshort{tls} $_{\glslink{tlsg}{g}}$) as the protocol for this layer of the stack.
 
-    \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are \texttt{TCP} (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data, and \texttt{UDP} (User Datagram Protocol), which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
+    \item \textbf{Transport layer}: ensures end-to-end communication between processes running on different hosts. The two principal transport protocols are \texttt{TCP} (Transmission Control Protocol), which offers reliable, ordered and error-checked delivery of data; and \texttt{UDP} (User Datagram Protocol), which provides a lightweight, connectionless communication service with lower latency but without delivery guarantees. \\
     GeoMedia's server adopt the TCP protocol of this stack.
 
     \item \textbf{Internet layer}: responsible for logical addressing and packet routing across interconnected networks. The Internet Protocol (IP) determines how packets are addressed and forwarded from the source host to the destination, regardless of the physical networks traversed. There are two principal versions of the Internet Protocol (IP): \texttt{IPv4} and \texttt{IPv6}. While both protocols provide logical addressing and packet routing across interconnected networks, IPv6 introduces several improvements over its predecessor.\\
     GeoMedia backend is deployed using IPv4 networking.
 
-    \item \textbf{Link layer}: handles communication over the local physical network. It is responsible for framing, physical addressing (e.g., MAC addresses), error detection on the local link, and transmitting data through the underlying network technology, such as Ethernet or Wi-Fi.
+    \item \textbf{Link layer}: handles communication over the local physical network. It is responsible for framing, physical addressing (e.g., MAC addresses), error detection on the local link, then, transmitting data through the underlying network technology, such as Ethernet or Wi-Fi.
 
 \end{itemize}
 
@@ -134,7 +134,7 @@ async def collections_get_local(uid,curr_lat,curr_lon):
     return SQL_MANAGER.select_query(query)
 \end{lstlisting}
 
-In this implementation, the local collections are individuated from the posts that user is allowed to see from its current location together with additional constraints such as user-specific policies and time-sensitive filtering criteria. Then, the collection are ranked based on the number of visible posts belonging to each collection, and finally the ten most used collections are selected, retrieved from the database and returned to the calling function that will respond to the HTTP request.
+In this implementation, the local collections are individuated from the posts that user is allowed to see from its current location together with additional constraints such as user-specific policies and time-sensitive filtering criteria. Then, the collection are ranked based on the number of visible posts belonging to each collection and finally the ten most used collections are selected, retrieved from the database and returned to the calling function that will respond to the HTTP request.
 
 \section{Python FastAPI}
 
@@ -429,7 +429,7 @@ The main security mechanisms adopted by GeoMedia can be summarized in the table~
 \\ \hline
 
 \textbf{HMAC}
-& Used to verify the authenticity and integrity of messages and requests, and combined with nonces or timestamps, to mitigate replay and masquerade attacks.
+& Used to verify the authenticity and integrity of messages and requests and combined with nonces or timestamps, to mitigate replay and masquerade attacks.
 \\ \hline
 
 \textbf{HASH (MD5)}
