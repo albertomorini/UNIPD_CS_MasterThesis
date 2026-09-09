@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  9 SEP 2026 13:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  9 SEP 2026 14:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3199,18 +3199,18 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 File: ../images/GeoMedia/map/tre_senza.png Graphic file (type png)
 <use ../images/GeoMedia/map/tre_senza.png>
 Package pdftex.def Info: ../images/GeoMedia/map/tre_senza.png  used on input li
-ne 232.
+ne 233.
 (pdftex.def)             Requested size: 316.80121pt x 228.70132pt.
  [27]
 <../images/GeoMedia/user/user.png, id=708, 1370.11874pt x 662.475pt>
 File: ../images/GeoMedia/user/user.png Graphic file (type png)
 <use ../images/GeoMedia/user/user.png>
 Package pdftex.def Info: ../images/GeoMedia/user/user.png  used on input line 2
-44.
+45.
 (pdftex.def)             Requested size: 396.0pt x 191.46588pt.
 
 [28 <build/../images/GeoMedia/map/tre_senza.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 251--253
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
@@ -3555,11 +3555,11 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 47518 strings out of 469431
- 883359 string characters out of 5468909
+ 47520 strings out of 469431
+ 883381 string characters out of 5468909
  2115785 words of memory out of 5000000
  74187 multiletter control sequences out of 15000+600000
- 671004 words of font info for 287 fonts, out of 8000000 for 9000
+ 671081 words of font info for 288 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,14n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -3605,7 +3605,7 @@ are/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/
 fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 tt1095.pfb>
-Output written on build/thesis.pdf (123 pages, 16656049 bytes).
+Output written on build/thesis.pdf (123 pages, 16655848 bytes).
 PDF statistics:
  2659 PDF objects out of 2984 (max. 8388607)
  2365 compressed objects within 24 object streams
