@@ -299,15 +299,15 @@ Moreover, GeoMedia incorporates gesture-based interactions and haptic feedback t
 
 The design of GeoMedia was also influenced by established social networking applications that users are likely to be familiar with, such as Snapchat or Instagram. In particular, the application adopts a bottom navigation menu to provide access to its main sections. Reusing a widely adopted navigation pattern reduces the need for users to learn a new interaction model and contributes to a more predictable and consistent user experience.
 
-\section{Accessability}
+\section{Accessibility}
 
-Accessibility concepts were also considered during the implementation of the mobile application. GeoMedia provides support for screen-reader technologies, including Android's TalkBack$_{\glslink{talkback}{g}}$, by assigning appropriate accessibility roles and descriptive labels to interactive components. This allows assistive technologies to communicate the purpose and state of interface elements to users who rely on them. An example of this implementation is demonstrated in Listing~\ref{lst:accessability_role_react}.
+Accessibility concepts were also considered during the implementation of the mobile application. GeoMedia provides support for screen-reader technologies, including Android's TalkBack$_{\glslink{talkback}{g}}$, by assigning appropriate accessibility roles and descriptive labels to interactive components. This allows assistive technologies to communicate the purpose and state of interface elements to users who rely on them. An example of this implementation is demonstrated in Listing~\ref{lst:accessibility_role_react}.
 
 \begin{lstlisting}[
     language=Javascript,
-    caption={Accessability role in React Native},
+    caption={Accessibility role in React Native},
     basicstyle=\ttfamily\footnotesize,
-    label={lst:accessability_role_react}
+    label={lst:accessibility_role_react}
 ]
 <TouchableOpacity style={[style.buttons.full_screen, style.colors.geomedia_green]} onPress={() => { saveInfo() }}
     accessibilityRole="button" accessibilityLabel={langselected?.save}

@@ -23,7 +23,7 @@ Finally, the server listens for HTTP or HTTPS requests on a configurable network
 By binding a server process to a specific port, the operating system forwards all requests addressed to that port to the corresponding application, which handles the HTTP request and returns a response, following the client-server model.
 
 
-\subsection{TCP/IP Stack \& HTTP Protocol}
+\subsection{TCP/IP Stack and HTTP Protocol}
 \label{sub:tcpipstack}
 
 HTTP is an application-layer protocol that defines the format and exchange of messages between clients and servers on the Internet. Rather than providing communication mechanisms itself, HTTP relies on the services offered by the underlying layers of the \textit{TCP/IP} networking stack, where each layer is responsible for a specific set of operations. \\
@@ -231,7 +231,7 @@ The first version of the GeoMedia, for the application layer used the HTTP nativ
 Compared to FastAPI, Node.JS ecosystem commonly relies on Express framework~\cite{site:expressjs}, which provides a lightweight and flexible approach for creating HTTP servers, offering routing mechanisms and a middleware-based architecture, where additional functionalities can be integrated through a chain of middleware components. Therefore, while Express offers greater flexibility and a mature ecosystem, FastAPI provides additional built-in functionalities that simplify the development and maintenance of scalable RESTful backends. For the GeoMedia platform, FastAPI was selected because provide integrated validation, documentation and structured development model better support the long-term evolution of the application layer.
 
 
-\section{Cybersecurity \& Privacy}
+\section{Cybersecurity and Privacy}
 
 In order to ensure the privacy, integrity, availability and confidentiality of data, GeoMedia must adopt some mitigation techniques to prevent cyber-attacks especially because the platform processes user accounts, user-generated content and location-related information.
 

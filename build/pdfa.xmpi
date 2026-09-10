@@ -66,7 +66,7 @@
    <dc:creator><rdf:Seq><rdf:li>Alberto Morini</rdf:li></rdf:Seq></dc:creator>
    <dc:language><rdf:Bag><rdf:li>en-EN</rdf:li></rdf:Bag></dc:language>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Master's Thesis in Computer Science at University of Padua</rdf:li></rdf:Alt></dc:description>
-   <dc:subject><rdf:Bag><rdf:li>Geomedia, Mobile Application, Software Architecture, OSNs, ThreeTierArchitecture, Android, AndroidDevelopment, REST</rdf:li></rdf:Bag></dc:subject>
+   <dc:subject><rdf:Bag><rdf:li>Geomedia, Mobile Application, Software Architecture, OSNs, ThreeTierArchitecture, Android, AndroidDevelopment, REST API, HTTP</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -78,15 +78,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2026-09-09T23:31:01+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2026-09-09T23:31:01+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2026-09-09T23:31:01+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2026-09-10T14:03:58+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2026-09-10T14:03:58+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2026-09-10T14:03:58+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:C8CFC28F-88E1-7995-E9AD-F6D12EAD346B</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:B072198C-E7D9-11BA-54C5-58A494D59DEA</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:A380D9B2-D189-B580-F5F3-DDB588DA155F</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

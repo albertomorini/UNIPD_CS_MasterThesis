@@ -25,6 +25,13 @@
 
     \captionsetup[table]{list=true}
     \mainmatter
+    % Blank page before Introduction
+    \cleardoublepage
+    \thispagestyle{empty}
+    \null
+    \cleardoublepage
+
+
     \input{chapters/introduction}
     \input{chapters/related-works.tex}
     \input{chapters/geomedia.tex}
@@ -35,8 +42,14 @@
     \input{chapters/testing.tex}
     \input{chapters/future_works.tex}
     \input{chapters/conclusions}
+
+    % Blank page after Conclusions
+    \cleardoublepage
+    \thispagestyle{empty}
+    \null
+    \cleardoublepage
     
-    \appendix
+    % \appendix
     \input{preface/acknowledgements}
     
 
