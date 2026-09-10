@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  10 SEP 2026 15:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  10 SEP 2026 17:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3152,14 +3152,10 @@ e png)
 <use ../images/../images/StateOfArt/auglin/auglin_merged.png>
 Package pdftex.def Info: ../images/../images/StateOfArt/auglin/auglin_merged.pn
 g  used on input line 155.
-(pdftex.def)             Requested size: 435.60242pt x 223.67249pt.
-
-Overfull \hbox (39.60242pt too wide) in paragraph at lines 155--156
- [][] 
- []
-
-) (./chapters/geomedia.tex [17 <build/../images/../images/StateOfArt/auglin/aug
-lin_merged.png>]
+(pdftex.def)             Requested size: 396.0pt x 203.33379pt.
+)
+(./chapters/geomedia.tex [17 <build/../images/../images/StateOfArt/auglin/augli
+n_merged.png>]
 Chapter 3.
 [18
 
@@ -3268,18 +3264,12 @@ File: ../images/GeoMedia/geo_camera.png Graphic file (type png)
 Package pdftex.def Info: ../images/GeoMedia/geo_camera.png  used on input line 
 216.
 (pdftex.def)             Requested size: 396.0pt x 277.30568pt.
-
-Overfull \hbox (18.07999pt too wide) in paragraph at lines 222--225
-\T1/cmr/m/n/10.95 (-20) To up-load files to-ward the server through HTTP pack-e
-ts, adopt-ing an \T1/cmtt/m/n/10.95 application/json$[]$
- []
-
-[47 <build/../images/GeoMedia/geo_camera.png>]
+ [47 <build/../images/GeoMedia/geo_camera.png>]
 <../images/GeoMedia/PostViewerSharing.png, id=997, 1379.1525pt x 1029.8475pt>
 File: ../images/GeoMedia/PostViewerSharing.png Graphic file (type png)
 <use ../images/GeoMedia/PostViewerSharing.png>
 Package pdftex.def Info: ../images/GeoMedia/PostViewerSharing.png  used on inpu
-t line 266.
+t line 269.
 (pdftex.def)             Requested size: 396.0pt x 295.69386pt.
  [48]
 <../images/GeoMedia/geomedia_activity_diagram.drawio.png, id=1028, 1782.66pt x 
@@ -3288,10 +3278,10 @@ File: ../images/GeoMedia/geomedia_activity_diagram.drawio.png Graphic file (typ
 e png)
 <use ../images/GeoMedia/geomedia_activity_diagram.drawio.png>
 Package pdftex.def Info: ../images/GeoMedia/geomedia_activity_diagram.drawio.pn
-g  used on input line 279.
+g  used on input line 282.
 (pdftex.def)             Requested size: 415.80121pt x 226.62811pt.
 
-Overfull \hbox (19.80121pt too wide) in paragraph at lines 279--280
+Overfull \hbox (19.80121pt too wide) in paragraph at lines 282--283
  [][] 
  []
 
@@ -3299,7 +3289,7 @@ Overfull \hbox (19.80121pt too wide) in paragraph at lines 279--280
 <../images/GeoMedia/Access.png, id=1036, 641.39626pt x 847.165pt>
 File: ../images/GeoMedia/Access.png Graphic file (type png)
 <use ../images/GeoMedia/Access.png>
-Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 293.
+Package pdftex.def Info: ../images/GeoMedia/Access.png  used on input line 296.
 
 (pdftex.def)             Requested size: 297.0pt x 392.28596pt.
  [50 <build/../images/GeoMedia/geomedia_activity_diagram.drawio.png>] [51 <buil
@@ -3308,14 +3298,14 @@ d/../images/GeoMedia/Access.png>] [52]
 File: ../images/GeoMedia/geomedia_settings.png Graphic file (type png)
 <use ../images/GeoMedia/geomedia_settings.png>
 Package pdftex.def Info: ../images/GeoMedia/geomedia_settings.png  used on inpu
-t line 347.
+t line 350.
 (pdftex.def)             Requested size: 138.60242pt x 262.29404pt.
  [53] [54 <build/../images/GeoMedia/geomedia_settings.png>]
 [55] [56]
 <../images/apk_signing.png, id=1095, 608.2725pt x 570.63188pt>
 File: ../images/apk_signing.png Graphic file (type png)
 <use ../images/apk_signing.png>
-Package pdftex.def Info: ../images/apk_signing.png  used on input line 412.
+Package pdftex.def Info: ../images/apk_signing.png  used on input line 415.
 (pdftex.def)             Requested size: 356.39758pt x 334.35379pt.
  [57] [58 <build/../images/apk_signing.png>] [59])
 (./chapters/backend.tex [60]
@@ -3620,7 +3610,7 @@ cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti10
 are/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/
 fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/cm-super/sftt1095.pfb>
-Output written on build/thesis.pdf (125 pages, 16783767 bytes).
+Output written on build/thesis.pdf (125 pages, 16783770 bytes).
 PDF statistics:
  2665 PDF objects out of 2984 (max. 8388607)
  2371 compressed objects within 24 object streams

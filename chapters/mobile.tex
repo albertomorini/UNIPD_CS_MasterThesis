@@ -221,7 +221,10 @@ The respective results of camera integration can be seen in Figure~\ref{fig:geom
 
 Alternatively, users can upload different types of files without restrictions on their respective extensions. GeoMedia supports any kind file formats, including audio files and PDF documents. \\
 To enable this functionality, the application allows users to select files directly from the device file system through libraries that interact with the operating system using well-defined system APIs. For this functionality, \texttt{expo-file-system} is adopted, as illustrated in Listing~\ref{lst:file_picking_snippet}, the library doesn't provide any visual components, but just invoke the system native file selection interface. \\
-To upload files toward the server through HTTP packets, adopting an \texttt{application/json}$_{\glslink{applicationjson}{g}}$ content-type, the selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format. This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, files are decoded and stored into the file system of the server.
+The selected files are encoded from its binary representation into Base64$_{\glslink{base64}{g}}$ format, thus to be uploaded toward the server through HTTP packets, in \texttt{application/json}$_{\glslink{applicationjson}{g}}$ content-type.
+
+
+This encoding provides a standardized method for representing binary data as a textual format, allowing files to be safely transmitted through protocols and systems that handle text-based data. On the application side, files are decoded and stored into the file system of the server.
 
 \newpage
 
