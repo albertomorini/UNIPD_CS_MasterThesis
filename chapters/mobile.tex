@@ -50,7 +50,7 @@ Instead, the tilde symbol (\texttt{\string~}) means that only backward-compatibl
 
 A particular emphasis should be placed on libraries that provide access to device APIs and hardware features, such as sensors and other physical components.
 
-\subsubsection{Map \& GPS Integrations}
+\subsubsection{Map and GPS Integrations}
 \label{subsub:map_and_gps}
 
 The map component represent the core functionality of GeoMedia, implemented using the \texttt{react-native-maps} library, which during the compilation process is translated into the corresponding native implementation for each platform, namely Google Maps on Android and Apple Maps on iOS.
@@ -170,7 +170,7 @@ The location permission and retrieval is requested via \texttt{@react-native-com
 }
 \end{lstlisting}
 
-\subsubsection{File sharing \& camera access}
+\subsubsection{File sharing and camera access}
 
 Another external implementation involving device sensors is the camera operability. This functionality, which is always granted through the permission model, allows GeoMedia to access the smartphone camera capabilities in order to capture images and upload them during the post creation process. \\
 To accomplish this objective, GeoMedia adopts \texttt{react-native-vision-camera} a popular and third-party component. This library provides a set of hook functions that encapsulate the underlying camera access logic and simplify the management and storage of captured images, as shown in Listing~\ref{lst:camera_implementation}.
