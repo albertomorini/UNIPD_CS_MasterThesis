@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  14 SEP 2026 23:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.16)  15 SEP 2026 07:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3403,10 +3403,7 @@ Chapter 10.
 
 
 
-]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 7.
- [101
+] [101
 
 
 ] [102]) (./appendix/bibliography.tex [103]
@@ -3555,10 +3552,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 47516 strings out of 469431
- 883482 string characters out of 5468909
- 2301296 words of memory out of 5000000
- 74183 multiletter control sequences out of 15000+600000
+ 47514 strings out of 469431
+ 883437 string characters out of 5468909
+ 2301277 words of memory out of 5000000
+ 74181 multiletter control sequences out of 15000+600000
  670927 words of font info for 286 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  99i,14n,125p,2498b,3926s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3604,7 +3601,7 @@ cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti10
 are/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/
 fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/cm-super/sftt1095.pfb>
-Output written on build/thesis.pdf (125 pages, 16840021 bytes).
+Output written on build/thesis.pdf (125 pages, 16840007 bytes).
 PDF statistics:
  2666 PDF objects out of 2984 (max. 8388607)
  2372 compressed objects within 24 object streams
